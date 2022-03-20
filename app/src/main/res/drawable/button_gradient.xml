@@ -8,6 +8,9 @@
         android:endColor="@color/purple_quaternary"
         android:angle="360"/>
 
+    <corners
+        android:radius="15dp"/>
+
 
 
 </shape>
