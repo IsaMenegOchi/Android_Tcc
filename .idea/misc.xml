@@ -5,6 +5,12 @@
       <map>
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
+        <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.4185" />
+        <entry key="app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.5765398550724637" />
+        <entry key="app/src/main/res/layout/activity_cadastro_empresa01.xml" value="0.5504451038575667" />
+        <entry key="app/src/main/res/layout/activity_cadastro_empresa02.xml" value="0.5765398550724637" />
+        <entry key="app/src/main/res/layout/activity_j.xml" value="0.5765398550724637" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
       </map>
     </option>
   </component>

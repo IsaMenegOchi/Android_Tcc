@@ -10,21 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter">
         <activity
-            android:name=".LoginActivity"
+            android:name=".cadastro_empresa.CadastroEmpresaActivity02"
+            android:exported="false" />
+        <activity
+            android:name=".cadastro_empresa.CadastroEmpresaActivity01"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
