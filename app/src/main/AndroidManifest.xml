@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter">
         <activity
-            android:name=".cadastro_empresa.CadastroEmpresaActivity02"
+            android:name=".cadastro_usuario.CadastroUsuarioActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".cadastro_empresa.CadastroEmpresaActivityPassword"
             android:exported="false" />
         <activity
             android:name=".cadastro_empresa.CadastroEmpresaActivity01"
@@ -23,7 +26,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
