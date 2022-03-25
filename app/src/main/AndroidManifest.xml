@@ -10,13 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter">
         <activity
-            android:name=".cadastro_usuario.CadastroUsuarioActivity1"
+            android:name=".ChoosePerfil"
             android:exported="false" />
         <activity
-            android:name=".cadastro_empresa.CadastroEmpresaActivityPassword"
+            android:name=".company.CompanyVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".cadastro_empresa.CadastroEmpresaActivity01"
+            android:name=".user.UserPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.CompanyPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.user_register.UserRegisterActivity02"
+            android:exported="false" />
+        <activity
+            android:name=".user.user_register.UserRegisterActivity01"
+            android:exported="false" />
+        <activity
+            android:name=".company.company_register.CompanyRegisterPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.company_register.CompanyRegisterActivity01"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +45,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

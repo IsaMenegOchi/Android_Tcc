@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/background_primary"
     android:paddingHorizontal="40dp"
-    tools:context=".cadastro_empresa.CadastroEmpresaActivityPassword">
+    tools:context=".company.company_register.CompanyRegisterPasswordActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

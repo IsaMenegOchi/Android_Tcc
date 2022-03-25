@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cadastro_usuario.CadastroUsuarioActivity1"
     android:background="@color/background_primary"
-    android:paddingHorizontal="40dp">
+    android:paddingHorizontal="40dp"
+    tools:context=".company.company_register.CompanyRegisterActivity01">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,47 +34,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <!--  FULL NAME  -->
-
-    <TextView
-        android:id="@+id/tvRegisterFullName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:letterSpacing="0.075"
-        android:text="Nome completo"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
-
-    <EditText
-        android:id="@+id/etRegisterFull"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/edit_text_background"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName" />
+    <!--  NICKNAME  -->
 
     <TextView
         android:id="@+id/tvRegisterNickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:letterSpacing="0.075"
         android:text="Nickname"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterFullName"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterFull" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
     <EditText
-        android:id="@+id/etInsertPassaword"
+        android:id="@+id/etRegisterNickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -86,8 +62,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegisterNickname" />
 
-    <!--  EMAIL  -->
+    <!-- CNPJ -->
 
+    <TextView
+        android:id="@+id/tvRegisterCnpj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:letterSpacing="0.075"
+        android:text="CNPJ"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/tvRegisterNickname"
+        app:layout_constraintTop_toBottomOf="@+id/etRegisterNickname" />
+
+    <EditText
+        android:id="@+id/etRegisterCnpj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterCnpj" />
+
+
+    <!--  EMAIL  -->
     <TextView
         android:id="@+id/tvRegisterEmail"
         android:layout_width="wrap_content"
@@ -95,10 +98,10 @@
         android:layout_marginTop="20dp"
         android:letterSpacing="0.075"
         android:text="Email"
-
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterNickname"
-        app:layout_constraintTop_toBottomOf="@+id/etInsertPassaword" />
+
+        app:layout_constraintStart_toStartOf="@+id/tvRegisterCnpj"
+        app:layout_constraintTop_toBottomOf="@+id/etRegisterCnpj" />
 
     <EditText
         android:id="@+id/etRegisterEmail"
@@ -119,7 +122,7 @@
     <EditText
         android:id="@+id/etRegisterConfEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+       android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
@@ -141,6 +144,7 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/tvRegisterEmail"
         app:layout_constraintTop_toBottomOf="@+id/etRegisterEmail" />
+
 
     <!--  FAZER LOGIN   -->
 

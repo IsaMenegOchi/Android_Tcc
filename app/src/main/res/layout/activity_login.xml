@@ -109,10 +109,10 @@
         android:text="Não tem uma conta?"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterLogin" />
 
     <TextView
-        android:id="@+id/login_password5"
+        android:id="@+id/tvLoginRegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -121,10 +121,10 @@
         android:text="Cadastre-se agora!"
         android:textColor="@color/purple_secondary"
         app:layout_constraintStart_toEndOf="@+id/login_password4"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterLogin" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegisterLogin"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
