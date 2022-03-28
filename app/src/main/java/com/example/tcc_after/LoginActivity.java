@@ -15,18 +15,19 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
+    tvLoginRegisterNow = findViewById(R.id.tvLoginRegisterNow);
 
         tvLoginRegisterNow.setOnClickListener(view->{
-//            Intent telaCadastro = new Intent(
-//                    MainActivity.this,
-//                    CadastroUsuario.class
+//            Intent loginScreen = new Intent(
+//                    LoginActivity.this,
+//                    ChoosePerfil.class
 //            );
-//
+////
 //            startActivity(telaCadastro);
             startActivity(new Intent(
-                    LoginActivity.this,ChoosePerfil.class
+                    LoginActivity.this, ChoosePerfil.class
             ));
         });
     }
