@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_primary"
-    android:paddingHorizontal="40dp"
     tools:context=".company.company_register.CompanyRegisterPasswordActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:paddingHorizontal="40dp">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="150dp"
@@ -85,17 +89,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInsertConfPassaword" />
 
-    <Button
-        android:id="@+id/registerPassawordButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/button_gradient"
-        android:text="Cadastrar"
+        <Button
+            android:id="@+id/registerPassawordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/button_gradient"
+            android:text="Cadastrar"
 
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/etInsertConfPassaword"
-        tools:layout_editor_absoluteX="40dp" />
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInsertConfPassaword" />
 
     <TextView
         android:id="@+id/loginPerfil"
@@ -122,5 +127,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerPassawordButton" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

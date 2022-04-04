@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_bank_account_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_choose_perfil.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_passaword_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_perfil.xml" value="0.18297101449275363" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_register01.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_verification.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_perfil.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register01.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register02.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
         <entry key="app/src/main/res/drawable/bussines_icon.xml" value="0.5475" />
