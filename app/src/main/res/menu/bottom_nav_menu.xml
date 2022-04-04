@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/searchMenu"
+        android:title="Pesquisa"
+        android:icon="@drawable/ic_baseline_search"/>
+    <item
+        android:id="@+id/ticktesMenu"
+        android:title="Ingressos"
+        android:icon="@drawable/ic_outline_local_activity"/>
+    <item
+        android:id="@+id/homeMenu"
+        android:title="Home"
+        android:icon="@drawable/ic_outline_home"/>
+    <item
+        android:id="@+id/momentsMenu"
+        android:title="Moments"
+        android:icon="@drawable/ic_outline_local_activity"/>
+    <item
+        android:id="@+id/perfilMenu"
+        android:title="Perfil"
+        android:icon="@drawable/ic_person_outline"/>
+
+</menu>

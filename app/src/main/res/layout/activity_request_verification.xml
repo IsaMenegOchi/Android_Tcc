@@ -4,6 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_primary"
     tools:context=".user.verification.RequestVerificationActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="40dp"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/tvTitleRequestVerification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verificação"
+            android:textColor="@color/white"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/confirmResquestVerification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar autenticidade"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

@@ -42,33 +42,38 @@
             android:id="@+id/etEmailAddressLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvLoginEmail"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail" />
 
         <EditText
             android:id="@+id/etPassawordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLoginPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginPassword" />
 
         <TextView
             android:id="@+id/tvLoginEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
             android:letterSpacing="0.075"
             android:text="E-mail"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewLogin" />
 
@@ -76,21 +81,25 @@
             android:id="@+id/tvLoginPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:letterSpacing="0.075"
             android:text="Senha"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etEmailAddressLogin"
             app:layout_constraintTop_toBottomOf="@+id/etEmailAddressLogin" />
 
         <TextView
             android:id="@+id/tvForgotPassawordLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:letterSpacing="0.075"
             android:text="Esqueci minha senha"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etPassawordLogin" />
 
@@ -98,6 +107,8 @@
             android:id="@+id/tvDonHaveAccountLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:letterSpacing="0.075"
             android:text="Não tem uma conta?"
             android:textColor="@color/white"
@@ -108,10 +119,12 @@
             android:id="@+id/tvLoginRegisterNow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:letterSpacing="0.075"
             android:text="Cadastre-se agora!"
             android:textColor="@color/purple_secondary"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toEndOf="@+id/tvDonHaveAccountLogin"
             app:layout_constraintTop_toBottomOf="@+id/btnRegisterLogin" />
 
@@ -119,18 +132,15 @@
             android:id="@+id/btnRegisterLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:background="@drawable/button_gradient"
-            android:text="Cadastrar"
+            android:text="Entrar"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvForgotPassawordLogin" />
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> d5a850158751371213db230462b4dc6e207fe2b4
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

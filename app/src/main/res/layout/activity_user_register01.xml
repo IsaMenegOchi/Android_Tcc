@@ -41,19 +41,18 @@
 
     <!--  FULL NAME  -->
 
-    <TextView
-        android:id="@+id/tvRegisterFullName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:letterSpacing="0.075"
-        android:text="Nome completo"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+        <TextView
+            android:id="@+id/tvRegisterFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.075"
+            android:text="Nome completo"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
-    <EditText
+        <EditText
         android:id="@+id/etRegisterFull"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

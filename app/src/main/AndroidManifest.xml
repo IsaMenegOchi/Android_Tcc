@@ -10,11 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter">
         <activity
-<<<<<<< HEAD
-            android:name=".user.user_register.BankAccountRegisterActivity"
-=======
+            android:name=".user.verification.AboutVerificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".user.verification.RequestVerificationActivity"
->>>>>>> d5a850158751371213db230462b4dc6e207fe2b4
+            android:exported="false" />
+        <activity
+            android:name=".user.user_register.BankAccountRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ChoosePerfil"

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryDark">@color/background_primary</item>
+        <item name="colorAccent">@android:color/holo_blue_dark</item>
+    </style>
 
     <style name="inputTitle">
-        <item name="android:layout_marginStart">30dp</item>
-        <item name="android:layout_marginEnd">30dp</item>
-        <item name="android:layout_marginBottom">40dp</item>
-        <item name="android:background">@color/purple_500</item>
-        <item name="textFillColor">@android:color/white</item>
-        <item name="android:padding">20dp</item>
-        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.075</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
