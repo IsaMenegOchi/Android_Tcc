@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter">
         <activity
+            android:name=".event.RegisterEventActivity"
+            android:exported="false" />
+        <activity
             android:name=".user.verification.AboutVerificationActivity"
             android:exported="false" />
         <activity
             android:name=".user.verification.RequestVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".user.user_register.BankAccountRegisterActivity"
+            android:name=".company.company_register.bank_account.BankAccountRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ChoosePerfil"
@@ -44,8 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

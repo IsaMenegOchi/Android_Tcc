@@ -25,23 +25,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_logo_text" />
 
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:letterSpacing="0.10"
-        android:text="CADASTRO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <!--  Data nascimento -->
 
-    <!--  Data nascimento -->
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:letterSpacing="0.10"
+            android:text="CADASTRO"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
+        <TextView
         android:id="@+id/tvRegisterBirthUser2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -207,13 +207,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tvInsertConfPassawordUser2" />
 
     <Button
-        android:id="@+id/registerPassawordButtonUser2"
+        android:id="@+id/btnUserRegister2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@drawable/button_gradient"
         android:text="Cadastrar"
-
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/etInsertConfPassawordUser2"
         tools:layout_editor_absoluteX="40dp" />
@@ -229,7 +228,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toEndOf="@+id/haveAccount"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassawordButtonUser2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister2" />
 
     <TextView
         android:id="@+id/haveAccount"
@@ -241,7 +240,7 @@
         android:text="Já tem uma conta?"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassawordButtonUser2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

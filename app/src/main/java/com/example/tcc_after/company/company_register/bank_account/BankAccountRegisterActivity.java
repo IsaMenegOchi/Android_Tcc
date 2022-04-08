@@ -1,4 +1,4 @@
-package com.example.tcc_after.user.user_register;
+package com.example.tcc_after.company.company_register.bank_account;
 
 import androidx.appcompat.app.AppCompatActivity;
 

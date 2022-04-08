@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".event.RegisterEventActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:paddingHorizontal="40dp">
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.075"
+            android:text="Nome completo"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName" />
+        <TextView
+            android:id="@+id/tvRegisterEvent_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.075"
+            android:text="Nome completo"
+            android:textColor="@color/white"
+             />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+             />
+        <TextView
+            android:id="@+id/tvRegisterEvent_Assunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.075"
+            android:text="Nome completo"
+            android:textColor="@color/white"
+             />
+
+        <EditText
+            android:id="@+id/tvRegisterEvent_Assunt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

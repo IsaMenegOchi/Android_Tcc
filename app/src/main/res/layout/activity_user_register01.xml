@@ -29,7 +29,7 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:letterSpacing="0.10"
         android:text="CADASTRO"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
