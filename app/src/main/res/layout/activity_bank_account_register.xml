@@ -108,8 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:letterSpacing="0.075"
-            android:text="Conta
-"
+            android:text="Conta"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_Bank"
             app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_Bank" />
@@ -125,6 +124,7 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/etRegisterBankAccount_Bank"
             app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Account"
             app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Account" />
 

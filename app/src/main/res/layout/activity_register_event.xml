@@ -10,19 +10,81 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:paddingHorizontal="40dp">
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="20dp"
+        android:scrollbars="vertical">
+
+        <ImageButton
+            android:id="@+id/btnAboutVerification_Back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/background_primary"
+            android:src="@drawable/ic_baseline_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_logo_text" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.02"
+            android:text="Criar Evento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.014"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/ivRegisterEvent_PerfilPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/perfil_photo_shape"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister"
+            />
+
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_PerfilName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="AUDIO EVENTOS"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRegisterEvent_PerfilPhoto"
+            app:layout_constraintStart_toEndOf="@+id/ivRegisterEvent_PerfilPhoto"
+            app:layout_constraintTop_toTopOf="@+id/ivRegisterEvent_PerfilPhoto"
+            app:layout_constraintVertical_bias="0.516" />
 
         <TextView
             android:id="@+id/tvRegisterEvent_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="28dp"
             android:letterSpacing="0.075"
-            android:text="Nome completo"
+            android:text="Titulo"
             android:textColor="@color/white"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+            app:layout_constraintTop_toBottomOf="@+id/ivRegisterEvent_PerfilPhoto" />
 
         <EditText
             android:id="@+id/etRegisterEvent_Title"
@@ -31,21 +93,23 @@
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:padding="10dp"
             android:textColor="@color/text_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName" />
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_Title"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_Title" />
+
         <TextView
             android:id="@+id/tvRegisterEvent_Category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:letterSpacing="0.075"
-            android:text="Nome completo"
+            android:text="Categoria"
             android:textColor="@color/white"
-             />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterEvent_Title"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_Title" />
 
         <EditText
             android:id="@+id/etRegisterEvent_Category"
@@ -54,33 +118,465 @@
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:padding="10dp"
             android:textColor="@color/text_color"
-             />
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_Category"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_Category" />
+
         <TextView
-            android:id="@+id/tvRegisterEvent_Assunt"
+            android:id="@+id/tvRegisterEvent_Subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:letterSpacing="0.075"
-            android:text="Nome completo"
+            android:text="Assunto"
             android:textColor="@color/white"
-             />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterEvent_Category"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_Category" />
 
         <EditText
-            android:id="@+id/tvRegisterEvent_Assunt"
+            android:id="@+id/etRegisterEvent_Subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:padding="10dp"
             android:textColor="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_Subject"
+             />
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_EventType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Tipo do evento"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_Subject"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_Subject" />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_EventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_EventType"
+             />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Cep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="CEP"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_EventType"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_EventType" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_Cep"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Cep" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Logradouro"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_Street"
+            app:layout_constraintTop_toTopOf="@+id/tvRegisterBankAccount_Cep" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_Street"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toEndOf="@+id/etRegisterBankAccount_Cep"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Street" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Neighborhood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Bairro"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Cep"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_Cep" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_Neighborhood"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Neighborhood"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Neighborhood" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_City"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Cidade"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Street"
+            app:layout_constraintTop_toTopOf="@+id/tvRegisterBankAccount_Neighborhood" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_City"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_Street"
+            app:layout_constraintTop_toTopOf="@+id/etRegisterBankAccount_Neighborhood" />
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_Complement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Complemento"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Neighborhood"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_Neighborhood" />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_Complement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_Neighborhood"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_Complement" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_StartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Data/Hora"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_Complement"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_Complement" />
+
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Início"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_StartDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_StartDate" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_StartHour"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/etRegisterEvent_Complement"
+            app:layout_constraintTop_toTopOf="@+id/etRegisterBankAccount_StartDate" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_StartDate"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterEvent_Complement"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Start" />
+
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Fim"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Start"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_StartDate" />
+        <EditText
+            android:id="@+id/etRegisterBankAccount_FinishDate"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_StartDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Finish" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_FinishtHour"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/etRegisterBankAccount_StartHour"
+            app:layout_constraintTop_toTopOf="@+id/etRegisterBankAccount_FinishDate" />
+
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Descrição"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_StartDate"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_FinishDate" />
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_Description"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_StartDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Description" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_AgeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Faixa etária"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_Description"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_Description" />
+
+
+        <EditText
+            android:id="@+id/etRegisterBankAccount_AgeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_AgeGroup"
             />
 
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_Cover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Adicionar foto de capa"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_AgeGroup"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterBankAccount_AgeGroup" />
 
+
+        <ImageButton
+            android:id="@+id/btnRegisterEvent_Cover"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/round_corner"
+            android:src="@drawable/ic_outline_add_photo_alternate"
+            app:layout_constraintEnd_toEndOf="@+id/etRegisterBankAccount_AgeGroup"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterBankAccount_AgeGroup"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_Cover" />
+
+        <TextView
+            android:id="@+id/tvRegisterBankAccount_PerfilPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Adicionar foto de capa"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_Cover"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegisterEvent_Cover" />
+
+        <ImageButton
+            android:id="@+id/btnRegisterEvent_PerfilPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/round_corner"
+            android:src="@drawable/ic_outline_add_photo_alternate"
+            app:layout_constraintStart_toStartOf="@+id/btnRegisterEvent_Cover"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterBankAccount_PerfilPhoto" />
+
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_Celebrity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.075"
+            android:text="Celebridade"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterBankAccount_PerfilPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegisterEvent_PerfilPhoto" />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_Celebrity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/btnRegisterEvent_PerfilPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_Celebrity" />
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_BankAccount"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Conta"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterEvent_Celebrity"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_Celebrity" />
+
+        <EditText
+            android:id="@+id/etRegisterEvent_BankAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterEvent_Celebrity"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_BankAccount" />
+
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_AboutTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:text="Para saber mais sobre os termos,"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegisterEvent_BankAccount" />
+
+        <TextView
+            android:id="@+id/tvRegisterEvent_SeeTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clique aqui!"
+            android:textColor="@color/purple_secondary"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvRegisterEvent_AboutTerms"
+            app:layout_constraintTop_toTopOf="@+id/tvRegisterEvent_AboutTerms" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/background_tertiary"
+            android:buttonTint="@color/white"
+            android:text="Li e concordo com os termos"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etRegisterEvent_BankAccount"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEvent_AboutTerms" />
+
+        <Button
+            android:id="@+id/btnRegisterUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
+            android:text="Avançar"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
