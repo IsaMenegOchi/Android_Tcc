@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/border_file.xml" value="0.216" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_add_a_photo.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/perfil_event_photo_shape.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/perfil_photo_shape.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/round_corner.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_home.xml" value="0.25729166666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_photo_register.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_register_event.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register01.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/fragment_dashboard.xml" value="0.25729166666666664" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
         <entry key="app/src/main/res/drawable/bussines_icon.xml" value="0.5475" />

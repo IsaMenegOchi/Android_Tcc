@@ -64,7 +64,7 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName"/>
 
     <TextView
         android:id="@+id/tvRegisterNickname"
