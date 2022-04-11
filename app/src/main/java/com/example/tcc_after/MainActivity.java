@@ -6,16 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.tcc_after.UI.ChoosePerfil;
+import com.example.tcc_after.UI.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.searchMenu:
-                        startActivity(new Intent(getApplicationContext(),ChoosePerfil.class));
+                        startActivity(new Intent(getApplicationContext(), ChoosePerfil.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.ticketMenu:
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.homeMenu:

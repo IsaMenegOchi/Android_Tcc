@@ -1,4 +1,4 @@
-package com.example.tcc_after.company.company_register;
+package com.example.tcc_after.UI.company.company_register.bank_account;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.tcc_after.R;
 
-public class CompanyRegisterActivity01 extends AppCompatActivity {
+public class BankAccountRegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_register01);
+        setContentView(R.layout.activity_bank_account_register);
     }
 }

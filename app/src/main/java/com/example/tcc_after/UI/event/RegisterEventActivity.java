@@ -1,4 +1,4 @@
-package com.example.tcc_after.user.verification;
+package com.example.tcc_after.UI.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.tcc_after.R;
 
-public class RequestVerificationActivity extends AppCompatActivity {
+public class RegisterEventActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_verification);
+        setContentView(R.layout.activity_register_event);
     }
 }

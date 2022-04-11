@@ -10,10 +10,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter" >
         <activity
-            android:name=".perfil.PhotoRegisterActivity"
+            android:name=".UI.perfil.PhotoRegisterActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".UI.event.RegisterEventActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".UI.user.verification.AboutVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".event.RegisterEventActivity"
+            android:name=".UI.user.verification.RequestVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ChoosePerfil"
+            android:exported="false" />
+        <activity
+            android:name=".UI.company.CompanyVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.user.UserPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.company.CompanyPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.user.user_register.UserRegisterActivity02"
+            android:exported="false" />
+
+        <activity
+            android:name=".UI.user.user_register.UserRegisterActivity01"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,41 +50,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".user.verification.AboutVerificationActivity"
+            android:name=".UI.company.company_register.CompanyRegisterPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".user.verification.RequestVerificationActivity"
+            android:name=".UI.company.company_register.CompanyRegisterActivity01"
             android:exported="false" />
         <activity
-            android:name=".company.company_register.bank_account.BankAccountRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChoosePerfil"
-            android:exported="false" />
-        <activity
-            android:name=".company.CompanyVerificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".user.UserPerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".company.CompanyPerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".user.user_register.UserRegisterActivity02"
-            android:exported="false" />
-        <activity
-            android:name=".user.user_register.UserRegisterActivity01"
-            android:exported="false" />
-        <activity
-            android:name=".company.company_register.CompanyRegisterPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".company.company_register.CompanyRegisterActivity01"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".UI.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

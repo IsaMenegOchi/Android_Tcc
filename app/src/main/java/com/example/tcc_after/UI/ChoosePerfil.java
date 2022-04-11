@@ -1,4 +1,4 @@
-package com.example.tcc_after;
+package com.example.tcc_after.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.example.tcc_after.company.company_register.CompanyRegisterActivity01;
-import com.example.tcc_after.user.user_register.UserRegisterActivity01;
+import com.example.tcc_after.R;
+import com.example.tcc_after.UI.company.company_register.CompanyRegisterActivity01;
+import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
 
 public class ChoosePerfil extends AppCompatActivity {
 

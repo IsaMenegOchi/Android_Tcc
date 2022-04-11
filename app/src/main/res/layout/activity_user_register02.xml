@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_primary"
 
-    tools:context=".user.user_register.UserRegisterActivity02">
+    tools:context=".UI.user.user_register.UserRegisterActivity02">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

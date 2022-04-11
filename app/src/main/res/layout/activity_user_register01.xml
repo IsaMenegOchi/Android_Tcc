@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.user_register.UserRegisterActivity01"
+    tools:context=".UI.user.user_register.UserRegisterActivity01"
     android:background="@color/background_primary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/icon_logo_text" />
 
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/tvUserRegister_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -42,7 +42,7 @@
     <!--  FULL NAME  -->
 
         <TextView
-            android:id="@+id/tvRegisterFullName"
+            android:id="@+id/tvUserRegister_FullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
@@ -50,10 +50,10 @@
             android:text="Nome completo"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+            app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Title" />
 
         <EditText
-        android:id="@+id/etRegisterFull"
+        android:id="@+id/etUserRegister_FullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -64,21 +64,21 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterFullName"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_FullName"/>
 
     <TextView
-        android:id="@+id/tvRegisterNickname"
+        android:id="@+id/tvUserRegister_Nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:letterSpacing="0.075"
         android:text="Nickname"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterFullName"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterFull" />
+        app:layout_constraintStart_toStartOf="@+id/tvUserRegister_FullName"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_FullName" />
 
     <EditText
-        android:id="@+id/etNickname"
+        android:id="@+id/etUserRegister_Nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -89,12 +89,12 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterNickname" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Nickname" />
 
     <!--  EMAIL  -->
 
     <TextView
-        android:id="@+id/tvRegisterEmail"
+        android:id="@+id/tvUserRegister_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -102,11 +102,11 @@
         android:text="Email"
 
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterNickname"
-        app:layout_constraintTop_toBottomOf="@+id/etNickname" />
+        app:layout_constraintStart_toStartOf="@+id/tvUserRegister_Nickname"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Nickname" />
 
     <EditText
-        android:id="@+id/etRegisterEmail"
+        android:id="@+id/etUserRegister_Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -117,12 +117,12 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Email" />
 
     <!--    Confirmação de email    -->
 
     <EditText
-        android:id="@+id/etRegisterConfEmail"
+        android:id="@+id/etUserRegister_ConfEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -133,31 +133,31 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterConfEmail"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_ConfEmail"/>
 
 
     <TextView
-        android:id="@+id/tvRegisterConfEmail"
+        android:id="@+id/tvUserRegister_ConfEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:letterSpacing="0.075"
         android:text="Confirme seu email"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterEmail"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterEmail"/>
+        app:layout_constraintStart_toStartOf="@+id/etUserRegister_Email"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Email"/>
 
     <!--  FAZER LOGIN   -->
 
     <Button
-        android:id="@+id/fowardButton1"
+        android:id="@+id/btnUserRegister01_Foward"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:background="@drawable/button_gradient"
         android:text="Avançar"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterConfEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_ConfEmail"
         tools:layout_editor_absoluteX="40dp"/>
 
     <TextView
@@ -171,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fowardButton1"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister01_Foward"/>
 
     <TextView
         android:id="@+id/entrarPerfil"
@@ -184,7 +184,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/haveAccount"
-        app:layout_constraintTop_toBottomOf="@+id/fowardButton1"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister01_Foward"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

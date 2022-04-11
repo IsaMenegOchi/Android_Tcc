@@ -1,4 +1,4 @@
-package com.example.tcc_after.perfil;
+package com.example.tcc_after.UI.perfil;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.tcc_after.company.company_register;
+package com.example.tcc_after.UI.user.user_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,15 @@ import android.os.Bundle;
 
 import com.example.tcc_after.R;
 
-public class CompanyRegisterPasswordActivity extends AppCompatActivity {
+public class UserRegisterActivity02 extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_passaword_register);
+        setContentView(R.layout.activity_user_register02);
+
+
     }
 }
