@@ -57,13 +57,6 @@ public class UserRegisterActivity01 extends AppCompatActivity {
                 addUsuario(usuarioComum);
 
 
-                startActivity(new Intent(
-                        UserRegisterActivity01.this, UserRegisterActivity02.class
-                ));
-
-
-
-
             //passa os dados para a API Rest
 
         }); //fim do setOnClickListener
