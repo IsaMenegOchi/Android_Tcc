@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-        android:id="@+id/tvRegisterBirthUser2"
+        android:id="@+id/tvUserRegister_Birth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
     <EditText
-        android:id="@+id/etRegisterBirthUser2"
+        android:id="@+id/etUserRegister_Birth"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -66,12 +66,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterBirthUser2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Birth" />
 
     <!--  Cep -->
 
     <TextView
-        android:id="@+id/tvRegisterCepUser2"
+        android:id="@+id/tvUserRegister_Cep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:letterSpacing="0.075"
@@ -79,11 +79,11 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etRegisterCepUser2"
-        app:layout_constraintTop_toTopOf="@+id/tvRegisterBirthUser2" />
+        app:layout_constraintStart_toStartOf="@+id/etUserRegister_Cep"
+        app:layout_constraintTop_toTopOf="@+id/tvUserRegister_Birth" />
 
     <EditText
-        android:id="@+id/etRegisterCepUser2"
+        android:id="@+id/etUserRegister_Cep"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -94,24 +94,24 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/etRegisterBirthUser2"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterCepUser2" />
+        app:layout_constraintStart_toEndOf="@+id/etUserRegister_Birth"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Cep" />
 
     <!--  Estado -->
 
     <TextView
-        android:id="@+id/tvRegisterStateUser2"
+        android:id="@+id/tvUserRegister_State"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:letterSpacing="0.075"
         android:text="Estado"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterBirthUser2"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterBirthUser2" />
+        app:layout_constraintStart_toStartOf="@+id/tvUserRegister_Birth"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Birth" />
 
     <EditText
-        android:id="@+id/etRegisterStateUser2"
+        android:id="@+id/etUserRegister_State"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -120,13 +120,13 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColor="@color/text_color"
-        app:layout_constraintStart_toStartOf="@+id/etRegisterBirthUser2"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterStateUser2" />
+        app:layout_constraintStart_toStartOf="@+id/etUserRegister_Birth"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_State" />
 
     <!--  Cidade -->
 
     <TextView
-        android:id="@+id/tvRegisterCityUser2"
+        android:id="@+id/tvUserRegister_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -135,13 +135,13 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etRegisterCityUser2"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterCepUser2" />
+        app:layout_constraintStart_toStartOf="@+id/etUserRegister_City"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Cep" />
 
 
 
     <EditText
-        android:id="@+id/etRegisterCityUser2"
+        android:id="@+id/etUserRegister_City"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -151,24 +151,24 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="@+id/etRegisterCepUser2"
+        app:layout_constraintEnd_toEndOf="@+id/etUserRegister_Cep"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/etRegisterStateUser2"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegisterCityUser2" />
+        app:layout_constraintStart_toEndOf="@+id/etUserRegister_State"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_City" />
 
     <TextView
-        android:id="@+id/tvInsertPassawordUser2"
+        android:id="@+id/tvUserRegister_Passaword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:letterSpacing="0.075"
         android:text="Senha"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvRegisterStateUser2"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterStateUser2" />
+        app:layout_constraintStart_toStartOf="@+id/tvUserRegister_State"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_State" />
 
     <EditText
-        android:id="@+id/etInsertPassawordUser2"
+        android:id="@+id/etUserRegister_Passaword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -177,23 +177,23 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="@+id/etRegisterStateUser2"
-        app:layout_constraintStart_toStartOf="@+id/etRegisterStateUser2"
-        app:layout_constraintTop_toBottomOf="@+id/tvInsertPassawordUser2" />
+        app:layout_constraintEnd_toEndOf="@+id/etUserRegister_State"
+        app:layout_constraintStart_toStartOf="@+id/etUserRegister_State"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Passaword" />
 
     <TextView
-        android:id="@+id/tvInsertConfPassawordUser2"
+        android:id="@+id/tvUserRegister_ConfPassaword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:letterSpacing="0.075"
         android:text="Confirme sua senha"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/tvInsertPassawordUser2"
-        app:layout_constraintTop_toBottomOf="@+id/etInsertPassawordUser2" />
+        app:layout_constraintStart_toStartOf="@+id/tvUserRegister_Passaword"
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Passaword" />
 
     <EditText
-        android:id="@+id/etInsertConfPassawordUser2"
+        android:id="@+id/etUserRegister_ConfPassaword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -202,23 +202,23 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="@+id/etInsertPassawordUser2"
+        app:layout_constraintEnd_toEndOf="@+id/etUserRegister_Passaword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInsertConfPassawordUser2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_ConfPassaword" />
 
     <Button
-        android:id="@+id/btnUserRegister2"
+        android:id="@+id/btnUserRegister02_Foward"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@drawable/button_gradient"
         android:text="Cadastrar"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/etInsertConfPassawordUser2"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_ConfPassaword"
+         />
 
     <TextView
-        android:id="@+id/loginPerfilUser2"
+        android:id="@+id/tvUserRegister_conectAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -228,7 +228,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toEndOf="@+id/haveAccount"
-        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister02_Foward" />
 
     <TextView
         android:id="@+id/haveAccount"
@@ -240,7 +240,7 @@
         android:text="Já tem uma conta?"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnUserRegister02_Foward" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

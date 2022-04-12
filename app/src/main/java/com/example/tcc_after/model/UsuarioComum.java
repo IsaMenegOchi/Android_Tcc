@@ -38,7 +38,7 @@ public class UsuarioComum {
 
     @SerializedName("dataNascUsuario")
     @Expose
-    private Date dataNascUsuario;
+    private String dataNascUsuario;
 
     @SerializedName("biografiaUsuario")
     @Expose
@@ -54,7 +54,7 @@ public class UsuarioComum {
     //Criação dos construtores com comandos
     public UsuarioComum(int idUsuario, String nomeCompletoUsuario, String nicknameUsuario,
                         String emailUsuario, String senhaUsuario, String fotoPerfilUsuario,
-                        String fotoDeFundoUsuario, Date dataNascUsuario, String biografiaUsuario) {
+                        String fotoDeFundoUsuario, String dataNascUsuario, String biografiaUsuario) {
 
         this.idUsuario = idUsuario;
         this.nomeCompletoUsuario = nomeCompletoUsuario;
@@ -125,11 +125,11 @@ public class UsuarioComum {
         this.fotoDeFundoUsuario = fotoDeFundoUsuario;
     }
 
-    public Date getDatanascUsuario() {
+    public String getDatanascUsuario() {
         return dataNascUsuario;
     }
 
-    public void setDatanascUsuario(Date datanascUsuario) {
+    public void setDatanascUsuario(String datanascUsuario) {
         this.dataNascUsuario = datanascUsuario;
     }
 

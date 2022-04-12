@@ -26,7 +26,11 @@ public class UserRegisterActivity01 extends AppCompatActivity {
     private EditText etConfirmEmail;
     private Button btnAvancar1;
 
-    RouterInterface routerInterface;
+    public static String nomeCadastroUsuario;
+    public static String nicknameCadastroUsuario;
+    public static String emailCadastroUsuario;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,40 +48,14 @@ public class UserRegisterActivity01 extends AppCompatActivity {
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar1.setOnClickListener(view->{
 
-            //Crcia um objeto modal de UsuarioComum
+            nomeCadastroUsuario = etNome.getText().toString();
+            nicknameCadastroUsuario = etNickname.getText().toString();
+            emailCadastroUsuario = etEmail.getText().toString();
 
-                UsuarioComum usuarioComum = new UsuarioComum();
-
-                usuarioComum.setNomeCompletoUsuario(etNome.getText().toString());
-                usuarioComum.setNicknameUsuario(etNickname.getText().toString());
-                usuarioComum.setEmailUsuario(etEmail.getText().toString());
-                usuarioComum.setEmailUsuario(etConfirmEmail.getText().toString());
-
-                routerInterface = APIUtil.getUsuarioInterface();
-                addUsuario(usuarioComum);
-
-
-            //passa os dados para a API Rest
+            Intent intent = new Intent(UserRegisterActivity01.this, UserRegisterActivity02.class);
+            startActivity(intent);
 
         }); //fim do setOnClickListener
     }// fim do metodo onCreate
 
-    public void addUsuario(UsuarioComum usuarioComum){
-
-        //calback - classe do java
-        Call<UsuarioComum> call = routerInterface.addUsuarioComum(usuarioComum);
-        call.enqueue(new Callback<UsuarioComum>() {
-            //o req é feito automaticamente
-            @Override
-            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
-                Toast.makeText(UserRegisterActivity01.this, "Usuario inserido com sucesso", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(Call<UsuarioComum> call, Throwable t) {
-                Log.d("Erro_api", t.getMessage());
-            }
-        });
-
-    }
 }

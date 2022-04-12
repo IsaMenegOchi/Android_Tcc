@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 public interface RouterInterface {
     /**ROTA DE INSERCAO DE USUARIO**/
     //Pegar o verbo http e colocar o caminho
-    @POST("/perfil/cadastrarPerfilUsuarioComum")
+    @POST("perfil/cadastrarPerfilUsuarioComum/")
     //realiza uma requisicao para a rota acima pelo metodo addUsuario
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 

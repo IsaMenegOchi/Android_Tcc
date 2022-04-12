@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter" >
         <activity
-            android:name=".UI.perfil.PhotoRegisterActivity"
+            android:name=".UI.user.user_register.PhotoRegisterActivity"
             android:exported="false"/>
 
         <activity
