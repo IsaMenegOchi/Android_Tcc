@@ -8,41 +8,61 @@ import java.util.Date;
 public class UsuarioComum {
 
     /** TRANSFORMANDO ATRIBUTOS EM JSON**/
-    @SerializedName("idUsuario")
+    @SerializedName("idUsuarioComum")
     @Expose
     private int idUsuario;
 
-    @SerializedName("nomeCompletoUsuario")
+    @SerializedName("idPerfil")
+    @Expose
+    private int idPerfil;
+
+    @SerializedName("idEnderecoUsuario")
+    @Expose
+    private int idEnderecoUsuario;
+
+    @SerializedName("nome")
     @Expose
     private String nomeCompletoUsuario;
 
-    @SerializedName("nicknameUsuario")
+    @SerializedName("nickname")
     @Expose
     private String nicknameUsuario;
 
-    @SerializedName("emailUsuario")
+    @SerializedName("email")
     @Expose
     private String emailUsuario;
 
-    @SerializedName("senhaUsuario")
+    @SerializedName("senha")
     @Expose
     private String senhaUsuario;
 
-    @SerializedName("fotoPerfilUsuario")
+    @SerializedName("imagemPerfil")
     @Expose
-    private String fotoPerfilUsuario;
+    private String imagemPerfilUsuario;
 
-    @SerializedName("fotoDeFundoUsuario")
+    @SerializedName("imagemFundo")
     @Expose
-    private String fotoDeFundoUsuario;
+    private String imagemFundoUsuario;
 
-    @SerializedName("dataNascUsuario")
+    @SerializedName("dataNasc")
     @Expose
     private String dataNascUsuario;
 
-    @SerializedName("biografiaUsuario")
+    @SerializedName("biografia")
     @Expose
     private String biografiaUsuario;
+
+    @SerializedName("cep")
+    @Expose
+    private String cepUsuario;
+
+    @SerializedName("cidade")
+    @Expose
+    private String cidadeUsuario;
+
+    @SerializedName("estado")
+    @Expose
+    private String estadoUsuario;
 
 
     /** CRIAÇÃO DOS CONSTRUTORES **/
@@ -52,22 +72,28 @@ public class UsuarioComum {
     }
 
     //Criação dos construtores com comandos
-    public UsuarioComum(int idUsuario, String nomeCompletoUsuario, String nicknameUsuario,
-                        String emailUsuario, String senhaUsuario, String fotoPerfilUsuario,
-                        String fotoDeFundoUsuario, String dataNascUsuario, String biografiaUsuario) {
 
+
+    public UsuarioComum(int idUsuario, int idPerfil, int idEnderecoUsuario,
+                        String nomeCompletoUsuario, String nicknameUsuario,
+                        String emailUsuario, String senhaUsuario, String imagemPerfilUsuario,
+                        String imagemFundoUsuario, String dataNascUsuario, String biografia,
+                        String cep, String cidade, String estado) {
         this.idUsuario = idUsuario;
+        this.idPerfil = idPerfil;
+        this.idEnderecoUsuario = idEnderecoUsuario;
         this.nomeCompletoUsuario = nomeCompletoUsuario;
         this.nicknameUsuario = nicknameUsuario;
         this.emailUsuario = emailUsuario;
         this.senhaUsuario = senhaUsuario;
-        this.fotoPerfilUsuario = fotoPerfilUsuario;
-        this.fotoDeFundoUsuario = fotoDeFundoUsuario;
+        this.imagemPerfilUsuario = imagemPerfilUsuario;
+        this.imagemFundoUsuario = imagemFundoUsuario;
         this.dataNascUsuario = dataNascUsuario;
-        this.biografiaUsuario = biografiaUsuario;
+        this.biografiaUsuario = biografia;
+        this.cepUsuario = cep;
+        this.cidadeUsuario = cidade;
+        this.estadoUsuario = estado;
     }
-
-    /** CRIACAO DE GETTERS E SETTERS **/
 
     public int getIdUsuario() {
         return idUsuario;
@@ -75,6 +101,14 @@ public class UsuarioComum {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public int getIdPerfil() {
+        return idPerfil;
+    }
+
+    public void setIdPerfil(int idPerfil) {
+        this.idPerfil = idPerfil;
     }
 
     public String getNomeCompletoUsuario() {
@@ -109,36 +143,68 @@ public class UsuarioComum {
         this.senhaUsuario = senhaUsuario;
     }
 
-    public String getFotoPerfilUsuario() {
-        return fotoPerfilUsuario;
+    public String getImagemPerfilUsuario() {
+        return imagemPerfilUsuario;
     }
 
-    public void setFotoPerfilUsuario(String fotoPerfilUsuario) {
-        this.fotoPerfilUsuario = fotoPerfilUsuario;
+    public void setImagemPerfilUsuario(String imagemPerfilUsuario) {
+        this.imagemPerfilUsuario = imagemPerfilUsuario;
     }
 
-    public String getFotoDeFundoUsuario() {
-        return fotoDeFundoUsuario;
+    public String getImagemFundoUsuario() {
+        return imagemFundoUsuario;
     }
 
-    public void setFotoDeFundoUsuario(String fotoDeFundoUsuario) {
-        this.fotoDeFundoUsuario = fotoDeFundoUsuario;
+    public void setImagemFundoUsuario(String imagemFundoUsuario) {
+        this.imagemFundoUsuario = imagemFundoUsuario;
     }
 
-    public String getDatanascUsuario() {
+    public String getDataNascUsuario() {
         return dataNascUsuario;
     }
 
-    public void setDatanascUsuario(String datanascUsuario) {
-        this.dataNascUsuario = datanascUsuario;
+    public void setDataNascUsuario(String dataNascUsuario) {
+        this.dataNascUsuario = dataNascUsuario;
     }
 
-    public String getBiografiaUsuario() {
+    public String getBiografia() {
         return biografiaUsuario;
     }
 
-    public void setBiografiaUsuario(String biografiaUsuario) {
-        this.biografiaUsuario = biografiaUsuario;
+    public void setBiografia(String biografia) {
+        this.biografiaUsuario = biografia;
+    }
+
+    public int getIdEnderecoUsuario() {
+        return idEnderecoUsuario;
+    }
+
+    public void setIdEnderecoUsuario(int idEnderecoUsuario) {
+        this.idEnderecoUsuario = idEnderecoUsuario;
+    }
+
+    public String getCep() {
+        return cepUsuario;
+    }
+
+    public void setCep(String cep) {
+        this.cepUsuario = cep;
+    }
+
+    public String getCidade() {
+        return cidadeUsuario;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidadeUsuario = cidade;
+    }
+
+    public String getEstado() {
+        return estadoUsuario;
+    }
+
+    public void setEstado(String estado) {
+        this.estadoUsuario = estado;
     }
 }
 
