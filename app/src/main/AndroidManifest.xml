@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tcc_after" >
-
-    <!--    ela pode enviar dados e receber dados externos-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--  desbloquear algumas coisas padrao do android  -->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-
-
+    package="com.example.tcc_after">
+    <!-- ela pode enviar dados e receber dados externos -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- desbloquear algumas coisas padrao do android -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tccafter" >
+        android:theme="@style/Theme.Tccafter"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.user.user_register.PhotoRegisterActivity"
-            android:exported="false"/>
-
+            android:name=".UI.event.purchase.PaidTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.event.EventDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.event.FeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.PhotoRegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.event.RegisterEventActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".UI.user.verification.AboutVerificationActivity"
             android:exported="false" />
@@ -48,17 +52,15 @@
         <activity
             android:name=".UI.user.user_register.UserRegisterActivity02"
             android:exported="false" />
-
         <activity
             android:name=".UI.user.user_register.UserRegisterActivity01"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".UI.company.company_register.CompanyRegisterPasswordActivity"
             android:exported="false" />

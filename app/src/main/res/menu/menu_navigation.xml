@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/searchMenu"
-        android:title="Pesquisa"
-        android:icon="@drawable/ic_baseline_search"/>
+        android:title="Marcar como interesse"
+        android:icon="@drawable/ic_outline_calendar_today"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/ticketMenu"
-        android:title="Ingressos"
-        android:icon="@drawable/ic_outline_local_activity"/>
+        android:title="Compartilhar"
+        android:icon="@drawable/ic_outline_share"
+        app:showAsAction="never"/>
 
-    <item
-        android:id="@+id/homeMenu"
-        android:title="Home"
-        android:icon="@drawable/ic_outline_home"/>
+
 
 </menu>

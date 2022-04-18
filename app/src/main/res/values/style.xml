@@ -7,15 +7,36 @@
         <item name="colorAccent">@android:color/holo_blue_dark</item>
     </style>
 
-    <style name="inputTitle">
-        <item name="android:letterSpacing">0.075</item>
+    <style name="textViewTitles">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+
     </style>
 
-    <style name="editText">
-        <item name="android:layout_marginStart">30dp</item>
-        <item name="android:layout_marginEnd">30dp</item>
-        <item name="android:layout_marginBottom">40dp</item>
+    <style name="textViewName">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="textViewSubName">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="editTextText">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="editTextPassword">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:inputType">text</item>
     </style>
 
 
