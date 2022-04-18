@@ -36,9 +36,12 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
         <entry key="app/src/main/res/drawable/bussines_icon.xml" value="0.5475" />
+        <entry key="app/src/main/res/drawable/button_gradient.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/choose_register.xml" value="0.569" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.4185" />
+        <entry key="app/src/main/res/drawable/heart_shape.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/ic_baseline_home.xml" value="0.3115" />
+        <entry key="app/src/main/res/drawable/ic_baseline_local_activity.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/ic_baseline_person.xml" value="0.3115" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ic_outline_home.xml" value="0.3115" />
@@ -49,7 +52,7 @@
         <entry key="app/src/main/res/font/font_montserrat.xml" value="0.1" />
         <entry key="app/src/main/res/font/montserrat_alternates.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/font/montserrat_family.xml" value="0.6213541666666667" />
-        <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.16717325227963525" />
+        <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_bank_account_register.xml" value="0.3852739726027397" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa01.xml" value="0.5504451038575667" />
@@ -64,12 +67,18 @@
         <entry key="app/src/main/res/layout/activity_j.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_paid_ticket.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/activity_photo_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register_event.xml" value="0.29010989010989013" />
         <entry key="app/src/main/res/layout/activity_request_verification.xml" value="0.554858934169279" />
         <entry key="app/src/main/res/layout/activity_user_perfil.xml" value="0.5765625" />
         <entry key="app/src/main/res/layout/activity_user_register01.xml" value="0.2229299363057325" />
         <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_verification_request.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/layout/activity_verification_solicitation.xml" value="0.5052083333333334" />
+        <entry key="app/src/main/res/layout/card_event.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/layout/card_moments.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/layout/card_solicitation.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.3813405797101449" />

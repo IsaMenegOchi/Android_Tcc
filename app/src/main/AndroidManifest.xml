@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tcc_after">
+    package="com.example.tcc_after" >
     <!-- ela pode enviar dados e receber dados externos -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- desbloquear algumas coisas padrao do android -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".UI.adm.VerificationSolicitationActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.event.purchase.PaidTicketActivity"
             android:exported="false" />
@@ -54,7 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.user.user_register.UserRegisterActivity01"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
