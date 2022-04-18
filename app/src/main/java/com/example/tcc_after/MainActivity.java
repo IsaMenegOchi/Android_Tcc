@@ -26,27 +26,27 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         // Perform item selected listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
-                    case R.id.searchMenu:
-                        startActivity(new Intent(getApplicationContext(), ChoosePerfil.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.ticketMenu:
-                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.homeMenu:
-
-                        return true;
-                }
-                return false;
-            }
-        });
+//                switch(item.getItemId())
+//                {
+//                    case R.id.searchMenu:
+//                        startActivity(new Intent(getApplicationContext(), ChoosePerfil.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.ticketMenu:
+//                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.homeMenu:
+//
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
 
     }
 }

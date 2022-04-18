@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:layout_paddingBottom="40dp"
+        android:paddingBottom="40dp"
         android:scrollbars="vertical">
 
         <ImageButton
@@ -140,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginTop="12dp"
-            android:checked="true"
+            android:checked="False"
             android:text="Criar meia entrada para esse ingresso"
             android:textColor="@color/text_color"
             app:layout_constraintStart_toStartOf="@+id/etPaidTicket_Description"
@@ -216,6 +216,7 @@
             style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/tvPaidTicket_HalfDescription"
              />
 

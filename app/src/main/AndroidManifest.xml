@@ -14,7 +14,11 @@
         android:theme="@style/Theme.Tccafter"
         android:usesCleartextTraffic="true" >
         <activity
+<<<<<<< Updated upstream
             android:name=".UI.adm.VerificationSolicitationActivity"
+=======
+            android:name=".UI.company.company_register.PhotoCompanyRegisterActivity"
+>>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".UI.event.purchase.PaidTicketActivity"
@@ -26,7 +30,7 @@
             android:name=".UI.event.FeedActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.PhotoRegisterActivity"
+            android:name=".UI.user.user_register.PhotoUserRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".UI.event.RegisterEventActivity"
@@ -57,6 +61,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.user.user_register.UserRegisterActivity01"
+<<<<<<< Updated upstream
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,6 +69,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+=======
+            android:exported="false"/>
+>>>>>>> Stashed changes
         <activity
             android:name=".UI.company.company_register.CompanyRegisterPasswordActivity"
             android:exported="false" />
@@ -72,7 +80,13 @@
             android:exported="false" />
         <activity
             android:name=".UI.LoginActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

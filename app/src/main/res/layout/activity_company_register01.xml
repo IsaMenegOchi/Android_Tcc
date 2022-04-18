@@ -85,7 +85,7 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         android:padding="10dp"
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"

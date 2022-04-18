@@ -15,10 +15,9 @@ import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
 public class CompanyRegisterActivity01 extends AppCompatActivity {
 
     EditText nicknameEmpresa, emailEmpresa, cnpjEmpresa, confEmailEmpresa;
-    Button avançar01;
+    Button avancar01;
 
-    public static String cnpjCadastroUsuario, emailCadastroEmpresa,  nicknameCadastroEmpresa;
-
+    public static String cnpjCadastroEmpresa, emailCadastroEmpresa,  nicknameCadastroEmpresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +28,15 @@ public class CompanyRegisterActivity01 extends AppCompatActivity {
         emailEmpresa = findViewById(R.id.etCompanyRegister_Email);
         cnpjEmpresa = findViewById(R.id.etCompanyRegister_Cnpj);
         confEmailEmpresa = findViewById(R.id.etCompanyRegister_ConfEmail);
-        avançar01 = findViewById(R.id.btnCompanyRegister_01);
+        avancar01 = findViewById(R.id.btnCompanyRegister_01);
 
-        avançar01.setOnClickListener(view ->{
+        avancar01.setOnClickListener(view ->{
 
             if (validateFields()){
 
                 nicknameCadastroEmpresa = nicknameEmpresa.getText().toString();
                 emailCadastroEmpresa = emailEmpresa.getText().toString();
-                cnpjCadastroUsuario = cnpjEmpresa.getText().toString();
+                cnpjCadastroEmpresa = cnpjEmpresa.getText().toString();
 
                 Intent intent = new Intent(CompanyRegisterActivity01.this, CompanyRegisterPasswordActivity.class);
                 startActivity(intent);
@@ -99,7 +98,7 @@ public class CompanyRegisterActivity01 extends AppCompatActivity {
         }
 
         //verifica se o email e a confirmacao são iguais
-        if (emailEmpresa.getText().toString().length() != confEmailEmpresa.getText().length()){
+        if (emailEmpresa.getText().toString().length() != confEmailEmpresa.getText().toString().length()){
             Toast.makeText(CompanyRegisterActivity01.this, "Reveja os campos de email", Toast.LENGTH_LONG).show();
             valid = false;
         }

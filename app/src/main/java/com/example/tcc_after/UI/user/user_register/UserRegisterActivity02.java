@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.PhotoRegisterActivity;
 import com.example.tcc_after.remote.RouterInterface;
 
 public class UserRegisterActivity02 extends AppCompatActivity {
@@ -58,7 +57,7 @@ public class UserRegisterActivity02 extends AppCompatActivity {
             senhaCadastroUsuario = etSenha.getText().toString();
 
             //REDIRECIONANDO A OUTRA TELA
-            Intent intent = new Intent(UserRegisterActivity02.this, PhotoRegisterActivity.class);
+            Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
             startActivity(intent);
 
             }
@@ -116,7 +115,7 @@ public class UserRegisterActivity02 extends AppCompatActivity {
             valid = false;
         }
 
-        if (etSenha.getText().toString().length() != etConfSenha.getText().length()){
+        if (etSenha.getText().toString().length() != etConfSenha.getText().toString().length()){
             Toast.makeText(UserRegisterActivity02.this, "Reveja os campos de senha", Toast.LENGTH_LONG).show();
             valid = false;
         }

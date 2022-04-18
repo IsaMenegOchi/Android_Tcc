@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.PhotoRegisterActivity"
+    tools:context=".UI.user.user_register.PhotoUserRegisterActivity"
     android:background="@color/background_primary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,6 @@
                 android:paddingEnd="300dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="70dp"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

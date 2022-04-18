@@ -11,7 +11,7 @@ public class Empresa {
 
     @SerializedName("cnpj")
     @Expose
-    private int cnpjEmpresa;
+    private String cnpjEmpresa;
 
     @SerializedName("nickname")
     @Expose
@@ -41,7 +41,7 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(int idEmpresa, int cnpjEmpresa, String nicknameEmpresa,
+    public Empresa(int idEmpresa, String cnpjEmpresa, String nicknameEmpresa,
                    String emailEmpresa, String senhaEmpresa, String imagemPerfilEmpresa,
                    String imagemFundoEmpresa, String biografiaEmpresa) {
         this.idEmpresa = idEmpresa;
@@ -62,11 +62,11 @@ public class Empresa {
         this.idEmpresa = idEmpresa;
     }
 
-    public int getCnpjEmpresa() {
+    public String getCnpjEmpresa() {
         return cnpjEmpresa;
     }
 
-    public void setCnpjEmpresa(int cnpjEmpresa) {
+    public void setCnpjEmpresa(String cnpjEmpresa) {
         this.cnpjEmpresa = cnpjEmpresa;
     }
 

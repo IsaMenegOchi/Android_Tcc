@@ -1,4 +1,4 @@
-package com.example.tcc_after.UI;
+package com.example.tcc_after.UI.user.user_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
@@ -23,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PhotoRegisterActivity extends AppCompatActivity {
+public class PhotoUserRegisterActivity extends AppCompatActivity {
 
     private ImageView photoPerfil;
     private ImageView photoCover;
@@ -40,7 +38,7 @@ public class PhotoRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_register);
+        setContentView(R.layout.activity_user_photo_register);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
         photoPerfil = findViewById(R.id.ivPhotoRegister_Perfil);
@@ -73,9 +71,9 @@ public class PhotoRegisterActivity extends AppCompatActivity {
                         usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
                         usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
                         usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
-//                    usuarioComum.setEmailUsuario(UserRegisterActivity02.cepCadastroUsuario);
-//                    usuarioComum.setEmailUsuario(UserRegisterActivity02.cidadeCadastroUsuario);
-//                    usuarioComum.setEmailUsuario(UserRegisterActivity02.estadoCadastroUsuario);
+                    usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
+                    usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
+                    usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
                         usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
                         usuarioComum.setBiografia(etBiografia.getText().toString());
 
@@ -132,7 +130,7 @@ public class PhotoRegisterActivity extends AppCompatActivity {
             //o req é feito automaticamente
             @Override
             public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
-                Toast.makeText(PhotoRegisterActivity.this, "Usuario inserido com sucesso", Toast.LENGTH_LONG).show();
+                Toast.makeText(PhotoUserRegisterActivity.this, "Usuario inserido com sucesso", Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -186,7 +184,7 @@ public class PhotoRegisterActivity extends AppCompatActivity {
 
         //verifica se o campo de biografia contem mais de 200 caracteres
         if (etBiografia.getText().length() > 200){
-            Toast.makeText(PhotoRegisterActivity.this, "Data inserida é muito grande", Toast.LENGTH_LONG).show();
+            Toast.makeText(PhotoUserRegisterActivity.this, "Data inserida é muito grande", Toast.LENGTH_LONG).show();
             valid = false;
         }
         return valid;

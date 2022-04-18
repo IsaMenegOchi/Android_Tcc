@@ -23,8 +23,8 @@ public class ChoosePerfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_perfil);
 
-        imgBgUserIcon = findViewById(R.id.bgCompany);
-        imgBgCompanyIcon = findViewById(R.id.bgUser);
+        imgBgUserIcon = findViewById(R.id.bgUser);
+        imgBgCompanyIcon = findViewById(R.id.bgCompany);
         imgUserIcon = findViewById(R.id.userIconChooseRegister);
         imgBussinesIcon = findViewById(R.id.bussinesIconChooseRegister);
 
