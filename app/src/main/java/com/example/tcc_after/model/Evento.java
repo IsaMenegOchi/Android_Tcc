@@ -3,6 +3,9 @@ package com.example.tcc_after.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class Evento {
 
 
@@ -14,35 +17,35 @@ public class Evento {
 
     @SerializedName("titulo")
     @Expose
-    private int tituloEvento;
+    private String tituloEvento;
 
     @SerializedName("descricao")
     @Expose
-    private int descricaoEvento;
+    private String descricaoEvento;
 
     @SerializedName("capa")
     @Expose
-    private int capaEvento;
+    private String capaEvento;
 
     @SerializedName("dataInicio")
     @Expose
-    private int dataInicioEvento;
+    private Date dataInicioEvento;
 
     @SerializedName("dataFim")
     @Expose
-    private int dataFimEvento;
+    private Date dataFimEvento;
 
     @SerializedName("horaInicio")
     @Expose
-    private int horaInicioEvento;
+    private Time horaInicioEvento;
 
     @SerializedName("horaFim")
     @Expose
-    private int horaFimEvento;
+    private Time horaFimEvento;
 
     @SerializedName("taxaAbsorvida")
     @Expose
-    private int taxaAbsorvidaEvento;
+    private boolean taxaAbsorvidaEvento;
 
     /** CATEGORIA **/
 
@@ -52,7 +55,7 @@ public class Evento {
 
     @SerializedName("nomeCategoria")
     @Expose
-    private int nomeCategoriaEvento;
+    private String nomeCategoriaEvento;
 
     /** TIPO EVENTO **/
 
@@ -62,7 +65,7 @@ public class Evento {
 
     @SerializedName("tipo")
     @Expose
-    private int tipoEvento;
+    private String tipoEvento;
 
     /** FAIXA ETARIA **/
 
@@ -74,126 +77,25 @@ public class Evento {
     @Expose
     private int idadeEvento;
 
+    @SerializedName("idAssunto")
+    @Expose
+    private int idAssuntoEvento;
+
+    @SerializedName("assunto")
+    @Expose
+    private int assuntoEvento;
+
+    @SerializedName("idCategoria")
+    @Expose
+    private int idCategoriaevento;
+
+    @SerializedName("categoria")
+    @Expose
+    private int categoriaevento;
 
 
-
-    public int getIdEvento() {
-        return idEvento;
+    public Evento() {
     }
 
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
-    }
 
-    public int getTituloEvento() {
-        return tituloEvento;
-    }
-
-    public void setTituloEvento(int tituloEvento) {
-        this.tituloEvento = tituloEvento;
-    }
-
-    public int getDescricaoEvento() {
-        return descricaoEvento;
-    }
-
-    public void setDescricaoEvento(int descricaoEvento) {
-        this.descricaoEvento = descricaoEvento;
-    }
-
-    public int getCapaEvento() {
-        return capaEvento;
-    }
-
-    public void setCapaEvento(int capaEvento) {
-        this.capaEvento = capaEvento;
-    }
-
-    public int getDataInicioEvento() {
-        return dataInicioEvento;
-    }
-
-    public void setDataInicioEvento(int dataInicioEvento) {
-        this.dataInicioEvento = dataInicioEvento;
-    }
-
-    public int getDataFimEvento() {
-        return dataFimEvento;
-    }
-
-    public void setDataFimEvento(int dataFimEvento) {
-        this.dataFimEvento = dataFimEvento;
-    }
-
-    public int getHoraInicioEvento() {
-        return horaInicioEvento;
-    }
-
-    public void setHoraInicioEvento(int horaInicioEvento) {
-        this.horaInicioEvento = horaInicioEvento;
-    }
-
-    public int getHoraFimEvento() {
-        return horaFimEvento;
-    }
-
-    public void setHoraFimEvento(int horaFimEvento) {
-        this.horaFimEvento = horaFimEvento;
-    }
-
-    public int getTaxaAbsorvidaEvento() {
-        return taxaAbsorvidaEvento;
-    }
-
-    public void setTaxaAbsorvidaEvento(int taxaAbsorvidaEvento) {
-        this.taxaAbsorvidaEvento = taxaAbsorvidaEvento;
-    }
-
-    public int getIdCategoriaEvento() {
-        return idCategoriaEvento;
-    }
-
-    public void setIdCategoriaEvento(int idCategoriaEvento) {
-        this.idCategoriaEvento = idCategoriaEvento;
-    }
-
-    public int getNomeCategoriaEvento() {
-        return nomeCategoriaEvento;
-    }
-
-    public void setNomeCategoriaEvento(int nomeCategoriaEvento) {
-        this.nomeCategoriaEvento = nomeCategoriaEvento;
-    }
-
-    public int getIdTipoEvento() {
-        return idTipoEvento;
-    }
-
-    public void setIdTipoEvento(int idTipoEvento) {
-        this.idTipoEvento = idTipoEvento;
-    }
-
-    public int getTipoEvento() {
-        return tipoEvento;
-    }
-
-    public void setTipoEvento(int tipoEvento) {
-        this.tipoEvento = tipoEvento;
-    }
-
-    public int getIdFaixaEtariaEvento() {
-        return idFaixaEtariaEvento;
-    }
-
-    public void setIdFaixaEtariaEvento(int idFaixaEtariaEvento) {
-        this.idFaixaEtariaEvento = idFaixaEtariaEvento;
-    }
-
-    public int getIdadeEvento() {
-        return idadeEvento;
-    }
-
-    public void setIdadeEvento(int idadeEvento) {
-        this.idadeEvento = idadeEvento;
-    }
 }
