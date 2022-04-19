@@ -1,7 +1,5 @@
-
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="180dp"
 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -49,47 +47,35 @@ android:backgroundTint="@color/background_tertiary">
         app:layout_constraintStart_toStartOf="@+id/tvCardSolicitation_Nickname"
         app:layout_constraintTop_toBottomOf="@+id/tvCardSolicitation_Nickname" />
 
-
-    <!--    <TextView-->
-<!--        android:id="@+id/tvCardEvent_TitleAtractions"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:maxWidth="250dp"-->
-<!--        android:text="Atrações principais"-->
-<!--        android:textAlignment="textStart"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="12sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/ivCardEvent_Favorite"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/ivCardEvent_Favorite"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ivCardEvent_Cover"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/ivCardEvent_Favorite"-->
-<!--        app:layout_constraintVertical_bias="0.235" />-->
-
     <TextView
         android:id="@+id/tvCardSolicitation_Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:maxWidth="250dp"
         android:text="Hoje"
         android:textAlignment="textStart"
         android:textColor="@color/purple_quaternary"
         android:textSize="12sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="318dp"
-        tools:layout_editor_absoluteY="4dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvCardSolicitation_Description"
         android:layout_width="190dp"
         android:layout_height="75dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
         android:maxWidth="190dp"
         android:maxHeight="71dp"
         android:text="Considerado o principal futebolista brasileiro da
         atualidade e um dos melhores teste dos melhores teste dos melhores teste dos melhores.."
         android:textColor="@color/white"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="63dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardSolicitation_Type" />
 
     <Button
         android:id="@+id/btnCardSolicitation"
@@ -105,15 +91,6 @@ android:backgroundTint="@color/background_tertiary">
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!--    <ImageView-->
-<!--        android:id="@+id/ivCardEvent_Favorite"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/heart_shape"-->
-<!--        android:src="@drawable/ic_baseline_favorite_border"-->
-<!--        android:padding="10dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
