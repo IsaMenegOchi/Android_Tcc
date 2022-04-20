@@ -196,7 +196,7 @@
 
         <EditText
             android:id="@+id/etEventRegister_Cep"
-            android:layout_width="207dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
@@ -208,6 +208,30 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cep" />
+
+        <TextView
+            android:id="@+id/tvEventRegister_Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:letterSpacing="0.075"
+            android:text="CEP"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/etEventRegister_Cep"
+            app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Cep" />
+
+        <EditText
+            android:id="@+id/etEventRegister_Number"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toEndOf="@+id/etEventRegister_Cep"
+            app:layout_constraintTop_toTopOf="@+id/etEventRegister_Cep" />
 
         <TextView
             android:id="@+id/tvEventRegister_State"
@@ -235,7 +259,7 @@
 
         <EditText
             android:id="@+id/etEventRegister_City"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_background"
@@ -257,18 +281,61 @@
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cep"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Cep" />
 
+        <EditText
+            android:id="@+id/etEventRegister_Neighborhood"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toEndOf="@+id/etEventRegister_City"
+            app:layout_constraintTop_toTopOf="@+id/etEventRegister_City" />
+
+        <TextView
+            android:id="@+id/tvEventRegister_Neighborhood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Bairro"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/tvEventRegister_City"
+            app:layout_constraintTop_toTopOf="@+id/tvEventRegister_City" />
+
+        <EditText
+            android:id="@+id/etEventRegister_Complement"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Complement"
+            tools:layout_editor_absoluteX="40dp" />
+
+
+        <TextView
+            android:id="@+id/tvEventRegister_Complement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.075"
+            android:text="Complemento"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
+            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_City" />
 
         <TextView
             android:id="@+id/tvEventRegister_StartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:letterSpacing="0.075"
             android:text="Data/Hora"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_City" />
+            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Complement" />
 
         <TextView
             android:id="@+id/tvEventRegister_Start"

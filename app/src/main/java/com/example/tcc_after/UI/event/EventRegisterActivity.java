@@ -57,16 +57,34 @@ public class EventRegisterActivity extends AppCompatActivity {
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
-//        avancarEvento.setOnClickListener(view -> {
-//            Evento evento = new Evento();
-//
-////            evento.setTituloEvento();
-////            evento;
-////            evento.;
-////            evento.setNomeCategoriaEvento();
-//
-//
-//        });
+        avancarEvento.setOnClickListener(view -> {
+            Evento evento = new Evento();
+
+            evento.setTituloEvento(tituloEvento.getText().toString());
+            evento.setDescricaoEvento(descricaoEvento.getText().toString());
+//            evento.setCapaEvento(capaEvento.getText().toString());
+//            evento.setDataInicioEvento(dataInicioEvento);
+//            evento.setHoraInicioEvento(horaInicioEvento);
+//            evento.setDataFimEvento(dataFimEvento);
+//            evento.setHoraFimEvento(horaFimEvento);
+
+            evento.setCepEvento(cepEvento.getText().toString());
+            evento.setLogradouroEvento(logradouroEvento.getText().toString());
+//            evento.setComplementoEvento(complementoEvento.getText().toString());
+//            evento.setBairroEvento(bairroEvento.getText().toString());
+            evento.setCidadeEvento(cidadeEvento.getText().toString());
+            evento.setEstadoEvento(estadoEvento.getText().toString());
+
+            evento.setAssuntoEvento(assuntoEvento.getText().toString());
+            evento.setCategoriaEvento(categoriaEvento.getText().toString());
+            evento.setTipoEvento(tipoEvento.getText().toString());
+//            evento.setImagensEvento(imagensEvento.getText().toString());
+//            evento.setFaixaEtariaEvento(faixaEtariaEvento.getText().toString());
+//            evento.setIdCelebridadeEvento(celebridadeEvento.getText().toString());
+
+
+
+        });
 
     }
 
