@@ -14,18 +14,13 @@
         android:theme="@style/Theme.Tccafter"
         android:usesCleartextTraffic="true" >
         <activity
-<<<<<<< Updated upstream
             android:name=".UI.adm.VerifyCardActivity"
             android:exported="false" />
         <activity
             android:name=".UI.adm.VerificationSolicitationActivity"
             android:exported="false" />
-        <activity
-=======
-            android:name=".UI.adm.VerificationSolicitationActivity"
-            android:exported="false"/>
+
             <activity
->>>>>>> Stashed changes
             android:name=".UI.company.company_register.PhotoCompanyRegisterActivity"
             android:exported="false" />
         <activity
@@ -69,11 +64,8 @@
             android:exported="false" />
         <activity
             android:name=".UI.user.user_register.UserRegisterActivity01"
-<<<<<<< Updated upstream
             android:exported="false" />
-=======
-            android:exported="false"/>
->>>>>>> Stashed changes
+
         <activity
             android:name=".UI.company.company_register.CompanyRegisterPasswordActivity"
             android:exported="false" />
