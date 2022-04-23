@@ -18,7 +18,7 @@
             android:id="@+id/ivCardEvent_Company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/photo_profile_card_event"
+            android:background="@drawable/shape_photo_profile_card_event"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,7 +67,7 @@
             android:id="@+id/ivCardEvent_person1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/photo_profile_card_event"
+            android:background="@drawable/shape_photo_profile_card_event"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
              />
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-15dp"
-            android:background="@drawable/photo_profile_card_event"
+            android:background="@drawable/shape_photo_profile_card_event"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivCardEvent_person1"
              />
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-15dp"
-            android:background="@drawable/photo_profile_card_event"
+            android:background="@drawable/shape_photo_profile_card_event"
             android:backgroundTint="@color/purple_secondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivCardEvent_person2"
@@ -128,7 +128,7 @@
             android:id="@+id/ivCardEvent_Favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/heart_shape"
+            android:background="@drawable/shape_heart"
             android:src="@drawable/ic_baseline_favorite_border"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"

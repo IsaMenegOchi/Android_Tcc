@@ -11,6 +11,6 @@ public class VerifyCardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_card);
+        setContentView(R.layout.activity_adm_verification_solicitation_card);
     }
 }

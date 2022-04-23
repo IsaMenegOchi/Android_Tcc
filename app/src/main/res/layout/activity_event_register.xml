@@ -18,36 +18,30 @@
             android:id="@+id/btnAboutVerification_Back"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
             android:background="@drawable/round_corner"
             android:backgroundTint="@color/background_primary"
             android:src="@drawable/ic_baseline_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
+            style="@style/imageViewAfterLogo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.54"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_logo_text" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvRegister"
+            style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:letterSpacing="0.02"
             android:text="Criar Evento"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -56,82 +50,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/perfil_event_photo_shape"
+            android:background="@drawable/shape_perfil_event_photo"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
             app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
         <TextView
             android:id="@+id/tvEventRegister_PerfilName"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="AUDIO EVENTOS"
-            android:textColor="@color/white"
+            android:text="AUDIO_EVENTOS"
             app:layout_constraintBottom_toBottomOf="@+id/ivEventRegister_PerfilPhoto"
             app:layout_constraintStart_toEndOf="@+id/ivEventRegister_PerfilPhoto"
-            app:layout_constraintTop_toTopOf="@+id/ivEventRegister_PerfilPhoto"
-            app:layout_constraintVertical_bias="0.516" />
+            app:layout_constraintTop_toTopOf="@+id/ivEventRegister_PerfilPhoto" />
 
         <TextView
             android:id="@+id/tvEventRegister_Title"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="28dp"
-            android:letterSpacing="0.075"
             android:text="Titulo"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivEventRegister_PerfilPhoto" />
 
         <EditText
             android:id="@+id/etEventRegister_Title"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Title"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Title" />
 
         <TextView
             android:id="@+id/tvEventRegister_Category"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Categoria"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Title"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Title" />
 
         <EditText
             android:id="@+id/etEventRegister_Category"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Category"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Category" />
 
         <TextView
             android:id="@+id/tvEventRegister_Subject"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Assunto"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Category"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Category" />
 
@@ -139,12 +117,9 @@
             android:id="@+id/etEventRegister_Subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            style="@style/editTextText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Subject" />
 
         <TextView
@@ -152,188 +127,170 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
+            style="@style/textViewName"
             android:text="Tipo do evento"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Subject"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Subject" />
 
-        <TextView
-            android:id="@+id/tvEventRegister_Localization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
-            android:text="Localização"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tvEventRegister_EventType"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_EventType" />
 
         <EditText
             android:id="@+id/etEventRegister_EventType"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_EventType" />
 
         <TextView
+            android:id="@+id/tvEventRegister_Localization"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Localização"
+            app:layout_constraintStart_toStartOf="@+id/tvEventRegister_EventType"
+            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_EventType" />
+
+        <TextView
             android:id="@+id/tvEventRegister_Cep"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:letterSpacing="0.075"
             android:text="CEP"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Localization"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Localization" />
 
         <EditText
             android:id="@+id/etEventRegister_Cep"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cep" />
-
-        <TextView
-            android:id="@+id/tvEventRegister_Number"
+            style="@style/editTextSmaller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
-            android:letterSpacing="0.075"
-            android:text="CEP"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/etEventRegister_Cep"
-            app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Cep" />
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_EventType"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cep" />
 
         <EditText
-            android:id="@+id/etEventRegister_Number"
-            android:layout_width="207dp"
+            android:id="@+id/etEventRegister_State"
+            style="@style/editTextSmaller"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="112dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@+id/etEventRegister_Cep"
-            app:layout_constraintTop_toTopOf="@+id/etEventRegister_Cep" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_State" />
 
         <TextView
             android:id="@+id/tvEventRegister_State"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.075"
             android:text="Estado"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_State"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Cep" />
 
         <EditText
-            android:id="@+id/etEventRegister_State"
-            android:layout_width="100dp"
+            android:id="@+id/etEventRegister_Number"
+            style="@style/editTextSmaller"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintStart_toEndOf="@+id/etEventRegister_Cep"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_State" />
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/etEventRegister_State"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Number" />
 
-        <EditText
-            android:id="@+id/etEventRegister_City"
-            android:layout_width="50dp"
+        <TextView
+            android:id="@+id/tvEventRegister_Number"
+            style="@style/textViewSubName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Cep"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_City" />
+            android:text="Número"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Number"
+            app:layout_constraintTop_toTopOf="@+id/tvEventRegister_State" />
 
         <TextView
             android:id="@+id/tvEventRegister_City"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Cidade"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cep"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Cep" />
 
         <EditText
-            android:id="@+id/etEventRegister_Neighborhood"
-            android:layout_width="50dp"
+            android:id="@+id/etEventRegister_City"
+            style="@style/editTextHalf"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintStart_toEndOf="@+id/etEventRegister_City"
-            app:layout_constraintTop_toTopOf="@+id/etEventRegister_City" />
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Cep"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_City" />
 
         <TextView
             android:id="@+id/tvEventRegister_Neighborhood"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.075"
             android:text="Bairro"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/tvEventRegister_City"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Neighborhood"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_City" />
+
+
+        <EditText
+            android:id="@+id/etEventRegister_Neighborhood"
+            style="@style/editTextHalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/etEventRegister_Number"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Neighborhood" />
 
         <EditText
             android:id="@+id/etEventRegister_Complement"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Complement"
-            tools:layout_editor_absoluteX="40dp" />
+            style="@style/editTextHalf"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_City"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Complement" />
 
 
         <TextView
             android:id="@+id/tvEventRegister_Complement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.075"
+            android:layout_marginTop="20dp"
             android:text="Complemento"
-            android:textColor="@color/white"
+            style="@style/textViewSubName"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_City" />
+
+
+        <TextView
+            android:id="@+id/tvEventRegister_Street"
+            style="@style/textViewSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logradouro"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Steet"
+            app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Complement" />
+
+
+        <EditText
+            android:id="@+id/etEventRegister_Steet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/editTextHalf"
+            app:layout_constraintEnd_toEndOf="@+id/etEventRegister_Neighborhood"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Neighborhood"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Street" />
+
+
 
         <TextView
             android:id="@+id/tvEventRegister_StartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.075"
+            android:layout_marginTop="20dp"
+            style="@style/textViewName"
             android:text="Data/Hora"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Complement" />
 
@@ -342,36 +299,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:letterSpacing="0.075"
+            style="@style/textViewSubName"
             android:text="Início"
-
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_StartDate" />
 
         <EditText
             android:id="@+id/etEventRegister_StartHour"
-            android:layout_width="100dp"
+            style="@style/editTextHalf"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etEventRegister_StartDate"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/etEventRegister_StartDate"
-            app:layout_constraintTop_toTopOf="@+id/etEventRegister_StartDate" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Start" />
 
         <EditText
             android:id="@+id/etEventRegister_StartDate"
-            android:layout_width="207dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            style="@style/editTextHalf"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Start" />
 
@@ -381,72 +329,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
+            style="@style/textViewSubName"
             android:text="Fim"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Start"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_StartDate" />
 
         <EditText
             android:id="@+id/etEventRegister_FinishDate"
-            android:layout_width="207dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            style="@style/editTextHalf"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Finish" />
 
         <EditText
             android:id="@+id/etEventRegister_FinishtHour"
-            android:layout_width="100dp"
+            style="@style/editTextHalf"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="@+id/etEventRegister_StartHour"
-            app:layout_constraintTop_toTopOf="@+id/etEventRegister_FinishDate" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Finish" />
 
 
         <TextView
             android:id="@+id/tvEventRegister_Description"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Descrição"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_FinishDate" />
 
         <EditText
             android:id="@+id/etEventRegister_Description"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Description" />
 
         <TextView
             android:id="@+id/tvEventRegister_AgeGroup"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Faixa etária"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Description"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Description" />
 
@@ -455,23 +385,16 @@
             android:id="@+id/etEventRegister_AgeGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            style="@style/editTextText"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AgeGroup" />
 
         <TextView
             android:id="@+id/tvEventRegister_Cover"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Adicionar foto de capa"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_AgeGroup"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_AgeGroup" />
 
@@ -489,13 +412,11 @@
 
         <TextView
             android:id="@+id/tvEventRegister_ExtraPhoto"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Adicionar fotos extras"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cover"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_Cover" />
 
@@ -512,38 +433,30 @@
 
         <TextView
             android:id="@+id/tvEventRegister_Celebrity"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Celebridade"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_ExtraPhoto" />
 
         <EditText
             android:id="@+id/etEventRegister_Celebrity"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/btnEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Celebrity" />
 
         <TextView
             android:id="@+id/tvEventRegister_BankAccount"
+            style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:letterSpacing="0.075"
             android:text="Conta"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Celebrity" />
 
@@ -551,36 +464,33 @@
             android:id="@+id/etEventRegister_BankAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_background"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/text_color"
+            style="@style/editTextText"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_BankAccount" />
 
 
         <TextView
             android:id="@+id/tvEventRegister_AboutTerms"
+            style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Para saber mais sobre os termos,"
-            android:textColor="@color/white"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Para saber mais,"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_BankAccount" />
 
         <TextView
             android:id="@+id/tvEventRegister_SeeTerms"
+            style="@style/textViewSubNamePurple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clique aqui!"
+            android:text=" clique aqui!"
             android:textColor="@color/purple_secondary"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvEventRegister_AboutTerms"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_AboutTerms" />
 
@@ -592,20 +502,19 @@
             android:backgroundTint="@color/background_tertiary"
             android:buttonTint="@color/white"
             android:text="Li e concordo com os termos"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            style="@style/textViewName"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_BankAccount"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AboutTerms" />
 
         <Button
             android:id="@+id/btnEventRegister_RegisterEvent"
+            style="@style/buttonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/button_gradient"
             android:text="Avançar"
-            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cbEventRegister_Acept" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

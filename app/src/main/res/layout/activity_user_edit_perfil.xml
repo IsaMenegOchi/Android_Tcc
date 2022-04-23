@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".UI.user.EditPerfilActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <ImageView
+            android:id="@+id/ivEditPerfil_Wallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/background_tertiary"
+            android:paddingTop="20dp"
+            android:paddingEnd="300dp"
+            android:paddingBottom="70dp"
+            android:src="@drawable/ic_outline_add_a_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivEditPerfil_Photo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="-65dp"
+            android:background="@drawable/shape_perfil_photo"
+            android:padding="35dp"
+            android:src="@drawable/ic_outline_add_a_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Wallpaper" />
+
+        <Button
+            android:id="@+id/btnEditPerfil_EditPhoto"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:text="Trocar Foto"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="@+id/ivEditPerfil_Photo"
+            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Photo" />
+
+        <Button
+            android:id="@+id/btnEditPerfil_EditWallpaper"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:text="Trocar Fundo"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivEditPerfil_Wallpaper"
+            app:layout_constraintEnd_toEndOf="@+id/ivEditPerfil_Wallpaper" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEditPerfil_EditPhoto">
+
+
+            <TextView
+                android:id="@+id/tvEditPerfil_Nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/textViewName"
+                android:text="Nickname"
+                />
+
+            <EditText
+                android:id="@+id/etEditPerfil_UserNickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editTextText"
+                 />
+
+            <TextView
+                android:id="@+id/tvEditPerfil_Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/textViewName"
+                android:text="Biografia"
+                 />
+
+            <EditText
+                android:id="@+id/etEditPerfil_UserDescription"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                style="@style/editTextText" />
+
+            <TextView
+                android:id="@+id/tvEditPerfil_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/textViewName"
+                android:text="Nome"
+                />
+
+            <EditText
+                android:id="@+id/etEditPerfil_UserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editTextText"
+                />
+
+            <TextView
+                android:id="@+id/tvEditPerfil_Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/textViewName"
+                android:text="Email"
+                 />
+
+            <EditText
+                android:id="@+id/etEditPerfil_UserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editTextText" />
+
+            <TextView
+                android:id="@+id/tvEditPerfil_Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/textViewName"
+                android:text="Senha"
+                 />
+
+
+            <EditText
+                android:id="@+id/etEditPerfil_UserPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editTextText"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/ic_baseline_visibility_off"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEditPerfil_Birth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textViewName"
+                        android:text="Data de Nascimento"
+                        />
+
+                    <EditText
+                        android:id="@+id/etEditPerfil_UserBirth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/editTextBigger"
+                         />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEditPerfil_Cep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textViewName"
+                        android:text="CEP"/>
+
+                    <EditText
+                        android:id="@+id/etEditPerfil_UserCep"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+
+                        style="@style/editTextText"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvEditPerfil_City"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textViewName"
+                    android:text="Cidade*"
+                     />
+
+                <EditText
+                    android:id="@+id/etEditPerfil_UserCity"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    style="@style/editTextText" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvEditPerfil_State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textViewName"
+                        android:text="Estado*"
+                         />
+
+                    <EditText
+                        android:id="@+id/etEditPerfil_UserState"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        style="@style/editTextText" />
+
+                </LinearLayout>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditPerfil_Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                style="@style/buttonCancel"
+
+                />
+
+            <Button
+                android:id="@+id/btnEditPerfil_Save"
+                style="@style/buttonSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Salvar"
+                app:layout_constraintStart_toEndOf="@+id/btnEditPerfil_Cancel"
+                app:layout_constraintTop_toBottomOf="@+id/etEditPerfil_UserCity" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

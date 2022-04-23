@@ -71,9 +71,11 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
                         usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
                         usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
-                    usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
-                    usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
-                    usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
+                        //fotoCapa
+                        //fotoFundo
+                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
+                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
+                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
                         usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
                         usuarioComum.setBiografia(etBiografia.getText().toString());
 

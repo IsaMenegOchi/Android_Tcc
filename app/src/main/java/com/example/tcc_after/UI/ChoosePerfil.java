@@ -23,10 +23,10 @@ public class ChoosePerfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_perfil);
 
-        imgBgUserIcon = findViewById(R.id.bgUser);
-        imgBgCompanyIcon = findViewById(R.id.bgCompany);
-        imgUserIcon = findViewById(R.id.userIconChooseRegister);
-        imgBussinesIcon = findViewById(R.id.bussinesIconChooseRegister);
+        imgBgUserIcon = findViewById(R.id.tvChoosePerfil_BgUser);
+        imgBgCompanyIcon = findViewById(R.id.ivChoosePerfil_BgCompany);
+        imgUserIcon = findViewById(R.id.tvChoosePerfil_UserIcon);
+        imgBussinesIcon = findViewById(R.id.ivChoosePerfil_CompanyIcon);
 
 // AREA DE MUDANÇA DE TELA
 

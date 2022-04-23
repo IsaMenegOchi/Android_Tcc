@@ -12,97 +12,89 @@
         android:scrollbars="vertical"
         android:paddingHorizontal="40dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_logo_text" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/imageViewAfterLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-    <TextView
-        android:id="@+id/loginAs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:letterSpacing="0.075"
-        android:text="Cadastrar como:"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <TextView
+            android:id="@+id/tvChoosePerfil_LoginAs"
+            style="@style/textViewTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Cadastrar como:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <ImageView
-        android:id="@+id/bgCompany"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/choose_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginAs" />
+        <ImageView
+            android:id="@+id/ivChoosePerfil_BgCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/choose_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePerfil_LoginAs" />
 
-    <ImageView
-        android:id="@+id/bussinesIconChooseRegister"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/bussines_icon"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/bgCompany"
-        app:layout_constraintEnd_toEndOf="@+id/bgCompany"
-        app:layout_constraintStart_toStartOf="@+id/bgCompany"
-        app:layout_constraintTop_toTopOf="@+id/bgCompany" />
+        <ImageView
+        android:id="@+id/ivChoosePerfil_CompanyIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/icon_bussines"
+        app:layout_constraintBottom_toBottomOf="@+id/ivChoosePerfil_BgCompany"
+        app:layout_constraintEnd_toEndOf="@+id/ivChoosePerfil_BgCompany"
+        app:layout_constraintStart_toStartOf="@+id/ivChoosePerfil_BgCompany"
+        app:layout_constraintTop_toTopOf="@+id/ivChoosePerfil_BgCompany" />
 
-    <TextView
-        android:id="@+id/companyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:letterSpacing="0.075"
-        android:text="Empresa"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bgCompany" />
+        <TextView
+            android:id="@+id/tvChoosePerfil_CompanyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            style="@style/textViewSubTitles"
+            android:text="Empresa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivChoosePerfil_BgCompany" />
 
-    <ImageView
-        android:id="@+id/bgUser"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/choose_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bgCompany" />
+        <ImageView
+            android:id="@+id/tvChoosePerfil_BgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/choose_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePerfil_CompanyLabel" />
 
-    <ImageView
-        android:id="@+id/userIconChooseRegister"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/person_arounded_icon"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/bgUser"
-        app:layout_constraintEnd_toEndOf="@+id/bgUser"
-        app:layout_constraintStart_toStartOf="@+id/bgUser"
-        app:layout_constraintTop_toTopOf="@+id/bgUser" />
+        <ImageView
+        android:id="@+id/tvChoosePerfil_UserIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_person_arounded"
+        app:layout_constraintBottom_toBottomOf="@+id/tvChoosePerfil_BgUser"
+        app:layout_constraintEnd_toEndOf="@+id/tvChoosePerfil_BgUser"
+        app:layout_constraintStart_toStartOf="@+id/tvChoosePerfil_BgUser"
+        app:layout_constraintTop_toTopOf="@+id/tvChoosePerfil_BgUser" />
 
-    <TextView
-        android:id="@+id/userLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:letterSpacing="0.075"
-        android:text="Usuário"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bgUser" />
+        <TextView
+            android:id="@+id/userLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            style="@style/textViewSubTitles"
+            android:text="Usuário"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePerfil_BgUser" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

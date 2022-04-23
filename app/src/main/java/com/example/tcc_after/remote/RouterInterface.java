@@ -35,9 +35,9 @@ public interface RouterInterface {
 
         /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
 
-//        @POST("perfil/cadastrarPerfilEmpresa/")
-        //realiza uma requisicao para a rota acima pelo metodo addUsuario
-//        Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
+        @POST("/bancoConta/cadastrarBancoConta/")
+//        realiza uma requisicao para a rota acima pelo metodo addUsuario
+        Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
 
 
         /** ROTAS DE VERIFICAÇÃO DA EMPRESA **/

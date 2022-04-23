@@ -3,45 +3,96 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/border_file.xml" value="0.216" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/border_purple_shape.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/bussines_icon.xml" value="0.2295" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/button_purple.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/button_red.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/choose_register.xml" value="0.1615" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/edit_text_background.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/event_extra_photos_shape.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/heart_shape.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_arrow_back.xml" value="0.187" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_calendar_today.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.187" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_home.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_person.xml" value="0.3675" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_video_library.xml" value="0.3055" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_visibility_off.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_add_a_photo.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_add_photo_alternate.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_calendar_today.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_chat.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_home.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_local_activity.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_notifications.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_notifications_24.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_question_answer.xml" value="0.187" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_send.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_settings.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_share.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_outline_video_library.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/ic_person_outline.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/icon_logo_text.xml" value="0.115" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/perfil_event_photo_shape.xml" value="0.203" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/perfil_photo_shape.xml" value="0.203" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/person_arounded_icon.xml" value="0.1615" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/photo_profile_card_event.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/photo_profile_event_description.xml" value="0.187" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/round_corner.xml" value="0.203" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_register01.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/selector.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_edit_text_background.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_card_event.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_card_verify.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_event_description.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_about_verification.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_bank_account_register.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_choose_perfil.xml" value="0.2564814814814815" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_password_register.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_perfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_register01.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_verification.xml" value="0.36102564102564105" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_company_perfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_perfil.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_perfil_company.xml" value="0.29259259259259257" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_user_perfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_description.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_register.xml" value="0.33" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_feed.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_home.xml" value="0.25729166666666664" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_main.xml" value="0.2171875" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_paid_ticket.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_photo_company_register.xml" value="0.1" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_photo_register.xml" value="0.33" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_register_event.xml" value="0.25" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_request_verification.xml" value="0.5" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_request_verification.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_perfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_photo_register.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register01.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register02.xml" value="0.2935185185185185" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_verification_solicitation.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_verify_card.xml" value="0.5" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_event.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_moments.xml" value="0.5" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_solicitation.xml" value="0.2171875" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/fragment_dashboard.xml" value="0.25729166666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/menu/menu_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
         <entry key="app/src/main/res/drawable/bussines_icon.xml" value="0.5475" />
-        <entry key="app/src/main/res/drawable/button_gradient.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/choose_register.xml" value="0.569" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.4185" />
-        <entry key="app/src/main/res/drawable/heart_shape.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/ic_baseline_home.xml" value="0.3115" />
-        <entry key="app/src/main/res/drawable/ic_baseline_local_activity.xml" value="0.4025" />
         <entry key="app/src/main/res/drawable/ic_baseline_person.xml" value="0.3115" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ic_outline_home.xml" value="0.3115" />
@@ -52,7 +103,7 @@
         <entry key="app/src/main/res/font/font_montserrat.xml" value="0.1" />
         <entry key="app/src/main/res/font/montserrat_alternates.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/font/montserrat_family.xml" value="0.6213541666666667" />
-        <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.16717325227963525" />
         <entry key="app/src/main/res/layout/activity_bank_account_register.xml" value="0.3852739726027397" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa01.xml" value="0.5504451038575667" />
@@ -67,28 +118,12 @@
         <entry key="app/src/main/res/layout/activity_j.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
-<<<<<<< Updated upstream
-        <entry key="app/src/main/res/layout/activity_paid_ticket.xml" value="0.5192708333333333" />
-=======
-        <entry key="app/src/main/res/layout/activity_paid_ticket.xml" value="0.3859375" />
-        <entry key="app/src/main/res/layout/activity_photo_company_register.xml" value="0.5911458333333334" />
->>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_photo_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register_event.xml" value="0.29010989010989013" />
         <entry key="app/src/main/res/layout/activity_request_verification.xml" value="0.554858934169279" />
         <entry key="app/src/main/res/layout/activity_user_perfil.xml" value="0.5765625" />
-        <entry key="app/src/main/res/layout/activity_user_photo_register.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_user_register01.xml" value="0.2229299363057325" />
         <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5911458333333334" />
-<<<<<<< Updated upstream
-        <entry key="app/src/main/res/layout/activity_verification_request.xml" value="0.5192708333333333" />
-        <entry key="app/src/main/res/layout/activity_verification_solicitation.xml" value="0.5052083333333334" />
-        <entry key="app/src/main/res/layout/card_event.xml" value="0.5192708333333333" />
-        <entry key="app/src/main/res/layout/card_moments.xml" value="0.5192708333333333" />
-        <entry key="app/src/main/res/layout/card_solicitation.xml" value="0.5192708333333333" />
-=======
-        <entry key="app/src/main/res/layout/content_photo_company_register.xml" value="0.5911458333333334" />
->>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.3813405797101449" />
@@ -103,5 +138,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

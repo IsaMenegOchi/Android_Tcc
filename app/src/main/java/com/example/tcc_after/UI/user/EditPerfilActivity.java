@@ -11,6 +11,6 @@ public class EditPerfilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_perfil);
+        setContentView(R.layout.activity_user_edit_perfil);
     }
 }

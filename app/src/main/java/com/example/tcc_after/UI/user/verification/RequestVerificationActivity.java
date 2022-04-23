@@ -11,6 +11,6 @@ public class RequestVerificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_verification);
+        setContentView(R.layout.activity_user_request_verification);
     }
 }

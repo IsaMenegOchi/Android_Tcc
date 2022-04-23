@@ -9,43 +9,147 @@
 
     <style name="textViewTitles">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">25sp</item>
+    </style>
 
+    <style name="textViewSubTitles">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="textViewName">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">15sp</item>
 
     </style>
 
     <style name="textViewSubName">
         <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="textViewPurpleSubName">
-        <item name="android:textColor">@color/purple_quaternary</item>
+
+    <style name="textViewNamePurple">
+        <item name="android:textColor">@color/purple_secondary</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textAlignment">textStart</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+    <style name="textViewSubNamePurple">
+        <item name="android:textColor">@color/purple_secondary</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="textViewNamePurpleQ">
+        <item name="android:textColor">@color/purple_quaternary</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="editTextText">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:padding">10dp</item>
-        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:background">@drawable/shape_edit_text_background</item>
         <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColorHint">@color/text_color</item>
     </style>
 
-    <style name="editTextPassword">
+
+    <style name="editTextBigger">
+        <item name="android:width">210dp</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:padding">10dp</item>
-        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:background">@drawable/shape_edit_text_background</item>
         <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
     </style>
+
+    <style name="editTextHalf">
+        <item name="android:width">160dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_edit_text_background</item>
+        <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="editTextSmaller">
+        <item name="android:width">110dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_edit_text_background</item>
+        <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="buttonText">
+        <item name="android:width">300dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_gradient</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="buttonCancel">
+        <item name="android:width">150dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_red</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="buttonSave">
+        <item name="android:width">150dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_gradient</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="imageViewAfterLogo">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="srcCompat">@drawable/icon_logo_text</item>
+    </style>
+
+    <style name="iconBack">
+        <item name="android:padding">5dp</item>
+        <item name="android:src">@drawable/ic_baseline_arrow_back</item>
+        <item name="android:background">@drawable/round_corner</item>
+    </style>
+
+    <style name="photoPerfil">
+        <item name="android:width">130dp</item>
+        <item name="android:height">130dp</item>
+        <item name="android:layout_marginTop">-65dp</item>
+        <item name="android:background">@drawable/shape_perfil_photo</item>
+        <item name="android:padding">35dp</item>
+        <item name="android:src">@drawable/ic_outline_add_a_photo</item>
+    </style>
+
+    <style name="photoCapa">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingEnd">300dp</item>
+        <item name="android:paddingBottom">70dp</item>
+        <item name="android:background">@color/background_tertiary</item>
+        <item name="android:src">@drawable/ic_outline_add_a_photo</item>
+    </style>
+
 
 
 </resources>

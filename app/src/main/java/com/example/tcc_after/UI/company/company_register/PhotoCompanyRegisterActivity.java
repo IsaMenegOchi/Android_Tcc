@@ -13,9 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.company.company_register.bank_account.BankAccountRegisterActivity;
-import com.example.tcc_after.UI.user.user_register.PhotoUserRegisterActivity;
 import com.example.tcc_after.model.Empresa;
-import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
@@ -37,7 +35,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_company_register);
+        setContentView(R.layout.activity_company_photo_register);
 
         photoPerfil = findViewById(R.id.ivPhotoCompanyRegister_Perfil);
         photoCover = findViewById(R.id.ivPhotoCompanyRegister_Cover);

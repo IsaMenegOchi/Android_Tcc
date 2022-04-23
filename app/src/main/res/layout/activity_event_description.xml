@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/photo_profile_event_description"
+                android:background="@drawable/shape_photo_profile_event_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -249,7 +249,7 @@
                 android:layout_marginVertical="20dp"
                 android:hint="Digite um comentário..."
                 android:textColorHint="@color/text_color"
-                android:background="@drawable/edit_text_background"
+                android:background="@drawable/shape_edit_text_background"
                 android:drawableEnd="@drawable/ic_outline_send"
                 android:inputType="number"
                 android:padding="10dp"

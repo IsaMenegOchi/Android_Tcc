@@ -11,7 +11,7 @@ public class VerificationSolicitationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verification_solicitation);
+        setContentView(R.layout.activity_adm_verification_solicitation_home);
     }
 }
 
