@@ -37,11 +37,11 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_photo_register);
 
-        photoPerfil = findViewById(R.id.ivPhotoCompanyRegister_Perfil);
-        photoCover = findViewById(R.id.ivPhotoCompanyRegister_Cover);
-        btnFinalizar = findViewById(R.id.btnPhotoCompanyRegister_Add);
-        etBiografia = findViewById(R.id.etPhotoCompanyRegister_Description);
-        tvPularEtapa = findViewById(R.id.tvPhotoCompanyRegister_Skip);
+        photoPerfil = findViewById(R.id.ivCompanyPhotoRegister_Perfil);
+        photoCover = findViewById(R.id.ivCompanyPhotoRegister_Cover);
+        btnFinalizar = findViewById(R.id.btnCompanyPhotoRegister_Add);
+        etBiografia = findViewById(R.id.etCompanyPhotoRegister_Description);
+        tvPularEtapa = findViewById(R.id.tvCompanyPhotoRegister_Skip);
 
 
         btnFinalizar.setOnClickListener(view -> {

@@ -49,7 +49,6 @@ public class UserRegisterActivity02 extends AppCompatActivity {
         setContentView(R.layout.activity_user_register02);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
-        tvTeste = findViewById(R.id.textUserRegister_teste);
 
         etDataNasc = findViewById(R.id.etUserRegister_Birth);
         etCep = findViewById(R.id.etUserRegister_Cep);

@@ -2,13 +2,17 @@ package com.example.tcc_after.UI.company.company_register.bank_account;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.company.CompanyVerificationActivity;
 import com.example.tcc_after.model.ContaBancaria;
+import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
 import retrofit2.Call;
@@ -17,7 +21,9 @@ import retrofit2.Response;
 
 public class BankAccountRegisterActivity extends AppCompatActivity {
 
-    private EditText etBancoEmpresa, etAgenciaEmpresa;
+    private EditText etBancoEmpresa, etAgenciaEmpresa, etContaEmpreasa, etDigitoEmpresa, etTipoContaEmpresa;
+
+    private Button btnCadastrarContaBancaria;
 
     RouterInterface routerInterface;
 
@@ -26,9 +32,36 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_register_bank_account);
 
+        etBancoEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Bank);
+        etAgenciaEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Agency);
+        etContaEmpreasa = findViewById(R.id.etCompanyRegisterBankAccount_Account);
+        etDigitoEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Digit);
+        etTipoContaEmpresa= findViewById(R.id.etCompanyRegisterBankAccount_TypeOfAccount);
+
+        btnCadastrarContaBancaria = findViewById(R.id.btnCompanyRegisterBankAccount);
+
         /** CRIANDO UM ALERT DIÁLOGO **/
 
+        btnCadastrarContaBancaria.setOnClickListener(view -> {
 
+            ContaBancaria contaBancaria = new ContaBancaria();
+            contaBancaria.setAgenciaCB(Integer.parseInt(etAgenciaEmpresa.getText().toString()));
+            contaBancaria.setDigitoCB(Integer.parseInt(etDigitoEmpresa.getText().toString()));
+            contaBancaria.setNomeBancoCB(etBancoEmpresa.getText().toString());
+            contaBancaria.setNomeTipoCB(etTipoContaEmpresa.getText().toString());
+            contaBancaria.setNumeroCB(Integer.parseInt(etDigitoEmpresa.getText().toString()));
+
+            routerInterface = APIUtil.getUsuarioInterface();
+            addContaBancaria(contaBancaria);
+
+            Log.d("socorro", "Ta apertando");
+
+//            Toast.makeText(this,"VOce esta cadastrando",Toast.LENGTH_LONG).show();
+
+//            Intent intent = new Intent(BankAccountRegisterActivity.this, CompanyVerificationActivity.class);
+//            startActivity(intent);
+
+        });
 
 
     }

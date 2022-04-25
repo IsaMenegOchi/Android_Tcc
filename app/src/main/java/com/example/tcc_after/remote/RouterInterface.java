@@ -4,6 +4,7 @@ import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.VerificacaoUsuario;
 
 import java.util.List;
 
@@ -23,9 +24,9 @@ public interface RouterInterface {
 
         /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
 
-    //        @POST("/verificacaoUsuario/cadastrarVerificacao/:tblUsuarioComumIdUsuarioComum/")
-        //realiza uma requisicao para a rota acima pelo metodo addUsuario
-    //        Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
+        @POST("/verificacaoUsuario/cadastrarVerificacao/:tblUsuarioComumIdUsuarioComum/")
+//        realiza uma requisicao para a rota acima pelo metodo addUsuario
+        Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
 
     /** ROTAS DE EMPRESA **/
 
@@ -35,7 +36,7 @@ public interface RouterInterface {
 
         /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
 
-        @POST("/bancoConta/cadastrarBancoConta/")
+        @POST("/contaEmpresa/cadastrarContaCompleta/1/")
 //        realiza uma requisicao para a rota acima pelo metodo addUsuario
         Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
 

@@ -146,7 +146,8 @@
             android:text="@string/register"
             app:layout_constraintEnd_toEndOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
             app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
-            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount" />
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

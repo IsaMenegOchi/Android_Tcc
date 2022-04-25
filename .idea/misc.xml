@@ -108,8 +108,13 @@
         <entry key="app/src/main/res/font/montserrat_alternates.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/font/montserrat_family.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.16717325227963525" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.3921875" />
+=======
+        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.3859375" />
+        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.1" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_bank_account_register.xml" value="0.3852739726027397" />
         <entry key="app/src/main/res/layout/activity_both_feed.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_both_login.xml" value="0.3921875" />
@@ -122,11 +127,18 @@
         <entry key="app/src/main/res/layout/activity_company_passaword_register.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_perfil.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_register01.xml" value="0.5911458333333334" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/activity_company_register02.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_company_verification.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_event_description.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_event_register.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/activity_event_warning_create.xml" value="0.3921875" />
+=======
+        <entry key="app/src/main/res/layout/activity_company_register_bank_account.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_company_ticket.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_company_verification.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/activity_event_register.xml" value="0.38055555555555554" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_j.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
@@ -137,6 +149,7 @@
         <entry key="app/src/main/res/layout/activity_user_perfil.xml" value="0.5765625" />
         <entry key="app/src/main/res/layout/activity_user_photo_register.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/activity_user_register01.xml" value="0.2229299363057325" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_user_request_verification.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_user_tickets_area.xml" value="0.3921875" />
@@ -145,6 +158,10 @@
         <entry key="app/src/main/res/layout/card_solicitation.xml" value="0.375" />
         <entry key="app/src/main/res/layout/card_ticket_description.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/card_tickets_area.xml" value="0.375" />
+=======
+        <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_user_request_verification.xml" value="0.3859375" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.3813405797101449" />

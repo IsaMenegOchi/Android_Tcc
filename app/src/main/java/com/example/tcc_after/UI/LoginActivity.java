@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_both_login);
 //        getSupportActionBar().hide();
 
-    tvLoginRegisterNow = findViewById(R.id.tvLoginRegisterNow);
+    tvLoginRegisterNow = findViewById(R.id.tvLogin_RegisterNow);
 
         tvLoginRegisterNow.setOnClickListener(view->{
 //            Intent loginScreen = new Intent(
