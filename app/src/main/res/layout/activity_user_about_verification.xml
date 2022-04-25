@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:paddingHorizontal="40dp">
+        style="@style/parent">
 
         <ImageButton
             android:id="@+id/btnAboutVerification_Back"
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewTitles"
-            android:text="Verificação"
+            android:text="@string/verification"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAboutVerification_Back" />
 
@@ -41,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewSubTitles"
-            android:text="Quem pode pedir verificação?"
+            android:text="@string/whoeVerification"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Verification" />
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             style="@style/textViewSubName"
-            android:text="Essa função é focada principalmente para celebridades e organizadores de eventos"
+            android:text="@string/whoVerificationDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Who" />
@@ -63,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewSubTitles"
-            android:text="Por que pedir verificação?"
+            android:text="@string/whyVerification"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_WhoDescription" />
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             style="@style/textViewSubName"
-            android:text="Sua principal funcionalidade é certificar que sua conta é oficial e diferenciar ela de outras contas falsas criadas por usuários."
+            android:text="@string/whyVerificationDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Why" />
@@ -85,9 +84,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewSubTitles"
-            android:text="Quais são os benefícios?"
+            android:text="@string/whichVerification"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_WhyDescription" />
 
@@ -98,8 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             style="@style/textViewSubName"
-            android:text="• Você poderá criar Moments\n• Você terá acesso a chats exclusivos com outros usuários verificados\n
-• Você poderá criar eventos na plataforma."
+            android:text="@string/whichVerificationDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_WhatBenefits" />
@@ -110,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewSubTitles"
-            android:text="Quais são os requisitos?"
+            android:text="@string/requisitVerification"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_WhatBenefitsDescription" />
@@ -122,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             style="@style/textViewSubName"
-            android:text="• Ter mais de 18 anos\n• Responder ao formulário de verificação"
+            android:text="@string/requisitVerificationDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Requirements" />
@@ -133,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:text="Solicitar verificação"
+            android:text="@string/requestVerification"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

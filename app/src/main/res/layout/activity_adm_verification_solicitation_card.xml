@@ -11,166 +11,156 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:paddingBottom="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
+            style="@style/imageViewAfterLogo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_logo_text" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnVerifyCard_Back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_baseline_arrow_back"
+            android:id="@+id/btnAdmVerificationSolicitationCard_Back"
+            style="@style/iconBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/tvVerificationSolicitation_Title"
+            android:id="@+id/tvAdmVerificationSolicitationCard_Title"
             style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Solicitações de Verificação"
+            android:layout_marginTop="26dp"
+            android:text="@string/verificationSolicitation"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <LinearLayout
+            android:id="@+id/llAdmVerificationSolicitationCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_edit_text_background"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/tvVerificationSolicitation_Title">
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAdmVerificationSolicitationCard_Title">
 
 
             <ImageView
-                android:id="@+id/ivVerifyCard_PerfilImage"
+                android:id="@+id/ivAdmVerificationSolicitationCard_PerfilImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/shape_photo_profile_card_verify"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_photo_profile_card_verify" />
 
 
             <TextView
-                android:id="@+id/tvVerifyCard_Nickname"
+                android:id="@+id/tvAdmVerificationSolicitationCard_Nickname"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Nickname"
-                />
+                android:layout_marginTop="20dp"
+                android:text="@string/nickname" />
 
             <TextView
-                android:id="@+id/tvVerifyCard_UserNickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Gusttavo Lima "
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/tvVerifyCard"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_Nickname" />
-
-            <TextView
-                android:id="@+id/tvVerifyCard_Name"
-                style="@style/textViewName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Nome Completo"
-                app:layout_constraintStart_toStartOf="@+id/tvVerifyCard"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_UserNickname" />
-
-            <TextView
-                android:id="@+id/tvVerifyCard_UserName"
+                android:id="@+id/tvAdmVerificationSolicitationCard_UserNickname"
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Nivaldo Batista "
+                android:layout_marginTop="10dp"
+                android:text="Gusttavo Lima"
                 />
 
             <TextView
-                android:id="@+id/tvVerifyCard_Justification"
+                android:id="@+id/tvAdmVerificationSolicitationCard_Name"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Motivo para a verificação"
-                 />
+                android:layout_marginTop="20dp"
+                android:text="@string/name"
+                />
 
             <TextView
-                android:id="@+id/tvVerifyCard_UserJustification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxHeight="100dp"
-                android:layout_marginTop="12dp"
-                android:text="Gusttavo Lima, nome artístico de Nivaldo Batista Lima (Presidente Olegário, 3 de setembro de 1989),
-            é um cantor, compositor, produtor musical e empresário brasileiro, um dos nomes de maior repercussão e influência na música brasileira."
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/tvVerifyCard"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_Justification" />
-
-            <TextView
-                android:id="@+id/tvVerifyCard_Identity"
+                android:id="@+id/tvAdmVerificationSolicitationCard_UserName"
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:text="Identidade:"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/tvVerifyCard"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_UserJustification" />
+                android:layout_marginTop="10dp"
+                android:text="Nivaldo Batista"
+                />
 
             <TextView
-                android:id="@+id/tvVerifyCard_UserIdentity"
+                android:id="@+id/tvAdmVerificationSolicitationCard_Justification"
+                style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Ver Imagem"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                app:layout_constraintStart_toEndOf="@+id/tvVerifyCard_Identity"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_UserJustification" />
-
-            <Button
-                android:id="@+id/btnVerifyCard_Accept"
-                android:layout_width="90dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="56dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button_purple"
-                android:text="Aceitar"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@+id/tvVerifyCard"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_Identity" />
+                android:text="@string/reasonVerificationAdm" />
 
-            <Button
-                android:id="@+id/btnVerifyCard_Reject"
-                android:layout_width="90dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="16dp"
+            <TextView
+                android:id="@+id/tvAdmVerificationSolicitationCard_UserJustification"
+                style="@style/textViewSubName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Gusttavo Lima, nome artístico de Nivaldo Batista Lima (Presidente Olegário, 3 de setembro de 1989), é um cantor, compositor, produtor musical e empresário brasileiro, um dos nomes de maior repercussão e influência na música brasileira."
+                android:textAlignment="textStart" />
+
+
+            <TextView
+                android:id="@+id/tvAdmVerificationSolicitationCard_Identity"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button_red"
-                android:text="Rejeitar"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toEndOf="@+id/btnVerifyCard_Accept"
-                app:layout_constraintTop_toBottomOf="@+id/tvVerifyCard_Identity" />
+                android:text="@string/identity" />
+
+            <TextView
+                android:id="@+id/tvAdmVerificationSolicitationCard_UserIdentity"
+                style="@style/textViewSubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_file"
+                android:backgroundTint="@color/background_primary"
+                android:gravity="center"
+                android:maxWidth="300dp"
+                android:maxHeight="400dp"
+                android:padding="5dp"
+                android:text="@string/seeImage" />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAdmVerificationSolicitationCard_Reject"
+            style="@style/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/denied"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llAdmVerificationSolicitationCard" />
+
+        <Button
+            android:id="@+id/btnAdmVerificationSolicitationCard_Accept"
+            style="@style/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/acept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnAdmVerificationSolicitationCard_Reject" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

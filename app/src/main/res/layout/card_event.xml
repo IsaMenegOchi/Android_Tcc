@@ -4,10 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
-    android:backgroundTint="@color/background_primary">
+    style="@style/cardsView"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,16 +21,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtLivroTituloCardView"
+            android:id="@+id/tvCardEvent_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:maxWidth="250dp"
             android:text="Festa neon"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
+            style="@style/textViewName"
             android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivCardEvent_Company"
             app:layout_constraintTop_toTopOf="@+id/ivCardEvent_Company" />
 
@@ -41,13 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            android:text="AUDIO_EVENTOS"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/txtLivroTituloCardView"
-            app:layout_constraintTop_toBottomOf="@+id/txtLivroTituloCardView" />
+            android:text="audio_eventos"
+            android:textStyle="italic"
+            style="@style/textViewSubName"
+            app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Title"
+            app:layout_constraintTop_toBottomOf="@+id/tvCardEvent_Title" />
 
         <TextView
             android:id="@+id/tvCardEvent_EventType"
@@ -55,10 +49,7 @@
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
             android:text="Show"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            android:textStyle="bold"
+            style="@style/textViewSubName"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Company"
             app:layout_constraintTop_toBottomOf="@+id/tvCardEvent_Company" />
 
@@ -98,15 +89,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            android:text="Atrações principais"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="12sp"
+            android:text="@string/principalAtraction"
+            style="@style/textViewSubName"
             app:layout_constraintBottom_toBottomOf="@+id/ivCardEvent_Favorite"
             app:layout_constraintEnd_toStartOf="@+id/ivCardEvent_Favorite"
             app:layout_constraintStart_toEndOf="@+id/ivCardEvent_Cover"
             app:layout_constraintTop_toTopOf="@+id/ivCardEvent_Favorite"
-            app:layout_constraintVertical_bias="0.235" />
+            app:layout_constraintVertical_bias="0.147" />
 
         <TextView
             android:id="@+id/tvCardEvent_Atractions"
@@ -114,10 +103,7 @@
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
             android:text="DJ Sharon"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            style="@style/textViewTitles"
             app:layout_constraintBottom_toBottomOf="@+id/ivCardEvent_Favorite"
             app:layout_constraintEnd_toEndOf="@+id/tvCardEvent_TitleAtractions"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_TitleAtractions"

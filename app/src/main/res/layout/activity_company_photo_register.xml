@@ -13,7 +13,7 @@
 
 
         <ImageView
-            android:id="@+id/ivPhotoCompanyRegister_Cover"
+            android:id="@+id/ivCompanyPhotoRegister_Cover"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             style="@style/photoCapa"
@@ -22,13 +22,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivPhotoCompanyRegister_Perfil"
+            android:id="@+id/ivCompanyPhotoRegister_Perfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/photoPerfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPhotoCompanyRegister_Cover" />
+            app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Cover" />
 
 
         <LinearLayout
@@ -37,43 +37,43 @@
             android:layout_marginHorizontal="40dp"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/ivPhotoCompanyRegister_Perfil">
+            app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Perfil">
 
             <TextView
-                android:id="@+id/tvPhotoCompanyRegister_Order"
+                android:id="@+id/tvCompanyPhotoRegister_Order"
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Selecione uma foto para o seu perfil"
+                android:text="@string/photoPerfil"
                  />
 
 
             <EditText
-                android:id="@+id/etPhotoCompanyRegister_Description"
+                android:id="@+id/etCompanyPhotoRegister_Description"
                 style="@style/editTextText"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:hint="Escreva aqui sua bio..."
+                android:hint="@string/writeBio"
                 />
 
             <Button
-                android:id="@+id/btnPhotoCompanyRegister_Add"
+                android:id="@+id/btnCompanyPhotoRegister_Add"
                 style="@style/buttonText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Finalizar cadastro"
+                android:text="@string/finish"
                 />
 
             <TextView
-                android:id="@+id/tvPhotoCompanyRegister_Skip"
+                android:id="@+id/tvCompanyPhotoRegister_Skip"
                 style="@style/textViewNamePurpleQ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Pular etapa"
+                android:text="@string/skipStep"
                  />
 
         </LinearLayout>

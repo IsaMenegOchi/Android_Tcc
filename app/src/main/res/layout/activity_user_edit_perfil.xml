@@ -14,52 +14,42 @@
         android:scrollbars="vertical">
 
         <ImageView
-            android:id="@+id/ivEditPerfil_Wallpaper"
+            android:id="@+id/ivUserEditPerfil_Cover"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/background_tertiary"
-            android:paddingTop="20dp"
-            android:paddingEnd="300dp"
-            android:paddingBottom="70dp"
-            android:src="@drawable/ic_outline_add_a_photo"
+            style="@style/photoCapa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivEditPerfil_Photo"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="-65dp"
-            android:background="@drawable/shape_perfil_photo"
-            android:padding="35dp"
-            android:src="@drawable/ic_outline_add_a_photo"
+            android:id="@+id/ivUserEditPerfil_Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/photoPerfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Wallpaper" />
+            app:layout_constraintTop_toBottomOf="@+id/ivUserEditPerfil_Cover" />
 
-        <Button
+        <TextView
             android:id="@+id/btnEditPerfil_EditPhoto"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="12dp"
-            android:background="@android:color/transparent"
-            android:text="Trocar Foto"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            app:layout_constraintStart_toStartOf="@+id/ivEditPerfil_Photo"
-            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Photo" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textViewSubName"
+            android:text="@string/changePhotoPerfil"
+            app:layout_constraintEnd_toEndOf="@+id/ivUserEditPerfil_Photo"
+            app:layout_constraintStart_toStartOf="@+id/ivUserEditPerfil_Photo"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserEditPerfil_Photo" />
 
-        <Button
-            android:id="@+id/btnEditPerfil_EditWallpaper"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:background="@android:color/transparent"
-            android:text="Trocar Fundo"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivEditPerfil_Wallpaper"
-            app:layout_constraintEnd_toEndOf="@+id/ivEditPerfil_Wallpaper" />
+        <TextView
+            android:id="@+id/tvEditPerfil_EditWallpaper"
+            style="@style/textViewSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changeBackPhoto"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserEditPerfil_Cover"
+            app:layout_constraintEnd_toEndOf="@+id/ivUserEditPerfil_Cover"
+            app:layout_constraintStart_toEndOf="@+id/ivUserEditPerfil_Photo" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 style="@style/textViewName"
-                android:text="Nickname"
+                android:text="@string/nickname"
                 />
 
             <EditText
@@ -93,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Biografia"
+                android:text="@string/bio"
                  />
 
             <EditText
@@ -108,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Nome"
+                android:text="@string/name"
                 />
 
             <EditText
@@ -124,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Email"
+                android:text="@string/email"
                  />
 
             <EditText
@@ -139,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Senha"
+                android:text="@string/password"
                  />
 
 
@@ -147,14 +137,14 @@
                 android:id="@+id/etEditPerfil_UserPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/editTextText"
+                style="@style/editTextPassword"
                 android:inputType="textPassword"
                 android:drawableEnd="@drawable/ic_baseline_visibility_off"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -167,7 +157,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/textViewName"
-                        android:text="Data de Nascimento"
+                        android:text="@string/bornDate"
                         />
 
                     <EditText
@@ -190,14 +180,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/textViewName"
-                        android:text="CEP"/>
+                        android:text="@string/cep"/>
 
                     <EditText
                         android:id="@+id/etEditPerfil_UserCep"
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
-
-                        style="@style/editTextText"
+                        style="@style/editTextSmaller"
                         />
 
                 </LinearLayout>
@@ -207,7 +196,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -219,14 +208,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/textViewName"
-                    android:text="Cidade*"
+                    android:text="@string/city"
                      />
 
                 <EditText
                     android:id="@+id/etEditPerfil_UserCity"
-                    android:layout_width="210dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/editTextText" />
+                    style="@style/editTextBigger" />
 
             </LinearLayout>
 
@@ -240,14 +229,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/textViewName"
-                        android:text="Estado*"
+                        android:text="@string/state"
                          />
 
                     <EditText
                         android:id="@+id/etEditPerfil_UserState"
-                        android:layout_width="110dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/editTextText" />
+                        style="@style/editTextSmaller" />
 
                 </LinearLayout>
         </LinearLayout>
@@ -257,15 +246,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
+                android:layout_weight="2"
                 android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnEditPerfil_Cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
+                android:text="@string/cancel"
                 style="@style/buttonCancel"
-
+                android:layout_weight="1"
                 />
 
             <Button
@@ -273,10 +263,10 @@
                 style="@style/buttonSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Salvar"
-                app:layout_constraintStart_toEndOf="@+id/btnEditPerfil_Cancel"
-                app:layout_constraintTop_toBottomOf="@+id/etEditPerfil_UserCity" />
+                android:layout_weight="1"
+                android:text="@string/save"
+                android:layout_marginLeft="20dp"
+                 />
 
             </LinearLayout>
         </LinearLayout>

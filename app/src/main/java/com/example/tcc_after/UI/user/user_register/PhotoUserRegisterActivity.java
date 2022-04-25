@@ -41,11 +41,11 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_photo_register);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
-        photoPerfil = findViewById(R.id.ivPhotoRegister_Perfil);
-        photoCover = findViewById(R.id.ivPhotoRegister_Cover);
-        btnFoward = findViewById(R.id.btnPhotoRegister_Add);
-        etBiografia = findViewById(R.id.etPhotoRegister_Description);
-        tvPularEtapa = findViewById(R.id.tvPhotoRegister_Skip);
+        photoPerfil = findViewById(R.id.ivUserPhotoRegister_Perfil);
+        photoCover = findViewById(R.id.ivUserPhotoRegister_Cover);
+        btnFoward = findViewById(R.id.btnUserPhotoRegister_Add);
+        etBiografia = findViewById(R.id.etUserPhotoRegister_Description);
+        tvPularEtapa = findViewById(R.id.tvUserPhotoRegister_Skip);
 
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FOTO DE FUNDO **/
         photoPerfil.setOnClickListener( view -> {

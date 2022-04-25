@@ -10,9 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="20dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageButton
             android:id="@+id/btnAboutVerification_Back"
@@ -29,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             style="@style/textViewTitles"
-            android:text="Verificação"
+            android:text="@string/verification"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAboutVerification_Back" />
 
@@ -39,8 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             style="@style/textViewSubTitles"
-            android:text="Confirmar autenticidade"
-            android:textColor="@color/white"
+            android:text="@string/confirmAuthenticity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Verification" />
 
@@ -50,8 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             style="@style/textViewName"
-            android:text="Nickname"
-            android:textColor="@color/white"
+            android:text="@string/nickname"
             app:layout_constraintStart_toStartOf="@+id/tvAboutVerification_Who"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutVerification_Who" />
 
@@ -70,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Nome completo"
+            android:text="@string/name"
             app:layout_constraintStart_toStartOf="@+id/etRequestVerification_Nickname"
             app:layout_constraintTop_toBottomOf="@+id/etRequestVerification_Nickname" />
 
@@ -89,7 +85,7 @@
             android:layout_height="wrap_content"
             style="@style/textViewName"
             android:layout_marginTop="20dp"
-            android:text="Anexe uma imagem sua segurando um documento com foto:"
+            android:text="@string/attachImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/etRequestVerification_FullName"
             app:layout_constraintTop_toBottomOf="@+id/etRequestVerification_FullName" />
@@ -102,7 +98,7 @@
             android:background="@drawable/border_file"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="Escolher um arquivo"
+            android:text="@string/chooseFile"
             style="@style/textViewSubName"
             app:layout_constraintEnd_toEndOf="@+id/tvRequestVerification_File"
             app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_File"
@@ -114,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Digite o motivo para verificação"
+            android:text="@string/reasonVerificationUser"
             app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_AddFile"
             app:layout_constraintTop_toBottomOf="@+id/tvRequestVerification_AddFile" />
 
@@ -133,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:text="Enviar"
+            android:text="@string/send"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etRequestVerification_Reason" />

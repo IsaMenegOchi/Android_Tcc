@@ -11,53 +11,63 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="175dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/imageViewAfterLogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_logo_text" />
+            />
 
         <TextView
-            android:id="@+id/tvVerificationSolicitation_Title"
+            android:id="@+id/tvAdmVerificationSolicitation_Title"
             style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Solicitações de verificação"
+            android:text="@string/verificationSolicitation"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/btnVerificationSolicitation_companyFilter"
+            android:id="@+id/btnAdmVerificationSolicitation_companyFilter"
             style="@style/textViewSubTitles"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="16dp"
-            android:text="Empresas"
-            app:layout_constraintStart_toStartOf="@+id/tvVerificationSolicitation_Title"
-            app:layout_constraintTop_toBottomOf="@+id/tvVerificationSolicitation_Title" />
+            android:layout_marginTop="20dp"
+            android:text="@string/company"
+            app:layout_constraintStart_toStartOf="@+id/tvAdmVerificationSolicitation_Title"
+            app:layout_constraintTop_toBottomOf="@+id/tvAdmVerificationSolicitation_Title" />
 
         <TextView
-            android:id="@+id/btnVerificationSolicitation_UserFilter"
+            android:id="@+id/btnAdmVerificationSolicitation_UserFilter"
             style="@style/textViewSubTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
-            android:text="Artistas"
-            app:layout_constraintBottom_toBottomOf="@+id/btnVerificationSolicitation_companyFilter"
-            app:layout_constraintStart_toEndOf="@+id/btnVerificationSolicitation_companyFilter"
-            app:layout_constraintTop_toTopOf="@+id/btnVerificationSolicitation_companyFilter" />
+            android:text="@string/user"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAdmVerificationSolicitation_companyFilter"
+            app:layout_constraintStart_toEndOf="@+id/btnAdmVerificationSolicitation_companyFilter"
+            app:layout_constraintTop_toTopOf="@+id/btnAdmVerificationSolicitation_companyFilter" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcAdmVerificationSolicitation_Cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdmVerificationSolicitation_companyFilter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>
 

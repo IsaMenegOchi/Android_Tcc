@@ -11,36 +11,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+        android:paddingBottom="20dp"
         android:scrollbars="vertical">
 
         <ImageView
-            android:id="@+id/ivEditPerfil_Wallpaper"
+            android:id="@+id/ivCompanyEditPerfil_Wallpaper"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/background_tertiary"
-            android:paddingTop="20dp"
-            android:paddingEnd="300dp"
-            android:paddingBottom="70dp"
-            android:src="@drawable/ic_outline_add_a_photo"
+            style="@style/photoCapa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivEditPerfil_Photo"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="-65dp"
-            android:background="@drawable/shape_perfil_photo"
-            android:padding="35dp"
-            android:src="@drawable/ic_outline_add_a_photo"
+            android:id="@+id/ivCompanyEditPerfil_Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/photoPerfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Wallpaper" />
+            app:layout_constraintTop_toBottomOf="@+id/ivCompanyEditPerfil_Wallpaper" />
 
         <Button
-            android:id="@+id/btnEditPerfil_EditPhoto"
+            android:id="@+id/btnCompanyEditPerfil_EditPhoto"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginStart="12dp"
@@ -48,19 +41,19 @@
             android:text="Trocar Foto"
             android:textColor="@color/white"
             android:textSize="10dp"
-            app:layout_constraintStart_toStartOf="@+id/ivEditPerfil_Photo"
-            app:layout_constraintTop_toBottomOf="@+id/ivEditPerfil_Photo" />
+            app:layout_constraintStart_toStartOf="@+id/ivCompanyEditPerfil_Photo"
+            app:layout_constraintTop_toBottomOf="@+id/ivCompanyEditPerfil_Photo" />
 
         <Button
-            android:id="@+id/btnEditPerfil_EditWallpaper"
+            android:id="@+id/btnCompanyEditPerfil_EditWallpaper"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:background="@android:color/transparent"
             android:text="Trocar Fundo"
             android:textColor="@color/white"
             android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivEditPerfil_Wallpaper"
-            app:layout_constraintEnd_toEndOf="@+id/ivEditPerfil_Wallpaper" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivCompanyEditPerfil_Wallpaper"
+            app:layout_constraintEnd_toEndOf="@+id/ivCompanyEditPerfil_Wallpaper" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,88 +62,87 @@
             android:paddingHorizontal="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnEditPerfil_EditPhoto">
+            app:layout_constraintTop_toBottomOf="@+id/btnCompanyEditPerfil_EditPhoto">
 
 
             <TextView
-                android:id="@+id/tvEditPerfil_Nickname"
+                android:id="@+id/tvCompanyEditPerfil_Nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 style="@style/textViewName"
-                android:text="Nickname"
+                android:text="@string/nickname"
                 />
 
             <EditText
-                android:id="@+id/etEditPerfil_UserNickname"
+                android:id="@+id/etCompanyEditPerfil_Nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/editTextText"
                  />
 
             <TextView
-                android:id="@+id/tvEditPerfil_Description"
+                android:id="@+id/tvCompanyEditPerfil_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Biografia"
+                android:text="@string/bio"
                  />
 
             <EditText
-                android:id="@+id/etEditPerfil_UserDescription"
+                android:id="@+id/etCompanyEditPerfil_Description"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 style="@style/editTextText" />
 
             <TextView
-                android:id="@+id/tvEditPerfil_Name"
+                android:id="@+id/tvCompanyEditPerfil_Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Nome"
+                android:text="@string/name"
                 />
 
             <EditText
-                android:id="@+id/etEditPerfil_UserName"
+                android:id="@+id/etCompanyEditPerfil_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/editTextText"
                 />
 
             <TextView
-                android:id="@+id/tvEditPerfil_Email"
+                android:id="@+id/tvCompanyEditPerfil_Email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Email"
+                android:text="@string/email"
                  />
 
             <EditText
-                android:id="@+id/etEditPerfil_UserEmail"
+                android:id="@+id/etCompanyEditPerfil_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/editTextText" />
 
             <TextView
-                android:id="@+id/tvEditPerfil_Password"
+                android:id="@+id/tvCompanyEditPerfil_Password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewName"
-                android:text="Senha"
+                android:text="@string/password"
                  />
 
 
             <EditText
-                android:id="@+id/etEditPerfil_UserPassword"
+                android:id="@+id/etCompanyEditPerfil_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/editTextText"
-                android:inputType="textPassword"
-                android:drawableEnd="@drawable/ic_baseline_visibility_off"/>
+                style="@style/editTextPassword"
+                />
 
 
 
@@ -165,24 +157,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvEditPerfil_City"
+                    android:id="@+id/tvCompanyEditPerfil_RegularAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/textViewName"
-                    android:text="Conta padrão"
+                    android:text="@string/regularBankAccount"
                      />
 
                 <EditText
-                    android:id="@+id/etEditPerfil_UserCity"
-                    android:layout_width="110dp"
+                    android:id="@+id/etCompanyEditPerfil_RegularAccount"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/editTextText" />
+                    style="@style/editTextSmaller" />
 
             </LinearLayout>
                 
-                    
+
                     <Button
-                        android:id="@+id/etEditPerfil_UserState"
+                        android:id="@+id/etCompanyEditPerfil_Plus"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -200,23 +192,22 @@
                 android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnEditPerfil_Cancel"
+                android:id="@+id/btnCompanyEditPerfil_Cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
+                android:text="@string/cancel"
                 style="@style/buttonCancel"
 
                 />
 
             <Button
-                android:id="@+id/btnEditPerfil_Save"
+                android:id="@+id/btnCompanyEditPerfil_Save"
                 style="@style/buttonSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Salvar"
-                app:layout_constraintStart_toEndOf="@+id/btnEditPerfil_Cancel"
-                app:layout_constraintTop_toBottomOf="@+id/etEditPerfil_UserCity" />
+                android:text="@string/save"
+                 />
 
             </LinearLayout>
         </LinearLayout>

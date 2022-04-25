@@ -24,7 +24,7 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_bank_account_register);
+        setContentView(R.layout.activity_company_register_bank_account);
 
         /** CRIANDO UM ALERT DIÁLOGO **/
 

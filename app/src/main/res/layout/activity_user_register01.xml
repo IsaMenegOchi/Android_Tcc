@@ -10,31 +10,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        style="@style/imageViewAfterLogo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_logo_text" />
+        />
 
     <TextView
         android:id="@+id/tvUserRegister_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:letterSpacing="0.10"
-        android:text="CADASTRO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:text="@string/register"
+        style="@style/textViewTitles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -46,9 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:letterSpacing="0.075"
-            android:text="Nome completo"
-            android:textColor="@color/white"
+            style="@style/textViewName"
+            android:text="@string/name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Title" />
 
@@ -56,12 +50,7 @@
         android:id="@+id/etUserRegister_FullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/shape_edit_text_background"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
+        style="@style/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_FullName"/>
@@ -71,9 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:letterSpacing="0.075"
-        android:text="Nickname"
-        android:textColor="@color/white"
+        style="@style/textViewName"
+        android:text="@string/nickname"
         app:layout_constraintStart_toStartOf="@+id/tvUserRegister_FullName"
         app:layout_constraintTop_toBottomOf="@+id/etUserRegister_FullName" />
 
@@ -81,12 +69,7 @@
         android:id="@+id/etUserRegister_Nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/shape_edit_text_background"
-        android:ems="10"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
+        style="@style/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Nickname" />
@@ -98,10 +81,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:letterSpacing="0.075"
-        android:text="Email"
-
-        android:textColor="@color/white"
+        style="@style/textViewName"
+        android:text="@string/email"
         app:layout_constraintStart_toStartOf="@+id/tvUserRegister_Nickname"
         app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Nickname" />
 
@@ -109,12 +90,7 @@
         android:id="@+id/etUserRegister_Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/shape_edit_text_background"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
+        style="@style/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Email" />
@@ -125,12 +101,7 @@
         android:id="@+id/etUserRegister_ConfEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/shape_edit_text_background"
-        android:ems="10"
-        android:padding="10dp"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/text_color"
+        style="@style/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_ConfEmail"/>
@@ -141,33 +112,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:letterSpacing="0.075"
+        style="@style/textViewName"
         android:text="Confirme seu email"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/etUserRegister_Email"
         app:layout_constraintTop_toBottomOf="@+id/etUserRegister_Email"/>
 
     <!--  FAZER LOGIN   -->
 
-    <Button
-        android:id="@+id/btnUserRegister01_Foward"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/button_gradient"
-        android:text="Avançar"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/etUserRegister_ConfEmail"
-        tools:layout_editor_absoluteX="40dp"/>
+        <Button
+            android:id="@+id/btnUserRegister01_Foward"
+            style="@style/buttonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="@string/advance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUserRegister_ConfEmail" />
 
     <TextView
         android:id="@+id/haveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:letterSpacing="0.075"
-        android:text="Já tem uma conta?"
-        android:textColor="@color/white"
+        style="@style/textViewSubName"
+        android:text="@string/haveAccont"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,9 +147,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:letterSpacing="0.075"
-        android:text="Conecte-se agora!"
-        android:textColor="@color/purple_secondary"
+        style="@style/textViewSubNamePurple"
+        android:text="@string/conectNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/haveAccount"

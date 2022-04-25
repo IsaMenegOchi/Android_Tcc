@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:layout_gravity="center"
-            android:text="CADASTRO"
+            android:text="@string/register"
              />
 
         <TextView
@@ -56,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="CNPJ"
+            android:text="@string/cnpj"
              />
 
         <EditText
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Email"
+            android:text="@string/email"
             />
 
         <EditText
@@ -92,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Confirme seu email"
+            android:text="@string/confEmail"
             />
 
         <EditText
@@ -110,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             style="@style/buttonText"
-            android:text="Avançar"
+            android:text="@string/advance"
              />
 
         <LinearLayout
@@ -125,7 +124,7 @@
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Já tem uma conta?"
+                android:text="@string/haveAccont"
                 />
 
             <TextView
@@ -133,7 +132,7 @@
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Conecte-se agora!"
+                android:text="@string/conectNow"
                 android:textColor="@color/purple_secondary"
                  />
 

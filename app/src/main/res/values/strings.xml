@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">tcc-after</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_photo_company_register">PhotoCompanyRegisterActivity</string>
 
 
-<!--    Botoes -->
+    <!--    Botoes -->
 
     <string name="next">Próximo</string>
     <string name="previous">Voltar</string>
@@ -27,8 +25,9 @@
     <string name="leave">Sair</string>
     <string name="send">Enviar</string>
     <string name="validate">Validar</string>
+    <string name="requestVerification">Solicitar verificação</string>
 
-<!--    Títulos de telas -->
+    <!--    Títulos de telas -->
 
     <string name="welcome">Bem vindo(a)!</string>
     <string name="tickets">Ingressos</string>
@@ -41,10 +40,11 @@
     <string name="verificationSolicitation">Solicitações de verificação</string>
     <string name="paidTicket">Ingresso pago</string>
     <string name="freeTicket">Ingresso gratuito</string>
+    <string name="createEvent">Criar evento</string>
+    <string name="allotment">Lote</string>
 
 
-
-<!--Sub titulos de telas -->
+    <!--Sub titulos de telas -->
 
     <string name="company">Empresa</string>
     <string name="user">Usuário</string>
@@ -55,14 +55,19 @@
     <string name="whoeVerification">Quem pode pedir verificação?</string>
     <string name="whyVerification">Por que pedir verificação?</string>
     <string name="whichVerification">Quais são os benefícios?</string>
-    <string name="requisiteVerification">Quais são os requisitos para verificação?</string>
+    <string name="requisitVerification">Quais são os requisitos para verificação?</string>
     <string name="confirmAuthenticity">Confirmar autenticidade</string>
 
     <string name="activeTickets">Ativos</string>
     <string name="usedTickets">Utilizados</string>
 
+    <string name="aboutSell">Sobre as vendas</string>
+    <string name="qtdBuy">Quantidade permitida por compra</string>
+    <string name="ticketArea">Área de ingressos</string>
+    <string name="newAllotment">Novo lote</string>
 
-<!--    Titulos de textos-->
+
+    <!--    Titulos de textos-->
 
     <string name="nickname">Nickname</string>
     <string name="name">Nome completo</string>
@@ -72,15 +77,23 @@
     <string name="confPassword">Confirme sua senha</string>
     <string name="cnpj">CNPJ</string>
     <string name="email">Email</string>
-    <string name="confemail">Confirmar email</string>
+    <string name="confEmail">Confirmar email</string>
     <string name="state">Estado</string>
     <string name="city">Cidade</string>
     <string name="neighborhood">Bairro</string>
     <string name="street">Logradouro</string>
     <string name="number">Número</string>
+    <string name="complement">Complemento</string>
+    <string name="subject">Assunto</string>
+    <string name="category">Categoria</string>
+    <string name="eventType">Tipo de evento</string>
+    <string name="localization">Localização</string>
     <string name="date">Data</string>
     <string name="time">Hora</string>
     <string name="search">Pesquisar</string>
+    <string name="eventTitle">Título</string>
+    <string name="dateTime">Data e hora</string>
+    <string name="ageGroup">Faixa etária</string>
 
 
     <string name="reasonVerificationAdm">Motivo para a verificação</string>
@@ -92,9 +105,11 @@
 
     <string name="photoPerfil">Selecione uma foto para o seu perfil</string>
     <string name="backPhoto">Adicione também uma foto de fundo</string>
-    <string name="bio">Adicione uma biografia ou uma mensagem para as outras pessoas verem</string>
+    <string name="addBio">Adicione uma biografia ou uma mensagem para as outras pessoas verem</string>
     <string name="addPerfilPhoto">Adicionar foto de perfil</string>
     <string name="addBackPhoto">Adicionar foto de capa</string>
+    <string name="addExtraPhotos">Adicionar fotos extras</string>
+    <string name="star">Celebridade</string>
 
     <string name="ticketTitle">Título do ingresso</string>
     <string name="price">Preço</string>
@@ -103,44 +118,72 @@
     <string name="createHalfTicket">Criar meia entrada para esse ingresso</string>
 
 
-
-<!--    Sub titulos de textos -->
+    <!--    Sub titulos de textos -->
 
     <string name="start">Inicio</string>
     <string name="end">Fim</string>
+
+
+    <string name="seeImage">Ver imagem</string>
     <string name="publishBy">Publicado por:</string>
     <string name="agreeTerms">Li e concordo com os termos</string>
     <string name="clickHere">clique aqui!</string>
-    <string name="knowMore">saiba mais!</string>
+    <string name="knowMore">Para saber mais!</string>
+    <string name="seeSolicitation">Ver solicitação</string>
+    <string name="forgotPassword">Esqueci minha senha</string>
+    <string name="dontHaveAccount">Não tem uma conta?</string>
+    <string name="registerNow">Cadastre-se agora!</string>
+    <string name="registerHow">Cadastrar como</string>
+    <string name="bankAccount">Conta bancária</string>
+    <string name="bank">Banco</string>
+    <string name="agency">Agência</string>
+    <string name="accountBankAccount">Conta</string>
+    <string name="digit">Dígito</string>
+    <string name="typeBankAccount">Tipo de conta</string>
+    <string name="bio">Biografia</string>
+    <string name="regularBankAccount">Conta padrão</string>
+    <string name="haveAccont">Já tem uma conta?</string>
+    <string name="conectNow">Conecte-se agora!</string>
+    <string name="writeBio">Ecreva aqui sua bio...</string>
+    <string name="skipStep">Pular etapa</string>
+    <string name="verificationInProgress">Verificação em andamento</string>
+    <string name="companyVerificationText">Olá produtor! Você poderá utilizar nossa aplicação a vontade quando a sua verificação for aprovada. Enquanto isso, conheça o aplicativo! ;)</string>
+    <string name="obsCompanyVerification">OBS: Você poderá criar eventos, porém não serão publicados</string>
+    <string name="whoVerificationDescription">Essa função é focada principalmente para celebridades e organizadores de eventos</string>
+    <string name="whyVerificationDescription">Sua principal funcionalidade é certificar que sua conta é oficial e diferenciar ela de outras contas falsas criadas por usuários.</string>
+    <string name="whichVerificationDescription">• Você poderá criar Moments\n• Você terá acesso a chats exclusivos com outros usuários verificados\n• Você poderá criar eventos na plataforma.</string>
+    <string name="requisitVerificationDescription">• Ter mais de 18 anos\n• Responder ao formulário de verificação</string>
+
+    <string name="changeBackPhoto">Trocar fundo</string>
+    <string name="changePhotoPerfil">Trocar foto</string>
+    <string name="principalAtraction">Atrações principais</string>
 
 
-<!--    <string name="number">O after não se responsabiliza pelo o que acontecer no evento. qualquer acontecimento indesejado, deve ser comunicado a empresa responsável</string>-->
-<!--    <string name="number">Todas e quaisquer documentação para a compravação de meia entrada devem ser levadas para o evento, visando a legetimidade do ingresso</string>-->
-<!--    <string name="number">O after não se responsabiliza por qualquer alterança do evento, por atraso e pela devolução de valores pagos nos ingressos</string>-->
-<!--    <string name="number">Ao frequentar um evento neste periodo de pandemia, você está ciente e assume os riscos de saúde envolvidos</string>-->
-<!--    <string name="number">A adoção dos protocolos de saúde e segurança pelo local e participantes visa mitigar os riscos de exposição e contaminação pelo coronavírus</string>-->
-<!--    <string name="number">Use máscara, matenha o distanciamente, higienize as mãos com frêquencia e se informe sobre as nomas de segurança vigente na cidade do evento</string>-->
-<!--    <string name="number">Em caso de dúvidas sobre o coronavírus, </string>-->
+    <!--    <string name="number">O after não se responsabiliza pelo o que acontecer no evento. qualquer acontecimento indesejado, deve ser comunicado a empresa responsável</string>-->
+    <!--    <string name="number">Todas e quaisquer documentação para a compravação de meia entrada devem ser levadas para o evento, visando a legetimidade do ingresso</string>-->
+    <!--    <string name="number">O after não se responsabiliza por qualquer alterança do evento, por atraso e pela devolução de valores pagos nos ingressos</string>-->
+    <!--    <string name="number">Ao frequentar um evento neste periodo de pandemia, você está ciente e assume os riscos de saúde envolvidos</string>-->
+    <!--    <string name="number">A adoção dos protocolos de saúde e segurança pelo local e participantes visa mitigar os riscos de exposição e contaminação pelo coronavírus</string>-->
+    <!--    <string name="number">Use máscara, matenha o distanciamente, higienize as mãos com frêquencia e se informe sobre as nomas de segurança vigente na cidade do evento</string>-->
+    <!--    <string name="number">Em caso de dúvidas sobre o coronavírus, </string>-->
 
-<!--    <string name="number">Selecione o tipo de ingresso</string>-->
+    <!--    <string name="number">Selecione o tipo de ingresso</string>-->
 
-<!--    <string name="number">Não esqueça de levar um comprovante para a meia entrada</string>-->
-<!--    <string name="number">Total</string>-->
-<!--    <string name="number">Taxa</string>-->
+    <!--    <string name="number">Não esqueça de levar um comprovante para a meia entrada</string>-->
+    <!--    <string name="number">Total</string>-->
+    <!--    <string name="number">Taxa</string>-->
 
-<!--    <string name="number">Se liga!</string>-->
-<!--    <string name="number">Termos de responsabilidade</string>-->
-<!--    <string name="number">Comprar ingresso</string>-->
-<!--    <string name="number">Pagamento</string>-->
-<!--    <string name="number">Compra efetuada com sucesso</string>-->
-<!--    <string name="number">Visualizar meus ingressos na aba ingressos</string>-->
-<!--    <string name="number">Subtotal</string>-->
-<!--    <string name="number">Selecione uma forma de entrega</string>-->
-<!--    <string name="number">Número de cartão de crédito</string>-->
-<!--    <string name="number">Data de validade</string>-->
-<!--    <string name="number">Código de segurança</string>-->
-
-
+    <!--    <string name="number">Se liga!</string>-->
+    <!--    <string name="number">Termos de responsabilidade</string>-->
+    <!--    <string name="number">Comprar ingresso</string>-->
+    <!--    <string name="number">Pagamento</string>-->
+    <!--    <string name="number">Compra efetuada com sucesso</string>-->
+    <!--    <string name="number">Visualizar meus ingressos na aba ingressos</string>-->
+    <!--    <string name="number">Subtotal</string>-->
+    <!--    <string name="number">Selecione uma forma de entrega</string>-->
+    <!--    <string name="number">Número de cartão de crédito</string>-->
+    <!--    <string name="number">Data de validade</string>-->
+    <!--    <string name="number">Código de segurança</string>-->
 
 
 </resources>

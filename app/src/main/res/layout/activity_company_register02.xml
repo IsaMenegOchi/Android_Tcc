@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -27,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="CADASTRO"
+            android:text="@string/register"
             android:layout_gravity="center" />
 
         <TextView
@@ -36,16 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="96dp"
-            android:text="Senha"
+            android:text="@string/password"
              />
 
         <EditText
             android:id="@+id/etCompanyRegister_Password"
-            style="@style/editTextText"
+            style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_baseline_visibility_off"
-            android:inputType="textPassword"
              />
 
         <TextView
@@ -54,16 +51,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Confirme sua senha"
+            android:text="@string/confPassword"
              />
 
         <EditText
             android:id="@+id/etCompanyRegister_ConfPassword"
-            style="@style/editTextText"
+            style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_baseline_visibility_off"
-            android:inputType="textPassword"
              />
 
         <Button
@@ -87,7 +82,7 @@
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Já tem uma conta?"
+                android:text="@string/haveAccont"
                 />
 
             <TextView
@@ -95,7 +90,7 @@
                 style="@style/textViewSubNamePurple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Conecte-se agora!"
+                android:text="@string/conectNow"
                 />
 
         </LinearLayout>

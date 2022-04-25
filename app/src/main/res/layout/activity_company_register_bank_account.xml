@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".UI.company.company_register.bank_account.BankAccountRegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            style="@style/imageViewAfterLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            style="@style/textViewTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tvBankAccount"
+            style="@style/textViewSubTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/bankAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+
+        <TextView
+            android:id="@+id/tvCompanyRegisterBankAccount_Bank"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBankAccount" />
+
+
+        <EditText
+            android:id="@+id/etCompanyRegisterBankAccount_Bank"
+            style="@style/editTextBigger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyRegisterBankAccount_Bank"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegisterBankAccount_Bank" />
+
+        <TextView
+            android:id="@+id/tvCompanyRegisterBankAccount_Agency"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agência"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_Agency"
+            app:layout_constraintTop_toTopOf="@+id/tvCompanyRegisterBankAccount_Bank" />
+
+        <EditText
+            android:id="@+id/etCompanyRegisterBankAccount_Agency"
+            style="@style/editTextSmaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/etCompanyRegisterBankAccount_Bank"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegisterBankAccount_Agency" />
+
+        <TextView
+            android:id="@+id/tvCompanyRegisterBankAccount_Account"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/accountBankAccount"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_Bank"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegisterBankAccount_Bank" />
+
+
+        <EditText
+            android:id="@+id/etCompanyRegisterBankAccount_Account"
+            style="@style/editTextBigger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/etCompanyRegisterBankAccount_Bank"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyRegisterBankAccount_Account"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegisterBankAccount_Account" />
+
+        <TextView
+            android:id="@+id/tvCompanyRegisterBankAccount_Digit"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dígito"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyRegisterBankAccount_Agency"
+            app:layout_constraintTop_toTopOf="@+id/tvCompanyRegisterBankAccount_Account" />
+
+
+        <EditText
+            android:id="@+id/etCompanyRegisterBankAccount_Digit"
+            style="@style/editTextSmaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_Agency"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegisterBankAccount_Digit" />
+
+        <TextView
+            android:id="@+id/tvCompanyRegisterBankAccount_TypeOfAccount"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/typeBankAccount"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_Account"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegisterBankAccount_Account" />
+
+        <EditText
+            android:id="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
+            style="@style/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/etCompanyRegisterBankAccount_Digit"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyRegisterBankAccount_TypeOfAccount"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegisterBankAccount_TypeOfAccount" />
+
+        <Button
+            android:id="@+id/btnCompanyRegisterBankAccount"
+            style="@style/buttonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="@string/register"
+            app:layout_constraintEnd_toEndOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegisterBankAccount_TypeOfAccount" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -3,13 +3,22 @@ package com.example.tcc_after.UI.user.user_register;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.model.Cep;
+import com.example.tcc_after.remote.ConectionViaCep;
+import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserRegisterActivity02 extends AppCompatActivity {
     private EditText etDataNasc;
@@ -19,7 +28,11 @@ public class UserRegisterActivity02 extends AppCompatActivity {
     private EditText etSenha;
     private EditText etConfSenha;
 
+    private TextView tvTeste;
+
     private Button btnAvancar2;
+
+    private List<Cep> cepList = new ArrayList<>();
 
     RouterInterface routerInterface;
 
@@ -36,6 +49,8 @@ public class UserRegisterActivity02 extends AppCompatActivity {
         setContentView(R.layout.activity_user_register02);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
+        tvTeste = findViewById(R.id.textUserRegister_teste);
+
         etDataNasc = findViewById(R.id.etUserRegister_Birth);
         etCep = findViewById(R.id.etUserRegister_Cep);
         etCidade = findViewById(R.id.etUserRegister_City);
@@ -47,7 +62,7 @@ public class UserRegisterActivity02 extends AppCompatActivity {
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->
         {
-            // FAZ A VALIDAÇÃO DOS CAMPOS
+// FAZ A VALIDAÇÃO DOS CAMPOS
             if (validateFields()){
             //ATRIBUINDO VALORES AS VARIAVEIS PÚBLICAS
             dataNascCadastroUsuario = etDataNasc.getText().toString();
@@ -56,12 +71,43 @@ public class UserRegisterActivity02 extends AppCompatActivity {
             estadoCadastroUsuario = etEstado.getText().toString();
             senhaCadastroUsuario = etSenha.getText().toString();
 
-            //REDIRECIONANDO A OUTRA TELA
+//            REDIRECIONANDO A OUTRA TELA
             Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
             startActivity(intent);
 
+
             }
+
+            BringJsonCep bringJsonCep = new BringJsonCep();
+            bringJsonCep.execute("https://viacep.com.br/ws/"+etCep.getText().toString()+"/xml/");
+            Log.d("teste", tvTeste.getText().toString());
         });
+    }
+//
+    private class BringJsonCep extends AsyncTask<String, String, String>{
+        @Override
+        protected String doInBackground(String... strings) {
+            String returnConection = ConectionViaCep.getData(strings[0]);
+            Log.d("boco", "InBackg");
+            return returnConection;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            cepList = ConsumeXML.xmlDatas(s);
+            showDatas();
+            Log.d("boco", "onPostexecute");
+        }
+
+        private void showDatas()
+        {
+            if (cepList != null){
+                for (Cep cep : cepList){
+                    etEstado.setText(cep.getUf());
+                    etCidade.setText(cep.getLocalidade());
+                }
+            }
+        }
     }
 
     /** CRIANDO UMA FUNÇÃO DE VALIDAR CAMPOS **/
@@ -122,7 +168,5 @@ public class UserRegisterActivity02 extends AppCompatActivity {
 
         return valid;
     }
-
-
 
 }

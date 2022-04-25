@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -21,7 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_logo_text" />
+            />
 
         <TextView
             android:id="@+id/textViewLogin"
@@ -29,101 +28,88 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="LOGIN"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/white"
-            android:textStyle="bold"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <EditText
-            android:id="@+id/etEmailAddressLogin"
+            android:id="@+id/etLogin_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/shape_edit_text_background"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/tvLoginEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail" />
+            style="@style/editTextText"
+            app:layout_constraintStart_toStartOf="@+id/tvLogin_Email"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin_Email" />
 
         <EditText
-            android:id="@+id/etPassawordLogin"
+            android:id="@+id/etLogin_Passaword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/shape_edit_text_background"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/tvLoginPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tvLoginPassword" />
+            style="@style/editTextText"
+            app:layout_constraintStart_toStartOf="@+id/tvLogin_Password"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin_Password" />
 
         <TextView
-            android:id="@+id/tvLoginEmail"
+            android:id="@+id/tvLogin_Email"
             style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="96dp"
-            android:text="E-mail"
+            android:text="@string/email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewLogin" />
 
         <TextView
-            android:id="@+id/tvLoginPassword"
+            android:id="@+id/tvLogin_Password"
             style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Senha"
+            android:text="@string/password"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailAddressLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/etLogin_Email" />
 
         <TextView
-            android:id="@+id/tvForgotPassawordLogin"
+            android:id="@+id/tvLogin_ForgotPassaword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             style="@style/textViewSubName"
-            android:text="Esqueci minha senha"
+            android:text="@string/forgotPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassawordLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/etLogin_Passaword" />
 
         <TextView
-            android:id="@+id/tvDonHaveAccountLogin"
+            android:id="@+id/tvLogin_DonHaveAccount"
             style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Não tem uma conta? "
+            android:text="@string/dontHaveAccount"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRegisterLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <TextView
-            android:id="@+id/tvLoginRegisterNow"
+            android:id="@+id/tvLogin_RegisterNow"
             style="@style/textViewSubNamePurple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastre-se agora!"
-            app:layout_constraintStart_toEndOf="@+id/tvDonHaveAccountLogin"
-            app:layout_constraintTop_toTopOf="@+id/tvDonHaveAccountLogin" />
+            android:text="@string/registerNow"
+            app:layout_constraintStart_toEndOf="@+id/tvLogin_DonHaveAccount"
+            app:layout_constraintTop_toTopOf="@+id/tvLogin_DonHaveAccount" />
 
         <Button
-            android:id="@+id/btnRegisterLogin"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             style="@style/buttonText"
-            android:text="Entrar"
+            android:text="@string/enter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvForgotPassawordLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin_ForgotPassaword" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

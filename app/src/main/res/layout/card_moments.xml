@@ -4,15 +4,14 @@
     android:layout_width="160dp"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="8dp"
-    app:cardElevation="3dp"
+    style="@style/cardsView"
     android:backgroundTint="@color/background_primary"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="2dp"
        >
 
         <ImageView
@@ -32,9 +31,7 @@
             android:layout_marginBottom="20dp"
             android:text="Carlos Prado"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            style="@style/textViewName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

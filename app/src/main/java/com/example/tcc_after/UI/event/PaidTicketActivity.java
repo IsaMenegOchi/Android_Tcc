@@ -1,4 +1,4 @@
-package com.example.tcc_after.UI.event.purchase;
+package com.example.tcc_after.UI.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 

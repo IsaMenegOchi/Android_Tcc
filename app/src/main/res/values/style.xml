@@ -65,6 +65,17 @@
         <item name="android:textColorHint">@color/text_color</item>
     </style>
 
+    <style name="editTextPassword">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_edit_text_background</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_visibility_off</item>
+    </style>
+
 
     <style name="editTextBigger">
         <item name="android:width">210dp</item>
@@ -81,6 +92,16 @@
         <item name="android:textColor">@color/text_color</item>
         <item name="android:padding">10dp</item>
         <item name="android:background">@drawable/shape_edit_text_background</item>
+        <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="editTextHalfBlack">
+        <item name="android:width">160dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_edit_text_background_black</item>
         <item name="android:inputType">text</item>
         <item name="fontFamily">@font/montserrat_regular</item>
         <item name="android:layout_marginTop">4dp</item>
@@ -148,6 +169,20 @@
         <item name="android:paddingBottom">70dp</item>
         <item name="android:background">@color/background_tertiary</item>
         <item name="android:src">@drawable/ic_outline_add_a_photo</item>
+    </style>
+
+    <style name="cardsView">
+        <item name="cardElevation">5dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:backgroundTint">@color/background_tertiary</item>
+    </style>
+
+    <style name="parent">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:paddingRight">40dp</item>
+        <item name="android:scrollbars">vertical</item>
     </style>
 
 

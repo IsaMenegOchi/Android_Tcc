@@ -11,6 +11,6 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_perfil_company);
+        setContentView(R.layout.activity_company_edit_perfil);
     }
 }

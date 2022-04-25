@@ -4,10 +4,8 @@ xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:layout_margin="8dp"
-    app:cardElevation="3dp"
-    app:cardCornerRadius="10dp"
-    android:backgroundTint="@color/background_tertiary">
+    style="@style/cardsView"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,10 +27,7 @@ xmlns:tools="http://schemas.android.com/tools"
             android:layout_marginStart="8dp"
             android:maxWidth="250dp"
             android:text="Neymar Jr"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            style="@style/textViewName"
             app:layout_constraintStart_toEndOf="@+id/ivCardEvent_PhotoPerfil"
             app:layout_constraintTop_toTopOf="@+id/ivCardEvent_PhotoPerfil" />
 
@@ -43,6 +38,7 @@ xmlns:tools="http://schemas.android.com/tools"
             android:maxWidth="150dp"
             android:maxHeight="20dp"
             style="@style/textViewSubNamePurple"
+            android:layout_marginTop="5dp"
             android:text="Artista"
             app:layout_constraintStart_toStartOf="@+id/tvCardSolicitation_Nickname"
             app:layout_constraintTop_toBottomOf="@+id/tvCardSolicitation_Nickname" />
@@ -52,42 +48,37 @@ xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/tvCardSolicitation_Date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="80dp"
+            android:maxWidth="95dp"
             android:maxHeight="20dp"
-            style="@style/textViewSubNamePurple"
+            style="@style/textViewNamePurple"
             android:text="14/04/2022"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCardSolicitation_Description"
-            android:layout_width="190dp"
-            android:layout_height="75dp"
-            android:maxWidth="190dp"
-            android:maxHeight="71dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="230dp"
+            android:maxHeight="90dp"
             android:text="Considerado o principal futebolista brasileiro da
-            atualidade e um dos melhores teste dos melhores teste dos melhores teste dos melhores.."
-            android:textColor="@color/white"
+            atualidade e um dos melhores teste dos melhores teste dos melhores teste dos melhores."
+            style="@style/textViewSubName"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/ivCardEvent_PhotoPerfil" />
 
         <Button
             android:id="@+id/btnCardSolicitation"
-            android:layout_width="100dp"
+                android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="Ver Solicitação"
-            android:textColor="@color/white"
+            android:text="@string/seeSolicitation"
+            style="@style/buttonSave"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> Stashed changes
-
 
 </androidx.cardview.widget.CardView>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".UI.event.EventRegisterAllotmentActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/parent"
+        android:paddingHorizontal="20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/btnAboutVerification_Back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/iconBack"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            style="@style/imageViewAfterLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            style="@style/textViewTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/allotment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clEventRegisterAllotment_Lote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/shape_edit_text_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister">
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_AboutSell"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aboutSell"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_StartDate"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_AboutSell" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_StartDate"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_StartDate" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_StartTime"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neighborhood"
+                app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_StartTime"
+                app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_StartDate" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_StartTime"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_StartTime" />
+
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_FinishDate"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neighborhood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_StartDate" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_FinishDate"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_FinishDate" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_FinishTime"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neighborhood"
+                app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_FinishTime"
+                app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_FinishDate" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_FinishTime"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_FinishTime" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_QtdBuy"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qtdBuy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_FinishDate" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_Minimum"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neighborhood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_QtdBuy" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_Minimum"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_Minimum" />
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_Maximum"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neighborhood"
+                app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_Maximum"
+                app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_Minimum" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_Maximum"
+                style="@style/editTextHalfBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_Maximum" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_Maximum">
+
+                <TextView
+                    android:id="@+id/tvEventRegisterAllotment_TicketArea"
+                    style="@style/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ticketArea" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcEventregisterAllotment_TicketCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_TicketArea" />
+
+                <Button
+                    android:id="@+id/btnEventRegisterAllotment_FreeTicket"
+                    style="@style/buttonSave"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/freeTicket"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rcEventregisterAllotment_TicketCard" />
+
+                <Button
+                    android:id="@+id/btnEventRegisterAllotment_PaidTicket"
+                    style="@style/buttonSave"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/freeTicket"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnEventRegisterAllotment_FreeTicket" />
+
+                <Button
+                    android:id="@+id/btnEventRegisterAllotment_FinishRegisterAllotment"
+                    style="@style/buttonText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    app:layout_constraintTop_toBottomOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnEventRegisterAllotment_NewAllotment"
+            style="@style/editTextText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/newAllotment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clEventRegisterAllotment_Lote" />
+
+        <Button
+            android:id="@+id/btnEventRegisterAllotment_RegisterAllotment"
+            style="@style/buttonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintTop_toBottomOf="@+id/btnEventRegisterAllotment_NewAllotment"
+            tools:layout_editor_absoluteX="26dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

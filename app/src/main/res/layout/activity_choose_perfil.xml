@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        android:paddingHorizontal="40dp">
+        style="@style/parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:text="Cadastrar como:"
+            android:text="@string/registerHow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -40,7 +40,6 @@
             android:layout_marginTop="44dp"
             android:background="@drawable/choose_register"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvChoosePerfil_LoginAs" />
 
@@ -60,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             style="@style/textViewSubTitles"
-            android:text="Empresa"
+            android:text="@string/company"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivChoosePerfil_BgCompany" />
@@ -91,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             style="@style/textViewSubTitles"
-            android:text="Usuário"
+            android:text="@string/user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvChoosePerfil_BgUser" />

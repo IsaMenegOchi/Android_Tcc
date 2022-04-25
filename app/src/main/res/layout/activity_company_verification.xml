@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="40dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageView
         android:id="@+id/imageView"
@@ -24,30 +23,30 @@
             />
 
         <TextView
-            android:id="@+id/tvCompanyVerification"
+            android:id="@+id/tvCompanyVerification_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="VERIFICAÇÃO EM ANDAMENTO"
+            android:layout_marginTop="40dp"
+            android:text="@string/verificationInProgress"
             style="@style/textViewTitles"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-        android:id="@+id/tvVerificationMessage"
+        android:id="@+id/tvCompanyVerification_Message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
         style="@style/textViewSubTitles"
-        android:text="Olá produtor! Você poderá utilizar nossa aplicação a vontade quando a sua verificação for aprovada. Enquanto isso, conheça o aplicativo! ;) "
+        android:text="@string/companyVerificationText"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCompanyVerification" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCompanyVerification_Title" />
 
         <Button
-            android:id="@+id/registerVerificationButton"
+            android:id="@+id/btnCompanyVerification"
             style="@style/buttonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,19 +54,19 @@
             android:text="CONCLUIDO"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvVerificationMessage" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyVerification_Message" />
 
     <TextView
-        android:id="@+id/tvVerificationObservation"
+        android:id="@+id/tvCompanyVerification_Observation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/textViewSubName"
         android:textAlignment="center"
-        android:text="OBS: Você poderá criar eventos, porém não serão publicados"
+        android:text="@string/obsCompanyVerification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerVerificationButton" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCompanyVerification" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 style="@style/textViewSubName"
-                android:text="Selecione uma foto para o seu perfil"
+                android:text="@string/photoPerfil"
                  />
 
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:hint="Escreva aqui sua bio..."
+                android:hint="@string/writeBio"
                  />
 
             <Button
@@ -64,8 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Finalizar cadastro"
-
+                android:text="@string/finish"
                  />
 
             <TextView
@@ -74,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Pular etapa" />
+                android:text="@string/skipStep" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

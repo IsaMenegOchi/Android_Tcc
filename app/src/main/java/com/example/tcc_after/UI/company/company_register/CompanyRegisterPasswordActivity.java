@@ -10,9 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.LoginActivity;
-
-import org.w3c.dom.Text;
 
 public class CompanyRegisterPasswordActivity extends AppCompatActivity {
 
@@ -26,7 +23,7 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_password_register);
+        setContentView(R.layout.activity_company_register02);
 
         etSenha = findViewById(R.id.etCompanyRegister_Password);
         etConfSenha = findViewById(R.id.etCompanyRegister_ConfPassword);

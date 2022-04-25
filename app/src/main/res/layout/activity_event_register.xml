@@ -10,17 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="20dp"
-        android:scrollbars="vertical">
+        style="@style/parent">
 
         <ImageButton
             android:id="@+id/btnAboutVerification_Back"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/round_corner"
-            android:backgroundTint="@color/background_primary"
-            android:src="@drawable/ic_baseline_arrow_back"
+            style="@style/iconBack"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
@@ -40,8 +36,9 @@
             style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="24dp"
-            android:text="Criar Evento"
+            android:text="@string/createEvent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -71,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="Titulo"
+            android:text="@string/eventTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivEventRegister_PerfilPhoto" />
 
@@ -90,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Categoria"
+            android:text="@string/category"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Title"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Title" />
 
@@ -109,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Assunto"
+            android:text="@string/subject"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Category"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Category" />
 
@@ -128,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Tipo do evento"
+            android:text="@string/eventType"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Subject"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Subject" />
 
@@ -148,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Localização"
+            android:text="@string/localization"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_EventType"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_EventType" />
 
@@ -158,7 +155,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="CEP"
+            android:text="@string/cep"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Localization"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Localization" />
 
@@ -184,7 +181,7 @@
             style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Estado"
+            android:text="@string/state"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_State"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Cep" />
 
@@ -202,7 +199,7 @@
             style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Número"
+            android:text="@string/number"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Number"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_State" />
 
@@ -212,7 +209,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Cidade"
+            android:text="@string/city"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cep"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Cep" />
 
@@ -229,7 +226,7 @@
             style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bairro"
+            android:text="@string/neighborhood"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Neighborhood"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_City" />
 
@@ -257,7 +254,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Complemento"
+            android:text="@string/complement"
             style="@style/textViewSubName"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_City" />
@@ -268,7 +265,7 @@
             style="@style/textViewSubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logradouro"
+            android:text="@string/street"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Steet"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Complement" />
 
@@ -290,7 +287,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewName"
-            android:text="Data/Hora"
+            android:text="@string/dateTime"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Complement" />
 
@@ -300,7 +297,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             style="@style/textViewSubName"
-            android:text="Início"
+            android:text="@string/start"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_StartDate" />
 
@@ -330,7 +327,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/textViewSubName"
-            android:text="Fim"
+            android:text="@string/end"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Start"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_StartDate" />
 
@@ -357,7 +354,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Descrição"
+            android:text="@string/description"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_FinishDate" />
 
@@ -365,7 +362,7 @@
             android:id="@+id/etEventRegister_Description"
             style="@style/editTextText"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Description" />
@@ -376,7 +373,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Faixa etária"
+            android:text="@string/ageGroup"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Description"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Description" />
 
@@ -394,7 +391,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Adicionar foto de capa"
+            android:text="@string/addBackPhoto"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_AgeGroup"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_AgeGroup" />
 
@@ -416,7 +413,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Adicionar fotos extras"
+            android:text="@string/addExtraPhotos"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cover"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_Cover" />
 
@@ -437,7 +434,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Celebridade"
+            android:text="@string/star"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_ExtraPhoto" />
 
@@ -456,7 +453,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Conta"
+            android:text="@string/bankAccount"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Celebrity" />
 
@@ -477,7 +474,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="20dp"
-            android:text="Para saber mais,"
+            android:text="@string/knowMore"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_BankAccount" />
 
@@ -486,11 +483,10 @@
             style="@style/textViewSubNamePurple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" clique aqui!"
-            android:textColor="@color/purple_secondary"
+            android:text="@string/clickHere"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.078"
             app:layout_constraintStart_toEndOf="@+id/tvEventRegister_AboutTerms"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_AboutTerms" />
 
@@ -501,7 +497,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/background_tertiary"
             android:buttonTint="@color/white"
-            android:text="Li e concordo com os termos"
+            android:text="@string/agreeTerms"
             style="@style/textViewName"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_BankAccount"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AboutTerms" />
@@ -512,7 +508,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Avançar"
+            android:text="@string/advance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cbEventRegister_Acept" />
