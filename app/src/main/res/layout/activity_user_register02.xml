@@ -149,7 +149,7 @@
 
         <EditText
             android:id="@+id/etUserRegister_ConfPassaword"
-            style="@style/editTextText"
+            style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/etUserRegister_Passaword"

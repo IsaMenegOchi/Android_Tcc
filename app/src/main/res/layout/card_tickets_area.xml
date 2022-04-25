@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="120dp"
+    style="@style/cardsView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivCardTicketsArea_Image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Festa neon"
+            style="@style/textViewCardName"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+            app:layout_constraintTop_toTopOf="@+id/ivCardTicketsArea_Image" />
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventCity"
+            style="@style/textViewCardSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Barueri"
+            app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventTitle" />
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventCompany"
+            style="@style/textViewCardSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="AUDIO EVENTOS"
+            app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventCity" />
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventLocate"
+            style="@style/textViewCardSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="310dp"
+            android:layout_marginStart="20dp"
+            android:text="Av. São Sam - Pq. Torresmo Mesmo - SP"
+            app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventCompany" />
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventDate"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30/04"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_EventLocate"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
+
+        <TextView
+            android:id="@+id/ivCardTicketsArea_EventTime"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="10h00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCardTicketsArea_EventDate"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
+
+        <Button
+            android:id="@+id/btnTicktsArea_OpenTicket"
+            style="@style/buttonOpenTicket"
+            android:layout_width="138dp"
+            android:layout_height="22dp"
+            android:text="Ver ingresso"
+            android:textSize="10sp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCardTicketsArea_Image"
+            app:layout_constraintEnd_toEndOf="@+id/ivCardTicketsArea_Image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
