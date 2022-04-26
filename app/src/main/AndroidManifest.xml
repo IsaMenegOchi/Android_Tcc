@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Tccafter"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.adm.TicketDescriptionActivity"
+            android:name=".UI.user.tickets.UserTicketDescription$TicketDescriptionActivity"
             android:exported="false" />
         <activity
             android:name=".UI.company.CompanyEventStatisticsActivity"

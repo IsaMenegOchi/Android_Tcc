@@ -173,6 +173,12 @@
         <item name="android:background">@drawable/round_corner</item>
     </style>
 
+    <style name="iconNotification">
+        <item name="android:padding">5dp</item>
+        <item name="android:src">@drawable/ic_baseline_notifications</item>
+        <item name="android:background">@drawable/round_corner</item>
+    </style>
+
     <style name="photoPerfil">
         <item name="android:width">130dp</item>
         <item name="android:height">130dp</item>

@@ -48,6 +48,9 @@
 
     <string name="company">Empresa</string>
     <string name="user">Usuário</string>
+    <string name="ativos">Ativos</string>
+    <string name="utilizados">Utilizados</string>
+    <string name="checkIt"> Se liga!</string>
 
     <string name="nearYou">Perto de você</string>
     <string name="suggestions">Outras sugestões</string>
@@ -70,6 +73,8 @@
     <!--    Titulos de textos-->
 
     <string name="nickname">Nickname</string>
+    <string name="carrier">Portador:</string>
+    <string name="cpf">CPF:</string>
     <string name="name">Nome completo</string>
     <string name="bornDate">Data de nascimento</string>
     <string name="cep">CEP</string>
@@ -96,6 +101,8 @@
     <string name="ageGroup">Faixa etária</string>
 
 
+    <string name="NumberCode">Número do Pedido:</string>
+    <string name="ShopDate">Data de Compra:</string>
     <string name="reasonVerificationAdm">Motivo para a verificação</string>
     <string name="identity">Identidade</string>
     <string name="attachImage">Anexe uma imagem sua segurando um documento com foto</string>

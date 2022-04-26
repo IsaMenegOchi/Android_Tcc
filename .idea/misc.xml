@@ -111,16 +111,23 @@
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.4185" />
         <entry key="app/src/main/res/drawable/ic_baseline_home.xml" value="0.3115" />
         <entry key="app/src/main/res/drawable/ic_baseline_person.xml" value="0.3115" />
+        <entry key="app/src/main/res/drawable/ic_baseline_qr_code_.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ic_outline_home.xml" value="0.3115" />
         <entry key="app/src/main/res/drawable/ic_person_outline.xml" value="0.3115" />
         <entry key="app/src/main/res/drawable/perfil_photo_shape.xml" value="0.199" />
         <entry key="app/src/main/res/drawable/round_corner.xml" value="0.199" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shape_photo_event_ticket_description.xml" value="0.294" />
+        <entry key="app/src/main/res/drawable/shape_photo_profile_card_event.xml" value="0.294" />
+        <entry key="app/src/main/res/drawable/shape_photo_profile_card_verify.xml" value="0.294" />
+        <entry key="app/src/main/res/drawable/shape_photo_profile_event_description.xml" value="0.294" />
         <entry key="app/src/main/res/font/font_montserrat.xml" value="0.1" />
         <entry key="app/src/main/res/font/montserrat_alternates.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/font/montserrat_family.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.16717325227963525" />
+        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.2463768115942029" />
+        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_bank_account_register.xml" value="0.3852739726027397" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa01.xml" value="0.5504451038575667" />
@@ -128,6 +135,8 @@
         <entry key="app/src/main/res/layout/activity_cadastro_usuario1.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_cadastro_usuario2.xml" value="0.625" />
         <entry key="app/src/main/res/layout/activity_choose_perfil.xml" value="0.5765625" />
+        <entry key="app/src/main/res/layout/activity_company_edit_perfil.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_company_event_statistics.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_company_passaword_register.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_perfil.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_register01.xml" value="0.5911458333333334" />
@@ -138,9 +147,19 @@
         <entry key="app/src/main/res/layout/activity_photo_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register_event.xml" value="0.29010989010989013" />
         <entry key="app/src/main/res/layout/activity_request_verification.xml" value="0.554858934169279" />
+        <entry key="app/src/main/res/layout/activity_ticket_description.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_buy_ticket_payment.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_buy_ticket_type.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_edit_perfil.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_user_perfil.xml" value="0.5765625" />
+        <entry key="app/src/main/res/layout/activity_user_photo_register.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/activity_user_register01.xml" value="0.2229299363057325" />
         <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_user_request_verification.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_ticket_description.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_tickets_area.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_user_warning_pandemic.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/card_tickets_area.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.3813405797101449" />

@@ -2,9 +2,9 @@
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <corners android:radius="50dp"/>
-        <size android:width="100dp" android:height="100dp"/>
-        <solid android:color="@color/background_tertiary"/>
+    <corners android:radius="20dp"/>
+    <size android:width="280dp" android:height="120dp"/>
+    <solid android:color="@color/background_tertiary"/>
     <stroke android:color="@color/purple_secondary" android:width="1.5dp"/>
 
 </shape>
