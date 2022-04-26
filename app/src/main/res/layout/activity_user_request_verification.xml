@@ -90,15 +90,13 @@
             app:layout_constraintStart_toStartOf="@+id/etRequestVerification_FullName"
             app:layout_constraintTop_toBottomOf="@+id/etRequestVerification_FullName" />
 
-        <TextView
-            android:id="@+id/tvRequestVerification_AddFile"
+        <ImageView
+            android:id="@+id/ivRequestVerification_AddFile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/border_file"
-            android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="@string/chooseFile"
             style="@style/textViewSubName"
             app:layout_constraintEnd_toEndOf="@+id/tvRequestVerification_File"
             app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_File"
@@ -111,8 +109,8 @@
             android:layout_marginTop="20dp"
             style="@style/textViewName"
             android:text="@string/reasonVerificationUser"
-            app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_AddFile"
-            app:layout_constraintTop_toBottomOf="@+id/tvRequestVerification_AddFile" />
+            app:layout_constraintStart_toStartOf="@+id/ivRequestVerification_AddFile"
+            app:layout_constraintTop_toBottomOf="@+id/ivRequestVerification_AddFile" />
 
         <EditText
             android:id="@+id/etRequestVerification_Reason"

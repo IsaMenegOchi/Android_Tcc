@@ -50,22 +50,33 @@
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/round_corner.xml" value="0.203" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/selector.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_edit_text_background.xml" value="0.3015" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_edit_text_background_black.xml" value="0.1975" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_card_event.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_card_verify.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/drawable/shape_photo_profile_event_description.xml" value="0.3015" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_about_verification.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.22" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_bank_account_register.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_both_feed.xml" value="0.36666666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_both_login.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_choose_perfil.xml" value="0.2564814814814815" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_password_register.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_bank_account_register.xml" value="0.27291666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_edit_perfil.xml" value="0.27291666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_password_register.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_perfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_photo_register.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_register01.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_register_bank_account.xml" value="0.27291666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_ticket.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_company_verification.xml" value="0.36102564102564105" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_company_perfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_perfil.xml" value="0.33" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_perfil_company.xml" value="0.29259259259259257" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_edit_user_perfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_description.xml" value="0.25" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_register.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_register.xml" value="0.2879120879120879" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_event_register_allotment.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_feed.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_home.xml" value="0.25729166666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.33" />
@@ -75,25 +86,27 @@
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_photo_register.xml" value="0.33" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_register_event.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_request_verification.xml" value="0.33" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_about_verification.xml" value="0.25" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_buy_ticket_confirm.xml" value="0.27291666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_buy_ticket_type.xml" value="0.27291666666666664" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_edit_perfil.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_perfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_photo_register.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register01.xml" value="0.33" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register02.xml" value="0.2935185185185185" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_register02.xml" value="0.22" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_request_verification.xml" value="0.22" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_user_warning_pandemic.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_verification_solicitation.xml" value="0.33" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/activity_verify_card.xml" value="0.5" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_event.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_moments.xml" value="0.5" />
-        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_solicitation.xml" value="0.2171875" />
+        <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/card_solicitation.xml" value="0.25" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/layout/fragment_dashboard.xml" value="0.25729166666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/Senai/3° Sem/After/Android_Tcc/app/src/main/res/menu/menu_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/drawable/button_gradient.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Android_Tcc/app/src/main/res/layout/activity_login.xml" value="0.12407407407407407" />
-        <entry key="app/src/main/res/drawable/border_card.xml" value="0.294" />
-        <entry key="app/src/main/res/drawable/border_file.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/bussines_icon.xml" value="0.5475" />
-        <entry key="app/src/main/res/drawable/button_gradient.xml" value="0.294" />
-        <entry key="app/src/main/res/drawable/button_ticket_open.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/choose_register.xml" value="0.569" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.4185" />
         <entry key="app/src/main/res/drawable/ic_baseline_home.xml" value="0.3115" />
@@ -108,60 +121,26 @@
         <entry key="app/src/main/res/font/montserrat_alternates.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/font/montserrat_family.xml" value="0.6213541666666667" />
         <entry key="app/src/main/res/layout/activity_about_verification.xml" value="0.16717325227963525" />
-<<<<<<< Updated upstream
-        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.3921875" />
-=======
-        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_card.xml" value="0.3859375" />
-        <entry key="app/src/main/res/layout/activity_adm_verification_solicitation_home.xml" value="0.1" />
->>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_bank_account_register.xml" value="0.3852739726027397" />
-        <entry key="app/src/main/res/layout/activity_both_feed.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/activity_both_login.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa01.xml" value="0.5504451038575667" />
         <entry key="app/src/main/res/layout/activity_cadastro_empresa02.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_cadastro_usuario1.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_cadastro_usuario2.xml" value="0.625" />
-        <entry key="app/src/main/res/layout/activity_choose_perfil.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_choose_perfil.xml" value="0.5765625" />
         <entry key="app/src/main/res/layout/activity_company_passaword_register.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_perfil.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_company_register01.xml" value="0.5911458333333334" />
-<<<<<<< Updated upstream
-        <entry key="app/src/main/res/layout/activity_company_register02.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_company_verification.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/activity_event_description.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/activity_event_register.xml" value="0.2463768115942029" />
-        <entry key="app/src/main/res/layout/activity_event_warning_create.xml" value="0.3921875" />
-=======
-        <entry key="app/src/main/res/layout/activity_company_register_bank_account.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_company_ticket.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_company_verification.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/activity_event_register.xml" value="0.38055555555555554" />
->>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_j.xml" value="0.5765398550724637" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_photo_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register_event.xml" value="0.29010989010989013" />
         <entry key="app/src/main/res/layout/activity_request_verification.xml" value="0.554858934169279" />
-        <entry key="app/src/main/res/layout/activity_user_buy_ticket_confirm.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_user_perfil.xml" value="0.5765625" />
-        <entry key="app/src/main/res/layout/activity_user_photo_register.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/activity_user_register01.xml" value="0.2229299363057325" />
-<<<<<<< Updated upstream
-        <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/activity_user_request_verification.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/activity_user_tickets_area.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/card_event.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/card_moments.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/card_solicitation.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/card_ticket_description.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/card_tickets_area.xml" value="0.375" />
-=======
         <entry key="app/src/main/res/layout/activity_user_register02.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_user_request_verification.xml" value="0.3859375" />
->>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3813405797101449" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.3813405797101449" />

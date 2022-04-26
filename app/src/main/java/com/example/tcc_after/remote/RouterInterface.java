@@ -3,6 +3,8 @@ package com.example.tcc_after.remote;
 import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.Evento;
+import com.example.tcc_after.model.Ingresso;
+import com.example.tcc_after.model.Lote;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.model.VerificacaoUsuario;
 
@@ -52,5 +54,13 @@ public interface RouterInterface {
     @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
     //realiza uma requisicao para a rota acima pelo metodo addUsuario
     Call<Evento> addEvento(@Body Evento evento);
+
+        @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
+            //realiza uma requisicao para a rota acima pelo metodo addUsuario
+        Call<Lote> addLote(@Body Lote lote);
+
+        @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
+            //realiza uma requisicao para a rota acima pelo metodo addUsuario
+        Call<Ingresso> addIngresso(@Body Ingresso ingresso);
 
 }

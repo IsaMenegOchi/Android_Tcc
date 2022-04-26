@@ -56,7 +56,7 @@
             android:name=".UI.company.company_register.PhotoCompanyRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.event.PaidTicketActivity"
+            android:name=".UI.event.TicketActivity"
             android:exported="false" />
         <activity
             android:name=".UI.event.EventDescriptionActivity"

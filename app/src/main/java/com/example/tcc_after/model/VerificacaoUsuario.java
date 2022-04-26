@@ -11,7 +11,7 @@ public class VerificacaoUsuario {
 
     @SerializedName("nickname")
     @Expose
-    private String verFicknameUsuario;
+    private String verNicknameUsuario;
 
     @SerializedName("status")
     @Expose
@@ -39,7 +39,7 @@ public class VerificacaoUsuario {
 
     public VerificacaoUsuario(int idVerificacaoUsuario, String verFicknameUsuario, boolean verStatusUsuario, String verNomeUsuario, String verArquivoDocUsuario, String verJustifivativaSUsuario, String getVerJustifivativaRUsuario) {
         this.idVerificacaoUsuario = idVerificacaoUsuario;
-        this.verFicknameUsuario = verFicknameUsuario;
+        this.verNicknameUsuario = verFicknameUsuario;
         this.verStatusUsuario = verStatusUsuario;
         this.verNomeUsuario = verNomeUsuario;
         this.verArquivoDocUsuario = verArquivoDocUsuario;
@@ -57,12 +57,12 @@ public class VerificacaoUsuario {
         this.idVerificacaoUsuario = idVerificacaoUsuario;
     }
 
-    public String getVerFicknameUsuario() {
-        return verFicknameUsuario;
+    public String getVerNicknameUsuario() {
+        return verNicknameUsuario;
     }
 
-    public void setVerFicknameUsuario(String verFicknameUsuario) {
-        this.verFicknameUsuario = verFicknameUsuario;
+    public void setVerNicknameUsuario(String verNicknameUsuario) {
+        this.verNicknameUsuario = verNicknameUsuario;
     }
 
     public boolean isVerStatusUsuario() {

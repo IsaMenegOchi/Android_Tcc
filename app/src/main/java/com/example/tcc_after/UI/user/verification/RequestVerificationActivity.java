@@ -2,17 +2,21 @@ package com.example.tcc_after.UI.user.verification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.VerifiedInputEvent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.company.company_register.PhotoCompanyRegisterActivity;
+import com.example.tcc_after.UI.user.UserPerfilActivity;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.VerificacaoUsuario;
+import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
 import retrofit2.Call;
@@ -23,6 +27,7 @@ public class RequestVerificationActivity extends AppCompatActivity {
 
     private EditText etVerNicknameUsuario, etVerNomeCompletoUsuario, etVerMotivoSolicitacao;
     private Button btnCadastrarVerificacao;
+    private ImageView ivArquivoDocUsuario;
 
     RouterInterface routerInterface;
 
@@ -31,14 +36,35 @@ public class RequestVerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_request_verification);
 
+        etVerNicknameUsuario = findViewById(R.id.etRequestVerification_Nickname);
+        etVerNomeCompletoUsuario = findViewById(R.id.etRequestVerification_FullName);
+        etVerMotivoSolicitacao = findViewById(R.id.etRequestVerification_Reason);
+        ivArquivoDocUsuario = findViewById(R.id.ivRequestVerification_AddFile);
+        btnCadastrarVerificacao = findViewById(R.id.btnRequestVerification_Send);
+
+
+        btnCadastrarVerificacao.setOnClickListener(view -> {
+
+            VerificacaoUsuario verificacaoUsuario = new VerificacaoUsuario();
+
+            verificacaoUsuario.setVerNicknameUsuario(etVerNicknameUsuario.getText().toString());
+            verificacaoUsuario.setVerNomeUsuario(etVerNomeCompletoUsuario.getText().toString());
+            verificacaoUsuario.setVerJustifivativaSUsuario(etVerMotivoSolicitacao.getText().toString());
+//            verificacaoUsuario.setVerArquivoDocUsuario(ivArquivoDocUsuario);
+
+
+            routerInterface = APIUtil.getUsuarioInterface();
+            addVerificacaoUsuario(verificacaoUsuario);
+
+            Toast.makeText(this, "Você cadastrou hehe", Toast.LENGTH_SHORT).show();
+
+//            Intent intent = new Intent(RequestVerificationActivity.this, UserPerfilActivity.class);
+//            startActivity(intent);
+        });
 
 
 
-//        routerInterface = APIUtil.getUsuarioInterface();
-//                addEmpresa(empresa);
-//
-//              Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);
-//               startActivity(intent);
+
 
     }
 
