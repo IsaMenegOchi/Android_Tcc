@@ -161,6 +161,14 @@
     <string name="whichVerificationDescription">• Você poderá criar Moments\n• Você terá acesso a chats exclusivos com outros usuários verificados\n• Você poderá criar eventos na plataforma.</string>
     <string name="requisitVerificationDescription">• Ter mais de 18 anos\n• Responder ao formulário de verificação</string>
 
+    <string name="pandemicAlert1">Ao frequentar um evento neste período de pandemia, você está ciente e assume os riscos de saúde envolvidos.</string>
+    <string name="pandemicAlert2">A adoção dos protocolos de saúde e segurança pelo local e participantes visa mitigar os riscos de exosição e contaminação pelo coronavírus.</string>
+    <string name="pandemicAlert3">Use máscara, mantenha o distanciamento, higienize as mãos com frequência e se informe sobre as normas de segurança vigentes na cidade do evento.</string>
+
+    <string name="responsabilityAlert1">O After não se responsabiliza pelo o que acontecer no evento.  Qualquer acontecimento indesejado, deve ser comunicado a empresa responsável.</string>
+    <string name="responsabilityAlert2">Todas e quaisquer documentação para a compravação de meia entrada devem ser levadas para o envento, visando a legitimidade desse ingresso.</string>
+    <string name="responsabilityAlert3">O After não se responsabiliza por qualquer alterança do evento, por atraso e pela devolução de valores pagos nos ingressos.</string>
+
     <string name="changeBackPhoto">Trocar fundo</string>
     <string name="changePhotoPerfil">Trocar foto</string>
     <string name="principalAtraction">Atrações principais</string>
