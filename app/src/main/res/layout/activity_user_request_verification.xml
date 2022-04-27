@@ -90,17 +90,25 @@
             app:layout_constraintStart_toStartOf="@+id/etRequestVerification_FullName"
             app:layout_constraintTop_toBottomOf="@+id/etRequestVerification_FullName" />
 
-        <ImageView
+<!--        <ImageView-->
+<!--            android:id="@+id/ivRequestVerification_AddFile"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/border_file"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            style="@style/textViewSubName"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/tvRequestVerification_File"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_File"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvRequestVerification_File" />-->
+
+        <EditText
             android:id="@+id/ivRequestVerification_AddFile"
+            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/border_file"
-            android:paddingVertical="10dp"
-            style="@style/textViewSubName"
-            app:layout_constraintEnd_toEndOf="@+id/tvRequestVerification_File"
-            app:layout_constraintStart_toStartOf="@+id/tvRequestVerification_File"
-            app:layout_constraintTop_toBottomOf="@+id/tvRequestVerification_File" />
+            app:layout_constraintTop_toBottomOf="@+id/tvRequestVerification_File"
+            tools:layout_editor_absoluteX="40dp" />
 
         <TextView
             android:id="@+id/tvRequestVerification_Reason"

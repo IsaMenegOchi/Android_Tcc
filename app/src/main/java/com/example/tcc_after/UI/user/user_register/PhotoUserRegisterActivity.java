@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.FeedActivity;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
@@ -84,41 +85,41 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         addUsuario(usuarioComum);
 
                         //REDIRECIONANDO A OUTRA TELA
-//                        Intent intent = new Intent(UserRegisterActivity02.this, PhotoRegisterActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, FeedActivity.class);
+                        startActivity(intent);
                     }//fim do if
                 }//fim da view
         ); //fim do click listener
 
-        tvPularEtapa.setOnClickListener(view ->
-                {
-                    // FAZ A VALIDAÇÃO DOS CAMPOS
-                    if (validateFields()){
-
-                        // CRIANDO UMA MODEL DE USUARIO COMUM
-                        UsuarioComum usuarioComum = new UsuarioComum();
-
-                        //CHAMANDO AS VARIAVEIS PUBLICAS
-                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
-                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
-                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
-                        usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
-                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
-                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
-                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
-                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
-                        usuarioComum.setBiografia(etBiografia.getText().toString());
-
-                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-                        routerInterface = APIUtil.getUsuarioInterface();
-                        addUsuario(usuarioComum);
-
-                        //REDIRECIONANDO A OUTRA TELA
-//                        Intent intent = new Intent(UserRegisterActivity02.this, PhotoRegisterActivity.class);
-//                        startActivity(intent);
-                    }//fim do if
-                }//fim da view
-        ); //fim d
+//        tvPularEtapa.setOnClickListener(view ->
+//                {
+//                    // FAZ A VALIDAÇÃO DOS CAMPOS
+//                    if (validateFields()){
+//
+//                        // CRIANDO UMA MODEL DE USUARIO COMUM
+//                        UsuarioComum usuarioComum = new UsuarioComum();
+//
+//                        //CHAMANDO AS VARIAVEIS PUBLICAS
+//                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
+//                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
+//                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
+//                        usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
+//                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
+//                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
+//                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
+//                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
+//                        usuarioComum.setBiografia(etBiografia.getText().toString());
+//
+//                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
+//                        routerInterface = APIUtil.getUsuarioInterface();
+//                        addUsuario(usuarioComum);
+//
+//                        //REDIRECIONANDO A OUTRA TELA
+////                        Intent intent = new Intent(UserRegisterActivity02.this, PhotoRegisterActivity.class);
+////                        startActivity(intent);
+//                    }//fim do if
+//                }//fim da view
+//        ); //fim d
 
     }//fim do onCreate
 

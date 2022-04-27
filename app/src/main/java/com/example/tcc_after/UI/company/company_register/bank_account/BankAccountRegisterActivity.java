@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class BankAccountRegisterActivity extends AppCompatActivity {
 
-    private EditText etBancoEmpresa, etAgenciaEmpresa, etContaEmpreasa, etDigitoEmpresa, etTipoContaEmpresa;
+    private EditText etBancoEmpresa, etAgenciaEmpresa, etContaEmpresa, etDigitoEmpresa, etTipoContaEmpresa;
 
     private Button btnCadastrarContaBancaria;
 
@@ -34,7 +34,7 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
 
         etBancoEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Bank);
         etAgenciaEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Agency);
-        etContaEmpreasa = findViewById(R.id.etCompanyRegisterBankAccount_Account);
+        etContaEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Account);
         etDigitoEmpresa = findViewById(R.id.etCompanyRegisterBankAccount_Digit);
         etTipoContaEmpresa= findViewById(R.id.etCompanyRegisterBankAccount_TypeOfAccount);
 
@@ -49,7 +49,7 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
             contaBancaria.setDigitoCB(Integer.parseInt(etDigitoEmpresa.getText().toString()));
             contaBancaria.setNomeBancoCB(etBancoEmpresa.getText().toString());
             contaBancaria.setNomeTipoCB(etTipoContaEmpresa.getText().toString());
-            contaBancaria.setNumeroCB(Integer.parseInt(etDigitoEmpresa.getText().toString()));
+            contaBancaria.setNumeroCB(Integer.parseInt(etContaEmpresa.getText().toString()));
 
             routerInterface = APIUtil.getUsuarioInterface();
             addContaBancaria(contaBancaria);

@@ -2,28 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_search"
+        android:id="@+id/nav_search"
         android:icon="@drawable/ic_baseline_search"
+        android:title="@string/titleSearch"/>
+
+    <item
+        android:id="@+id/nav_ticket"
+        android:icon="@drawable/ic_outline_local_activity"
+        android:title="@string/titleTikets"/>
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_outline_home"
         android:title="@string/title_home"/>
 
     <item
-        android:id="@+id/navigation_ticket"
-        android:icon="@drawable/ic_outline_local_activity"
-        android:title="Ingressos"/>
-
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_outline_home"
-        android:title="Home"/>
-
-    <item
-        android:id="@+id/navigation_moments"
+        android:id="@+id/nav_moments"
         android:icon="@drawable/ic_outline_video_library"
-        android:title="Moments"/>
+        android:title="@string/titleMoments"/>
 
     <item
-        android:id="@+id/navigation_perfil"
+        android:id="@+id/nav_perfil"
         android:icon="@drawable/ic_person_outline"
-        android:title="Perfil"/>
+        android:title="@string/titlePerfil"/>
 
 </menu>

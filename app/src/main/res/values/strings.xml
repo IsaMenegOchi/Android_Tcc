@@ -2,9 +2,10 @@
     <string name="app_name">tcc-after</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_photo_company_register">PhotoCompanyRegisterActivity</string>
+    <string name="titleMoments">Moments</string>
+    <string name="titleSearch">Pesquisa</string>
+    <string name="titlePerfil">Perfil</string>
+    <string name="titleTikets">Ingressos</string>
 
 
     <!--    Botoes -->
@@ -172,6 +173,8 @@
     <string name="changeBackPhoto">Trocar fundo</string>
     <string name="changePhotoPerfil">Trocar foto</string>
     <string name="principalAtraction">Atrações principais</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <!--    <string name="number">O after não se responsabiliza pelo o que acontecer no evento. qualquer acontecimento indesejado, deve ser comunicado a empresa responsável</string>-->

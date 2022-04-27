@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tcc_after">
+    package="com.example.tcc_after" >
     <!-- ela pode enviar dados e receber dados externos -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- desbloquear algumas coisas padrao do android -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -12,15 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+
+
+<!--        ADM-->
         <activity
-            android:name=".UI.user.tickets.UserTicketDescription$TicketDescriptionActivity"
+            android:name=".UI.adm.VerifyCardActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.company.CompanyEventStatisticsActivity"
+            android:name=".UI.adm.VerificationSolicitationActivity"
             android:exported="false" />
+
+
+<!--       USUÁRIO  -->
         <activity
-            android:name=".UI.event.EventWarningCreateActivity"
+            android:name=".UI.user.tickets.UserTicketDescription"
             android:exported="false" />
         <activity
             android:name=".UI.user.tickets.UserTicketsArea"
@@ -40,46 +46,32 @@
         <activity
             android:name=".UI.user.tickets.buy_tickets.UserWarningPandemic"
             android:exported="false" />
-        <activity
-            android:name=".UI.company.EditPerfilCompanyActivity"
-            android:exported="false" />
+
         <activity
             android:name=".UI.user.EditPerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.adm.VerifyCardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.adm.VerificationSolicitationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.company.company_register.PhotoCompanyRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.event.TicketActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.event.EventDescriptionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.event.FeedActivity"
+            android:name=".UI.FeedActivity"
             android:exported="false" />
         <activity
             android:name=".UI.user.user_register.PhotoUserRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.event.EventRegisterActivity"
+            android:name=".UI.user.user_register.UserRegisterActivity02"
             android:exported="false" />
+        <activity
+            android:name=".UI.user.user_register.UserRegisterActivity01"
+            android:exported="false" />
+        <activity
+            android:name=".UI.user.UserPerfilActivity"
+            android:exported="false" />
+
         <activity
             android:name=".UI.user.verification.AboutVerificationActivity"
             android:exported="false" />
         <activity
             android:name=".UI.user.verification.RequestVerificationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -87,24 +79,21 @@
             </intent-filter>
         </activity>
 
+
+        <!--       EMPRESA  -->
         <activity
-            android:name=".UI.ChoosePerfil"
+            android:name=".UI.company.CompanyEventStatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.company.company_register.PhotoCompanyRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".UI.company.CompanyVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.user.UserPerfilActivity"
-            android:exported="false" />
-        <activity
             android:name=".UI.company.CompanyPerfilActivity"
             android:exported="false" />
-        <activity
-            android:name=".UI.user.user_register.UserRegisterActivity02"
-            android:exported="false"/>
-        <activity
-            android:name=".UI.user.user_register.UserRegisterActivity01"
-            android:exported="false" />
+
         <activity
             android:name=".UI.company.company_register.CompanyRegisterPasswordActivity"
             android:exported="false" />
@@ -112,8 +101,37 @@
             android:name=".UI.company.company_register.CompanyRegisterActivity01"
             android:exported="false" />
         <activity
-            android:name=".UI.LoginActivity"
+            android:name=".UI.company.EditPerfilCompanyActivity"
             android:exported="false" />
+        <activity
+            android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
+            android:exported="false" />
+
+        <!--       EVENTO  -->
+        <activity
+            android:name=".UI.event.TicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.event.EventDescriptionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UI.event.EventWarningCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.event.EventRegisterActivity"
+            android:exported="false" />
+
+        <!--       TUDO  -->
+        <activity
+            android:name=".UI.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ChoosePerfil"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

@@ -3,52 +3,67 @@ package com.example.tcc_after;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.tcc_after.UI.ChoosePerfil;
-import com.example.tcc_after.UI.LoginActivity;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
-import com.example.tcc_after.remote.ConectionViaCep;
+import com.example.tcc_after.UI.FeedActivity;
+import com.example.tcc_after.UI.PerfilActivity;
+import com.example.tcc_after.UI.user.tickets.UserTicketsArea;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
-    private TextView tv;
+    BottomNavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       button = findViewById(R.id.buttonMain);
-       tv = findViewById(R.id.textMain);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-       button.setOnClickListener(view -> {
+        navigationView = findViewById(R.id.bottom_navigation);
 
-           BringJsonCep bringJsonCep = new BringJsonCep();
-           bringJsonCep.execute("https://viacep.com.br/ws/01001000/json/");
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent intent = null;
+                switch (item.getItemId()){
+                    case R.id.nav_search:
+                       Toast.makeText(MainActivity.this, "Você ainda nao criou essa tela", Toast.LENGTH_SHORT).show();
+                        break;
 
-       });
+                    case R.id.nav_ticket:
+                        intent = new Intent(MainActivity.this, UserTicketsArea.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.nav_home:
+                        intent = new Intent(MainActivity.this, FeedActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.nav_moments:
+//                        intent = new Intent(MainActivity.this, FeedActivity.class);
+//                        startActivity(intent);
+                        Toast.makeText(MainActivity.this, "Você ainda nao criou essa tela", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_perfil:
+                        intent = new Intent(MainActivity.this, PerfilActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+
+                return true;
+            }
+        });
+
     }
 
-    private class BringJsonCep extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... strings) {
-            String returnConection = ConectionViaCep.getData(strings[0]);
-            return returnConection;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            tv.setText(s);
-        }
-    }
 
 }

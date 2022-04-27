@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_primary"
 
-    tools:context=".UI.event.FeedActivity">
+    tools:context=".UI.FeedActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -74,11 +74,11 @@
             android:layout_marginVertical="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/llFeed_EventTypes" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

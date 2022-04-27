@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,6 +60,22 @@ public class UserRegisterActivity02 extends AppCompatActivity {
         etConfSenha = findViewById(R.id.etUserRegister_ConfPassaword);
         btnAvancar2 = findViewById(R.id.btnUserRegister02_Foward);
 
+
+//        etCep.setOnClickListener(new View.OnKeyListener(){
+//            @Override
+//            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+//
+//                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+//                    if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
+//                        BringJsonCep bringJsonCep = new BringJsonCep();
+//                        bringJsonCep.execute("https://viacep.com.br/ws/"+etCep.getText().toString()+"/xml/");
+//                        return true;
+//                    }
+//                }
+//                return true;
+//            }
+//        });
+
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->
         {
@@ -74,12 +92,9 @@ public class UserRegisterActivity02 extends AppCompatActivity {
             Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
             startActivity(intent);
 
-
             }
 
-            BringJsonCep bringJsonCep = new BringJsonCep();
-            bringJsonCep.execute("https://viacep.com.br/ws/"+etCep.getText().toString()+"/xml/");
-            Log.d("teste", tvTeste.getText().toString());
+
         });
     }
 //
@@ -160,7 +175,7 @@ public class UserRegisterActivity02 extends AppCompatActivity {
             valid = false;
         }
 
-        if (etSenha.getText().toString().length() != etConfSenha.getText().toString().length()){
+        if (!etSenha.getText().toString().equals(etConfSenha.getText().toString())){
             Toast.makeText(UserRegisterActivity02.this, "Reveja os campos de senha", Toast.LENGTH_LONG).show();
             valid = false;
         }

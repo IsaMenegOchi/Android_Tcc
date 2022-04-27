@@ -265,12 +265,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/street"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Steet"
+            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Street"
             app:layout_constraintTop_toTopOf="@+id/tvEventRegister_Complement" />
 
 
         <EditText
-            android:id="@+id/etEventRegister_Steet"
+            android:id="@+id/etEventRegister_Street"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/editTextHalf"
@@ -395,16 +395,24 @@
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_AgeGroup" />
 
 
-        <ImageButton
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnEventRegister_Cover"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/round_corner"-->
+<!--            android:src="@drawable/ic_outline_add_photo_alternate"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/etEventRegister_AgeGroup"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/etEventRegister_AgeGroup"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cover" />-->
+
+        <EditText
             android:id="@+id/btnEventRegister_Cover"
+            style="@style/editTextText"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/round_corner"
-            android:src="@drawable/ic_outline_add_photo_alternate"
-            app:layout_constraintEnd_toEndOf="@+id/etEventRegister_AgeGroup"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_AgeGroup"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cover" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cover"
+            tools:layout_editor_absoluteX="29dp" />
 
         <TextView
             android:id="@+id/tvEventRegister_ExtraPhoto"
@@ -416,16 +424,23 @@
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cover"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_Cover" />
 
-        <ImageButton
-            android:id="@+id/btnEventRegister_ExtraPhoto"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/round_corner"
-            android:src="@drawable/ic_outline_add_photo_alternate"
-            app:layout_constraintStart_toStartOf="@+id/btnEventRegister_Cover"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnEventRegister_ExtraPhoto"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/round_corner"-->
+<!--            android:src="@drawable/ic_outline_add_photo_alternate"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/btnEventRegister_Cover"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto" />-->
 
+        <EditText
+            android:id="@+id/btnEventRegister_ExtraPhoto"
+            style="@style/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto"
+            tools:layout_editor_absoluteX="39dp" />
 
         <TextView
             android:id="@+id/tvEventRegister_Celebrity"

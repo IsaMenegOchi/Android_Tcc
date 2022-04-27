@@ -18,6 +18,16 @@ import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.RouterInterface;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Date;
+import java.util.SimpleTimeZone;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,7 +36,9 @@ public class EventRegisterActivity extends AppCompatActivity {
 
     private EditText tituloEvento, categoriaEvento, assuntoEvento,
             tipoEvento, cepEvento, estadoEvento, logradouroEvento,
-            cidadeEvento, descricaoEvento, contaEvento;
+            cidadeEvento, descricaoEvento, contaEvento, capaEvento,
+            dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,
+            faixaEtariaEvento, celebridadeEvento, imagensEvento, complementoEvento, bairroEvento ;
 
     private TextView sobreTermos;
 
@@ -45,43 +57,67 @@ public class EventRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_register);
 
         tituloEvento = findViewById(R.id.etEventRegister_Title);
-        categoriaEvento = findViewById(R.id.etEventRegister_Category);
-        assuntoEvento = findViewById(R.id.etEventRegister_Subject);
-        tipoEvento = findViewById(R.id.etEventRegister_EventType);
-        cepEvento = findViewById(R.id.etEventRegister_Cep);
-        estadoEvento = findViewById(R.id.etEventRegister_State);
-//        logradouroEvento = findViewById(R.id);
-        cidadeEvento = findViewById(R.id.etEventRegister_City);
         descricaoEvento = findViewById(R.id.etEventRegister_Description);
+        capaEvento = findViewById(R.id.btnEventRegister_Cover);
+        dataInicioEvento = findViewById(R.id.etEventRegister_StartDate);
+        dataFimEvento = findViewById(R.id.etEventRegister_FinishDate);
+        horaInicioEvento = findViewById(R.id.etEventRegister_StartHour);
+        horaFimEvento = findViewById(R.id.etEventRegister_FinishtHour);
+        categoriaEvento = findViewById(R.id.etEventRegister_Category);
+        tipoEvento = findViewById(R.id.etEventRegister_EventType);
+        faixaEtariaEvento = findViewById(R.id.etEventRegister_AgeGroup);
+        assuntoEvento = findViewById(R.id.etEventRegister_Subject);
+        imagensEvento = findViewById(R.id.btnEventRegister_ExtraPhoto);
+        celebridadeEvento = findViewById(R.id.etEventRegister_Celebrity);
+        cepEvento = findViewById(R.id.etEventRegister_Cep);
+        logradouroEvento = findViewById(R.id.etEventRegister_Street);
+        complementoEvento = findViewById(R.id.etEventRegister_Complement);
+        bairroEvento = findViewById(R.id.etEventRegister_Neighborhood);
+        cidadeEvento = findViewById(R.id.etEventRegister_City);
+        estadoEvento = findViewById(R.id.etEventRegister_State);
         contaEvento = findViewById(R.id.etEventRegister_BankAccount);
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
+
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+//        DateTimeFormatter dateTimeFormatter = new DateTimeFormatterBuilder();
 
         avancarEvento.setOnClickListener(view -> {
             Evento evento = new Evento();
 
             evento.setTituloEvento(tituloEvento.getText().toString());
             evento.setDescricaoEvento(descricaoEvento.getText().toString());
-//            evento.setCapaEvento(capaEvento.getText().toString());
-//            evento.setDataInicioEvento(dataInicioEvento);
-//            evento.setHoraInicioEvento(horaInicioEvento);
-//            evento.setDataFimEvento(dataFimEvento);
-//            evento.setHoraFimEvento(horaFimEvento);
+            evento.setCapaEvento(capaEvento.getText().toString());
+            try {
+                evento.setDataInicioEvento(format.parse(dataInicioEvento.getText().toString()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            try {
+                evento.setDataFimEvento(format.parse(dataFimEvento.getText().toString()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            evento.setHoraInicioEvento(Time.valueOf(horaInicioEvento.getText().toString()));
+            evento.setHoraFimEvento(Time.valueOf(horaFimEvento.getText().toString()));
+
+            evento.setCategoriaEvento(categoriaEvento.getText().toString());
+            evento.setTipoEvento(tipoEvento.getText().toString());
+            evento.setFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
+            evento.setAssuntoEvento(assuntoEvento.getText().toString());
+            evento.setImagensEvento(imagensEvento.getText().toString());
 
             evento.setCepEvento(cepEvento.getText().toString());
             evento.setLogradouroEvento(logradouroEvento.getText().toString());
-//            evento.setComplementoEvento(complementoEvento.getText().toString());
-//            evento.setBairroEvento(bairroEvento.getText().toString());
+            evento.setComplementoEvento(complementoEvento.getText().toString());
+            evento.setBairroEvento(bairroEvento.getText().toString());
             evento.setCidadeEvento(cidadeEvento.getText().toString());
             evento.setEstadoEvento(estadoEvento.getText().toString());
 
-            evento.setAssuntoEvento(assuntoEvento.getText().toString());
-            evento.setCategoriaEvento(categoriaEvento.getText().toString());
-            evento.setTipoEvento(tipoEvento.getText().toString());
-//            evento.setImagensEvento(imagensEvento.getText().toString());
-//            evento.setFaixaEtariaEvento(faixaEtariaEvento.getText().toString());
-//            evento.setIdCelebridadeEvento(celebridadeEvento.getText().toString());
 
+
+
+            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
 
 
         });

@@ -122,7 +122,7 @@ public class UserRegisterActivity01 extends AppCompatActivity {
         }
 
         //verifica se o email e a confirmacao são iguais
-        if (etEmail.getText().toString().length() != etConfirmEmail.getText().toString().length()){
+        if (!etEmail.getText().toString().equals(etConfirmEmail.getText().toString())){
             Toast.makeText(UserRegisterActivity01.this, "Reveja os campos de email", Toast.LENGTH_LONG).show();
             valid = false;
         }

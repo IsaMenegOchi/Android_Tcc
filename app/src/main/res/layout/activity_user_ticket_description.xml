@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.user.tickets.UserTicketDescription$TicketDescriptionActivity"
+    tools:context=".UI.user.tickets.UserTicketDescription"
     android:background="@color/background_primary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -167,7 +167,7 @@
                 android:text="Validar"
                 android:textStyle="bold"
                 android:textColor="@color/purple_secondary"
-                android:background=""
+                android:background="@color/background_tertiary"
                 android:drawableTop="@drawable/ic_baseline_qr_code"/>
 
 

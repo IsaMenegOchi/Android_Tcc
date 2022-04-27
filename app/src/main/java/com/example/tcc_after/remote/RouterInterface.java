@@ -26,7 +26,7 @@ public interface RouterInterface {
 
         /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
 
-        @POST("/verificacaoUsuario/cadastrarVerificacao/:tblUsuarioComumIdUsuarioComum/")
+        @POST("/verificacaoUsuario/cadastrarVerificacao/1/")
 //        realiza uma requisicao para a rota acima pelo metodo addUsuario
         Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
 

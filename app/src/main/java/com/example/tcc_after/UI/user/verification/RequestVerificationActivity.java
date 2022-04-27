@@ -25,9 +25,9 @@ import retrofit2.Response;
 
 public class RequestVerificationActivity extends AppCompatActivity {
 
-    private EditText etVerNicknameUsuario, etVerNomeCompletoUsuario, etVerMotivoSolicitacao;
+    private EditText etVerNicknameUsuario, etVerNomeCompletoUsuario, etVerMotivoSolicitacao, ivArquivoDocUsuario;
     private Button btnCadastrarVerificacao;
-    private ImageView ivArquivoDocUsuario;
+//    private ImageView ivArquivoDocUsuario;
 
     RouterInterface routerInterface;
 
@@ -50,7 +50,7 @@ public class RequestVerificationActivity extends AppCompatActivity {
             verificacaoUsuario.setVerNicknameUsuario(etVerNicknameUsuario.getText().toString());
             verificacaoUsuario.setVerNomeUsuario(etVerNomeCompletoUsuario.getText().toString());
             verificacaoUsuario.setVerJustifivativaSUsuario(etVerMotivoSolicitacao.getText().toString());
-//            verificacaoUsuario.setVerArquivoDocUsuario(ivArquivoDocUsuario);
+            verificacaoUsuario.setVerArquivoDocUsuario(ivArquivoDocUsuario.getText().toString());
 
 
             routerInterface = APIUtil.getUsuarioInterface();
@@ -61,11 +61,6 @@ public class RequestVerificationActivity extends AppCompatActivity {
 //            Intent intent = new Intent(RequestVerificationActivity.this, UserPerfilActivity.class);
 //            startActivity(intent);
         });
-
-
-
-
-
     }
 
 
