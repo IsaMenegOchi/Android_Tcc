@@ -51,7 +51,7 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
             contaBancaria.setNomeTipoCB(etTipoContaEmpresa.getText().toString());
             contaBancaria.setNumeroCB(Integer.parseInt(etContaEmpresa.getText().toString()));
 
-            routerInterface = APIUtil.getUsuarioInterface();
+            routerInterface = APIUtil.getApiInterface();
             addContaBancaria(contaBancaria);
 
             Log.d("socorro", "Ta apertando");

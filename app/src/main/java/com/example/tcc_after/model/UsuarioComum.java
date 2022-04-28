@@ -46,7 +46,7 @@ public class UsuarioComum {
 
     @SerializedName("dataNasc")
     @Expose
-    private String dataNascUsuario;
+    private Date dataNascUsuario;
 
     @SerializedName("biografia")
     @Expose
@@ -77,7 +77,7 @@ public class UsuarioComum {
     public UsuarioComum(int idUsuario, int idPerfil, int idEnderecoUsuario,
                         String nomeCompletoUsuario, String nicknameUsuario,
                         String emailUsuario, String senhaUsuario, String imagemPerfilUsuario,
-                        String imagemFundoUsuario, String dataNascUsuario, String biografia,
+                        String imagemFundoUsuario, Date dataNascUsuario, String biografia,
                         String cep, String cidade, String estado) {
         this.idUsuario = idUsuario;
         this.idPerfil = idPerfil;
@@ -159,11 +159,11 @@ public class UsuarioComum {
         this.imagemFundoUsuario = imagemFundoUsuario;
     }
 
-    public String getDataNascUsuario() {
+    public Date getDataNascUsuario() {
         return dataNascUsuario;
     }
 
-    public void setDataNascUsuario(String dataNascUsuario) {
+    public void setDataNascUsuario(Date dataNascUsuario) {
         this.dataNascUsuario = dataNascUsuario;
     }
 

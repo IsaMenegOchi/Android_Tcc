@@ -53,7 +53,7 @@ public class RequestVerificationActivity extends AppCompatActivity {
             verificacaoUsuario.setVerArquivoDocUsuario(ivArquivoDocUsuario.getText().toString());
 
 
-            routerInterface = APIUtil.getUsuarioInterface();
+            routerInterface = APIUtil.getApiInterface();
             addVerificacaoUsuario(verificacaoUsuario);
 
             Toast.makeText(this, "Você cadastrou hehe", Toast.LENGTH_SHORT).show();

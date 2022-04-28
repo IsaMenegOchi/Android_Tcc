@@ -19,7 +19,6 @@ public interface RouterInterface {
 
     /** ROTAS DE USUARIO **/
 
-    //Pegar o verbo http e colocar o caminho
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
     //realiza uma requisicao para a rota acima pelo metodo addUsuario
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
@@ -27,8 +26,8 @@ public interface RouterInterface {
         /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
 
         @POST("/verificacaoUsuario/cadastrarVerificacao/1/")
-//        realiza uma requisicao para a rota acima pelo metodo addUsuario
         Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
+
 
     /** ROTAS DE EMPRESA **/
 

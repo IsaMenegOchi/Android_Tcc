@@ -56,7 +56,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                 empresa.setBiografiaEmpresa(etBiografia.getText().toString());
 
                 //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-                routerInterface = APIUtil.getUsuarioInterface();
+                routerInterface = APIUtil.getApiInterface();
                 addEmpresa(empresa);
 
                 Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);

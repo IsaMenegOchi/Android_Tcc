@@ -2,9 +2,9 @@ package com.example.tcc_after.remote;
 
 public class APIUtil {
 
-    private static final String API_URL = "http://10.107.144.15:4000/";
+    private static final String API_URL = "http://10.107.144.26:4000/";
 
-    public static RouterInterface getUsuarioInterface(){
+    public static RouterInterface getApiInterface(){
         //indicamos onde roda nossa aplicacao, e indica a rota
         return RetroFit.getClient(API_URL).create(RouterInterface.class);
     }

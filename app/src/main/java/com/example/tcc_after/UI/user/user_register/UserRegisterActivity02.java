@@ -61,20 +61,12 @@ public class UserRegisterActivity02 extends AppCompatActivity {
         btnAvancar2 = findViewById(R.id.btnUserRegister02_Foward);
 
 
-//        etCep.setOnClickListener(new View.OnKeyListener(){
-//            @Override
-//            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-//
-//                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
-//                    if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
-//                        BringJsonCep bringJsonCep = new BringJsonCep();
-//                        bringJsonCep.execute("https://viacep.com.br/ws/"+etCep.getText().toString()+"/xml/");
-//                        return true;
-//                    }
-//                }
-//                return true;
-//            }
-//        });
+        etCep.setOnFocusChangeListener((view, b) -> {
+            BringJsonCep bringJsonCep = new BringJsonCep();
+            bringJsonCep.execute("https://viacep.com.br/ws/"+etCep.getText().toString()+"/xml/");
+
+        });
+
 
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->

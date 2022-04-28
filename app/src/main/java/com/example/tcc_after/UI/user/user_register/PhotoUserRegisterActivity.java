@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,10 @@ import com.example.tcc_after.UI.FeedActivity;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
+
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,6 +69,8 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                     // FAZ A VALIDAÇÃO DOS CAMPOS
                     if (validateFields()){
 
+//                        Date dataNacimento = Date.valueOf(UserRegisterActivity02.dataNascCadastroUsuario);
+                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                         // CRIANDO UMA MODEL DE USUARIO COMUM
                         UsuarioComum usuarioComum = new UsuarioComum();
 
@@ -71,7 +78,12 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
                         usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
                         usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
-                        usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
+                        try {
+                            usuarioComum.setDataNascUsuario(format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
+                        }
+                        catch (ParseException e) {
+                            e.printStackTrace();
+                        };
                         //fotoCapa
                         //fotoFundo
                         usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
@@ -81,7 +93,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         usuarioComum.setBiografia(etBiografia.getText().toString());
 
                         //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-                        routerInterface = APIUtil.getUsuarioInterface();
+                        routerInterface = APIUtil.getApiInterface();
                         addUsuario(usuarioComum);
 
                         //REDIRECIONANDO A OUTRA TELA
