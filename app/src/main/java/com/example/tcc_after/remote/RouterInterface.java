@@ -17,10 +17,9 @@ import retrofit2.http.POST;
 
 public interface RouterInterface {
 
-    /** ROTAS DE USUARIO **/
+    //* ROTAS DE USUARIO
 
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
-    //realiza uma requisicao para a rota acima pelo metodo addUsuario
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
         /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
@@ -29,16 +28,14 @@ public interface RouterInterface {
         Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
 
 
-    /** ROTAS DE EMPRESA **/
+    //* ROTAS DE EMPRESA
 
     @POST("perfil/cadastrarPerfilEmpresa/")
-    //realiza uma requisicao para a rota acima pelo metodo addUsuario
     Call<Empresa> addEmpresa(@Body Empresa empresa);
 
         /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
-
+//        {idEmpresa}
         @POST("/contaEmpresa/cadastrarContaCompleta/1/")
-//        realiza uma requisicao para a rota acima pelo metodo addUsuario
         Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
 
 
@@ -48,18 +45,15 @@ public interface RouterInterface {
         //realiza uma requisicao para a rota acima pelo metodo addUsuario
 //        Call<VerificacaoEmpresa> addVerificacaoEmpresa(@Body VerificacaoEmpresa verificacaoEmpresa);
 
-    /** ROTAS DE EVENTO **/
+    //* ROTAS DE EVENTO
 
-    @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
-    //realiza uma requisicao para a rota acima pelo metodo addUsuario
+    @POST("evento/cadastrarEvento/1/")
     Call<Evento> addEvento(@Body Evento evento);
 
-        @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
-            //realiza uma requisicao para a rota acima pelo metodo addUsuario
+        @POST("lote/cadastrarLote/:tblEventoIdEvento/")
         Call<Lote> addLote(@Body Lote lote);
 
-        @POST("evento/cadastrarEvento/:tblEmpresaIdEmpresa/")
-            //realiza uma requisicao para a rota acima pelo metodo addUsuario
+        @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
         Call<Ingresso> addIngresso(@Body Ingresso ingresso);
 
 }

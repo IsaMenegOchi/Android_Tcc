@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.tcc_after.R;
@@ -18,15 +19,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_both_login);
 //        getSupportActionBar().hide();
 
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
     tvLoginRegisterNow = findViewById(R.id.tvLogin_RegisterNow);
 
         tvLoginRegisterNow.setOnClickListener(view->{
-//            Intent loginScreen = new Intent(
-//                    LoginActivity.this,
-//                    ChoosePerfil.class
-//            );
-////
-//            startActivity(telaCadastro);
             startActivity(new Intent(
                     LoginActivity.this, ChoosePerfil.class
             ));

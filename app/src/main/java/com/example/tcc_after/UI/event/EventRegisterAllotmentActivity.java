@@ -2,11 +2,14 @@ package com.example.tcc_after.UI.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.company.company_register.CompanyRegisterActivity01;
+import com.example.tcc_after.UI.company.company_register.CompanyRegisterPasswordActivity;
 import com.example.tcc_after.model.Ingresso;
 import com.example.tcc_after.model.Lote;
 import com.example.tcc_after.remote.RouterInterface;
@@ -24,6 +27,9 @@ public class EventRegisterAllotmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_register_allotment);
+
+        Intent intent = new Intent(EventRegisterAllotmentActivity.this, TicketActivity.class);
+        startActivity(intent);
     }
 
     public void addLote(Lote lote) {

@@ -176,6 +176,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="startDate">Data do início</string>
+    <string name="finishDate">Data do término</string>
+    <string name="startTime">Hora do início</string>
+    <string name="finishTime">Hora do término</string>
+    <string name="minimum">Mínimo</string>
+    <string name="maximum">Máximo</string>
+
 
     <!--    <string name="number">O after não se responsabiliza pelo o que acontecer no evento. qualquer acontecimento indesejado, deve ser comunicado a empresa responsável</string>-->
     <!--    <string name="number">Todas e quaisquer documentação para a compravação de meia entrada devem ser levadas para o evento, visando a legetimidade do ingresso</string>-->

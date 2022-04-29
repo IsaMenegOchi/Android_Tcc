@@ -139,10 +139,9 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     /** FUNCOES DE MODEL **/
     public void addUsuario(UsuarioComum usuarioComum) {
 
-        //calback - classe do java
         Call<UsuarioComum> call = routerInterface.addUsuarioComum(usuarioComum);
         call.enqueue(new Callback<UsuarioComum>() {
-            //o req é feito automaticamente
+
             @Override
             public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
                 Toast.makeText(PhotoUserRegisterActivity.this, "Usuario inserido com sucesso", Toast.LENGTH_LONG).show();
@@ -155,7 +154,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         }); //fim do enqueue e do calback
     }// fim da funcao addUsuario
 
-    /** FUNCOES GERAIS **/
+    //* FUNCOES GERAIS
 
         /** funcao de pegar a imagem **/
 //    public void onActivityResult (int requestCode, int resultCode,Intent imagem) {
@@ -178,7 +177,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 //
 //    }
 
-    /** funcao de abrir galeria de fotos **/
+    //* funcao de abrir galeria de fotos
     public void openGalery(){
 
         //criamos uma variavel com
@@ -191,7 +190,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         this.startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODE_IMAGE);
     }
 
-    /** funcao de validar dados **/
+    //* funcao de validar dados
     private boolean validateFields(){
 
         //cria uma variavel que se inicia com true

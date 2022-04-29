@@ -3,6 +3,7 @@ package com.example.tcc_after.UI.event;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -12,10 +13,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.company.company_register.CompanyRegisterActivity01;
+import com.example.tcc_after.UI.company.company_register.CompanyRegisterPasswordActivity;
 import com.example.tcc_after.UI.user.user_register.PhotoUserRegisterActivity;
 import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
+import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
+import com.example.tcc_after.model.Cep;
 import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.remote.APIUtil;
+import com.example.tcc_after.remote.ConectionViaCep;
+import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
 
 import java.sql.Time;
@@ -25,7 +33,9 @@ import java.time.DateTimeException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.SimpleTimeZone;
 
 import retrofit2.Call;
@@ -50,7 +60,10 @@ public class EventRegisterActivity extends AppCompatActivity {
     tipoCadastroEvento, cepCadastroEvento, estadoCadastroEvento, logradouroCadastroEvento,
     cidadeCadastroEvento, descricaoCadastroEvento, contaCadastroEvento;
 
+    private List<Cep> cepList = new ArrayList<>();
     RouterInterface routerInterface;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +95,11 @@ public class EventRegisterActivity extends AppCompatActivity {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 //        DateTimeFormatter dateTimeFormatter = new DateTimeFormatterBuilder();
 
+        cepEvento.setOnFocusChangeListener((view, b) -> {
+            BringJsonCep bringJsonCep = new BringJsonCep();
+            bringJsonCep.execute("https://viacep.com.br/ws/"+cepEvento.getText().toString()+"/xml/");
+
+        });
         avancarEvento.setOnClickListener(view -> {
             Evento evento = new Evento();
 
@@ -106,6 +124,7 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
             evento.setAssuntoEvento(assuntoEvento.getText().toString());
             evento.setImagensEvento(imagensEvento.getText().toString());
+            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
 
             evento.setCepEvento(cepEvento.getText().toString());
             evento.setLogradouroEvento(logradouroEvento.getText().toString());
@@ -113,23 +132,22 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setBairroEvento(bairroEvento.getText().toString());
             evento.setCidadeEvento(cidadeEvento.getText().toString());
             evento.setEstadoEvento(estadoEvento.getText().toString());
+            evento.setNumeroContaEvento(contaEvento.getText().toString());
 
+            routerInterface = APIUtil.getApiInterface();
+            addEvento(evento);
 
-
-
-            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
-
-
+            Intent intent = new Intent(EventRegisterActivity.this, EventRegisterAllotmentActivity.class);
+            startActivity(intent);
         });
 
     }
 
     public void addEvento(Evento evento) {
 
-        //calback - classe do java
         Call<Evento> call = routerInterface.addEvento(evento);
         call.enqueue(new Callback<Evento>() {
-            //o req é feito automaticamente
+
             @Override
             public void onResponse(Call<Evento> call, Response<Evento> response) {
                 Toast.makeText(EventRegisterActivity.this, "Evento inserido com sucesso", Toast.LENGTH_LONG).show();
@@ -138,9 +156,40 @@ public class EventRegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Evento> call, Throwable t) {
                 Log.d("Erro_api", t.getMessage());
-            }//fim do onFailure
-        }); //fim do enqueue e do calback
-    }// fim da funcao addUsuario
+            }
+        });
+    }// fim da funcao addEvento
+
+
+    private class BringJsonCep extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            String returnConection = ConectionViaCep.getData(strings[0]);
+            Log.d("boco", "InBackg");
+            return returnConection;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            cepList = ConsumeXML.xmlDatas(s);
+            showDatas();
+            Log.d("boco", "onPostexecute");
+        }
+
+        private void showDatas()
+        {
+            if (cepList != null){
+                for (Cep cep : cepList){
+                    estadoEvento.setText(cep.getUf());
+                    cidadeEvento.setText(cep.getLocalidade());
+                    logradouroEvento.setText(cep.getLogradroudo());
+                    complementoEvento.setText(cep.getComplemento());
+                    bairroEvento.setText(cep.getBairro());
+                }
+            }
+        }
+    }
+
 
 
 //    private boolean validateFields (){

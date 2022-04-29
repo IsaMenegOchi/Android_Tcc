@@ -15,6 +15,20 @@
         android:usesCleartextTraffic="true" >
 
 
+        <!--       TUDO  -->
+        <activity
+            android:name=".UI.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ChoosePerfil"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
 <!--        ADM-->
         <activity
             android:name=".UI.adm.VerifyCardActivity"
@@ -114,17 +128,6 @@
             android:exported="false" />
         <activity
             android:name=".UI.event.EventRegisterActivity"
-            android:exported="false" />
-
-        <!--       TUDO  -->
-        <activity
-            android:name=".UI.PerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.ChoosePerfil"
-            android:exported="false" />
-        <activity
-            android:name=".UI.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -132,9 +135,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
+
     </application>
 
 </manifest>

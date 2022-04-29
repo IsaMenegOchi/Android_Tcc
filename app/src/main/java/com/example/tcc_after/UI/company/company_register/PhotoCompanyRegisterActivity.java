@@ -9,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.company.company_register.bank_account.BankAccountRegisterActivity;
+import com.example.tcc_after.UI.event.EventRegisterActivity;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
@@ -59,8 +61,16 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                 routerInterface = APIUtil.getApiInterface();
                 addEmpresa(empresa);
 
-                Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(PhotoCompanyRegisterActivity.this)
+                        .setMessage("Deseja adicionar uma conta bancária?")
+                        .setPositiveButton("Sim", (dialog1, witch)->{
+                            Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);
+                            startActivity(intent);
+                        })
+                        .setNegativeButton("Não", (dialog1, witch)->{
+                            Intent intent = new Intent(PhotoCompanyRegisterActivity.this, EventRegisterActivity.class);
+                            startActivity(intent);
+                        });
             }
 
         });

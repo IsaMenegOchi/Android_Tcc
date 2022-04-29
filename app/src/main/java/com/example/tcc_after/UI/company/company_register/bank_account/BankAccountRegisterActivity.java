@@ -58,8 +58,8 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
 
 //            Toast.makeText(this,"VOce esta cadastrando",Toast.LENGTH_LONG).show();
 
-//            Intent intent = new Intent(BankAccountRegisterActivity.this, CompanyVerificationActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(BankAccountRegisterActivity.this, CompanyVerificationActivity.class);
+            startActivity(intent);
 
         });
 

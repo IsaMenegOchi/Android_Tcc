@@ -37,7 +37,7 @@
             style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="40dp"
             android:text="@string/allotment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -46,28 +46,44 @@
             android:id="@+id/clEventRegisterAllotment_Lote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="15dp"
             android:paddingHorizontal="20dp"
             android:background="@drawable/shape_edit_text_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvRegister">
 
-            <TextView
-                android:id="@+id/tvEventRegisterAllotment_AboutSell"
-                style="@style/textViewName"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_Title"
+                style="@style/editTextText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/aboutSell"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:hint="Título do lote"
+                android:padding="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_AboutSell"
+                style="@style/textViewSubTitlesAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/aboutSell"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_Title" />
 
             <TextView
                 android:id="@+id/tvEventRegisterAllotment_StartDate"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/city"
+                android:layout_marginTop="10dp"
+                android:text="@string/startDate"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_AboutSell" />
 
@@ -84,7 +100,7 @@
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/neighborhood"
+                android:text="@string/startTime"
                 app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_StartTime"
                 app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_StartDate" />
 
@@ -102,7 +118,8 @@
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/neighborhood"
+                android:layout_marginTop="20dp"
+                android:text="@string/finishDate"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_StartDate" />
 
@@ -119,7 +136,7 @@
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/neighborhood"
+                android:text="@string/finishTime"
                 app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_FinishTime"
                 app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_FinishDate" />
 
@@ -132,20 +149,42 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_FinishTime" />
 
             <TextView
-                android:id="@+id/tvEventRegisterAllotment_QtdBuy"
+                android:id="@+id/tvEventRegisterAllotment_QtdTicket"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/qtdBuy"
+                android:layout_marginTop="20dp"
+                android:text="@string/quantity"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_FinishDate" />
+
+            <EditText
+                android:id="@+id/etEventRegisterAllotment_qtdTicket"
+                style="@style/editTextText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_secondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_QtdTicket" />
+
+
+            <TextView
+                android:id="@+id/tvEventRegisterAllotment_QtdBuy"
+                style="@style/textViewSubTitlesAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qtdBuy"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_qtdTicket" />
 
             <TextView
                 android:id="@+id/tvEventRegisterAllotment_Minimum"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/neighborhood"
+                android:layout_marginTop="10dp"
+                android:text="@string/minimum"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_QtdBuy" />
 
@@ -162,7 +201,7 @@
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/neighborhood"
+                android:text="@string/maximum"
                 app:layout_constraintStart_toStartOf="@+id/etEventRegisterAllotment_Maximum"
                 app:layout_constraintTop_toTopOf="@+id/tvEventRegisterAllotment_Minimum" />
 
@@ -176,64 +215,68 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/clEventRegisterAllotment_TicketArea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_Maximum">
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_Minimum">
+
 
                 <TextView
                     android:id="@+id/tvEventRegisterAllotment_TicketArea"
-                    style="@style/textViewName"
+                    style="@style/textViewSubTitlesAfter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ticketArea" />
-
+                    android:text="@string/ticketArea"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="3dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcEventregisterAllotment_TicketCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_TicketArea" />
 
+
                 <Button
                     android:id="@+id/btnEventRegisterAllotment_FreeTicket"
                     style="@style/buttonSave"
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="@string/freeTicket"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcEventregisterAllotment_TicketCard" />
 
                 <Button
                     android:id="@+id/btnEventRegisterAllotment_PaidTicket"
                     style="@style/buttonSave"
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/freeTicket"
+                    android:text="@string/paidTicket"
+                    android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btnEventRegisterAllotment_FreeTicket" />
 
-                <Button
-                    android:id="@+id/btnEventRegisterAllotment_FinishRegisterAllotment"
-                    style="@style/buttonText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/save"
-                    app:layout_constraintTop_toBottomOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-
-
+            <Button
+                android:id="@+id/btnEventRegisterAllotment_FinishRegisterAllotment"
+                style="@style/buttonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clEventRegisterAllotment_TicketArea" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -243,18 +286,23 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/newAllotment"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/clEventRegisterAllotment_Lote" />
 
         <Button
-            android:id="@+id/btnEventRegisterAllotment_RegisterAllotment"
+            android:id="@+id/btnEventRegisterAllotment_RegisterAllEvent"
             style="@style/buttonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:text="@string/save"
-            app:layout_constraintTop_toBottomOf="@+id/btnEventRegisterAllotment_NewAllotment"
-            tools:layout_editor_absoluteX="26dp"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEventRegisterAllotment_NewAllotment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
