@@ -71,6 +71,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                             Intent intent = new Intent(PhotoCompanyRegisterActivity.this, EventRegisterActivity.class);
                             startActivity(intent);
                         });
+                alertDialog.show();
             }
 
         });

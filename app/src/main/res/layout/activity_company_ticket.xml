@@ -43,178 +43,102 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <TextView
-            android:id="@+id/tvCompanyPaidTicket_TicketTitle"
-            style="@style/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/ticketTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Title" />
-
-
-        <EditText
-            android:id="@+id/etCompanyPaidTicket_TicketTitle"
-            style="@style/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_TicketTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_TicketTitle" />
-
-        <TextView
-            android:id="@+id/tvCompanyPaidTicket_Qtdd"
-            style="@style/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/quantity"
-            app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_TicketTitle"
-            app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_TicketTitle" />
-
-        <EditText
-            android:id="@+id/etCompanyPaidTicket_Qtdd"
-            style="@style/editTextHalf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Qtdd" />
-
-        <TextView
-            android:id="@+id/tvCompanyPaidTicket_Price"
-            style="@style/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/price"
-            app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_Price"
-            app:layout_constraintTop_toTopOf="@+id/tvCompanyPaidTicket_Qtdd" />
-
-        <EditText
-            android:id="@+id/etCompanyPaidTicket_Price"
-            style="@style/editTextHalf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@+id/etCompanyPaidTicket_TicketTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Price" />
-        <!--        android:background="@drawable/border_purple_shape"-->
-        <!--        android:enabled="false"-->
-        <!--        android:text="GRÁTIS"-->
-        <!--        android:textAlignment="center"-->
-
-        <TextView
-            android:id="@+id/tvCompanyPaidTicket_Description"
-            style="@style/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/description"
-            app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_Qtdd"
-            app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_Qtdd" />
-
-        <EditText
-            android:id="@+id/etCompanyPaidTicket_Description"
-            style="@style/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Description" />
-
-        <Switch
-            android:id="@+id/switchCompanyPaidTicket_HalfTicket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/textViewSubName"
-            android:layout_marginTop="12dp"
-            android:checked="false"
-            android:text="@string/createHalfTicket"
-            app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_Description"
-            app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_Description" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clcompanyPaidTicket_HalfTicket"
+            android:id="@+id/clcompanyPaidTicket_Ticket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switchCompanyPaidTicket_HalfTicket">
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Title">
 
 
             <TextView
-                android:id="@+id/tvCompanyPaidTicket_HalfTicketTitle"
+                android:id="@+id/tvCompanyPaidTicket_TicketTitle"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ticketTitle"
-                 />
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/etCompanyPaidTicket_HalfTicketTitle"
+                android:id="@+id/etCompanyPaidTicket_TicketTitle"
                 style="@style/editTextText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_HalfTicketTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_TicketTitle" />
 
             <TextView
-                android:id="@+id/tvCompanyPaidTicket_HalfQtdd"
+                android:id="@+id/tvCompanyPaidTicket_Qtdd"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/quantity"
-                app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_HalfTicketTitle"
-                app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_HalfTicketTitle" />
+                app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_TicketTitle"
+                app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_TicketTitle" />
 
             <EditText
-                android:id="@+id/etCompanyPaidTicket_HalfQtdd"
+                android:id="@+id/etCompanyPaidTicket_Qtdd"
                 style="@style/editTextHalf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_HalfTicketTitle"
-                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_HalfQtdd" />
+                app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_TicketTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Qtdd" />
 
             <TextView
-                android:id="@+id/tvCompanyPaidTicket_HalfPrice"
+                android:id="@+id/tvCompanyPaidTicket_Price"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/price"
-                app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_HalfPrice"
-                app:layout_constraintTop_toTopOf="@+id/tvCompanyPaidTicket_HalfQtdd" />
+                app:layout_constraintStart_toStartOf="@+id/etCompanyPaidTicket_Price"
+                app:layout_constraintTop_toTopOf="@+id/tvCompanyPaidTicket_Qtdd" />
 
             <EditText
-                android:id="@+id/etCompanyPaidTicket_HalfPrice"
+                android:id="@+id/etCompanyPaidTicket_Price"
                 style="@style/editTextHalf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/etCompanyPaidTicket_HalfTicketTitle"
-                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_HalfPrice" />
+                app:layout_constraintEnd_toEndOf="@+id/etCompanyPaidTicket_TicketTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Price" />
 
             <TextView
-                android:id="@+id/tvCompanyPaidTicket_HalfDescription"
+                android:id="@+id/tvCompanyPaidTicket_Description"
                 style="@style/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/description"
-                app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_HalfQtdd"
-                app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_HalfQtdd" />
+                app:layout_constraintStart_toStartOf="@+id/tvCompanyPaidTicket_Qtdd"
+                app:layout_constraintTop_toBottomOf="@+id/etCompanyPaidTicket_Qtdd" />
 
             <EditText
-                android:id="@+id/etCompanyPaidTicket_HalfDescription"
+                android:id="@+id/etCompanyPaidTicket_Description"
                 style="@style/editTextText"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_HalfDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyPaidTicket_Description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <Switch
+            android:id="@+id/switchCompanyPaidTicket_HalfTicket"
+            style="@style/textViewSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:text="@string/createHalfTicket"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clcompanyPaidTicket_Ticket" />
 
 
         <Button
@@ -222,11 +146,11 @@
             style="@style/buttonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="@string/finish"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clcompanyPaidTicket_HalfTicket" />
+            app:layout_constraintTop_toBottomOf="@+id/switchCompanyPaidTicket_HalfTicket" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

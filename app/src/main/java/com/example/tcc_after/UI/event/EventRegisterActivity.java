@@ -92,15 +92,17 @@ public class EventRegisterActivity extends AppCompatActivity {
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-//        DateTimeFormatter dateTimeFormatter = new DateTimeFormatterBuilder();
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+//            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
             bringJsonCep.execute("https://viacep.com.br/ws/"+cepEvento.getText().toString()+"/xml/");
 
         });
+
         avancarEvento.setOnClickListener(view -> {
+
             Evento evento = new Evento();
 
             evento.setTituloEvento(tituloEvento.getText().toString());
@@ -116,8 +118,9 @@ public class EventRegisterActivity extends AppCompatActivity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            evento.setHoraInicioEvento(Time.valueOf(horaInicioEvento.getText().toString()));
-            evento.setHoraFimEvento(Time.valueOf(horaFimEvento.getText().toString()));
+
+//            evento.setHoraInicioEvento(Time.valueOf(horaInicioEvento.getText().toString()));
+//            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
 
             evento.setCategoriaEvento(categoriaEvento.getText().toString());
             evento.setTipoEvento(tipoEvento.getText().toString());

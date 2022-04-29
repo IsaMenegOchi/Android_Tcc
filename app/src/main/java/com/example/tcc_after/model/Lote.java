@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Lote {
@@ -20,13 +21,17 @@ public class Lote {
     @Expose
     private int maxDeCompraUsuario;
 
+    @SerializedName("minDeCompraPorUsuario")
+    @Expose
+    private int minDeCompraUsuario;
+
     @SerializedName("dataInicio")
     @Expose
     private Date dataInicioVenda;
 
     @SerializedName("horaInicio")
     @Expose
-    private Time horaInicioVenda;
+    private LocalTime horaInicioVenda;
 
     @SerializedName("dataFim")
     @Expose
@@ -34,7 +39,7 @@ public class Lote {
 
     @SerializedName("horaFim")
     @Expose
-    private Time horaFimVenda;
+    private LocalTime horaFimVenda;
 
     @SerializedName("taxaAbsovida")
     @Expose
@@ -57,10 +62,11 @@ public class Lote {
     public Lote() {
     }
 
-    public Lote(int idLote, int qtdEstoque, int maxDeCompraUsuario, Date dataInicioVenda, Time horaInicioVenda, Date dataFimVenda, Time horaFimVenda, Boolean taxaAbsorvida, int idTipoIngresso, String tipoIngresso, int idEventoLote) {
+    public Lote(int idLote, int qtdEstoque, int maxDeCompraUsuario, int minDeCompraUsuario, Date dataInicioVenda, LocalTime horaInicioVenda, Date dataFimVenda, LocalTime horaFimVenda, Boolean taxaAbsorvida, int idTipoIngresso, String tipoIngresso, int idEventoLote) {
         this.idLote = idLote;
         this.qtdEstoque = qtdEstoque;
         this.maxDeCompraUsuario = maxDeCompraUsuario;
+        this.minDeCompraUsuario = minDeCompraUsuario;
         this.dataInicioVenda = dataInicioVenda;
         this.horaInicioVenda = horaInicioVenda;
         this.dataFimVenda = dataFimVenda;
@@ -69,6 +75,15 @@ public class Lote {
         this.idTipoIngresso = idTipoIngresso;
         this.tipoIngresso = tipoIngresso;
         this.idEventoLote = idEventoLote;
+    }
+
+
+    public int getMinDeCompraUsuario() {
+        return minDeCompraUsuario;
+    }
+
+    public void setMinDeCompraUsuario(int minDeCompraUsuario) {
+        this.minDeCompraUsuario = minDeCompraUsuario;
     }
 
     public int getIdLote() {
@@ -103,11 +118,11 @@ public class Lote {
         this.dataInicioVenda = dataInicioVenda;
     }
 
-    public Time getHoraInicioVenda() {
+    public LocalTime getHoraInicioVenda() {
         return horaInicioVenda;
     }
 
-    public void setHoraInicioVenda(Time horaInicioVenda) {
+    public void setHoraInicioVenda(LocalTime horaInicioVenda) {
         this.horaInicioVenda = horaInicioVenda;
     }
 
@@ -119,11 +134,11 @@ public class Lote {
         this.dataFimVenda = dataFimVenda;
     }
 
-    public Time getHoraFimVenda() {
+    public LocalTime getHoraFimVenda() {
         return horaFimVenda;
     }
 
-    public void setHoraFimVenda(Time horaFimVenda) {
+    public void setHoraFimVenda(LocalTime horaFimVenda) {
         this.horaFimVenda = horaFimVenda;
     }
 

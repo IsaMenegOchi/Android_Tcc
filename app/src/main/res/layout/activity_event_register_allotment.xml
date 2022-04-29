@@ -87,6 +87,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_AboutSell" />
 
+
             <EditText
                 android:id="@+id/etEventRegisterAllotment_StartDate"
                 style="@style/editTextHalfBlack"
@@ -167,16 +168,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_QtdTicket" />
 
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Absorver taxa"
+                style="@style/textViewSubName"
+                android:checked="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_qtdTicket" />
 
             <TextView
                 android:id="@+id/tvEventRegisterAllotment_QtdBuy"
                 style="@style/textViewSubTitlesAfter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/qtdBuy"
                 android:layout_marginTop="20dp"
+                android:text="@string/qtdBuy"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_qtdTicket" />
+                app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
             <TextView
                 android:id="@+id/tvEventRegisterAllotment_Minimum"

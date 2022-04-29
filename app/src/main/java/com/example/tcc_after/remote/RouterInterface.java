@@ -12,26 +12,56 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface RouterInterface {
 
     //* ROTAS DE USUARIO
 
+    @GET("/usuarioComum/acharPerfilUsuario/{idUsuarioComum}")
+    Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
+
+    @GET("/usuarioComum/listarPerfilUsuarios/")
+    Call<UsuarioComum> getUsuarioComum();
+
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
+
+//    @PUT;
+
+    @DELETE("/usuarioComum/deletarUsuario/{idUsuarioComum}")
+    Call<UsuarioComum> delUsuarioComum(@Path("idUsuarioComum") int idUsuarioComum);
+
 
         /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
 
         @POST("/verificacaoUsuario/cadastrarVerificacao/1/")
         Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
 
+        @GET("/verificacaoUsuario/listarVerificacoes/")
+        Call<VerificacaoUsuario> getVerificacaoUsuario();
+//!FAZER
+//        @GET("/verificacaoUsuario/listarVerificacoes/{idVerificacaoUsuario}")
+//        Call<VerificacaoUsuario> getVerificacaoUsuarioId();
+
 
     //* ROTAS DE EMPRESA
 
+    @GET("/empresa/listarEmpresas/")
+    Call<Empresa> getEmpresa();
+
+    //!FAZER
+//    @GET("/empresa/listarEmpresas/{idEmpresa}/")
+//    Call<Empresa> getEmpresaId(@Path("idEmpresa") int idEmpresa);
+
     @POST("perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
+
 
         /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
 //        {idEmpresa}

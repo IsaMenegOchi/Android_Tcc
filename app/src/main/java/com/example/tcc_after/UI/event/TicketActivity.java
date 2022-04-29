@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
@@ -19,8 +21,9 @@ import retrofit2.Response;
 public class TicketActivity extends AppCompatActivity {
 
 //    Switch switch;
-//    EditText edtDescricao;
+    private EditText tituloIngresso, quantidadeIngresso, precoIngresso, descricaoIngresso;
 
+    private Button btnCadastrar;
     RouterInterface routerInterface;
 
     @Override
@@ -32,6 +35,21 @@ public class TicketActivity extends AppCompatActivity {
 //            edtDescricao.android:visibility="true";
 //        }
 
+        tituloIngresso = findViewById(R.id.etCompanyPaidTicket_TicketTitle);
+        quantidadeIngresso = findViewById(R.id.etCompanyPaidTicket_Qtdd);
+        precoIngresso = findViewById(R.id.etCompanyPaidTicket_Price);
+        descricaoIngresso = findViewById(R.id.etCompanyPaidTicket_Description);
+
+        btnCadastrar = findViewById(R.id.btnCompanyPaidTicket_Finish);
+
+        btnCadastrar.setOnClickListener(view -> {
+            Ingresso ingresso = new Ingresso();
+            ingresso.setQtdIngresso(Integer.parseInt(quantidadeIngresso.getText().toString()));
+            ingresso.setTitulo(tituloIngresso.getText().toString());
+            ingresso.setValor(Float.parseFloat(precoIngresso.getText().toString()));
+            ingresso.setDescricaoIngresso(descricaoIngresso.getText().toString());
+
+        });
     }
 
     public void addIngresso(Ingresso ingresso) {
@@ -47,7 +65,7 @@ public class TicketActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Ingresso> call, Throwable t) {
                 Log.d("Erro_api", t.getMessage());
-            }//fim do onFailure
-        }); //fim do enqueue e do calback
+            }
+        });
     }// fim da funcao addEmprea
 }
