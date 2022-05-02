@@ -1,5 +1,6 @@
 package com.example.tcc_after.uiFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,15 @@ import com.example.tcc_after.R;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PerfilFragment#newInstance} factory method to
+=======
+import com.example.tcc_after.UI.event.EventRegisterActivity;
+import com.example.tcc_after.UI.event.EventRegisterAllotmentActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the { testeFragment#newInstance} factory method to
+>>>>>>> Stashed changes:app/src/main/java/com/example/tcc_after/testeFragment.java
  * create an instance of this fragment.
  */
 public class PerfilFragment extends Fragment {
@@ -48,19 +58,5 @@ public class PerfilFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false);
-    }
 }

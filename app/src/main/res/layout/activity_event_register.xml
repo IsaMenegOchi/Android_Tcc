@@ -109,11 +109,11 @@
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Category"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Category" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etEventRegister_Subject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/editTextText"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/background_tertiary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Subject" />

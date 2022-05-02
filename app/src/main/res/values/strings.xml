@@ -7,6 +7,10 @@
     <string name="titlePerfil">Perfil</string>
     <string name="titleTikets">Ingressos</string>
 
+    <string-array name="category">
+        <item>Hehe</item>
+    </string-array>
+
 
     <!--    Botoes -->
 

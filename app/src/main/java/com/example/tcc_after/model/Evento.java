@@ -47,7 +47,7 @@ public class Evento {
 
     /** CATEGORIA **/
 
-    @SerializedName("idCategoria")
+    @SerializedName("tblCategoriumIdCategoria")
     @Expose
     private int idCategoriaEvento;
 
@@ -57,7 +57,7 @@ public class Evento {
 
     /** TIPO EVENTO **/
 
-    @SerializedName("idTipoEvento")
+    @SerializedName("tblTipoEventoIdTipoEvento")
     @Expose
     private int idTipoEvento;
 
@@ -67,7 +67,7 @@ public class Evento {
 
     /** FAIXA ETARIA **/
 
-    @SerializedName("idFaixaEtaria")
+    @SerializedName("tblFaixaEtariumIdFaixaEtaria")
     @Expose
     private int idFaixaEtariaEvento;
 
@@ -136,7 +136,7 @@ public class Evento {
 
     /** CONTA BANCARIA **/
 
-    @SerializedName("idContaEmpresa")
+    @SerializedName("tblContaEmpresaIdContaEmpresa")
     @Expose
     private int idContaEmpresaEvento;
 

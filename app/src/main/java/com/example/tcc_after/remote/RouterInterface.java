@@ -8,6 +8,7 @@ import com.example.tcc_after.model.Lote;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.model.VerificacaoUsuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -77,10 +78,13 @@ public interface RouterInterface {
 
     //* ROTAS DE EVENTO
 
-    @POST("evento/cadastrarEvento/1/")
+    @POST("evento/cadastrarEventoEndereco/1")
     Call<Evento> addEvento(@Body Evento evento);
 
-        @POST("lote/cadastrarLote/:tblEventoIdEvento/")
+    @GET("/categoria/listarCategorias")
+    Call<List<Evento>> getCategorias();
+
+        @POST("lote/cadastrarLote/1/")
         Call<Lote> addLote(@Body Lote lote);
 
         @POST("variedadeIngresso/cadastrarVariedadeIngresso/")

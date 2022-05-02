@@ -2,12 +2,14 @@ package com.example.tcc_after.UI.event;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.model.Categoria;
 import com.example.tcc_after.model.Cep;
 import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.remote.APIUtil;
@@ -26,6 +29,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,19 +50,19 @@ public class EventRegisterActivity extends AppCompatActivity {
 
     private Button avancarEvento;
 
-    public static String tituloCadastroEvento, categoriaCadastroEvento, assuntoCadastroEvento,
-    tipoCadastroEvento, cepCadastroEvento, estadoCadastroEvento, logradouroCadastroEvento,
-    cidadeCadastroEvento, descricaoCadastroEvento, contaCadastroEvento;
 
     private List<Cep> cepList = new ArrayList<>();
+
     RouterInterface routerInterface;
 
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_register);
+
+        routerInterface = APIUtil.getApiInterface();
+        Call<List<Evento>> call = routerInterface.getCategorias();
+
 
         tituloEvento = findViewById(R.id.etEventRegister_Title);
         descricaoEvento = findViewById(R.id.etEventRegister_Description);
@@ -70,7 +74,7 @@ public class EventRegisterActivity extends AppCompatActivity {
         categoriaEvento = findViewById(R.id.etEventRegister_Category);
         tipoEvento = findViewById(R.id.etEventRegister_EventType);
         faixaEtariaEvento = findViewById(R.id.etEventRegister_AgeGroup);
-        assuntoEvento = findViewById(R.id.etEventRegister_Subject);
+//        assuntoEvento = findViewById(R.id.etEventRegister_Subject);
         imagensEvento = findViewById(R.id.btnEventRegister_ExtraPhoto);
         celebridadeEvento = findViewById(R.id.etEventRegister_Celebrity);
         cepEvento = findViewById(R.id.etEventRegister_Cep);
@@ -82,6 +86,32 @@ public class EventRegisterActivity extends AppCompatActivity {
         contaEvento = findViewById(R.id.etEventRegister_BankAccount);
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
+
+
+        //*FAZENDO LISTAGEM DE CATEGORIAS
+//        call.enqueue(new Callback<List<Categoria>>() {
+//                         @Override
+//                         public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+//
+//                             //se houve um status http de 200
+//                             //? is successful - é um método de response
+//                             if(response.isSuccessful()){
+//
+//                                 List<Categoria> list = new ArrayList<Categoria>();
+//                                 list = response.body();
+//                             }
+//
+//                         }
+//
+//                         @Override
+//                         public void onFailure(Call<List<Categoria>> call, Throwable t) {
+//                             Toast.makeText(EventRegisterActivity.this, "Nao pegamos o livro", Toast.LENGTH_SHORT).show();
+//                         }
+//                     }
+//        );
+
+
+
 
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 //            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -115,9 +145,9 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
 
             evento.setCategoriaEvento(categoriaEvento.getText().toString());
-            evento.setTipoEvento(tipoEvento.getText().toString());
-            evento.setFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
-            evento.setAssuntoEvento(assuntoEvento.getText().toString());
+            evento.setIdTipoEvento(Integer.parseInt(tipoEvento.getText().toString()));
+            evento.setIdFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
+            evento.setIdAssuntoEvento(Integer.parseInt(assuntoEvento.getText().toString()));
             evento.setImagensEvento(imagensEvento.getText().toString());
             evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
 
@@ -127,9 +157,15 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setBairroEvento(bairroEvento.getText().toString());
             evento.setCidadeEvento(cidadeEvento.getText().toString());
             evento.setEstadoEvento(estadoEvento.getText().toString());
-            evento.setNumeroContaEvento(contaEvento.getText().toString());
+            evento.setIdContaEmpresaEvento(Integer.parseInt(contaEvento.getText().toString()));
 
-            routerInterface = APIUtil.getApiInterface();
+            Log.d("teste", contaEvento.getText().toString());
+            Log.d("teste", tipoEvento.getText().toString());
+            Log.d("teste", faixaEtariaEvento.getText().toString());
+            Log.d("teste", assuntoEvento.getText().toString());
+            Log.d("teste", categoriaEvento.getText().toString());
+
+
             addEvento(evento);
 
             Intent intent = new Intent(EventRegisterActivity.this, EventRegisterAllotmentActivity.class);
