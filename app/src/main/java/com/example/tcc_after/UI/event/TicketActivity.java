@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.company.company_register.PhotoCompanyRegisterActivity;
-import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.Ingresso;
 import com.example.tcc_after.remote.RouterInterface;
 

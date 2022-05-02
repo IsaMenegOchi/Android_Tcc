@@ -11,14 +11,10 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.company.company_register.CompanyRegisterActivity01;
-import com.example.tcc_after.UI.company.company_register.CompanyRegisterPasswordActivity;
-import com.example.tcc_after.model.Ingresso;
 import com.example.tcc_after.model.Lote;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 

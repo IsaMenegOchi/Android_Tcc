@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
 
 public class CompanyRegisterActivity01 extends AppCompatActivity {
 

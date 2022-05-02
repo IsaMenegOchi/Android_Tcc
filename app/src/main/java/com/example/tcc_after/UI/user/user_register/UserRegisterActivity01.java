@@ -4,22 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.UsuarioComum;
-import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class UserRegisterActivity01 extends AppCompatActivity {
 

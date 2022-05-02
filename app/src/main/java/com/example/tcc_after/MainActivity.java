@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.tcc_after.UI.FeedActivity;
-import com.example.tcc_after.UI.PerfilActivity;
-import com.example.tcc_after.UI.user.tickets.UserTicketsArea;
+import com.example.tcc_after.uiFragments.FeedFragment;
+import com.example.tcc_after.uiFragments.MomentsFragment;
+import com.example.tcc_after.uiFragments.PerfilFragment;
+import com.example.tcc_after.uiFragments.SearchFragment;
+import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
+import com.example.tcc_after.uiFragments.user.verification.RequestVerificationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.content.Intent;
@@ -33,33 +36,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent intent = null;
+                Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_search:
-                       Toast.makeText(MainActivity.this, "Você ainda nao criou essa tela", Toast.LENGTH_SHORT).show();
+                        fragment = new SearchFragment();
                         break;
 
                     case R.id.nav_ticket:
-                        intent = new Intent(MainActivity.this, UserTicketsArea.class);
-                        startActivity(intent);
+                        fragment = new RequestVerificationFragment();
                         break;
 
                     case R.id.nav_home:
-                        intent = new Intent(MainActivity.this, FeedActivity.class);
-                        startActivity(intent);
+                        fragment = new FeedFragment();
                         break;
 
                     case R.id.nav_moments:
-//                        intent = new Intent(MainActivity.this, FeedActivity.class);
-//                        startActivity(intent);
-                        Toast.makeText(MainActivity.this, "Você ainda nao criou essa tela", Toast.LENGTH_SHORT).show();
+                        fragment = new MomentsFragment();
                         break;
 
                     case R.id.nav_perfil:
-                        intent = new Intent(MainActivity.this, PerfilActivity.class);
-                        startActivity(intent);
+                        fragment = new PerfilFragment();
                         break;
                 }
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
                 return true;
             }
         });

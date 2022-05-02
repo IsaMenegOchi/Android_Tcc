@@ -1,9 +1,11 @@
 package com.example.tcc_after.UI.event;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -13,30 +15,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.company.company_register.CompanyRegisterActivity01;
-import com.example.tcc_after.UI.company.company_register.CompanyRegisterPasswordActivity;
-import com.example.tcc_after.UI.user.user_register.PhotoUserRegisterActivity;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
-import com.example.tcc_after.UI.user.user_register.UserRegisterActivity02;
 import com.example.tcc_after.model.Cep;
 import com.example.tcc_after.model.Evento;
-import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
 
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DateTimeException;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.SimpleTimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,6 +54,7 @@ public class EventRegisterActivity extends AppCompatActivity {
     RouterInterface routerInterface;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +99,7 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setTituloEvento(tituloEvento.getText().toString());
             evento.setDescricaoEvento(descricaoEvento.getText().toString());
             evento.setCapaEvento(capaEvento.getText().toString());
+
             try {
                 evento.setDataInicioEvento(format.parse(dataInicioEvento.getText().toString()));
             } catch (ParseException e) {
@@ -119,8 +111,8 @@ public class EventRegisterActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-//            evento.setHoraInicioEvento(Time.valueOf(horaInicioEvento.getText().toString()));
-//            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
+            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
+            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
 
             evento.setCategoriaEvento(categoriaEvento.getText().toString());
             evento.setTipoEvento(tipoEvento.getText().toString());

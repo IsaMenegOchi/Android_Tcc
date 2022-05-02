@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Evento {
@@ -37,11 +38,11 @@ public class Evento {
 
     @SerializedName("horaInicio")
     @Expose
-    private Time horaInicioEvento;
+    private LocalTime horaInicioEvento;
 
     @SerializedName("horaFim")
     @Expose
-    private Time horaFimEvento;
+    private LocalTime horaFimEvento;
 
 
     /** CATEGORIA **/
@@ -162,7 +163,14 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento, Date dataInicioEvento, Date dataFimEvento, Time horaInicioEvento, Time horaFimEvento, int idCategoriaEvento, String categoriaEvento, int idTipoEvento, String tipoEvento, int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento, int idImagensEvento, String imagensEvento, int idCelebridadeEvento, String nicknameCelEvento, int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento, String bairroEvento, String cidadeEvento, String estadoEvento, int idContaEmpresaEvento, String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento) {
+    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento,
+                  Date dataInicioEvento, Date dataFimEvento, LocalTime horaInicioEvento, LocalTime horaFimEvento,
+                  int idCategoriaEvento, String categoriaEvento, int idTipoEvento, String tipoEvento,
+                  int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento,
+                  int idImagensEvento, String imagensEvento, int idCelebridadeEvento, String nicknameCelEvento,
+                  int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento,
+                  String bairroEvento, String cidadeEvento, String estadoEvento, int idContaEmpresaEvento,
+                  String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento) {
         this.idEvento = idEvento;
         this.tituloEvento = tituloEvento;
         this.descricaoEvento = descricaoEvento;
@@ -245,19 +253,19 @@ public class Evento {
         this.dataFimEvento = dataFimEvento;
     }
 
-    public Time getHoraInicioEvento() {
+    public LocalTime getHoraInicioEvento() {
         return horaInicioEvento;
     }
 
-    public void setHoraInicioEvento(Time horaInicioEvento) {
+    public void setHoraInicioEvento(LocalTime horaInicioEvento) {
         this.horaInicioEvento = horaInicioEvento;
     }
 
-    public Time getHoraFimEvento() {
+    public LocalTime getHoraFimEvento() {
         return horaFimEvento;
     }
 
-    public void setHoraFimEvento(Time horaFimEvento) {
+    public void setHoraFimEvento(LocalTime horaFimEvento) {
         this.horaFimEvento = horaFimEvento;
     }
 

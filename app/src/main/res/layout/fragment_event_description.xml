@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_secondary"
+    tools:context=".uiFragments.event.EventDescriptionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_primary"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="40dp">
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_logo_text"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <ImageButton
+                    android:id="@+id/btnFeed_Chat"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/round_corner"
+                    android:src="@drawable/ic_outline_question_answer"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+
+                    app:layout_constraintEnd_toStartOf="@+id/btnFeed_Notification"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <ImageButton
+                    android:id="@+id/btnFeed_Notification"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_corner"
+                    android:src="@drawable/ic_outline_notifications"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_EventTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Festa Neon"
+                    android:textSize="35sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AUDIO_EVENTOS"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_EventTitle" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="40dp">
+
+                <ImageView
+                    android:id="@+id/ivEventDescription_PhotoAtraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_photo_profile_event_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_NameAtraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="DJ Sharon"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_PhotoAtraction" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- Início: 13:00"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEventDescription_Hour"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvEventDescription_Hour"
+                    app:layout_constraintTop_toTopOf="@+id/tvEventDescription_Hour"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginTop="4dp"
+                    android:text="12/06/2022 "
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_NameAtraction" />
+
+                <ImageView
+                    android:id="@+id/ivEventDescription_ExtraPhotoEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/event_extra_photos_shape"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Date" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_LowPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="R$30,00"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.347"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_ExtraPhotoEvent" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_HighPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - R$60,00"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEventDescription_LowPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvEventDescription_LowPrice"
+                    app:layout_constraintTop_toTopOf="@+id/tvEventDescription_LowPrice" />
+
+                <Button
+                    android:id="@+id/btnEventDescription_Buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_gradient"
+                    android:text="Comprar"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_HighPrice" />
+
+                <View
+                    android:id="@+id/viewEventDescription_Top"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Buy" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewEventDescription_Top">
+
+                    <ImageButton
+                        android:id="@+id/ibEventDescription_FavoriteEvent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_baseline_favorite_border" />
+
+                    <ImageButton
+                        android:id="@+id/ibEventDescription_ComentsEvent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_outline_chat" />
+
+                    <ImageButton
+                        android:id="@+id/ibEventDescription_CalendarEvent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_outline_calendar_today" />
+
+                    <ImageButton
+                        android:id="@+id/ibEventDescription_ShareEvent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_outline_share" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewEventDescription_Bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                <EditText
+                    android:id="@+id/etEventDescription_AddComent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:hint="Digite um comentário..."
+                    android:textColorHint="@color/text_color"
+                    android:background="@drawable/shape_edit_text_background"
+                    android:drawableEnd="@drawable/ic_outline_send"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintTop_toBottomOf="@+id/viewEventDescription_Bottom"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

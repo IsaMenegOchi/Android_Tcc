@@ -12,8 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tccafter"
-        android:usesCleartextTraffic="true" >
-
+        android:usesCleartextTraffic="true">
 
         <!--       TUDO  -->
         <activity
@@ -27,7 +26,7 @@
             android:exported="false"/>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true"/>
 
 <!--        ADM-->
         <activity
@@ -40,36 +39,12 @@
 
 <!--       USUÁRIO  -->
         <activity
-            android:name=".UI.user.tickets.UserTicketDescription"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.tickets.UserTicketsArea"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.tickets.buy_tickets.UserBuyTicketConfirm"
-            android:exported="false" />
-        <activity
             android:name=".UI.user.tickets.buy_tickets.UserBuyTicketTypeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.tickets.buy_tickets.UserBuyTicketSelectActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.tickets.buy_tickets.UserResponsabilityTerms"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.tickets.buy_tickets.UserWarningPandemic"
             android:exported="false" />
 
         <activity
             android:name=".UI.user.EditPerfilActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
 
         <activity
             android:name=".UI.FeedActivity"
@@ -87,12 +62,12 @@
             android:name=".UI.user.UserPerfilActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".UI.user.verification.AboutVerificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.user.verification.RequestVerificationActivity"
-           android:exported="false"/>
+<!--        <activity-->
+<!--            android:name=".UI.user.verification.AboutVerificationActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".UI.user.verification.RequestVerificationActivity"-->
+<!--           android:exported="false"/>-->
 
 
         <!--       EMPRESA  -->
@@ -135,7 +110,13 @@
             android:exported="false" />
         <activity
             android:name=".UI.event.EventRegisterActivity"
-            android:exported="false"/>
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
     </application>

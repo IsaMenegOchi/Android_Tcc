@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".uiFragments.user.tickets.TicketsDescriptionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                style="@style/imageViewAfterLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="40dp" />
+
+
+            <ImageButton
+                android:id="@+id/ibTicketDescripion_Notifications"
+                style="@style/iconNotification"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAdmVerificationSolicitationCard_Title"
+                style="@style/textViewTitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/tickets"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <LinearLayout
+                android:id="@+id/llTicketDescriptionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_edit_text_background"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdmVerificationSolicitationCard_Title">
+
+                <ImageButton
+                    android:id="@+id/ibTicketdescription_Back"
+                    style="@style/iconBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/llAdmVerificationSolicitationCard" />
+
+
+                <TextView
+                    android:id="@+id/tvTicketDescripion_EventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Olga Kos - Corrida e caminhada"
+                    style="@style/textViewName"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"/>
+
+                <ImageView
+                    android:id="@+id/ivTicketDescription_EventImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_photo_event_ticket_description" />
+
+
+                <TextView
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/carrier" />
+
+                <TextView
+                    android:id="@+id/tvTicketDescripion_CarrierNickname"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jo Soares" />
+
+                <TextView
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/cpf" />
+
+                <TextView
+                    android:id="@+id/tvTicketDescription_UserCpf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11382790281"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/ShopDate" />
+
+                <TextView
+                    android:id="@+id/tvTicketDescription_ShopDate"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12/02/2022"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NumberCode"
+                    style="@style/textViewSubName"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/tvTicketDescription_NumberCode"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="029PQ35DJ"
+                    android:textAlignment="textStart" />
+
+
+                <TextView
+                    android:id="@+id/tvTicketDescription_ShopDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="1x inteira (1º lote) - R$60,00"
+                    android:layout_gravity="center"
+                    style="@style/textViewName"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="1x meia (3º lote) - R$180,00"
+                    android:layout_gravity="center"
+                    style="@style/textViewName"
+                    />
+
+                <Button
+                    android:id="@+id/btnTicketDescription_validate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="Validar"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_secondary"
+                    android:background="@color/background_tertiary"
+                    android:drawableTop="@drawable/ic_baseline_qr_code"/>
+
+
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>
