@@ -1,18 +1,16 @@
 package com.example.tcc_after.UI.event;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +23,7 @@ import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
 
+import java.sql.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -38,13 +37,14 @@ import retrofit2.Response;
 
 public class EventRegisterActivity extends AppCompatActivity {
 
-    private EditText tituloEvento, categoriaEvento, assuntoEvento,
-            tipoEvento, cepEvento, estadoEvento, logradouroEvento,
-            cidadeEvento, descricaoEvento, contaEvento, capaEvento,
+    private EditText tituloEvento, cepEvento, estadoEvento, logradouroEvento,
+            cidadeEvento, descricaoEvento, capaEvento,
             dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,
-            faixaEtariaEvento, celebridadeEvento, imagensEvento, complementoEvento, bairroEvento ;
+             imagensEvento, complementoEvento, bairroEvento ;
 
     private TextView sobreTermos;
+
+    private Spinner faixaEtariaEvento, celebridadeEvento, tipoEvento,categoriaEvento,assuntoEvento, contaEvento;
 
     private CheckBox aceitarTermos;
 
@@ -61,8 +61,6 @@ public class EventRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_register);
 
         routerInterface = APIUtil.getApiInterface();
-        Call<List<Evento>> call = routerInterface.getCategorias();
-
 
         tituloEvento = findViewById(R.id.etEventRegister_Title);
         descricaoEvento = findViewById(R.id.etEventRegister_Description);
@@ -71,44 +69,54 @@ public class EventRegisterActivity extends AppCompatActivity {
         dataFimEvento = findViewById(R.id.etEventRegister_FinishDate);
         horaInicioEvento = findViewById(R.id.etEventRegister_StartHour);
         horaFimEvento = findViewById(R.id.etEventRegister_FinishtHour);
-        categoriaEvento = findViewById(R.id.etEventRegister_Category);
-        tipoEvento = findViewById(R.id.etEventRegister_EventType);
-        faixaEtariaEvento = findViewById(R.id.etEventRegister_AgeGroup);
-//        assuntoEvento = findViewById(R.id.etEventRegister_Subject);
+        categoriaEvento = findViewById(R.id.spEventRegister_Category);
+        tipoEvento = findViewById(R.id.spEventRegister_EventType);
+        faixaEtariaEvento = findViewById(R.id.spEventRegister_AgeGroup);
+        assuntoEvento = findViewById(R.id.spEventRegister_Subject);
         imagensEvento = findViewById(R.id.btnEventRegister_ExtraPhoto);
-        celebridadeEvento = findViewById(R.id.etEventRegister_Celebrity);
+        celebridadeEvento = findViewById(R.id.spEventRegister_Celebrity);
         cepEvento = findViewById(R.id.etEventRegister_Cep);
         logradouroEvento = findViewById(R.id.etEventRegister_Street);
         complementoEvento = findViewById(R.id.etEventRegister_Complement);
         bairroEvento = findViewById(R.id.etEventRegister_Neighborhood);
         cidadeEvento = findViewById(R.id.etEventRegister_City);
         estadoEvento = findViewById(R.id.etEventRegister_State);
-        contaEvento = findViewById(R.id.etEventRegister_BankAccount);
+        contaEvento = findViewById(R.id.spEventRegister_BankAccount);
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
 
         //*FAZENDO LISTAGEM DE CATEGORIAS
-//        call.enqueue(new Callback<List<Categoria>>() {
-//                         @Override
-//                         public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
-//
-//                             //se houve um status http de 200
-//                             //? is successful - é um método de response
-//                             if(response.isSuccessful()){
-//
-//                                 List<Categoria> list = new ArrayList<Categoria>();
-//                                 list = response.body();
-//                             }
-//
-//                         }
-//
-//                         @Override
-//                         public void onFailure(Call<List<Categoria>> call, Throwable t) {
-//                             Toast.makeText(EventRegisterActivity.this, "Nao pegamos o livro", Toast.LENGTH_SHORT).show();
-//                         }
-//                     }
-//        );
+        Call<List<Categoria>> call = routerInterface.getCategorias();
+
+
+        call.enqueue(new Callback<List<Categoria>>() {
+                         @Override
+                         public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+
+                             //se houve um status http de 200
+                             //? is successful - é um método de response
+
+                             if(response.isSuccessful()){
+
+                                 List<Categoria> list = new ArrayList<Categoria>();
+                                 ArrayList arrayList = new ArrayList();
+                                 list = response.body();
+
+                                 for(int i = 0 ; i < list.size(); i++){
+                                     Log.d("TESTE-LIST", String.valueOf(list.get(i).getCategoriaEvento()));
+
+                                 }
+
+//                                 ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this, R.layout.activity_event_register);
+                             }
+                         }
+                         @Override
+                         public void onFailure(Call<List<Categoria>> call, Throwable t) {
+                             Toast.makeText(EventRegisterActivity.this, "Nao pegamos a categoria", Toast.LENGTH_SHORT).show();
+                         }
+                     }
+        );
 
 
 
@@ -141,8 +149,8 @@ public class EventRegisterActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
-            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
+//            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
+//            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
 
             evento.setCategoriaEvento(categoriaEvento.getText().toString());
             evento.setIdTipoEvento(Integer.parseInt(tipoEvento.getText().toString()));

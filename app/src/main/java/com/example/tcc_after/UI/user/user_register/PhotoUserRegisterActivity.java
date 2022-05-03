@@ -20,6 +20,7 @@ import com.example.tcc_after.remote.RouterInterface;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -82,6 +83,8 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         catch (ParseException e) {
                             e.printStackTrace();
                         };
+                        Log.d("teste", "onCreate: " + usuarioComum.getDataNascUsuario().toString());
+
                         //fotoCapa
                         //fotoFundo
                         usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);

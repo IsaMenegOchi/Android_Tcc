@@ -1,5 +1,6 @@
 package com.example.tcc_after.remote;
 
+import com.example.tcc_after.model.Categoria;
 import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.Evento;
@@ -82,7 +83,7 @@ public interface RouterInterface {
     Call<Evento> addEvento(@Body Evento evento);
 
     @GET("/categoria/listarCategorias")
-    Call<List<Evento>> getCategorias();
+    Call<List<Categoria>> getCategorias();
 
         @POST("lote/cadastrarLote/1/")
         Call<Lote> addLote(@Body Lote lote);

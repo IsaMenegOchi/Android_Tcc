@@ -90,8 +90,8 @@
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_Title"
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Title" />
 
-        <EditText
-            android:id="@+id/etEventRegister_Category"
+        <Spinner
+            android:id="@+id/spEventRegister_Category"
             style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,11 +106,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/subject"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Category"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Category" />
+            app:layout_constraintStart_toStartOf="@+id/spEventRegister_Category"
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_Category" />
 
         <Spinner
-            android:id="@+id/etEventRegister_Subject"
+            android:id="@+id/spEventRegister_Subject"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="@color/background_tertiary"
@@ -126,11 +126,11 @@
             style="@style/textViewName"
             android:text="@string/eventType"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Subject"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Subject" />
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_Subject" />
 
 
-        <EditText
-            android:id="@+id/etEventRegister_EventType"
+        <Spinner
+            android:id="@+id/spEventRegister_EventType"
             style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/localization"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_EventType"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_EventType" />
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_EventType" />
 
         <TextView
             android:id="@+id/tvEventRegister_Cep"
@@ -163,7 +163,7 @@
             style="@style/editTextSmaller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_EventType"
+            app:layout_constraintStart_toStartOf="@+id/spEventRegister_EventType"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Cep" />
 
         <EditText
@@ -377,8 +377,8 @@
             app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Description" />
 
 
-        <EditText
-            android:id="@+id/etEventRegister_AgeGroup"
+        <Spinner
+            android:id="@+id/spEventRegister_AgeGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/editTextText"
@@ -391,8 +391,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/addBackPhoto"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_AgeGroup"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_AgeGroup" />
+            app:layout_constraintStart_toStartOf="@+id/spEventRegister_AgeGroup"
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_AgeGroup" />
 
 
 <!--        <ImageButton-->
@@ -452,8 +452,8 @@
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_ExtraPhoto" />
 
-        <EditText
-            android:id="@+id/etEventRegister_Celebrity"
+        <Spinner
+            android:id="@+id/spEventRegister_Celebrity"
             style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -469,15 +469,15 @@
             android:layout_marginTop="20dp"
             android:text="@string/bankAccount"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Celebrity"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_Celebrity" />
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_Celebrity" />
 
-        <EditText
-            android:id="@+id/etEventRegister_BankAccount"
+        <Spinner
+            android:id="@+id/spEventRegister_BankAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/editTextText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_Celebrity"
+            app:layout_constraintStart_toStartOf="@+id/spEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_BankAccount" />
 
 
