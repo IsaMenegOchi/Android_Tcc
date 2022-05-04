@@ -2,6 +2,7 @@ package com.example.tcc_after.UI.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -100,15 +101,30 @@ public class EventRegisterActivity extends AppCompatActivity {
                              if(response.isSuccessful()){
 
                                  List<Categoria> list = new ArrayList<Categoria>();
-                                 ArrayList arrayList = new ArrayList();
+                                 List<String> listString = new ArrayList<String>();
                                  list = response.body();
 
                                  for(int i = 0 ; i < list.size(); i++){
-                                     Log.d("TESTE-LIST", String.valueOf(list.get(i).getCategoriaEvento()));
+//                                     Log.d("testeL", String.valueOf(list.get(i).getCategoriaEvento()));
+//                                     Log.d("testeL", String.valueOf(list.get(i).getIdCategoriaEvento()));
+
+//                                    String stringsCategorias = list.get(i).getCategoriaEvento();
+//                                     Log.d("testeL", stringsCategorias);
+
+//                                     Log.d("testeL", String.valueOf(arrayAdapter));
+
+                                     listString.add(list.get(i).getCategoriaEvento());
+
+
+//                                     Log.d("testeL", String.valueOf(R.array.category));
+//
 
                                  }
+                                 ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(EventRegisterActivity.this, listString.size(), android.R.layout.simple_spinner_item);
+                                     arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                     categoriaEvento.setAdapter(arrayAdapter);
 
-//                                 ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this, R.layout.activity_event_register);
+
                              }
                          }
                          @Override
@@ -126,7 +142,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
-            bringJsonCep.execute("https://viacep.com.br/ws/"+cepEvento.getText().toString()+"/xml/");
+            bringJsonCep.execute("https://viacep.com.br/ws/" + cepEvento.getText().toString()+"/xml/");
 
         });
 
@@ -152,26 +168,26 @@ public class EventRegisterActivity extends AppCompatActivity {
 //            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
 //            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
 
-            evento.setCategoriaEvento(categoriaEvento.getText().toString());
-            evento.setIdTipoEvento(Integer.parseInt(tipoEvento.getText().toString()));
-            evento.setIdFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
-            evento.setIdAssuntoEvento(Integer.parseInt(assuntoEvento.getText().toString()));
-            evento.setImagensEvento(imagensEvento.getText().toString());
-            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
+//            evento.setCategoriaEvento(categoriaEvento.getText().toString());
+//            evento.setIdTipoEvento(Integer.parseInt(tipoEvento.getText().toString()));
+//            evento.setIdFaixaEtariaEvento(Integer.parseInt(faixaEtariaEvento.getText().toString()));
+//            evento.setIdAssuntoEvento(Integer.parseInt(assuntoEvento.getText().toString()));
+//            evento.setImagensEvento(imagensEvento.getText().toString());
+//            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
+//
+//            evento.setCepEvento(cepEvento.getText().toString());
+//            evento.setLogradouroEvento(logradouroEvento.getText().toString());
+//            evento.setComplementoEvento(complementoEvento.getText().toString());
+//            evento.setBairroEvento(bairroEvento.getText().toString());
+//            evento.setCidadeEvento(cidadeEvento.getText().toString());
+//            evento.setEstadoEvento(estadoEvento.getText().toString());
+//            evento.setIdContaEmpresaEvento(Integer.parseInt(contaEvento.getText().toString()));
 
-            evento.setCepEvento(cepEvento.getText().toString());
-            evento.setLogradouroEvento(logradouroEvento.getText().toString());
-            evento.setComplementoEvento(complementoEvento.getText().toString());
-            evento.setBairroEvento(bairroEvento.getText().toString());
-            evento.setCidadeEvento(cidadeEvento.getText().toString());
-            evento.setEstadoEvento(estadoEvento.getText().toString());
-            evento.setIdContaEmpresaEvento(Integer.parseInt(contaEvento.getText().toString()));
-
-            Log.d("teste", contaEvento.getText().toString());
-            Log.d("teste", tipoEvento.getText().toString());
-            Log.d("teste", faixaEtariaEvento.getText().toString());
-            Log.d("teste", assuntoEvento.getText().toString());
-            Log.d("teste", categoriaEvento.getText().toString());
+//            Log.d("teste", contaEvento.getText().toString());
+//            Log.d("teste", tipoEvento.getText().toString());
+//            Log.d("teste", faixaEtariaEvento.getText().toString());
+//            Log.d("teste", assuntoEvento.getText().toString());
+//            Log.d("teste", categoriaEvento.getText().toString());
 
 
             addEvento(evento);
