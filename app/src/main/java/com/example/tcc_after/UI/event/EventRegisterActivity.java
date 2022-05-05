@@ -4,14 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +27,7 @@ import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.util.DateConvert;
 
 import java.sql.Array;
 import java.text.ParseException;
@@ -61,8 +66,8 @@ public class EventRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_register);
 
+//* LISTAGEM DE COMPONENTES COM IDS
         routerInterface = APIUtil.getApiInterface();
-
         tituloEvento = findViewById(R.id.etEventRegister_Title);
         descricaoEvento = findViewById(R.id.etEventRegister_Description);
         capaEvento = findViewById(R.id.btnEventRegister_Cover);
@@ -86,59 +91,52 @@ public class EventRegisterActivity extends AppCompatActivity {
 
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
-
-        //*FAZENDO LISTAGEM DE CATEGORIAS
+//*FAZENDO LISTAGEM DE CATEGORIAS
         Call<List<Categoria>> call = routerInterface.getCategorias();
 
-
-        call.enqueue(new Callback<List<Categoria>>() {
+        call.enqueue(
+                new Callback<List<Categoria>>() {
                          @Override
                          public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
-
-                             //se houve um status http de 200
-                             //? is successful - é um método de response
 
                              if(response.isSuccessful()){
 
                                  List<Categoria> list = new ArrayList<Categoria>();
-                                 List<String> listString = new ArrayList<String>();
+
+                                 List<String> listNomeCategoria = new ArrayList<String>();
+//                                 List<Integer> listIdCategoria = new ArrayList<Integer>();
+
                                  list = response.body();
 
+//                                 int quantidadeIndicesArray = list.size();
+//                                 String [] teste = new String[quantidadeIndicesArray];
+
                                  for(int i = 0 ; i < list.size(); i++){
-//                                     Log.d("testeL", String.valueOf(list.get(i).getCategoriaEvento()));
-//                                     Log.d("testeL", String.valueOf(list.get(i).getIdCategoriaEvento()));
-
-//                                    String stringsCategorias = list.get(i).getCategoriaEvento();
-//                                     Log.d("testeL", stringsCategorias);
-
-//                                     Log.d("testeL", String.valueOf(arrayAdapter));
-
-                                     listString.add(list.get(i).getCategoriaEvento());
-
-
-//                                     Log.d("testeL", String.valueOf(R.array.category));
-//
-
+//                                     teste[i] = list.get(i).getCategoriaEvento();
+                                     listNomeCategoria.add(list.get(i).getCategoriaEvento());
+//                                     listIdCategoria.add(list.get(i).getIdCategoriaEvento());
                                  }
-                                 ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(EventRegisterActivity.this, listString.size(), android.R.layout.simple_spinner_item);
-                                     arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                     categoriaEvento.setAdapter(arrayAdapter);
+
+                                 ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNomeCategoria);
+                                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                 categoriaEvento.setAdapter(arrayAdapter);
+
+                                 categoriaEvento.setOnClickListener(view -> {
+                                             Toast.makeText(EventRegisterActivity.this, "VOce esta selecionando" + categoriaEvento.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                                         });
+
 
 
                              }
+
                          }
                          @Override
                          public void onFailure(Call<List<Categoria>> call, Throwable t) {
                              Toast.makeText(EventRegisterActivity.this, "Nao pegamos a categoria", Toast.LENGTH_SHORT).show();
                          }
-                     }
+                }
         );
 
-
-
-
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-//            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
@@ -146,27 +144,47 @@ public class EventRegisterActivity extends AppCompatActivity {
 
         });
 
-        avancarEvento.setOnClickListener(view -> {
 
+
+        avancarEvento.setOnClickListener(view -> {
+//          SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             Evento evento = new Evento();
+            Categoria categoria = new Categoria();
 
             evento.setTituloEvento(tituloEvento.getText().toString());
             evento.setDescricaoEvento(descricaoEvento.getText().toString());
             evento.setCapaEvento(capaEvento.getText().toString());
 
             try {
-                evento.setDataInicioEvento(format.parse(dataInicioEvento.getText().toString()));
+                evento.setDataInicioEvento(DateConvert.format.parse(dataInicioEvento.getText().toString()));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
             try {
-                evento.setDataFimEvento(format.parse(dataFimEvento.getText().toString()));
+                evento.setDataFimEvento(DateConvert.format.parse(dataFimEvento.getText().toString()));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
 
 //            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
 //            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
+
+
+            //* SPINNER
+//            categoriaEvento.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                    if(categoriaEvento.getSelectedItem().equals("Musical")){
+//
+//
+//                        evento.setIdCategoriaEvento(categoria.getIdCategoriaEvento());
+//                    }
+//                    Log.d("testeS", "onItemClick: " + evento.getIdCategoriaEvento());
+//                }
+//            });
+
+
+
 
 //            evento.setCategoriaEvento(categoriaEvento.getText().toString());
 //            evento.setIdTipoEvento(Integer.parseInt(tipoEvento.getText().toString()));
