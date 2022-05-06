@@ -25,16 +25,17 @@ public interface RouterInterface {
 
     //* ROTAS DE USUARIO
 
-    @GET("/usuarioComum/acharPerfilUsuario/{idUsuarioComum}")
+    @GET("/perfil/acharPerfil/{idUsuarioComum}")
     Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
 
     @GET("/usuarioComum/listarPerfilUsuarios/")
-    Call<UsuarioComum> getUsuarioComum();
+    Call<UsuarioComum> getUsuariosComuns();
 
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
-//    @PUT;
+    @PUT("/usuarioComum/editarUsuario/{idUsuarioComum}")
+    Call<UsuarioComum> updateUsuarioComum(@Path("idUsuarioComum") int idUsuariocomum, @Body UsuarioComum usuarioComum);
 
     @DELETE("/usuarioComum/deletarUsuario/{idUsuarioComum}")
     Call<UsuarioComum> delUsuarioComum(@Path("idUsuarioComum") int idUsuarioComum);
@@ -69,6 +70,9 @@ public interface RouterInterface {
 //        {idEmpresa}
         @POST("/contaEmpresa/cadastrarContaCompleta/1/")
         Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
+
+        @GET("/contaEmpresa/listarContasEmpresa")
+        Call<List<ContaBancaria>> getContasBancarias();
 
 
         /** ROTAS DE VERIFICAÇÃO DA EMPRESA **/

@@ -22,7 +22,9 @@ import android.widget.Toast;
 import com.example.tcc_after.R;
 import com.example.tcc_after.model.Categoria;
 import com.example.tcc_after.model.Cep;
+import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.Evento;
+import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
@@ -92,9 +94,8 @@ public class EventRegisterActivity extends AppCompatActivity {
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
 //*FAZENDO LISTAGEM DE CATEGORIAS
-        Call<List<Categoria>> call = routerInterface.getCategorias();
-
-        call.enqueue(
+        Call<List<Categoria>> getCategorias = routerInterface.getCategorias();
+        getCategorias.enqueue(
                 new Callback<List<Categoria>>() {
                          @Override
                          public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
@@ -124,11 +125,7 @@ public class EventRegisterActivity extends AppCompatActivity {
                                  categoriaEvento.setOnClickListener(view -> {
                                              Toast.makeText(EventRegisterActivity.this, "VOce esta selecionando" + categoriaEvento.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                                          });
-
-
-
                              }
-
                          }
                          @Override
                          public void onFailure(Call<List<Categoria>> call, Throwable t) {
@@ -136,6 +133,41 @@ public class EventRegisterActivity extends AppCompatActivity {
                          }
                 }
         );
+
+        //*FAZENDO LISTAGEM DE ASSUNTOS
+//        Call<List<Assunto>> call = routerInterface.getCategorias();
+
+        //*FAZENDO LISTAGEM DE TIPOS DE EVENTO
+//        Call<List<TipoEvento>> call = routerInterface.getCategorias();
+
+        //*FAZENDO LISTAGEM DE CONTA BANCÁRIA
+        Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContasBancarias();
+        getContasBancarias.enqueue(new Callback<List<ContaBancaria>>() {
+            @Override
+            public void onResponse(Call<List<ContaBancaria>> call, Response<List<ContaBancaria>> response) {
+//                List<ContaBancaria>
+            }
+
+            @Override
+            public void onFailure(Call<List<ContaBancaria>> call, Throwable t) {
+
+            }
+        });
+
+
+        //*FAZENDO LISTAGEM DE USUARIOS COMUNS
+        Call<UsuarioComum> getUsuarioComuns = routerInterface.getUsuariosComuns();
+        getUsuarioComuns.enqueue(new Callback<UsuarioComum>() {
+            @Override
+            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioComum> call, Throwable t) {
+
+            }
+        });
 
 
         cepEvento.setOnFocusChangeListener((view, b) -> {

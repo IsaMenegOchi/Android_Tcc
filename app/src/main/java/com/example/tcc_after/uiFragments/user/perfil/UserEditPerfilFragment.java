@@ -1,5 +1,6 @@
 package com.example.tcc_after.uiFragments.user.perfil;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,24 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.PerfilActivity;
+import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.remote.APIUtil;
+import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.util.DateConvert;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,50 +34,97 @@ import com.example.tcc_after.R;
  */
 public class UserEditPerfilFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText nickname, nomeCompleto, biografia, email, senha, dataNascimento, CEP, cidade, estado;
+    private Button salvar, cancelar;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    RouterInterface routerInterface;
+    List<UsuarioComum> list = new ArrayList<UsuarioComum>();
 
     public UserEditPerfilFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserEditPerfilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UserEditPerfilFragment newInstance(String param1, String param2) {
         UserEditPerfilFragment fragment = new UserEditPerfilFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        nickname = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        biografia = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        email = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        nomeCompleto = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        senha = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        CEP = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        estado = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        cidade = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        dataNascimento = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+
+
+
+        //!Trocar id
+        routerInterface = APIUtil.getApiInterface();
+        Call<List<UsuarioComum>> getUsuarioComum= routerInterface.getUsuarioComumId(1);
+        getUsuarioComum.enqueue(new Callback<List<UsuarioComum>>() {
+            @Override
+            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
+
+                if (response.isSuccessful()){
+                    list = response.body();
+
+                    nomeCompleto.setText(list.get(0).getNomeCompletoUsuario());
+                    nickname.setText(list.get(0).getNicknameUsuario());
+                    biografia.setText(list.get(0).getBiografia());
+                    email.setText(list.get(0).getEmailUsuario());
+                    senha.setText(list.get(0).getSenhaUsuario());
+                    dataNascimento.setText(list.get(0).getDataNascUsuario().toString());
+                    CEP.setText(list.get(0).getCep());
+                    estado.setText(list.get(0).getEstado());
+                    cidade.setText(list.get(0).getCidade());
+
+                    salvar.setOnClickListener(view -> {
+                        UsuarioComum usuarioComum = new UsuarioComum();
+                        usuarioComum.setNomeCompletoUsuario(nomeCompleto.getText().toString());
+                        usuarioComum.setBiografia(biografia.getText().toString());
+                        usuarioComum.setEmailUsuario(email.getText().toString());
+                        usuarioComum.setSenhaUsuario(senha.getText().toString());
+//                        usuarioComum.getDataNascUsuario(DateConvert.format(dataNascimento.getText().toString()));
+                        usuarioComum.setCep(CEP.getText().toString());
+                        usuarioComum.setEstado(estado.getText().toString());
+                        usuarioComum.setCidade(cidade.getText().toString());
+
+                        Call<UsuarioComum> updateUsuarioComum = routerInterface.updateUsuarioComum(1, usuarioComum);
+
+                        updateUsuarioComum.enqueue(new Callback<UsuarioComum>() {
+                            @Override
+                            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
+//                                Toast.makeText(MainA, "foi nega, vc alterou o livro", Toast.LENGTH_SHORT).show();
+
+//                                startActivity(new Intent(UserEditPerfilFragment.this, PerfilActivity.class));
+                            }
+
+                            @Override
+                            public void onFailure(Call<UsuarioComum> call, Throwable t) {
+
+                            }
+                        });
+                    });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
+
+            }
+        });
         return inflater.inflate(R.layout.fragment_user_edit_perfil, container, false);
     }
 }
