@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".uiFragments.company.EditPerfilCompanyFragment">
 
-    <?xml version="1.0" encoding="utf-8"?>
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_primary"
@@ -74,108 +71,99 @@
 
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_Nickname"
+                    style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    style="@style/textViewName"
-                    android:text="@string/nickname"
-                    />
+                    android:text="@string/nickname" />
 
                 <EditText
                     android:id="@+id/etCompanyEditPerfil_Nickname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     style="@style/editTextText"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_Description"
+                    style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    style="@style/textViewName"
-                    android:text="@string/bio"
-                    />
+                    android:text="@string/bio" />
 
                 <EditText
                     android:id="@+id/etCompanyEditPerfil_Description"
+                    style="@style/editTextText"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    style="@style/editTextText" />
+                    android:layout_height="100dp" />
 
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_Name"
+                    style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    style="@style/textViewName"
-                    android:text="@string/cnpj"
-                    />
+                    android:text="@string/cnpj" />
 
                 <EditText
                     android:id="@+id/etCompanyEditPerfil_Name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     style="@style/editTextText"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_Email"
+                    style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    style="@style/textViewName"
-                    android:text="@string/email"
-                    />
+                    android:text="@string/email" />
 
                 <EditText
                     android:id="@+id/etCompanyEditPerfil_Email"
+                    style="@style/editTextText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/editTextText" />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_Password"
+                    style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    style="@style/textViewName"
-                    android:text="@string/password"
-                    />
+                    android:text="@string/password" />
 
 
                 <EditText
                     android:id="@+id/etCompanyEditPerfil_Password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     style="@style/editTextPassword"
-                    />
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingTop="16dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/tvCompanyEditPerfil_RegularAccount"
+                            style="@style/textViewName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/textViewName"
-                            android:text="@string/regularBankAccount"
-                            />
+                            android:text="@string/regularBankAccount" />
 
                         <EditText
                             android:id="@+id/etCompanyEditPerfil_RegularAccount"
+                            style="@style/editTextSmaller"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/editTextSmaller" />
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
 
@@ -184,10 +172,9 @@
                         android:id="@+id/etCompanyEditPerfil_Plus"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
                         android:layout_marginStart="12dp"
-                        android:background="@drawable/ic_baseline_add"
-                        />
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ic_baseline_add" />
 
                 </LinearLayout>
 
@@ -200,10 +187,10 @@
 
                     <Button
                         android:id="@+id/btnCompanyEditPerfil_Cancel"
+                        style="@style/buttonCancel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cancel"
-                        style="@style/buttonCancel"
 
                         />
 
@@ -213,8 +200,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="@string/save"
-                        />
+                        android:text="@string/save" />
 
                 </LinearLayout>
             </LinearLayout>

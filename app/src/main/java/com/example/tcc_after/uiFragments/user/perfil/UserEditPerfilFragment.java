@@ -59,14 +59,14 @@ public class UserEditPerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         nickname = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        biografia = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        email = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        nomeCompleto = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        senha = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        CEP = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        estado = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        cidade = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        dataNascimento = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
+        biografia = getActivity().findViewById(R.id.etEditPerfil_UserDescription);
+        email = getActivity().findViewById(R.id.etEditPerfil_UserEmail);
+        nomeCompleto = getActivity().findViewById(R.id.etEditPerfil_UserName);
+        senha = getActivity().findViewById(R.id.etEditPerfil_UserPassword);
+        CEP = getActivity().findViewById(R.id.etEditPerfil_UserCep);
+        estado = getActivity().findViewById(R.id.etEditPerfil_UserState);
+        cidade = getActivity().findViewById(R.id.etEditPerfil_UserCity);
+        dataNascimento = getActivity().findViewById(R.id.etEditPerfil_UserBirth);
 
 
 
@@ -107,7 +107,6 @@ public class UserEditPerfilFragment extends Fragment {
                             @Override
                             public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
 //                                Toast.makeText(MainA, "foi nega, vc alterou o livro", Toast.LENGTH_SHORT).show();
-
 //                                startActivity(new Intent(UserEditPerfilFragment.this, PerfilActivity.class));
                             }
 

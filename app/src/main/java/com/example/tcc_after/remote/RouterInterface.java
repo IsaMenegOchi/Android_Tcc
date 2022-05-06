@@ -1,15 +1,17 @@
 package com.example.tcc_after.remote;
 
-import com.example.tcc_after.model.Categoria;
+import com.example.tcc_after.model.evento.Assunto;
+import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.Empresa;
-import com.example.tcc_after.model.Evento;
+import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.Ingresso;
 import com.example.tcc_after.model.Lote;
+import com.example.tcc_after.model.evento.FaixaEtaria;
+import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.model.VerificacaoUsuario;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,7 +20,6 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
-import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface RouterInterface {
@@ -58,9 +59,6 @@ public interface RouterInterface {
     @GET("/empresa/listarEmpresas/")
     Call<Empresa> getEmpresa();
 
-    //!FAZER
-//    @GET("/empresa/listarEmpresas/{idEmpresa}/")
-//    Call<Empresa> getEmpresaId(@Path("idEmpresa") int idEmpresa);
 
     @POST("perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
@@ -86,11 +84,25 @@ public interface RouterInterface {
     @POST("evento/cadastrarEventoEndereco/1")
     Call<Evento> addEvento(@Body Evento evento);
 
-    @GET("/categoria/listarCategorias")
-    Call<List<Categoria>> getCategorias();
+        @GET("/categoria/listarCategorias")
+        Call<List<Categoria>> getCategorias();
+
+        @GET("/assunto/listarAssuntos")
+        Call<List<Assunto>> getAssuntos();
+
+        @GET("/tipoEvento/listarTipoEvento")
+        Call<List<TipoEvento>> getTiposEvento();
+
+        @GET("/faixaEtaria/listarFaixaEtaria")
+        Call<List<FaixaEtaria>> getFaixasEtaria();
+
+
+        //*ROTAS DE LOTE
 
         @POST("lote/cadastrarLote/1/")
         Call<Lote> addLote(@Body Lote lote);
+
+        //*ROTAS DE INGRESSO
 
         @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
         Call<Ingresso> addIngresso(@Body Ingresso ingresso);

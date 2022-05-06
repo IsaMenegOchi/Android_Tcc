@@ -130,7 +130,6 @@
 
         <Spinner
             android:id="@+id/spEventRegister_EventType"
-            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -302,6 +301,7 @@
         <EditText
             android:id="@+id/etEventRegister_StartHour"
             style="@style/editTextHalf"
+            android:drawableEnd="@drawable/ic_outline_access_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -315,6 +315,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/editTextHalf"
+            android:drawableEnd="@drawable/ic_outline_calendar_today"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_City"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Start" />
 
@@ -334,12 +335,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/editTextHalf"
+            android:drawableEnd="@drawable/ic_outline_calendar_today"
             app:layout_constraintStart_toStartOf="@+id/etEventRegister_StartDate"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Finish" />
 
         <EditText
             android:id="@+id/etEventRegister_FinishtHour"
             style="@style/editTextHalf"
+            android:drawableEnd="@drawable/ic_outline_access_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/etEventRegister_StartHour"
@@ -380,7 +383,6 @@
             android:id="@+id/spEventRegister_AgeGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/editTextText"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AgeGroup" />
 
         <TextView
@@ -453,7 +455,6 @@
 
         <Spinner
             android:id="@+id/spEventRegister_Celebrity"
-            style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -474,7 +475,6 @@
             android:id="@+id/spEventRegister_BankAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/editTextText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/spEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_BankAccount" />
@@ -489,7 +489,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/knowMore"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEventRegister_BankAccount" />
+            app:layout_constraintTop_toBottomOf="@+id/spEventRegister_BankAccount" />
 
         <TextView
             android:id="@+id/tvEventRegister_SeeTerms"
@@ -512,7 +512,7 @@
             android:buttonTint="@color/white"
             android:text="@string/agreeTerms"
             style="@style/textViewName"
-            app:layout_constraintStart_toStartOf="@+id/etEventRegister_BankAccount"
+            app:layout_constraintStart_toStartOf="@+id/spEventRegister_BankAccount"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AboutTerms" />
 
         <Button
