@@ -8,7 +8,10 @@
     <string name="titleTikets">Ingressos</string>
 
     <string-array name="category">
-        <item>Hehe</item>
+        <item>
+            <id>9</id>
+            <nome>Festa</nome>
+        </item>
         <item>haha</item>
         <item>hihi</item>
         <item>huhu</item>
