@@ -30,7 +30,7 @@ public interface RouterInterface {
     Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
 
     @GET("/usuarioComum/listarPerfilUsuarios/")
-    Call<UsuarioComum> getUsuariosComuns();
+    Call<List<UsuarioComum>> getUsuariosComuns();
 
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
@@ -49,7 +49,7 @@ public interface RouterInterface {
 
         @GET("/verificacaoUsuario/listarVerificacoes/")
         Call<VerificacaoUsuario> getVerificacaoUsuario();
-//!FAZER
+        //!FAZER
 //        @GET("/verificacaoUsuario/listarVerificacoes/{idVerificacaoUsuario}")
 //        Call<VerificacaoUsuario> getVerificacaoUsuarioId();
 
@@ -57,11 +57,13 @@ public interface RouterInterface {
     //* ROTAS DE EMPRESA
 
     @GET("/empresa/listarEmpresas/")
-    Call<Empresa> getEmpresa();
-
+    Call<List<Empresa>> getEmpresa();
 
     @POST("perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
+
+    @PUT("/evento/editarEvento/{idEvento}")
+    Call<Empresa> updateEmpresa(@Path("idEvento") int idEvento, @Body Empresa empresa);
 
 
         /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
@@ -81,30 +83,37 @@ public interface RouterInterface {
 
     //* ROTAS DE EVENTO
 
-    @POST("evento/cadastrarEventoEndereco/1")
-    Call<Evento> addEvento(@Body Evento evento);
+        @POST("evento/cadastrarEventoEndereco/1")
+        Call<Evento> addEvento(@Body Evento evento);
 
-        @GET("/categoria/listarCategorias")
-        Call<List<Categoria>> getCategorias();
+        @GET("/evento/listarEvento")
+        Call<List<Evento>> getEventos();
 
-        @GET("/assunto/listarAssuntos")
-        Call<List<Assunto>> getAssuntos();
+        @GET("/evento/acharEventoIdEvento/{idEvento}")
+        Call<List<Evento>> getEventoId(@Path("idEvento") int idEvento);
 
-        @GET("/tipoEvento/listarTipoEvento")
-        Call<List<TipoEvento>> getTiposEvento();
+            @GET("/categoria/listarCategorias")
+            Call<List<Categoria>> getCategorias();
 
-        @GET("/faixaEtaria/listarFaixaEtaria")
-        Call<List<FaixaEtaria>> getFaixasEtaria();
+            @GET("/assunto/listarAssuntos")
+            Call<List<Assunto>> getAssuntos();
+
+            @GET("/tipoEvento/listarTipoEvento")
+            Call<List<TipoEvento>> getTiposEvento();
+
+            @GET("/faixaEtaria/listarFaixaEtaria")
+            Call<List<FaixaEtaria>> getFaixasEtaria();
 
 
-        //*ROTAS DE LOTE
+            //*ROTAS DE LOTE
 
-        @POST("lote/cadastrarLote/1/")
-        Call<Lote> addLote(@Body Lote lote);
+            @POST("lote/cadastrarLote/1/")
+            Call<Lote> addLote(@Body Lote lote);
 
-        //*ROTAS DE INGRESSO
+            //*ROTAS DE INGRESSO
 
-        @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
-        Call<Ingresso> addIngresso(@Body Ingresso ingresso);
+            @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
+            Call<Ingresso> addIngresso(@Body Ingresso ingresso);
 
+    //*Fim das rodas de evento
 }

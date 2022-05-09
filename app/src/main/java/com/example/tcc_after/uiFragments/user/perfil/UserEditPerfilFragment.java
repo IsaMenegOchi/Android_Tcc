@@ -72,8 +72,8 @@ public class UserEditPerfilFragment extends Fragment {
 
         //!Trocar id
         routerInterface = APIUtil.getApiInterface();
-        Call<List<UsuarioComum>> getUsuarioComum= routerInterface.getUsuarioComumId(1);
-        getUsuarioComum.enqueue(new Callback<List<UsuarioComum>>() {
+        Call<List<UsuarioComum>> updateUsuarioComum= routerInterface.getUsuarioComumId(1);
+        updateUsuarioComum.enqueue(new Callback<List<UsuarioComum>>() {
             @Override
             public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
 

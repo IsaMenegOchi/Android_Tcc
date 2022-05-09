@@ -54,7 +54,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 
     private Button avancarEvento;
 
-    int idCategoria, idAssunto, idTipoEvento, idFaixaEtaria, idContaBancaria = 0;
+    int idCategoria, idAssunto, idTipoEvento, idFaixaEtaria, idContaBancaria, idCelebridade = 0;
 
     private List<Cep> cepList = new ArrayList<>();
 
@@ -369,26 +369,64 @@ public class EventRegisterActivity extends AppCompatActivity {
 
 
         //*FAZENDO LISTAGEM DE USUARIOS COMUNS
-        Call<UsuarioComum> getUsuarioComuns = routerInterface.getUsuariosComuns();
-        getUsuarioComuns.enqueue(new Callback<UsuarioComum>() {
+        Call<List<UsuarioComum>> getUsuarioComuns = routerInterface.getUsuariosComuns();
+        getUsuarioComuns.enqueue(new Callback<List<UsuarioComum>>() {
             @Override
-            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
+            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
 
+                if(response.isSuccessful()) {
+
+                    List<UsuarioComum> listUsuarioComum = new ArrayList<UsuarioComum>();
+
+                    List<String> listNicknameUsuarioComum = new ArrayList<String>();
+                    List<Integer> listIdPerfilUsuarioComum = new ArrayList<Integer>();
+
+                    listUsuarioComum = response.body();
+
+                    for (int i = 0; i < listUsuarioComum.size(); i++) {
+
+                        listNicknameUsuarioComum.add(listUsuarioComum.get(i).getNicknameUsuario());
+                        listIdPerfilUsuarioComum.add(listUsuarioComum.get(i).getIdPerfil());
+
+                    }
+
+                    ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNicknameUsuarioComum);
+                    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    celebridadeEvento.setAdapter(arrayAdapter);
+
+                    celebridadeEvento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            for (int ii = 0; ii < listIdPerfilUsuarioComum.size(); ii++) {
+
+                                if (celebridadeEvento.getSelectedItemPosition() == listIdPerfilUsuarioComum.get(ii)) {
+                                    idCelebridade = listIdPerfilUsuarioComum.get(ii);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
             }
 
             @Override
-            public void onFailure(Call<UsuarioComum> call, Throwable t) {
+            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
 
             }
+
         });
 
-
+        //*FAZENDO CONSUMO DE VIA CEP
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
             bringJsonCep.execute("https://viacep.com.br/ws/" + cepEvento.getText().toString()+"/xml/");
 
         });
-
 
 
         avancarEvento.setOnClickListener(view -> {
@@ -420,11 +458,10 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setIdTipoEvento(idTipoEvento);
             evento.setIdFaixaEtariaEvento(idFaixaEtaria);
             evento.setIdContaEmpresaEvento(idContaBancaria);
+            evento.setIdCelebridadeEvento(idCelebridade);
 
-//            evento.setNicknameCelEvento(celebridadeEvento.getText().toString());
 
             evento.setImagensEvento(imagensEvento.getText().toString());
-
             evento.setCepEvento(cepEvento.getText().toString());
             evento.setLogradouroEvento(logradouroEvento.getText().toString());
             evento.setComplementoEvento(complementoEvento.getText().toString());
@@ -433,11 +470,11 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setEstadoEvento(estadoEvento.getText().toString());
 
 
-            Log.d("teste", contaEvento.getText().toString());
-            Log.d("teste", tipoEvento.getText().toString());
-            Log.d("teste", faixaEtariaEvento.getText().toString());
-            Log.d("teste", assuntoEvento.getText().toString());
-            Log.d("teste", categoriaEvento.getText().toString());
+//            Log.d("teste", contaEvento.getText().toString());
+//            Log.d("teste", tipoEvento.getText().toString());
+//            Log.d("teste", faixaEtariaEvento.getText().toString());
+//            Log.d("teste", assuntoEvento.getText().toString());
+//            Log.d("teste", categoriaEvento.getText().toString());
 
 
             addEvento(evento);
