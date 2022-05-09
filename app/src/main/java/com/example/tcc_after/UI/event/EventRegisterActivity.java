@@ -32,6 +32,8 @@ import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
 
 import java.text.ParseException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +46,7 @@ public class EventRegisterActivity extends AppCompatActivity {
     private EditText tituloEvento, cepEvento, estadoEvento, logradouroEvento,
             cidadeEvento, descricaoEvento, capaEvento,
             dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,
-             imagensEvento, complementoEvento, bairroEvento ;
+             imagensEvento, complementoEvento, bairroEvento, numeroEvento;
 
     private TextView sobreTermos;
 
@@ -87,7 +89,7 @@ public class EventRegisterActivity extends AppCompatActivity {
         cidadeEvento = findViewById(R.id.etEventRegister_City);
         estadoEvento = findViewById(R.id.etEventRegister_State);
         contaEvento = findViewById(R.id.spEventRegister_BankAccount);
-
+        numeroEvento = findViewById(R.id.etEventRegister_Number);
         avancarEvento = findViewById(R.id.btnEventRegister_RegisterEvent);
 
     //*FAZENDO LISTAGEM DE CATEGORIAS
@@ -308,23 +310,28 @@ public class EventRegisterActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<List<FaixaEtaria>> call, Throwable t) {
                         Toast.makeText(EventRegisterActivity.this, "Nao pegamos a faixa tária", Toast.LENGTH_SHORT).show();
+                        Log.d("teste", "onResponse: Falha em capturar dados de faixa etaria");
                     }
                 }
 
         );
 
     //*FAZENDO LISTAGEM DE CONTA BANCÁRIA
-        Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContasBancarias();
-        getContasBancarias.enqueue(new Callback<List<ContaBancaria>>() {
+        Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContasBancarias(1);
+        getContasBancarias.enqueue(
+
+                new Callback<List<ContaBancaria>>() {
             @Override
             public void onResponse(Call<List<ContaBancaria>> call, Response<List<ContaBancaria>> response) {
+
 
                 if(response.isSuccessful()){
 
                     List<ContaBancaria> listContaBancaria = new ArrayList<ContaBancaria>();
 
-                    List<Integer> listNumeroContaBancaria = new ArrayList<Integer>();
+                    List<String> listNumeroContaBancaria = new ArrayList<String>();
                     List<Integer> listIdContaBancaria = new ArrayList<Integer>();
+
 
                     listContaBancaria = response.body();
 
@@ -348,8 +355,8 @@ public class EventRegisterActivity extends AppCompatActivity {
                                 if (contaEvento.getSelectedItemPosition() == listIdContaBancaria.get(ii)){
                                     idContaBancaria = listIdContaBancaria.get(ii);
                                 }
-
                             }
+                            Log.d("teste", "onItemSelected: " + idContaBancaria);
                         }
 
                         @Override
@@ -363,63 +370,71 @@ public class EventRegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ContaBancaria>> call, Throwable t) {
-
+                Log.d("teste", "onFailure: Falha em capturar dados de conta bancária");
+                Log.d("teste", "onFailure: " + t.getMessage());
             }
-        });
+        }
+
+        );
 
 
         //*FAZENDO LISTAGEM DE USUARIOS COMUNS
-        Call<List<UsuarioComum>> getUsuarioComuns = routerInterface.getUsuariosComuns();
-        getUsuarioComuns.enqueue(new Callback<List<UsuarioComum>>() {
-            @Override
-            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
-
-                if(response.isSuccessful()) {
-
-                    List<UsuarioComum> listUsuarioComum = new ArrayList<UsuarioComum>();
-
-                    List<String> listNicknameUsuarioComum = new ArrayList<String>();
-                    List<Integer> listIdPerfilUsuarioComum = new ArrayList<Integer>();
-
-                    listUsuarioComum = response.body();
-
-                    for (int i = 0; i < listUsuarioComum.size(); i++) {
-
-                        listNicknameUsuarioComum.add(listUsuarioComum.get(i).getNicknameUsuario());
-                        listIdPerfilUsuarioComum.add(listUsuarioComum.get(i).getIdPerfil());
-
-                    }
-
-                    ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNicknameUsuarioComum);
-                    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    celebridadeEvento.setAdapter(arrayAdapter);
-
-                    celebridadeEvento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            for (int ii = 0; ii < listIdPerfilUsuarioComum.size(); ii++) {
-
-                                if (celebridadeEvento.getSelectedItemPosition() == listIdPerfilUsuarioComum.get(ii)) {
-                                    idCelebridade = listIdPerfilUsuarioComum.get(ii);
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
-
-            }
-
-        });
+//        Call<List<UsuarioComum>> getUsuarioComuns = routerInterface.getUsuariosComuns();
+//        getUsuarioComuns.enqueue(
+//
+//                new Callback<List<UsuarioComum>>() {
+//            @Override
+//            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
+//
+//                if(response.isSuccessful()) {
+//                    List<UsuarioComum> listUsuarioComum = new ArrayList<UsuarioComum>();
+//
+//                    List<String> listNicknameUsuarioComum = new ArrayList<String>();
+//                    List<Integer> listIdPerfilUsuarioComum = new ArrayList<Integer>();
+//
+//                    listUsuarioComum = response.body();
+//
+//                    for (int i = 0; i < listUsuarioComum.size(); i++) {
+//
+//                        listNicknameUsuarioComum.add(listUsuarioComum.get(i).getNicknameUsuario());
+//                        listIdPerfilUsuarioComum.add(listUsuarioComum.get(i).getIdUsuario());
+//
+//                    }
+//
+//                    ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNicknameUsuarioComum);
+//                    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                    celebridadeEvento.setAdapter(arrayAdapter);
+//
+//                    celebridadeEvento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                        @Override
+//                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//                            for (int ii = 0; ii < listIdPerfilUsuarioComum.size(); ii++) {
+//
+//                                if (celebridadeEvento.getSelectedItemPosition() == listIdPerfilUsuarioComum.get(ii)) {
+//                                    idCelebridade = listIdPerfilUsuarioComum.get(ii);
+//                                }
+//                            }
+//
+//                        }
+//
+//                        @Override
+//                        public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                        }
+//                    });
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
+//                Log.d("teste", "onFailure: Não estou listando um usuario Comum");
+//                Log.d("teste", "onFailure: " + t.getMessage());
+//            }
+//
+//        }
+//
+//        );
 
         //*FAZENDO CONSUMO DE VIA CEP
         cepEvento.setOnFocusChangeListener((view, b) -> {
@@ -448,8 +463,8 @@ public class EventRegisterActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-//            evento.setHoraInicioEvento(LocalTime.parse(horaInicioEvento.getText().toString()));
-//            evento.setHoraFimEvento(LocalTime.parse(horaFimEvento.getText().toString()));
+            evento.setHoraInicioEvento(horaInicioEvento.getText().toString());
+            evento.setHoraFimEvento(horaFimEvento.getText().toString());
 
 
             //* SPINNERS
@@ -458,8 +473,7 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setIdTipoEvento(idTipoEvento);
             evento.setIdFaixaEtariaEvento(idFaixaEtaria);
             evento.setIdContaEmpresaEvento(idContaBancaria);
-            evento.setIdCelebridadeEvento(idCelebridade);
-
+//            evento.setIdCelebridadeEvento(idCelebridade);
 
             evento.setImagensEvento(imagensEvento.getText().toString());
             evento.setCepEvento(cepEvento.getText().toString());
@@ -468,14 +482,7 @@ public class EventRegisterActivity extends AppCompatActivity {
             evento.setBairroEvento(bairroEvento.getText().toString());
             evento.setCidadeEvento(cidadeEvento.getText().toString());
             evento.setEstadoEvento(estadoEvento.getText().toString());
-
-
-//            Log.d("teste", contaEvento.getText().toString());
-//            Log.d("teste", tipoEvento.getText().toString());
-//            Log.d("teste", faixaEtariaEvento.getText().toString());
-//            Log.d("teste", assuntoEvento.getText().toString());
-//            Log.d("teste", categoriaEvento.getText().toString());
-
+            evento.setNumeroEvento(numeroEvento.getText().toString());
 
             addEvento(evento);
 

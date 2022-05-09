@@ -45,11 +45,11 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
         btnCadastrarContaBancaria.setOnClickListener(view -> {
 
             ContaBancaria contaBancaria = new ContaBancaria();
-            contaBancaria.setAgenciaCB(Integer.parseInt(etAgenciaEmpresa.getText().toString()));
-            contaBancaria.setDigitoCB(Integer.parseInt(etDigitoEmpresa.getText().toString()));
+            contaBancaria.setAgenciaCB(etAgenciaEmpresa.getText().toString());
+            contaBancaria.setDigitoCB(etDigitoEmpresa.getText().toString());
             contaBancaria.setNomeBancoCB(etBancoEmpresa.getText().toString());
             contaBancaria.setNomeTipoCB(etTipoContaEmpresa.getText().toString());
-            contaBancaria.setNumeroCB(Integer.parseInt(etContaEmpresa.getText().toString()));
+            contaBancaria.setNumeroCB(etContaEmpresa.getText().toString());
 
             routerInterface = APIUtil.getApiInterface();
             addContaBancaria(contaBancaria);

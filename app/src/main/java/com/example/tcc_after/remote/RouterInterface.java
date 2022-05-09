@@ -71,8 +71,8 @@ public interface RouterInterface {
         @POST("/contaEmpresa/cadastrarContaCompleta/1/")
         Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
 
-        @GET("/contaEmpresa/listarContasEmpresa")
-        Call<List<ContaBancaria>> getContasBancarias();
+        @GET("/contaEmpresa/listarContasPorIdEmpresa/{idEmpresa}/")
+        Call<List<ContaBancaria>> getContasBancarias(@Path("idEmpresa") int idEmpresa);
 
 
         /** ROTAS DE VERIFICAÇÃO DA EMPRESA **/
@@ -83,7 +83,7 @@ public interface RouterInterface {
 
     //* ROTAS DE EVENTO
 
-        @POST("evento/cadastrarEventoEndereco/1")
+        @POST("/evento/cadastrarEventoEndereco/1/")
         Call<Evento> addEvento(@Body Evento evento);
 
         @GET("/evento/listarEvento")

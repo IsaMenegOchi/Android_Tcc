@@ -12,15 +12,15 @@ public class ContaBancaria {
 
     @SerializedName("agencia")
     @Expose
-    private int agenciaCB;
+    private String agenciaCB;
 
     @SerializedName("numeroConta")
     @Expose
-    private int numeroCB;
+    private String numeroCB;
 
     @SerializedName("digito")
     @Expose
-    private int digitoCB;
+    private String digitoCB;
 
     /** TIPO DE CONTA BANCARIA **/
     @SerializedName("idTipoConta")
@@ -43,7 +43,7 @@ public class ContaBancaria {
     public ContaBancaria() {
     }
 
-    public ContaBancaria(int idContaBancaria, int agenciaCB, int numeroCB, int digitoCB, int idTipoCB, String nomeTipoCB, int idBancoContaCB, String nomeBancoCB) {
+    public ContaBancaria(int idContaBancaria, String agenciaCB, String numeroCB, String digitoCB, int idTipoCB, String nomeTipoCB, int idBancoContaCB, String nomeBancoCB) {
         this.idContaBancaria = idContaBancaria;
         this.agenciaCB = agenciaCB;
         this.numeroCB = numeroCB;
@@ -63,27 +63,27 @@ public class ContaBancaria {
         this.idContaBancaria = idContaBancaria;
     }
 
-    public int getAgenciaCB() {
+    public String getAgenciaCB() {
         return agenciaCB;
     }
 
-    public void setAgenciaCB(int agenciaCB) {
+    public void setAgenciaCB(String agenciaCB) {
         this.agenciaCB = agenciaCB;
     }
 
-    public int getNumeroCB() {
+    public String getNumeroCB() {
         return numeroCB;
     }
 
-    public void setNumeroCB(int numeroCB) {
+    public void setNumeroCB(String numeroCB) {
         this.numeroCB = numeroCB;
     }
 
-    public int getDigitoCB() {
+    public String getDigitoCB() {
         return digitoCB;
     }
 
-    public void setDigitoCB(int digitoCB) {
+    public void setDigitoCB(String digitoCB) {
         this.digitoCB = digitoCB;
     }
 

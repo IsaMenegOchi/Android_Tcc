@@ -38,11 +38,11 @@ public class Evento {
 
     @SerializedName("horaInicio")
     @Expose
-    private LocalTime horaInicioEvento;
+    private String horaInicioEvento;
 
     @SerializedName("horaFim")
     @Expose
-    private LocalTime horaFimEvento;
+    private String horaFimEvento;
 
 
     /** CATEGORIA **/
@@ -134,6 +134,11 @@ public class Evento {
     @Expose
     private String estadoEvento;
 
+    @SerializedName("numero")
+    @Expose
+    private String numeroEvento;
+
+
     /** CONTA BANCARIA **/
 
     @SerializedName("tblContaEmpresaIdContaEmpresa")
@@ -164,12 +169,12 @@ public class Evento {
     }
 
     public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento,
-                  Date dataInicioEvento, Date dataFimEvento, LocalTime horaInicioEvento, LocalTime horaFimEvento,
+                  Date dataInicioEvento, Date dataFimEvento, String horaInicioEvento, String horaFimEvento,
                   int idCategoriaEvento, String categoriaEvento, int idTipoEvento, String tipoEvento,
                   int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento,
                   int idImagensEvento, String imagensEvento, int idCelebridadeEvento, String nicknameCelEvento,
                   int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento,
-                  String bairroEvento, String cidadeEvento, String estadoEvento, int idContaEmpresaEvento,
+                  String bairroEvento, String cidadeEvento, String estadoEvento, String numeroEvento, int idContaEmpresaEvento,
                   String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento) {
         this.idEvento = idEvento;
         this.tituloEvento = tituloEvento;
@@ -198,6 +203,7 @@ public class Evento {
         this.bairroEvento = bairroEvento;
         this.cidadeEvento = cidadeEvento;
         this.estadoEvento = estadoEvento;
+        this.numeroEvento = numeroEvento;
         this.idContaEmpresaEvento = idContaEmpresaEvento;
         this.numeroContaEvento = numeroContaEvento;
         this.idEmpresaEvento = idEmpresaEvento;
@@ -253,19 +259,19 @@ public class Evento {
         this.dataFimEvento = dataFimEvento;
     }
 
-    public LocalTime getHoraInicioEvento() {
+    public String getHoraInicioEvento() {
         return horaInicioEvento;
     }
 
-    public void setHoraInicioEvento(LocalTime horaInicioEvento) {
+    public void setHoraInicioEvento(String horaInicioEvento) {
         this.horaInicioEvento = horaInicioEvento;
     }
 
-    public LocalTime getHoraFimEvento() {
+    public String getHoraFimEvento() {
         return horaFimEvento;
     }
 
-    public void setHoraFimEvento(LocalTime horaFimEvento) {
+    public void setHoraFimEvento(String horaFimEvento) {
         this.horaFimEvento = horaFimEvento;
     }
 
@@ -419,6 +425,14 @@ public class Evento {
 
     public void setEstadoEvento(String estadoEvento) {
         this.estadoEvento = estadoEvento;
+    }
+
+    public String getNumeroEvento() {
+        return numeroEvento;
+    }
+
+    public void setNumeroEvento(String numeroEvento) {
+        this.numeroEvento = numeroEvento;
     }
 
     public int getIdContaEmpresaEvento() {
