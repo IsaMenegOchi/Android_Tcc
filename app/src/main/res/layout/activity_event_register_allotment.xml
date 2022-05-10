@@ -169,7 +169,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvEventRegisterAllotment_QtdTicket" />
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/swEventResgisterActivity_AbsorveTaxa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -187,7 +187,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/qtdBuy"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/switch1" />
+                app:layout_constraintTop_toBottomOf="@+id/swEventResgisterActivity_AbsorveTaxa" />
 
             <TextView
                 android:id="@+id/tvEventRegisterAllotment_Minimum"
@@ -230,6 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="20dp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etEventRegisterAllotment_Minimum">

@@ -13,11 +13,11 @@ public class Lote {
     @Expose
     private int idLote;
 
-    @SerializedName("qtdEstoque")
+    @SerializedName("qtdeEstoque")
     @Expose
     private int qtdEstoque;
 
-    @SerializedName("maxDeCompraPorUsuario")
+    @SerializedName("maxCompraPorUsuario")
     @Expose
     private int maxDeCompraUsuario;
 
@@ -31,7 +31,7 @@ public class Lote {
 
     @SerializedName("horaInicio")
     @Expose
-    private LocalTime horaInicioVenda;
+    private String horaInicioVenda;
 
     @SerializedName("dataFim")
     @Expose
@@ -39,9 +39,9 @@ public class Lote {
 
     @SerializedName("horaFim")
     @Expose
-    private LocalTime horaFimVenda;
+    private String horaFimVenda;
 
-    @SerializedName("taxaAbsovida")
+    @SerializedName("taxaAbsorvida")
     @Expose
     private Boolean taxaAbsorvida;
 
@@ -62,7 +62,9 @@ public class Lote {
     public Lote() {
     }
 
-    public Lote(int idLote, int qtdEstoque, int maxDeCompraUsuario, int minDeCompraUsuario, Date dataInicioVenda, LocalTime horaInicioVenda, Date dataFimVenda, LocalTime horaFimVenda, Boolean taxaAbsorvida, int idTipoIngresso, String tipoIngresso, int idEventoLote) {
+    public Lote(int idLote, int qtdEstoque, int maxDeCompraUsuario, int minDeCompraUsuario,
+                Date dataInicioVenda, String horaInicioVenda, Date dataFimVenda,
+                String horaFimVenda, Boolean taxaAbsorvida, int idTipoIngresso, String tipoIngresso, int idEventoLote) {
         this.idLote = idLote;
         this.qtdEstoque = qtdEstoque;
         this.maxDeCompraUsuario = maxDeCompraUsuario;
@@ -118,11 +120,11 @@ public class Lote {
         this.dataInicioVenda = dataInicioVenda;
     }
 
-    public LocalTime getHoraInicioVenda() {
+    public String getHoraInicioVenda() {
         return horaInicioVenda;
     }
 
-    public void setHoraInicioVenda(LocalTime horaInicioVenda) {
+    public void setHoraInicioVenda(String horaInicioVenda) {
         this.horaInicioVenda = horaInicioVenda;
     }
 
@@ -134,11 +136,11 @@ public class Lote {
         this.dataFimVenda = dataFimVenda;
     }
 
-    public LocalTime getHoraFimVenda() {
+    public String getHoraFimVenda() {
         return horaFimVenda;
     }
 
-    public void setHoraFimVenda(LocalTime horaFimVenda) {
+    public void setHoraFimVenda(String horaFimVenda) {
         this.horaFimVenda = horaFimVenda;
     }
 

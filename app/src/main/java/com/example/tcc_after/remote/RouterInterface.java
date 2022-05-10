@@ -110,10 +110,22 @@ public interface RouterInterface {
             @POST("lote/cadastrarLote/1/")
             Call<Lote> addLote(@Body Lote lote);
 
+
+
+
             //*ROTAS DE INGRESSO
 
             @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
             Call<Ingresso> addIngresso(@Body Ingresso ingresso);
+
+            @GET("/variedadeIngresso/listarVariedadeIngresso")
+            Call<List<Ingresso>> getIngresso();
+
+            @PUT("/variedadeIngresso/editarVariedadeIngresso/{idVariedadeIngressoLote}")
+            Call<List<Ingresso>> updateIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote);
+            
+            @DELETE("/variedadeIngresso/deletarVariedadeIngresso/{idVariedadeIngressoLote}")
+            Call<Ingresso> deleteIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote);
 
     //*Fim das rodas de evento
 }

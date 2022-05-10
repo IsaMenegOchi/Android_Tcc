@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Ingresso {
 
-    @SerializedName("idIngresso")
+    @SerializedName("idVariedadeIngressoLote")
     @Expose
     private int idIngresso;
 
@@ -21,11 +21,11 @@ public class Ingresso {
     @Expose
     private Float valor;
 
-    @SerializedName("titulo")
+    @SerializedName("tituloIngresso")
     @Expose
     private String titulo;
 
-    @SerializedName("idLote")
+    @SerializedName("tblLoteIdLote")
     @Expose
     private int idLoteIngresso;
 
