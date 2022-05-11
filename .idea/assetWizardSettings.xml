@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialiconsoutlined/access_time/outline_access_time_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/keyboard_arrow_down/baseline_keyboard_arrow_down_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,7 +34,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_outline_access_time" />
+                            <entry key="outputName" value="ic_outline_keyboard_arrow_down" />
                             <entry key="sourceFile" value="$USER_HOME$/Downloads/health_and_safety_black_24dp 1.png" />
                           </map>
                         </option>

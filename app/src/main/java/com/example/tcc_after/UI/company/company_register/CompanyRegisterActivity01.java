@@ -69,6 +69,11 @@ public class CompanyRegisterActivity01 extends AppCompatActivity {
             valid = false;
         }
 
+//        if (nicknameEmpresa.getText().toString()){
+//            Toast.makeText(CompanyRegisterActivity01.this, "Nome inserido é muito grande", Toast.LENGTH_LONG).show();
+//            valid = false;
+//        }
+
 
         /** nickname **/
         //verifica se o campos de nickname esta preenchido

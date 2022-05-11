@@ -101,6 +101,7 @@ public class UserEditPerfilFragment extends Fragment {
                         usuarioComum.setEstado(estado.getText().toString());
                         usuarioComum.setCidade(cidade.getText().toString());
 
+                        //!TROCAR ID DO USUARIO COMUM
                         Call<UsuarioComum> updateUsuarioComum = routerInterface.updateUsuarioComum(1, usuarioComum);
 
                         updateUsuarioComum.enqueue(new Callback<UsuarioComum>() {

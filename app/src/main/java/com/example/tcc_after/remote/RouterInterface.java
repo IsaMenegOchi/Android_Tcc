@@ -24,53 +24,73 @@ import retrofit2.http.Path;
 
 public interface RouterInterface {
 
+
+    //* ROTAS DE PERFIL
+    @DELETE("/perfil/deletarPerfil/{idPerfil}")
+    Call<Evento> deletarPerfil(@Path("idPerfil") int idPerfil);
+
     //* ROTAS DE USUARIO
 
-    @GET("/perfil/acharPerfil/{idUsuarioComum}")
-    Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
-
-    @GET("/usuarioComum/listarPerfilUsuarios/")
-    Call<List<UsuarioComum>> getUsuariosComuns();
-
+    //? CADASTRO
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
-    @PUT("/usuarioComum/editarUsuario/{idUsuarioComum}")
-    Call<UsuarioComum> updateUsuarioComum(@Path("idUsuarioComum") int idUsuariocomum, @Body UsuarioComum usuarioComum);
+    //? LISTAGEM POR ID
+    @GET("/perfil/acharPerfil/{idUsuarioComum}")
+    Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
 
+    //? LISTAGEM DE TODOS
+    @GET("/usuarioComum/listarPerfilUsuarios/")
+    Call<List<UsuarioComum>> getUsuariosComuns();
+
+    //? EDIÇÃO
+    @PUT("/perfil/editarPerfilUsuarioComum/{idPerfil}")
+    Call<UsuarioComum> updateUsuarioComum(@Path("idPerfil") int idPerfilUsuarioComum, @Body UsuarioComum usuarioComum);
+
+    //? DELEÇÃO
     @DELETE("/usuarioComum/deletarUsuario/{idUsuarioComum}")
     Call<UsuarioComum> delUsuarioComum(@Path("idUsuarioComum") int idUsuarioComum);
 
 
-        /** ROTAS DE VERIFICAÇÃO DO USUARIO **/
+        //* ROTAS DE VERIFICAÇÃO DO USUARIO
 
-        @POST("/verificacaoUsuario/cadastrarVerificacao/1/")
-        Call<VerificacaoUsuario> addVerificacaoUsuario(@Body VerificacaoUsuario verificacaoUsuario);
+        //? CADASTRO
+        @POST("/verificacaoUsuario/cadastrarVerificacao/{idUsuarioComum}/")
+        Call<VerificacaoUsuario> addVerificacaoUsuario(@Path("idUsuarioComum") int idUsuarioComum, @Body VerificacaoUsuario verificacaoUsuario);
 
+        //? LISTAGEM DE TODOS
         @GET("/verificacaoUsuario/listarVerificacoes/")
-        Call<VerificacaoUsuario> getVerificacaoUsuario();
-        //!FAZER
-//        @GET("/verificacaoUsuario/listarVerificacoes/{idVerificacaoUsuario}")
-//        Call<VerificacaoUsuario> getVerificacaoUsuarioId();
+        Call<List<VerificacaoUsuario>> getVerificacaoUsuario();
+
+        //? LISTAGEM POR ID
+        @GET("/verificacaoUsuario/acharVerificacaoPorId/{idVerificacaoUsuario}")
+        Call<List<VerificacaoUsuario>> getVerificacaoUsuarioId(@Path("idVerificacaoUsuario") int idVerificacaoUsuario);
+
+        @PUT("/verificacaoUsuario/responderVerificacao/{idVerificacaoUsuario}")
+        Call<VerificacaoUsuario> updateVerificacaoUsuario(@Path("idVerificacaoUsuario") int idVerificacaoUsuario, @Body VerificacaoUsuario verificacaoUsuario);
 
 
     //* ROTAS DE EMPRESA
 
-    @GET("/empresa/listarEmpresas/")
-    Call<List<Empresa>> getEmpresa();
-
+    //? CADASTRO
     @POST("perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
 
-    @PUT("/evento/editarEvento/{idEvento}")
-    Call<Empresa> updateEmpresa(@Path("idEvento") int idEvento, @Body Empresa empresa);
+    //? LISTAGEM
+    @GET("/empresa/listarEmpresas/")
+    Call<List<Empresa>> getEmpresa();
+
+//    //? EDIÇÃO
+//    @PUT("/evento/editarEvento/{idEvento}")
+//    Call<Empresa> updateEmpresa(@Path("idEvento") int idEvento, @Body Empresa empresa);
 
 
-        /** ROTAS DE CONTA BANCARIA DA EMPRESA **/
-//        {idEmpresa}
-        @POST("/contaEmpresa/cadastrarContaCompleta/1/")
-        Call<ContaBancaria> addContaBancaria(@Body ContaBancaria contaBancaria);
+        //* ROTAS DE CONTA BANCARIA DA EMPRESA
+        //? CADASTRO
+        @POST("/contaEmpresa/cadastrarContaCompleta/{idEmpresa}/")
+        Call<ContaBancaria> addContaBancaria(@Path("idEmpresa") int idEmpresa, @Body ContaBancaria contaBancaria);
 
+        //? LISTAGEM
         @GET("/contaEmpresa/listarContasPorIdEmpresa/{idEmpresa}/")
         Call<List<ContaBancaria>> getContasBancarias(@Path("idEmpresa") int idEmpresa);
 
@@ -83,47 +103,85 @@ public interface RouterInterface {
 
     //* ROTAS DE EVENTO
 
-        @POST("/evento/cadastrarEventoEndereco/1/")
-        Call<Evento> addEvento(@Body Evento evento);
+        //? CADASTRO
+        @POST("/evento/cadastrarEventoEndereco/{idEmpresa}")
+        Call<Evento> addEvento(@Path("idEmpresa") int idEmpresa, @Body Evento evento);
 
+        //? LISTAGEM DE TODOS
         @GET("/evento/listarEvento")
         Call<List<Evento>> getEventos();
 
+        //? LISTAGEM POR ID DO EVENTO
         @GET("/evento/acharEventoIdEvento/{idEvento}")
-        Call<List<Evento>> getEventoId(@Path("idEvento") int idEvento);
+        Call<List<Evento>> getEventoIdEvento(@Path("idEvento") int idEvento);
 
+        //? LISTAGEM POR ID DA EMPRESA
+        @GET("/evento/acharEventoPorId/{idEmpresa}")
+        Call<List<Evento>> getEventoIdEmpresa(@Path("idEmpresa") int idEmpresa);
+
+        //? EDIÇÃO
+        @PUT("/evento/editarEvento/{idEvento}")
+        Call<Evento> updateEvento(@Path("idEvento") int idEvento);
+
+        //? DELEÇÃO
+        @DELETE("/evento/deletarEvento/{idEvento}")
+        Call<Evento> deleteEvento(@Path("idEvento") int idEvento);
+
+            //* CATEGORIA
+            //? LISTAGEM DE TODOS
             @GET("/categoria/listarCategorias")
             Call<List<Categoria>> getCategorias();
 
+            //* ASSUNTOS
+            //? LISTAGEM DE TODOS
             @GET("/assunto/listarAssuntos")
             Call<List<Assunto>> getAssuntos();
 
+            //* TIPOS DE EVENTOS
+            //? LISTAGEM DE TODOS
             @GET("/tipoEvento/listarTipoEvento")
             Call<List<TipoEvento>> getTiposEvento();
 
+            //* FAIXA ETÁRIA
+            //? LISTAGEM DE TODOS
             @GET("/faixaEtaria/listarFaixaEtaria")
             Call<List<FaixaEtaria>> getFaixasEtaria();
 
 
             //*ROTAS DE LOTE
 
-            @POST("lote/cadastrarLote/1/")
-            Call<Lote> addLote(@Body Lote lote);
+            //? CADASTRO
+            @POST("lote/cadastrarLote/{idEmpresa}/")
+            Call<Lote> addLote(@Path("idEmpresa")int idEmpresa, @Body Lote lote);
 
+            //? LISTAGEM DE TODOS
+            @GET("/lote/listarLote")
+            Call<List<Lote>> getLote();
 
+            //? EDIÇÃO
+            @PUT("/lote/editarLote/{idLote}")
+            Call<Lote> updateLote(@Path("idLote") int idLote, @Body Lote lote);
+
+            //?DELEÇÃO
+            @DELETE("/lote/deletarLote/{idLote}")
+            Call<Lote> deleteLote(@Path("idLote") int idLote);
 
 
             //*ROTAS DE INGRESSO
 
+            //? CADASTRO
             @POST("variedadeIngresso/cadastrarVariedadeIngresso/")
             Call<Ingresso> addIngresso(@Body Ingresso ingresso);
 
+            //? LISTAGEM DE TODOS
             @GET("/variedadeIngresso/listarVariedadeIngresso")
             Call<List<Ingresso>> getIngresso();
 
+            //? EDICÃO
             @PUT("/variedadeIngresso/editarVariedadeIngresso/{idVariedadeIngressoLote}")
-            Call<List<Ingresso>> updateIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote);
-            
+            Call<Ingresso> updateIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote, @Body Ingresso ingresso);
+
+            //? DELEÇÃO
             @DELETE("/variedadeIngresso/deletarVariedadeIngresso/{idVariedadeIngressoLote}")
             Call<Ingresso> deleteIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote);
 

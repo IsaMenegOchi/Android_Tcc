@@ -51,8 +51,9 @@ public class RequestVerificationFragment extends Fragment {
 
     public void addVerificacaoUsuario(VerificacaoUsuario verificacaoUsuario) {
 
+        //! ARRUMAR ID DO USUARIO COMUM
         //calback - classe do java
-        Call<VerificacaoUsuario> call = routerInterface.addVerificacaoUsuario(verificacaoUsuario);
+        Call<VerificacaoUsuario> call = routerInterface.addVerificacaoUsuario(1, verificacaoUsuario);
         call.enqueue(new Callback<VerificacaoUsuario>() {
             //o req é feito automaticamente
             @Override

@@ -1,7 +1,10 @@
 package com.example.tcc_after.UI.event;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,12 +14,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.util.DatePickerFragment;
+import com.example.tcc_after.util.TimePickerFragment;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.Cep;
@@ -24,7 +32,6 @@ import com.example.tcc_after.model.ContaBancaria;
 import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.FaixaEtaria;
 import com.example.tcc_after.model.evento.TipoEvento;
-import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
@@ -32,23 +39,24 @@ import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
 
 import java.text.ParseException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EventRegisterActivity extends AppCompatActivity {
-
+public class EventRegisterActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+//    DatePickerDialog.OnDateSetListener
     private EditText tituloEvento, cepEvento, estadoEvento, logradouroEvento,
             cidadeEvento, descricaoEvento, capaEvento,
             dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,
              imagensEvento, complementoEvento, bairroEvento, numeroEvento;
 
     private TextView sobreTermos;
+
+    private ScrollView scrollView;
 
     private Spinner faixaEtariaEvento, celebridadeEvento, tipoEvento,categoriaEvento,assuntoEvento, contaEvento;
 
@@ -62,11 +70,14 @@ public class EventRegisterActivity extends AppCompatActivity {
 
     RouterInterface routerInterface;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_register);
 
+        scrollView = findViewById(R.id.eventResgister_ScrollView);
     //* LISTAGEM DE COMPONENTES COM IDS
         routerInterface = APIUtil.getApiInterface();
         tituloEvento = findViewById(R.id.etEventRegister_Title);
@@ -137,14 +148,14 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onNothingSelected(AdapterView<?> adapterView) {
-
+                                        Toast.makeText(EventRegisterActivity.this, "Escolha uma categoria", Toast.LENGTH_SHORT).show();
                                     }
                                  });
                              }
                          }
                          @Override
                          public void onFailure(Call<List<Categoria>> call, Throwable t) {
-                             Toast.makeText(EventRegisterActivity.this, "Nao pegamos a categoria", Toast.LENGTH_SHORT).show();
+                             Log.d("ErrorEvento", "onFailure: Categorias não foram capturadas");
                          }
                 }
 
@@ -191,7 +202,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> adapterView) {
-                                    Toast.makeText(EventRegisterActivity.this, "Voce precisa preencher os campos de assunto", Toast.LENGTH_SHORT).show();
+
                                 }
                             });
                         }
@@ -199,7 +210,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<Assunto>> call, Throwable t) {
-
+                        Log.d("ErrorEvento", "onFailure: Assuntos não foi capturado");
                     }
                 }
 
@@ -249,14 +260,14 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> adapterView) {
-
+                                    Toast.makeText(EventRegisterActivity.this, "Escolha um tipo de evento", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
                     }
                     @Override
                     public void onFailure(Call<List<TipoEvento>> call, Throwable t) {
-                        Toast.makeText(EventRegisterActivity.this, "Nao pegamos o tipo evento", Toast.LENGTH_SHORT).show();
+                        Log.d("ErrorEvento", "onFailure: Tipos de eventos não foram capturados");
                     }
                 }
 
@@ -302,15 +313,14 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> adapterView) {
-
+                                    Toast.makeText(EventRegisterActivity.this, "Escolha uma faixa etária", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
                     }
                     @Override
                     public void onFailure(Call<List<FaixaEtaria>> call, Throwable t) {
-                        Toast.makeText(EventRegisterActivity.this, "Nao pegamos a faixa tária", Toast.LENGTH_SHORT).show();
-                        Log.d("teste", "onResponse: Falha em capturar dados de faixa etaria");
+                        Log.d("ErrorEvento", "onFailure: Faixas etárias não foram capturadas");
                     }
                 }
 
@@ -361,7 +371,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
-
+                            Toast.makeText(EventRegisterActivity.this, "Escolha uma conta bancária", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -370,15 +380,14 @@ public class EventRegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ContaBancaria>> call, Throwable t) {
-                Log.d("teste", "onFailure: Falha em capturar dados de conta bancária");
-                Log.d("teste", "onFailure: " + t.getMessage());
+                Log.d("ErrorEvento", "onFailure: Contas bancárias não foram capturadas");
             }
         }
 
         );
 
 
-        //*FAZENDO LISTAGEM DE USUARIOS COMUNS
+//        //*FAZENDO LISTAGEM DE USUARIOS COMUNS
 //        Call<List<UsuarioComum>> getUsuarioComuns = routerInterface.getUsuariosComuns();
 //        getUsuarioComuns.enqueue(
 //
@@ -397,7 +406,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 //                    for (int i = 0; i < listUsuarioComum.size(); i++) {
 //
 //                        listNicknameUsuarioComum.add(listUsuarioComum.get(i).getNicknameUsuario());
-//                        listIdPerfilUsuarioComum.add(listUsuarioComum.get(i).getIdUsuario());
+//                        listIdPerfilUsuarioComum.add(listUsuarioComum.get(i).getIdPerfil());
 //
 //                    }
 //
@@ -415,7 +424,6 @@ public class EventRegisterActivity extends AppCompatActivity {
 //                                    idCelebridade = listIdPerfilUsuarioComum.get(ii);
 //                                }
 //                            }
-//
 //                        }
 //
 //                        @Override
@@ -428,8 +436,7 @@ public class EventRegisterActivity extends AppCompatActivity {
 //
 //            @Override
 //            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
-//                Log.d("teste", "onFailure: Não estou listando um usuario Comum");
-//                Log.d("teste", "onFailure: " + t.getMessage());
+//                Log.d("ErrorEvento", "onFailure: Celebridades não foram capturadas");
 //            }
 //
 //        }
@@ -437,16 +444,42 @@ public class EventRegisterActivity extends AppCompatActivity {
 //        );
 
         //*FAZENDO CONSUMO DE VIA CEP
+
+
+        dataInicioEvento.setOnClickListener(view -> {
+            DatePickerFragment mDatePickerDialogFragment;
+            mDatePickerDialogFragment = new DatePickerFragment();
+            mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+        });
+
+        dataFimEvento.setOnClickListener(view -> {
+            DatePickerFragment mDatePickerDialogFragment;
+            mDatePickerDialogFragment = new DatePickerFragment();
+            mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+        });
+
+        horaInicioEvento.setOnClickListener(view -> {
+            DialogFragment timePicker = new TimePickerFragment();
+            timePicker.show(getSupportFragmentManager(), "time picker");
+        });
+
+        horaFimEvento.setOnClickListener(view -> {
+            DialogFragment timePicker = new TimePickerFragment();
+            timePicker.show(getSupportFragmentManager(), "time picker");
+        });
+
+
+
+
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
             bringJsonCep.execute("https://viacep.com.br/ws/" + cepEvento.getText().toString()+"/xml/");
 
         });
 
-
+        //* CADASTRAR EVENTO
         avancarEvento.setOnClickListener(view -> {
             Evento evento = new Evento();
-            Categoria categoria = new Categoria();
 
             evento.setTituloEvento(tituloEvento.getText().toString());
             evento.setDescricaoEvento(descricaoEvento.getText().toString());
@@ -492,9 +525,41 @@ public class EventRegisterActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        String hora = dayOfMonth + "/" + month + "/" + year;
+
+        if (dataInicioEvento.isFocusable() && dataInicioEvento.length() == 0){
+            dataInicioEvento.setText(hora);
+        }
+        else if(dataFimEvento.isFocusable() && dataFimEvento.length() == 0){
+            dataFimEvento.setText(hora);
+        }
+
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        String hora = hourOfDay + ":" + minute;
+        if (horaInicioEvento.isFocusable() && horaInicioEvento.length() == 0){
+            horaInicioEvento.setText(hora);
+        }
+        else if(horaFimEvento.isFocusable() && horaFimEvento.length() == 0){
+            horaFimEvento.setText(hora);
+        }
+
+    }
+
+
     public void addEvento(Evento evento) {
 
-        Call<Evento> call = routerInterface.addEvento(evento);
+        //! ARRUMAR O ID DA EMPRESA
+        Call<Evento> call = routerInterface.addEvento(1, evento);
         call.enqueue(new Callback<Evento>() {
 
             @Override
@@ -538,7 +603,6 @@ public class EventRegisterActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
 //    private boolean validateFields (){

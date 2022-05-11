@@ -123,7 +123,8 @@ public class EventRegisterAllotmentActivity extends AppCompatActivity {
 
     public void addLote(Lote lote) {
 
-        Call<Lote> call = routerInterface.addLote(lote);
+        //! TROCAR ID DA EMPRESA
+        Call<Lote> call = routerInterface.addLote(1, lote);
         call.enqueue(new Callback<Lote>() {
 
             @Override

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventResgister_ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_primary"
@@ -94,6 +95,7 @@
             android:id="@+id/spEventRegister_Category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Category"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Category" />
@@ -111,7 +113,8 @@
         <Spinner
             android:id="@+id/spEventRegister_Subject"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
+            style="@style/spinner"
             android:backgroundTint="@color/background_tertiary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +135,7 @@
             android:id="@+id/spEventRegister_EventType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_EventType" />
@@ -381,8 +385,11 @@
 
         <Spinner
             android:id="@+id/spEventRegister_AgeGroup"
+            style="@style/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_AgeGroup" />
 
         <TextView
@@ -440,8 +447,9 @@
             style="@style/editTextText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto"
-            tools:layout_editor_absoluteX="39dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto" />
 
         <TextView
             android:id="@+id/tvEventRegister_Celebrity"
@@ -457,6 +465,7 @@
             android:id="@+id/spEventRegister_Celebrity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/btnEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Celebrity" />
@@ -475,6 +484,7 @@
             android:id="@+id/spEventRegister_BankAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/spEventRegister_Celebrity"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_BankAccount" />

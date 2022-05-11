@@ -68,8 +68,9 @@ public class BankAccountRegisterActivity extends AppCompatActivity {
 
     public void addContaBancaria(ContaBancaria contaBancaria) {
 
+        //! Mudar id da empresa
         //calback - classe do java
-        Call<ContaBancaria> call = routerInterface.addContaBancaria(contaBancaria);
+        Call<ContaBancaria> call = routerInterface.addContaBancaria(1, contaBancaria);
         call.enqueue(new Callback<ContaBancaria>() {
             //o req é feito automaticamente
             @Override
