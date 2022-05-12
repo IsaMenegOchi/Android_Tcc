@@ -66,7 +66,7 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
         }
 
         //verifica se o email e a confirmacao são iguais
-        if (etSenha.getText().toString().equals(etConfSenha.getText().toString())){
+        if (!etSenha.getText().toString().equals(etConfSenha.getText().toString())){
             Toast.makeText(CompanyRegisterPasswordActivity.this, "Reveja os campos de email", Toast.LENGTH_LONG).show();
             valid = false;
         }

@@ -18,15 +18,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 style="@style/photoCapa"
+                android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivUserPhotoRegister_Perfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/photoPerfil"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:maxHeight="130dp"
+                android:maxWidth="130dp"
+                android:layout_marginTop="-65dp"
+                android:background="@drawable/shape_perfil_photo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_outline_add_a_photo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserPhotoRegister_Cover" />

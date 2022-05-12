@@ -4,12 +4,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
 import com.example.tcc_after.model.Empresa;
 import com.example.tcc_after.model.UsuarioComum;
@@ -92,26 +95,23 @@ public class EditPerfilCompanyFragment extends Fragment {
                         updateEmpresa.enqueue(new Callback<Empresa>() {
                             @Override
                             public void onResponse(Call<Empresa> call, Response<Empresa> response) {
-//                                if (response.isSuccessful()){
-//
-//                                }
+                                if (response.isSuccessful()){
+                                    Toast.makeText(getActivity(), "Você editou seu perfil", Toast.LENGTH_SHORT).show();
+                                }
                             }
 
                             @Override
                             public void onFailure(Call<Empresa> call, Throwable t) {
-
+                                Toast.makeText(getActivity(), "Não foi possivel editar seu perfil", Toast.LENGTH_SHORT).show();
                             }
                         });
                     });
-
-
-
                 }
             }
 
             @Override
             public void onFailure(Call<List<Empresa>> call, Throwable t) {
-
+                Log.d("ErrorEmpresa", "onFailure: nao estamos listando os dados de empresaa");
             }
         });
 

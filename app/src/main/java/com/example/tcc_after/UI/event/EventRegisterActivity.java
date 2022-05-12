@@ -1,13 +1,17 @@
 package com.example.tcc_after.UI.event;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +20,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -38,6 +43,7 @@ import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -51,10 +57,12 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 //    DatePickerDialog.OnDateSetListener
     private EditText tituloEvento, cepEvento, estadoEvento, logradouroEvento,
             cidadeEvento, descricaoEvento, capaEvento,
-            dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,
-             imagensEvento, complementoEvento, bairroEvento, numeroEvento;
+            dataInicioEvento, dataFimEvento, horaInicioEvento, horaFimEvento,complementoEvento,
+        bairroEvento, numeroEvento;
 
     private TextView sobreTermos;
+
+    private ImageView imagensEvento;
 
     private ScrollView scrollView;
 
@@ -65,7 +73,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
     private Button avancarEvento;
 
     int idCategoria, idAssunto, idTipoEvento, idFaixaEtaria, idContaBancaria, idCelebridade = 0;
-
+    private final int CODEIMAGE = 1;
     private List<Cep> cepList = new ArrayList<>();
 
     RouterInterface routerInterface;
@@ -91,7 +99,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
         tipoEvento = findViewById(R.id.spEventRegister_EventType);
         faixaEtariaEvento = findViewById(R.id.spEventRegister_AgeGroup);
         assuntoEvento = findViewById(R.id.spEventRegister_Subject);
-        imagensEvento = findViewById(R.id.btnEventRegister_ExtraPhoto);
+        imagensEvento = findViewById(R.id.ivEventRegister_ExtraPhoto);
         celebridadeEvento = findViewById(R.id.spEventRegister_Celebrity);
         cepEvento = findViewById(R.id.etEventRegister_Cep);
         logradouroEvento = findViewById(R.id.etEventRegister_Street);
@@ -469,7 +477,9 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
         });
 
 
-
+        imagensEvento.setOnClickListener(view -> {
+            openGalery();
+        });
 
         cepEvento.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
@@ -508,7 +518,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
             evento.setIdContaEmpresaEvento(idContaBancaria);
 //            evento.setIdCelebridadeEvento(idCelebridade);
 
-            evento.setImagensEvento(imagensEvento.getText().toString());
+//            evento.setImagensEvento(imagensEvento.getText().toString());
             evento.setCepEvento(cepEvento.getText().toString());
             evento.setLogradouroEvento(logradouroEvento.getText().toString());
             evento.setComplementoEvento(complementoEvento.getText().toString());
@@ -555,6 +565,48 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == this.RESULT_CANCELED)
+        {
+            return;
+        }
+        if (requestCode == CODEIMAGE)
+        {
+            if (data != null) //veio alguma coisa?
+            {
+                Uri uri = data.getData(); //uri é responsável por manipular enderecos do recurso
+
+                try
+                {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+                    //esse bitmap representa o recurso de imagem vindo do local URI que foi convertido para um MediaStote
+
+                    imagensEvento.setImageBitmap(bitmap);
+
+                    Log.d("IMAGEM", "Imagem alterada");
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                    Log.d("IMAGEM", e.getMessage());
+                }
+            }
+        }
+
+    }
+
+    private void openGalery(){
+        Intent intent = new Intent(Intent.ACTION_PICK, //o pick permite abrir uma parte especifica do smartphine
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI //o priveder permite acessar funcionalidades do Sistema Operacional
+        );
+        intent.setType("image/*"); //tipo de arquivo a ser aceito
+
+        startActivityForResult(Intent.createChooser(intent, "Selecione a imagem do livro"), CODEIMAGE);
+    }
 
     public void addEvento(Evento evento) {
 
@@ -603,6 +655,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
             }
         }
     }
+
 
 
 //    private boolean validateFields (){

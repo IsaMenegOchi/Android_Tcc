@@ -196,18 +196,14 @@
     </style>
 
     <style name="photoPerfil">
-        <item name="android:width">130dp</item>
-        <item name="android:height">130dp</item>
+<!--        <item name="android:width">130dp</item>-->
+<!--        <item name="android:height">130dp</item>-->
         <item name="android:layout_marginTop">-65dp</item>
         <item name="android:background">@drawable/shape_perfil_photo</item>
-        <item name="android:padding">35dp</item>
         <item name="android:src">@drawable/ic_outline_add_a_photo</item>
     </style>
 
     <style name="photoCapa">
-        <item name="android:paddingTop">20dp</item>
-        <item name="android:paddingEnd">300dp</item>
-        <item name="android:paddingBottom">70dp</item>
         <item name="android:background">@color/background_tertiary</item>
         <item name="android:src">@drawable/ic_outline_add_a_photo</item>
     </style>

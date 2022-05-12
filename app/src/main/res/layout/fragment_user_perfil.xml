@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_primary"
     tools:context=".uiFragments.user.perfil.UserPerfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".UI.user.UserPerfilFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <ImageView
+                android:id="@+id/ivCompanyPhotoRegister_Cover"
+                style="@style/photoCapa"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCompanyPhotoRegister_Perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/photoPerfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Cover" />
+
+            <Spinner
+                android:id="@+id/spUserPerfil_Settings"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_outline_settings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUserPerfil_ContentPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Perfil">
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_UserName"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audio_eventos"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_Biografia"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dias de luta dias de glória #paz"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_UserName" />
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_NumberFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="65"
+                    style="@style/textViewTitles"
+                    app:layout_constraintEnd_toStartOf="@+id/tvUserPerfil_Biografia"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_Biografia" />
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_SubTitleFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seguindo"
+                    style="@style/textViewSubName"
+                    app:layout_constraintEnd_toEndOf="@+id/tvUserPerfil_NumberFollowing"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserPerfil_NumberFollowing"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_NumberFollowing" />
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_NumberWitnessedEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="65"
+                    style="@style/textViewTitles"
+                    app:layout_constraintStart_toEndOf="@+id/tvUserPerfil_Biografia"
+                    app:layout_constraintTop_toTopOf="@+id/tvUserPerfil_NumberFollowing" />
+
+                <TextView
+                    android:id="@+id/tvUserPerfil_SubTitleWitnessedEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eventos presenciados"
+                    style="@style/textViewSubName"
+                    app:layout_constraintEnd_toEndOf="@+id/tvUserPerfil_NumberWitnessedEvents"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserPerfil_NumberWitnessedEvents"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_NumberWitnessedEvents" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </FrameLayout>

@@ -7,16 +7,14 @@
     <string name="titlePerfil">Perfil</string>
     <string name="titleTikets">Ingressos</string>
 
-    <string-array name="category">
-        <item>
-            <id>9</id>
-            <nome>Festa</nome>
-        </item>
-        <item>haha</item>
-        <item>hihi</item>
-        <item>huhu</item>
-    </string-array>
+    <string name="titleNotifications">Notificações</string>
+    <string name="titleSettings">Configurações</string>
 
+    <string-array name="settingsArray">
+        <item>Editar</item>
+        <item>Verificar</item>
+        <item>Sair</item>
+    </string-array>
 
     <!--    Botoes -->
 

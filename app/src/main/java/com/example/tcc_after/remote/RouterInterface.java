@@ -1,5 +1,6 @@
 package com.example.tcc_after.remote;
 
+import com.example.tcc_after.model.Banco;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.ContaBancaria;
@@ -8,6 +9,7 @@ import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.Ingresso;
 import com.example.tcc_after.model.Lote;
 import com.example.tcc_after.model.evento.FaixaEtaria;
+import com.example.tcc_after.model.evento.TipoDeConta;
 import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.model.VerificacaoUsuario;
@@ -80,9 +82,9 @@ public interface RouterInterface {
     @GET("/empresa/listarEmpresas/")
     Call<List<Empresa>> getEmpresa();
 
-//    //? EDIÇÃO
-//    @PUT("/evento/editarEvento/{idEvento}")
-//    Call<Empresa> updateEmpresa(@Path("idEvento") int idEvento, @Body Empresa empresa);
+    //? EDIÇÃO
+    @PUT("/perfil/editarPerfilEmpresa/{idPerfil}")
+    Call<Empresa> updateEmpresa(@Path("idPerfil") int idPerfil, @Body Empresa empresa);
 
 
         //* ROTAS DE CONTA BANCARIA DA EMPRESA
@@ -93,6 +95,12 @@ public interface RouterInterface {
         //? LISTAGEM
         @GET("/contaEmpresa/listarContasPorIdEmpresa/{idEmpresa}/")
         Call<List<ContaBancaria>> getContasBancarias(@Path("idEmpresa") int idEmpresa);
+
+            @GET("/bancoConta/listarBancoConta/")
+            Call<List<Banco>> getBancos();
+
+            @GET("/tipoConta/listarTiposConta/")
+            Call<List<TipoDeConta>> getTiposConta();
 
 
         /** ROTAS DE VERIFICAÇÃO DA EMPRESA **/

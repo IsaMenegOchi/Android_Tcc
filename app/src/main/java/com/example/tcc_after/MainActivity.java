@@ -12,6 +12,7 @@ import com.example.tcc_after.uiFragments.MomentsFragment;
 import com.example.tcc_after.uiFragments.PerfilFragment;
 import com.example.tcc_after.uiFragments.SearchFragment;
 import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
+import com.example.tcc_after.uiFragments.user.tickets.TicketsFragment;
 import com.example.tcc_after.uiFragments.user.verification.RequestVerificationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -43,19 +44,46 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_ticket:
-                        fragment = new RequestVerificationFragment();
+                        if (item.isCheckable()){
+                            item.setIcon(R.drawable.ic_baseline_local_activity);
+                        }
+                        else{
+                            item.setIcon(R.drawable.ic_outline_local_activity);
+                        }
+
+                        fragment = new TicketsFragment();
                         break;
 
                     case R.id.nav_home:
+                        if (item.isCheckable()){
+                            item.setIcon(R.drawable.ic_baseline_home);
+                        }
+                        else{
+                            item.setIcon(R.drawable.ic_outline_local_activity);
+                        }
+
                         fragment = new FeedFragment();
                         break;
 
                     case R.id.nav_moments:
+                        if (item.isCheckable()){
+                            item.setIcon(R.drawable.ic_baseline_video_library);
+                        }
+                        else{
+                            item.setIcon(R.drawable.ic_outline_local_activity);
+                        }
                         fragment = new MomentsFragment();
                         break;
 
                     case R.id.nav_perfil:
-                        fragment = new PerfilFragment();
+                        if (item.isCheckable()){
+                            item.setIcon(R.drawable.ic_baseline_person);
+                        }
+                        else{
+                            item.setIcon(R.drawable.ic_outline_local_activity);
+                        }
+
+                        fragment = new UserPerfilFragment();
                         break;
                 }
                     getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();

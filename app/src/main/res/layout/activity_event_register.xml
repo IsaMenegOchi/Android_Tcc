@@ -432,21 +432,14 @@
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Cover"
             app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_Cover" />
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/btnEventRegister_ExtraPhoto"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="200dp"-->
-<!--            android:layout_marginTop="4dp"-->
-<!--            android:background="@drawable/round_corner"-->
-<!--            android:src="@drawable/ic_outline_add_photo_alternate"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/btnEventRegister_Cover"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto" />-->
 
-        <EditText
-            android:id="@+id/btnEventRegister_ExtraPhoto"
+        <ImageView
+            android:id="@+id/ivEventRegister_ExtraPhoto"
             style="@style/editTextText"
+            android:src="@drawable/ic_outline_add_a_photo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_ExtraPhoto" />
@@ -459,7 +452,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/star"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_ExtraPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/btnEventRegister_ExtraPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/ivEventRegister_ExtraPhoto" />
 
         <Spinner
             android:id="@+id/spEventRegister_Celebrity"
@@ -467,7 +460,7 @@
             android:layout_height="wrap_content"
             style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btnEventRegister_ExtraPhoto"
+            app:layout_constraintStart_toStartOf="@+id/ivEventRegister_ExtraPhoto"
             app:layout_constraintTop_toBottomOf="@+id/tvEventRegister_Celebrity" />
 
         <TextView

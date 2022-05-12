@@ -1,10 +1,13 @@
 package com.example.tcc_after.UI.user.user_register;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +21,7 @@ import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,6 +38,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     private EditText etBiografia;
     private TextView tvPularEtapa;
 
+    private final int CODEIMAGE = 1;
     RouterInterface routerInterface;
 
     private final int CODE_IMAGE = 100;
@@ -178,19 +183,55 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 //
 //    }
 
-    //* funcao de abrir galeria de fotos
-    public void openGalery(){
+    //* funcao de abrir galeria
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+        {
+            super.onActivityResult(requestCode, resultCode, data);
 
-        //criamos uma variavel com
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            if (resultCode == this.RESULT_CANCELED)
+            {
+                return;
+            }
+            if (requestCode == CODEIMAGE)
+            {
+                if (data != null) //veio alguma coisa?
+                {
+                    Uri uri = data.getData(); //uri é responsável por manipular enderecos do recurso
 
-        //qual o tipo de recurso que quero pegar
-        intent.setType("image/*");
+                    try
+                    {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+                        //esse bitmap representa o recurso de imagem vindo do local URI que foi convertido para um MediaStote
 
-        //abrir a activity responsavel por exibir as imagens, na qual retornará o conteudo selecionado para o nosso app
-        this.startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODE_IMAGE);
+                        if (photoCover.hasOnClickListeners()){
+                            photoCover.setImageBitmap(bitmap);
+                        }
+                        else{
+                        photoPerfil.setImageBitmap(bitmap);
+                        }
+
+
+                        Log.d("IMAGEM", "Imagem alterada");
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                        Log.d("IMAGEM", e.getMessage());
+                    }
+                }
+            }
+
+        }
+
+    private void openGalery(){
+        Intent intent = new Intent(Intent.ACTION_PICK, //o pick permite abrir uma parte especifica do smartphine
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI //o priveder permite acessar funcionalidades do Sistema Operacional
+        );
+        intent.setType("image/*"); //tipo de arquivo a ser aceito
+
+        startActivityForResult(Intent.createChooser(intent, "Selecione a imagem do livro"), CODEIMAGE);
     }
-
     //* funcao de validar dados
     private boolean validateFields(){
 
