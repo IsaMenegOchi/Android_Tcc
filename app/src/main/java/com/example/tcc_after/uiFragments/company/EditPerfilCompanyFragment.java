@@ -12,10 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.Empresa;
-import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 

@@ -100,9 +100,10 @@ public class Evento {
     @Expose
     private int idCelebridadeEvento;
 
-    @SerializedName("nickname")
-    @Expose
-    private String nicknameCelEvento;
+
+//    @SerializedName("nickname")
+//    @Expose
+//    private String nicknameCelEvento;
 
     /** ENDERECO EVENTO **/
 
@@ -155,9 +156,9 @@ public class Evento {
     @Expose
     private int idEmpresaEvento;
 
-    @SerializedName("nickname")
-    @Expose
-    private String nicknameEmpresaEvento;
+//    @SerializedName("nickname")
+//    @Expose
+//    private String nicknameEmpresaEvento;
 
     @SerializedName("imagemPerfil")
     @Expose
@@ -195,7 +196,7 @@ public class Evento {
         this.idImagensEvento = idImagensEvento;
         this.imagensEvento = imagensEvento;
         this.idCelebridadeEvento = idCelebridadeEvento;
-        this.nicknameCelEvento = nicknameCelEvento;
+//        this.nicknameCelEvento = nicknameCelEvento;
         this.idEnderecoEvento = idEnderecoEvento;
         this.cepEvento = cepEvento;
         this.logradouroEvento = logradouroEvento;
@@ -207,7 +208,7 @@ public class Evento {
         this.idContaEmpresaEvento = idContaEmpresaEvento;
         this.numeroContaEvento = numeroContaEvento;
         this.idEmpresaEvento = idEmpresaEvento;
-        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
+//        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
     }
 
@@ -363,13 +364,13 @@ public class Evento {
         this.idCelebridadeEvento = idCelebridadeEvento;
     }
 
-    public String getNicknameCelEvento() {
-        return nicknameCelEvento;
-    }
-
-    public void setNicknameCelEvento(String nicknameCelEvento) {
-        this.nicknameCelEvento = nicknameCelEvento;
-    }
+//    public String getNicknameCelEvento() {
+//        return nicknameCelEvento;
+//    }
+//
+//    public void setNicknameCelEvento(String nicknameCelEvento) {
+//        this.nicknameCelEvento = nicknameCelEvento;
+//    }
 
     public int getIdEnderecoEvento() {
         return idEnderecoEvento;
@@ -459,13 +460,13 @@ public class Evento {
         this.idEmpresaEvento = idEmpresaEvento;
     }
 
-    public String getNicknameEmpresaEvento() {
-        return nicknameEmpresaEvento;
-    }
-
-    public void setNicknameEmpresaEvento(String nicknameEmpresaEvento) {
-        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
-    }
+//    public String getNicknameEmpresaEvento() {
+//        return nicknameEmpresaEvento;
+//    }
+//
+//    public void setNicknameEmpresaEvento(String nicknameEmpresaEvento) {
+//        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
+//    }
 
     public String getImagemPerfilEmpresaEvento() {
         return imagemPerfilEmpresaEvento;

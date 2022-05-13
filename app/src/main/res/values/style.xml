@@ -47,6 +47,12 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="textViewSubSubName">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="textViewCardSubName">
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/montserrat_medium</item>
@@ -217,8 +223,8 @@
     <style name="parent">
         <item name="android:paddingTop">20dp</item>
         <item name="android:paddingBottom">20dp</item>
-        <item name="android:paddingLeft">40dp</item>
-        <item name="android:paddingRight">40dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
         <item name="android:scrollbars">vertical</item>
     </style>
 

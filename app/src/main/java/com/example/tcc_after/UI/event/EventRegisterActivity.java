@@ -33,7 +33,7 @@ import com.example.tcc_after.util.TimePickerFragment;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.Cep;
-import com.example.tcc_after.model.ContaBancaria;
+import com.example.tcc_after.model.empresa.ContaBancaria;
 import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.FaixaEtaria;
 import com.example.tcc_after.model.evento.TipoEvento;
@@ -333,6 +333,8 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
                 }
 
         );
+
+
 
     //*FAZENDO LISTAGEM DE CONTA BANCÁRIA
         Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContasBancarias(1);

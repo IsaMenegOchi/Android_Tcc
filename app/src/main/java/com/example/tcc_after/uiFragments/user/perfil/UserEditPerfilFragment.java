@@ -1,6 +1,5 @@
 package com.example.tcc_after.uiFragments.user.perfil;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,15 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.PerfilActivity;
-import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
-import com.example.tcc_after.util.DateConvert;
 
 import java.util.ArrayList;
 import java.util.List;

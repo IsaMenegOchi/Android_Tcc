@@ -16,11 +16,9 @@ import android.widget.Toast;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.company.CompanyVerificationActivity;
-import com.example.tcc_after.UI.company.company_register.PhotoCompanyRegisterActivity;
-import com.example.tcc_after.UI.event.EventRegisterActivity;
-import com.example.tcc_after.model.Banco;
-import com.example.tcc_after.model.ContaBancaria;
-import com.example.tcc_after.model.evento.TipoDeConta;
+import com.example.tcc_after.model.empresa.Banco;
+import com.example.tcc_after.model.empresa.ContaBancaria;
+import com.example.tcc_after.model.empresa.TipoDeConta;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 

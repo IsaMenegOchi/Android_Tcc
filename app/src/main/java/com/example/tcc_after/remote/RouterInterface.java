@@ -1,18 +1,19 @@
 package com.example.tcc_after.remote;
 
-import com.example.tcc_after.model.Banco;
+import com.example.tcc_after.model.Celebridade;
+import com.example.tcc_after.model.empresa.Banco;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
-import com.example.tcc_after.model.ContaBancaria;
-import com.example.tcc_after.model.Empresa;
+import com.example.tcc_after.model.empresa.ContaBancaria;
+import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.model.evento.Evento;
-import com.example.tcc_after.model.Ingresso;
-import com.example.tcc_after.model.Lote;
+import com.example.tcc_after.model.evento.Ingresso;
+import com.example.tcc_after.model.evento.Lote;
 import com.example.tcc_after.model.evento.FaixaEtaria;
-import com.example.tcc_after.model.evento.TipoDeConta;
+import com.example.tcc_after.model.empresa.TipoDeConta;
 import com.example.tcc_after.model.evento.TipoEvento;
-import com.example.tcc_after.model.UsuarioComum;
-import com.example.tcc_after.model.VerificacaoUsuario;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
+import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 
 import java.util.List;
 
@@ -28,8 +29,8 @@ public interface RouterInterface {
 
 
     //* ROTAS DE PERFIL
-    @DELETE("/perfil/deletarPerfil/{idPerfil}")
-    Call<Evento> deletarPerfil(@Path("idPerfil") int idPerfil);
+//    @DELETE("/perfil/deletarPerfil/{idPerfil}")
+//    Call<Empresa> deletarPerfil(@Path("idPerfil") int idPerfil);
 
     //* ROTAS DE USUARIO
 
@@ -116,7 +117,7 @@ public interface RouterInterface {
         Call<Evento> addEvento(@Path("idEmpresa") int idEmpresa, @Body Evento evento);
 
         //? LISTAGEM DE TODOS
-        @GET("/evento/listarEvento")
+        @GET("/evento/listarEvento/")
         Call<List<Evento>> getEventos();
 
         //? LISTAGEM POR ID DO EVENTO
@@ -194,4 +195,13 @@ public interface RouterInterface {
             Call<Ingresso> deleteIngresso(@Path("idVariedadeIngressoLote") int idVariedadeIngressoLote);
 
     //*Fim das rodas de evento
+
+    //*celebridade
+
+    //? LISTAGEM DE TODOS
+    @GET("/celebridade/listarCelebridades")
+    Call<List<Celebridade>> getCelebridades();
+
+
+
 }

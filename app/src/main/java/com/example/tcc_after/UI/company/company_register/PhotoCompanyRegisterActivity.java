@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.company.company_register.bank_account.BankAccountRegisterActivity;
 import com.example.tcc_after.UI.event.EventRegisterActivity;
-import com.example.tcc_after.model.Empresa;
+import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 

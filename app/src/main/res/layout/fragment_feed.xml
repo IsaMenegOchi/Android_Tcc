@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/parent"
-        >
+        style="@style/parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -54,26 +53,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <LinearLayout
-            android:id="@+id/llFeed_EventTypes"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginVertical="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rcFeed_CardMoments"
-            android:orientation="horizontal">
-        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llFeed_EventTypes"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginVertical="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/rcFeed_CardMoments"-->
+<!--            android:orientation="horizontal">-->
+<!--        </LinearLayout>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcFeed_CardEvent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llFeed_EventTypes" />
+            app:layout_constraintTop_toBottomOf="@+id/rcFeed_CardMoments" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

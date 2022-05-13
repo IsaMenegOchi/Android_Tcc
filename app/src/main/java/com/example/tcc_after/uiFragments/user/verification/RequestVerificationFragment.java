@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.VerificacaoUsuario;
+import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

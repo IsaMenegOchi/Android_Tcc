@@ -17,14 +17,13 @@ import android.widget.Toast;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.FeedActivity;
-import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;

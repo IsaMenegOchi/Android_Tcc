@@ -18,6 +18,8 @@ import com.example.tcc_after.R;
 import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.uiFragments.event.EventDescriptionFragment;
+import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,153 +55,150 @@ public class FeedFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-//        routerInterface = APIUtil.getApiInterface();
-//        Call<List<Evento>> call = routerInterface.getEventos();
+        routerInterface = APIUtil.getApiInterface();
+        Call<List<Evento>> call = routerInterface.getEventos();
+
+        call.enqueue(new Callback<List<Evento>>() {
+            @Override
+            public void onResponse(Call<List<Evento>> call, Response<List<Evento>> response) {
+
+                if (response.isSuccessful()) {
+                    List<Evento> list = new ArrayList<Evento>();
+                    List<String> eventos = new ArrayList<String>();
+
+                    list = response.body();
+
+//                    for (int i = 0; i < list.size(); i++) {
 //
-//        call.enqueue(new Callback<List<Evento>>() {
-//            @Override
-//            public void onResponse(Call<List<Evento>> call, Response<List<Evento>> response) {
-//
-//                if (response.isSuccessful()){
-//                    List<Evento> list = new ArrayList<Evento>();
-//                    List<String> eventos = new ArrayList<String>();
-//
-//                    list = response.body();
-//
-//                    for(int i = 0; i < list.size(); i++){
-////                        eventos.add(list.get(i));
 //                    }
-//                    RecyclerView recyclerView = getActivity().findViewById(R.id.rcFeed_CardEvent);
-//                    recyclerView.setAdapter(new adapterEvento());
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Evento>> call, Throwable t) {
-//
-//            }
-//        });
-//
+                    RecyclerView recyclerView = getActivity().findViewById(R.id.rcFeed_CardEvent);
+                    recyclerView.setAdapter(new EventoAdapter(list));
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Evento>> call, Throwable t) {
+
+            }
+        });
+
         return inflater.inflate(R.layout.fragment_feed, container, false);
     }
-//
-//    private class EventoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-//
-//        List<Evento> evento;
-//
-//        public EventoAdapter(List<Evento> eventos){
-//            this.evento = eventos;
-//        }
-//
-//        //cria a view holder
-//        @NonNull
-//        @Override
-//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//            return new EventoAdapter.EventoViewAdapter(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_livro, parent, false));
-//        }
-//
-//        //passsa os dados para a view holder
-//        @Override
-//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//
-//
-//                ((LivroAdapter.LivroViewHolder) holder).setLivroData(livro); }
-//
-//        }
-//        //conta a quantidade de livros
-//        @Override
-//        public int getItemCount() {
-//
-//        return eventos.size();
-//
-//        }
-//
-//
-//        public int getItemViewType(int position){
-//
-////            return itens.get(position).getType();
-//
-//        }
-//
-//        class LivroViewHolder extends RecyclerView.ViewHolder{
-//
-//            /** ATRIBUTOS DA CLASS LIVROVIEWHOLDER **/
-//            private TextView tvTituloLivro, tvDescricaoLivro;
-//            private int cod_livro;
-//
-//            //View itemView - elementos de view (et, tv, btn)
-//            //o item_conteiner entre na no itemView
-//            public LivroViewHolder(@NonNull View itemView) {
-//                //estamos chamando o mestoto construtor de quem foi herdado
-//                super(itemView);
-//
-//                tvTituloLivro = itemView.findViewById(R.id.tvItemContainerLivro_Titulo);
-//                tvDescricaoLivro = itemView.findViewById(R.id.tvItemContainerLivro_Descricao);
-//
-//                /** AÇÃO DE CLIQUE PARA EDITAR LIVRO E EXCLUIR LIVRO **/
-//
-//                itemView.setOnClickListener(view -> {
-//
-//                    /**
-//                     * Onde vai abrir
-//                     * A mensagem que queremos - set message
-//                     * Confirmr a acao - set posive button
-//                     *     Parametros:
-//                     *          1 - titulo
-//                     *          2 - acao a ser executada
-//                     * Negar a acao - set negatice button
-//                     *      Parametros:
-//                     *          1 - titulo
-//                     *          2 - acao a ser executada
-//                     **/
-//                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(FeedLivro.this)
+
+    //
+    private class EventoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        List<Evento> evento;
+
+        public EventoAdapter(List<Evento> eventos) {
+            this.evento = eventos;
+        }
+
+        //cria a view holder
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new EventoAdapter.EventoViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_event, parent, false));
+        }
+
+        //passsa os dados para a view holder
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+            Evento evento = new Evento();
+            ((EventoAdapter.EventoViewHolder) holder).setEventoData(evento);
+        }
+
+
+
+        //conta a quantidade de livros
+        @Override
+        public int getItemCount() {
+
+            return evento.size();
+
+        }
+
+
+        public int getItemViewType(int position) {
+
+            return evento.size();
+
+        }
+
+        class EventoViewHolder extends RecyclerView.ViewHolder {
+
+            /**
+             * ATRIBUTOS DA CLASS LIVROVIEWHOLDER
+             **/
+            private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCelebridade;
+            private int idEvento;
+
+            //View itemView - elementos de view (et, tv, btn)
+            //o item_conteiner entre na no itemView
+            public EventoViewHolder(@NonNull View itemView) {
+                //estamos chamando o mestoto construtor de quem foi herdado
+                super(itemView);
+
+                tvTituloEvento = itemView.findViewById(R.id.tvCardEvent_Title);
+                tvEmpresa = itemView.findViewById(R.id.tvCardEvent_Company);
+                tvTipoEvento = itemView.findViewById(R.id.tvCardEvent_EventType);
+                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
+
+                /** AÇÃO DE CLIQUE PARA EDITAR LIVRO E EXCLUIR LIVRO **/
+
+                itemView.setOnClickListener(view -> {
+
+                    Fragment fragment = new EventDescriptionFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("idEvento", idEvento);
+                    fragment.setArguments(bundle);
+
+
+//                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
 //                            .setMessage("O que você deseja fazer?")
-//                            .setPositiveButton("Editar", (dialog1, witch)->{
+//                            .setPositiveButton("Editar", (dialog1, witch) -> {
 //
-//                                Intent intent = new Intent(FeedLivro.this, AlterarLivro.class);
-//                                intent.putExtra("cod_livro", cod_livro);
+//                                Intent intent = new Intent(getActivity(), UserPerfilFragment.class);
+//                                intent.putExtra("idEvento", idEvento);
 //                                startActivity(intent);
 //                            })
-//                            .setNegativeButton("Excluir", (dialog1, witch)->{
+//                            .setNegativeButton("Excluir", (dialog1, witch) -> {
 //
-//                                routerInterfeace = APIUtil.getAPIInterface();
-//                                Call<Livro> call = routerInterfeace.delLivro(cod_livro);
-//                                call.enqueue(new Callback<Livro>() {
+//                                routerInterface = APIUtil.getApiInterface();
+//                                Call<Evento> call = routerInterface.deleteEvento(idEvento);
+//                                call.enqueue(new Callback<Evento>() {
 //                                    @Override
-//                                    public void onResponse(Call<Livro> call, Response<Livro> response) {
-//                                        Toast.makeText(FeedLivro.this, "Você exclui um livro", Toast.LENGTH_SHORT).show();
-//                                        recreate();
-////                                        finish();
-////                                        overridePendingTransition(0,0);
-////                                        startActivity(getIntent());
-////                                        overridePendingTransition(0, 0);
+//                                    public void onResponse(Call<Evento> call, Response<Evento> response) {
+//                                        Toast.makeText(getActivity(), "Você exclui um livro", Toast.LENGTH_SHORT).show();
+//    //                                        recreate();
+//    //                                        finish();
+//    //                                        overridePendingTransition(0,0);
+//    //                                        startActivity(getIntent());
+//    //                                        overridePendingTransition(0, 0);
 //                                    }
 //
 //                                    @Override
-//                                    public void onFailure(Call<Livro> call, Throwable t) {
-//                                        Toast.makeText(FeedLivro.this, "Nem foi nega", Toast.LENGTH_SHORT).show();
+//                                    public void onFailure(Call<Evento> call, Throwable t) {
+//                                        Toast.makeText(getActivity(), "Nao pegamos eventos", Toast.LENGTH_SHORT).show();
 //                                    }
 //                                });
-//                            })
-//                            ;
+//                            });
 //                    alertDialog.show();
 //                });
-//
-//            }//fim do construtor da classe livroviewholder
-//
-//            /** MÉTODO QUE CARREGA OS CALORES NOS ELEMENTOS DE TEXTVIEW
-//             * tvTituloLivro
-//             * tvDescricaoLivro
-//             * **/
-//
-//            public void setLivroData(Livro livro){
-//                tvTituloLivro.setText(livro.getTitulo());
-//                tvDescricaoLivro.setText(livro.getDescricao());
-//                //precisamodo cod livro para informar qual estamos editando
-//                cod_livro = livro.getCod_livro();
-//            }
-//        }//fim da classe livroViewHolder
-//
-//    }
+
+            }//fim do construtor da classe eventoviewholder
+
+
+            public void setEventoData(Evento evento) {
+//                tvTituloEvento.setText(evento.getTituloEvento());
+//                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
+                //precisamodo cod livro para informar qual estamos editando
+//                tvTipoEvento.setText(evento.getTipoEvento());
+//                tvCelebridade.setText(evento.getNicknameCelEvento());
+//                idEvento = evento.getIdEvento();
+            }
+        }//fim da classe livroViewHolder
+    }
+
     }
