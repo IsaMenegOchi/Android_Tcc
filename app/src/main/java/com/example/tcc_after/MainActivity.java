@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent intent = null;
                 Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_search:
@@ -95,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                     getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
+
                 return true;
             }
         });

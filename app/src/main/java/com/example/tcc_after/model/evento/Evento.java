@@ -156,9 +156,9 @@ public class Evento {
     @Expose
     private int idEmpresaEvento;
 
-//    @SerializedName("nickname")
-//    @Expose
-//    private String nicknameEmpresaEvento;
+    @SerializedName("nickname")
+    @Expose
+    private String nicknameEmpresaEvento;
 
     @SerializedName("imagemPerfil")
     @Expose
@@ -208,7 +208,7 @@ public class Evento {
         this.idContaEmpresaEvento = idContaEmpresaEvento;
         this.numeroContaEvento = numeroContaEvento;
         this.idEmpresaEvento = idEmpresaEvento;
-//        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
+        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
     }
 
@@ -460,13 +460,13 @@ public class Evento {
         this.idEmpresaEvento = idEmpresaEvento;
     }
 
-//    public String getNicknameEmpresaEvento() {
-//        return nicknameEmpresaEvento;
-//    }
-//
-//    public void setNicknameEmpresaEvento(String nicknameEmpresaEvento) {
-//        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
-//    }
+    public String getNicknameEmpresaEvento() {
+        return nicknameEmpresaEvento;
+    }
+
+    public void setNicknameEmpresaEvento(String nicknameEmpresaEvento) {
+        this.nicknameEmpresaEvento = nicknameEmpresaEvento;
+    }
 
     public String getImagemPerfilEmpresaEvento() {
         return imagemPerfilEmpresaEvento;

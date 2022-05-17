@@ -8,14 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.event.EventRegisterActivity;
 import com.example.tcc_after.model.evento.Evento;
+import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.uiFragments.event.EventDescriptionFragment;
@@ -55,6 +60,7 @@ public class FeedFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
+
         routerInterface = APIUtil.getApiInterface();
         Call<List<Evento>> call = routerInterface.getEventos();
 
@@ -67,6 +73,7 @@ public class FeedFragment extends Fragment {
                     List<String> eventos = new ArrayList<String>();
 
                     list = response.body();
+                    Log.d("teste", String.valueOf(list.get(0).getTituloEvento()));
 
 //                    for (int i = 0; i < list.size(); i++) {
 //
@@ -89,10 +96,13 @@ public class FeedFragment extends Fragment {
     //
     private class EventoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        List<Evento> evento;
+        List<Evento> listEventos;
+        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
+
+
 
         public EventoAdapter(List<Evento> eventos) {
-            this.evento = eventos;
+            this.listEventos = eventos;
         }
 
         //cria a view holder
@@ -105,24 +115,27 @@ public class FeedFragment extends Fragment {
         //passsa os dados para a view holder
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            Evento evento = new Evento();
+            Evento evento = this.listEventos.get(position);
+//            TipoEvento tipoEvento = this.listTiposEvento.get(position);
+            Log.d("teste", "onBindViewHolder: " + listEventos.get(0).getIdEvento());
             ((EventoAdapter.EventoViewHolder) holder).setEventoData(evento);
-        }
 
+
+
+        }
 
 
         //conta a quantidade de livros
         @Override
         public int getItemCount() {
 
-            return evento.size();
+            return listEventos.size();
 
         }
 
-
         public int getItemViewType(int position) {
 
-            return evento.size();
+            return listEventos.size();
 
         }
 
@@ -132,6 +145,7 @@ public class FeedFragment extends Fragment {
              * ATRIBUTOS DA CLASS LIVROVIEWHOLDER
              **/
             private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCelebridade;
+            private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivCount;
             private int idEvento;
 
             //View itemView - elementos de view (et, tv, btn)
@@ -145,21 +159,33 @@ public class FeedFragment extends Fragment {
                 tvTipoEvento = itemView.findViewById(R.id.tvCardEvent_EventType);
                 tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
 
+                ivEmpresa = itemView.findViewById(R.id.ivCardEvent_Company);
+                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
+                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
+
                 /** AÇÃO DE CLIQUE PARA EDITAR LIVRO E EXCLUIR LIVRO **/
+
+
 
                 itemView.setOnClickListener(view -> {
 
-                    Fragment fragment = new EventDescriptionFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("idEvento", idEvento);
-                    fragment.setArguments(bundle);
+                    Log.d("teste", "EventoViewHolder: " + idEvento);
+
+
+//                    Fragment fragment = new EventDescriptionFragment();
+//                    Log.d("teste", "EventoViewHolder: " + itemView);
+//                    Bundle bundle = new Bundle();
+//                    bundle.putInt("idEvento", idEvento);
+//                    fragment.setArguments(bundle);
+
+//                   Fragment fragment = new EventDescriptionFragment();
 
 
 //                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
 //                            .setMessage("O que você deseja fazer?")
 //                            .setPositiveButton("Editar", (dialog1, witch) -> {
 //
-//                                Intent intent = new Intent(getActivity(), UserPerfilFragment.class);
+//                                Intent intent = new Fragment(getActivity(), UserPerfilFragment.class);
 //                                intent.putExtra("idEvento", idEvento);
 //                                startActivity(intent);
 //                            })
@@ -185,20 +211,21 @@ public class FeedFragment extends Fragment {
 //                                });
 //                            });
 //                    alertDialog.show();
-//                });
+                });
 
-            }//fim do construtor da classe eventoviewholder
+                }//fim do construtor da classe eventoviewholder
 
 
             public void setEventoData(Evento evento) {
-//                tvTituloEvento.setText(evento.getTituloEvento());
-//                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
-                //precisamodo cod livro para informar qual estamos editando
-//                tvTipoEvento.setText(evento.getTipoEvento());
+                tvTituloEvento.setText(evento.getTituloEvento());
+                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
+//                ivEmpresa.setImageBitmap(evento.getImagemPerfilEmpresaEvento());
+//                precisamodo cod livro para informar qual estamos editando
+//                tvTipoEvento.setText(tipoEvento.getTipo());
 //                tvCelebridade.setText(evento.getNicknameCelEvento());
-//                idEvento = evento.getIdEvento();
+                idEvento = evento.getIdEvento();
             }
         }//fim da classe livroViewHolder
     }
 
-    }
+}

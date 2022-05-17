@@ -4,9 +4,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.tcc_after.R;
@@ -49,25 +53,26 @@ public class UserPerfilFragment extends Fragment {
         String[] config = getResources().getStringArray(R.array.settingsArray);
         spConfiguracoes.setAdapter(new ArrayAdapter<String>(getContext(),  android.R.layout.simple_spinner_item, config));
 
+        Log.d("teste", "onCreateView: " + config);
 //
 
 
-        spConfiguracoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (spConfiguracoes.getSelectedItemId() == 0){
-                    Fragment fragment = new UserEditPerfilFragment();
-                }
-                if (spConfiguracoes.getSelectedItemId() == 1){
-                    startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//        spConfiguracoes.setOnItemSelectedListener(new AdapterView<>().OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                if (spConfiguracoes.getSelectedItemId() == 0){
+//                    Fragment fragment = new UserEditPerfilFragment();
+//                }
+//                if (spConfiguracoes.getSelectedItemId() == 1){
+//                    startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_perfil, container, false);
     }

@@ -117,7 +117,7 @@ public interface RouterInterface {
         Call<Evento> addEvento(@Path("idEmpresa") int idEmpresa, @Body Evento evento);
 
         //? LISTAGEM DE TODOS
-        @GET("/evento/listarEvento/")
+        @GET("/evento/listarEvento")
         Call<List<Evento>> getEventos();
 
         //? LISTAGEM POR ID DO EVENTO

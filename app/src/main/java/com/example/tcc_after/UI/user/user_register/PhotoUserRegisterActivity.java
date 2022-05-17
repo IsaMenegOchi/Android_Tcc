@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.UsuarioComum;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
