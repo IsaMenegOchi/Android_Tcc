@@ -20,7 +20,6 @@ public class UserPerfilFragment extends Fragment {
 
     private Spinner spConfiguracoes;
 
-
     public UserPerfilFragment() {
         // Required empty public constructor
     }
@@ -47,28 +46,28 @@ public class UserPerfilFragment extends Fragment {
 
         spConfiguracoes = getActivity().findViewById(R.id.spUserPerfil_Settings);
 
-//        String[] config = getResources().getStringArray(R.array.settingsArray);
-//        spConfiguracoes.setAdapter(new ArrayAdapter<String>(getContext(),  android.R.layout.simple_spinner_item, config));
+        String[] config = getResources().getStringArray(R.array.settingsArray);
+        spConfiguracoes.setAdapter(new ArrayAdapter<String>(getContext(),  android.R.layout.simple_spinner_item, config));
 
 //
 
 
-//        spConfiguracoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-////                if (spConfiguracoes.getSelectedItemId() == 0){
-////                    Fragment fragment = new UserEditPerfilFragment();
-////                }
-////                if (spConfiguracoes.getSelectedItemId() == 1){
-////                    startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
-////                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
+        spConfiguracoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (spConfiguracoes.getSelectedItemId() == 0){
+                    Fragment fragment = new UserEditPerfilFragment();
+                }
+                if (spConfiguracoes.getSelectedItemId() == 1){
+                    startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_perfil, container, false);
     }

@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconlogo_after"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -53,9 +53,6 @@
             android:name=".UI.user.tickets.buy_tickets.UserBuyTicketTypeActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".UI.FeedActivity"
-            android:exported="false"/>
         <activity
             android:name=".UI.user.user_register.PhotoUserRegisterActivity"
             android:exported="false" />
@@ -115,7 +112,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.event.EventRegisterActivity"
-           android:exported="false"/>
+            android:exported="false"/>
 
         <activity
             android:name=".UI.event.EventRegisterAllotmentActivity"

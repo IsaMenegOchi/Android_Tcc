@@ -2,11 +2,16 @@ package com.example.tcc_after.UI.user.user_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,9 +23,10 @@ import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-public class UserRegisterActivity02 extends AppCompatActivity {
+public class UserRegisterActivity02 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private EditText etDataNasc;
     private EditText etCep;
     private EditText etCidade;
@@ -65,6 +71,17 @@ public class UserRegisterActivity02 extends AppCompatActivity {
 
         });
 
+        etSenha.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    if(motionEvent.getRawX() >= etSenha.getRight() - etSenha.getTotalPaddingRight())
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->
@@ -87,7 +104,23 @@ public class UserRegisterActivity02 extends AppCompatActivity {
 
         });
     }
-//
+
+    //*função de pegar data
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        String hora = dayOfMonth + "/" + month + "/" + year;
+
+            etDataNasc.setText(hora);
+
+
+    }
+
+
     private class BringJsonCep extends AsyncTask<String, String, String>{
         @Override
         protected String doInBackground(String... strings) {
