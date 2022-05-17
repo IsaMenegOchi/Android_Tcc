@@ -10,21 +10,23 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tcc_after.MainActivity;
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.FeedActivity;
 import com.example.tcc_after.model.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.util.DateConvert;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,8 +75,6 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                     // FAZ A VALIDAÇÃO DOS CAMPOS
                     if (validateFields()){
 
-//                        Date dataNacimento = Date.valueOf(UserRegisterActivity02.dataNascCadastroUsuario);
-                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                         // CRIANDO UMA MODEL DE USUARIO COMUM
                         UsuarioComum usuarioComum = new UsuarioComum();
 
@@ -83,12 +83,11 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
                         usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
                         try {
-                            usuarioComum.setDataNascUsuario(format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
+                            usuarioComum.setDataNascUsuario(DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
                         }
                         catch (ParseException e) {
                             e.printStackTrace();
-                        };
-                        Log.d("teste", "onCreate: " + usuarioComum.getDataNascUsuario().toString());
+                        }
 
                         //fotoCapa
                         //fotoFundo
@@ -103,41 +102,46 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         addUsuario(usuarioComum);
 
                         //REDIRECIONANDO A OUTRA TELA
-                        Intent intent = new Intent(PhotoUserRegisterActivity.this, FeedActivity.class);
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainActivity.class);
                         startActivity(intent);
                     }//fim do if
                 }//fim da view
         ); //fim do click listener
 
-//        tvPularEtapa.setOnClickListener(view ->
-//                {
-//                    // FAZ A VALIDAÇÃO DOS CAMPOS
-//                    if (validateFields()){
-//
-//                        // CRIANDO UMA MODEL DE USUARIO COMUM
-//                        UsuarioComum usuarioComum = new UsuarioComum();
-//
-//                        //CHAMANDO AS VARIAVEIS PUBLICAS
-//                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
-//                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
-//                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
-//                        usuarioComum.setDataNascUsuario(UserRegisterActivity02.dataNascCadastroUsuario);
-//                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
-//                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
-//                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
-//                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
-//                        usuarioComum.setBiografia(etBiografia.getText().toString());
-//
-//                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-//                        routerInterface = APIUtil.getUsuarioInterface();
-//                        addUsuario(usuarioComum);
-//
-//                        //REDIRECIONANDO A OUTRA TELA
-////                        Intent intent = new Intent(UserRegisterActivity02.this, PhotoRegisterActivity.class);
-////                        startActivity(intent);
-//                    }//fim do if
-//                }//fim da view
-//        ); //fim d
+        tvPularEtapa.setOnClickListener(view ->
+                {
+                    // FAZ A VALIDAÇÃO DOS CAMPOS
+                    if (validateFields()){
+
+                        // CRIANDO UMA MODEL DE USUARIO COMUM
+                        UsuarioComum usuarioComum = new UsuarioComum();
+
+                        //CHAMANDO AS VARIAVEIS PUBLICAS
+                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
+                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
+                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
+                        try {
+                            usuarioComum.setDataNascUsuario(DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
+                        }
+                        catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
+                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
+                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
+                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
+                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
+
+                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
+                        routerInterface = APIUtil.getApiInterface();
+                        addUsuario(usuarioComum);
+
+                        //REDIRECIONANDO A OUTRA TELA
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }//fim do if
+                }//fim da view
+        ); //fim d
 
     }//fim do onCreate
 
@@ -183,6 +187,8 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 //
 //    }
 
+
+
     //* funcao de abrir galeria
         @Override
         protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
@@ -202,15 +208,13 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                     try
                     {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-                        //esse bitmap representa o recurso de imagem vindo do local URI que foi convertido para um MediaStote
 
-                        if (photoCover.hasOnClickListeners()){
+                        if (photoCover.isActivated()){
                             photoCover.setImageBitmap(bitmap);
                         }
                         else{
-                        photoPerfil.setImageBitmap(bitmap);
+                            photoPerfil.setImageBitmap(bitmap);
                         }
-
 
                         Log.d("IMAGEM", "Imagem alterada");
                     }

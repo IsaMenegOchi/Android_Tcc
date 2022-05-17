@@ -44,46 +44,54 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_ticket:
-                        if (item.isCheckable()){
-                            item.setIcon(R.drawable.ic_baseline_local_activity);
-                        }
-                        else{
-                            item.setIcon(R.drawable.ic_outline_local_activity);
-                        }
 
                         fragment = new TicketsFragment();
+
+                        if (fragment.equals(TicketsFragment.class)){
+                            item.setIcon(R.drawable.ic_baseline_local_activity);
+                        }
+                        else {
+                            item.setIcon(R.drawable.ic_outline_local_activity);
+                        }
                         break;
 
                     case R.id.nav_home:
-                        if (item.isCheckable()){
+
+                        fragment = new FeedFragment();
+
+                        if (fragment.equals(FeedFragment.class)){
                             item.setIcon(R.drawable.ic_baseline_home);
                         }
                         else{
                             item.setIcon(R.drawable.ic_outline_local_activity);
                         }
 
-                        fragment = new FeedFragment();
                         break;
 
                     case R.id.nav_moments:
-                        if (item.isCheckable()){
+
+                        fragment = new MomentsFragment();
+
+                        if (fragment.equals(MomentsFragment.class)){
                             item.setIcon(R.drawable.ic_baseline_video_library);
                         }
                         else{
-                            item.setIcon(R.drawable.ic_outline_local_activity);
+                            item.setIcon(R.drawable.ic_outline_video_library);
                         }
-                        fragment = new MomentsFragment();
+
                         break;
 
                     case R.id.nav_perfil:
-                        if (item.isCheckable()){
+
+                        fragment = new UserPerfilFragment();
+
+                        if (fragment.equals(MomentsFragment.class)) {
                             item.setIcon(R.drawable.ic_baseline_person);
                         }
                         else{
-                            item.setIcon(R.drawable.ic_outline_local_activity);
+                            item.setIcon(R.drawable.ic_person_outline);
                         }
 
-                        fragment = new UserPerfilFragment();
                         break;
                 }
                     getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
