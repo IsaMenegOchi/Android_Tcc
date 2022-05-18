@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_primary"
-    tools:context=".UI.user.EditPerfilActivity">
+    tools:context=".UI.company.EditPerfilCompanyActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -145,44 +145,101 @@
                 />
 
 
-
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
                 <TextView
                     android:id="@+id/tvCompanyEditPerfil_RegularAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     style="@style/textViewName"
-                    android:text="@string/regularBankAccount"
-                     />
-
-                <EditText
-                    android:id="@+id/etCompanyEditPerfil_RegularAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/editTextSmaller" />
+                    android:layout_marginTop="20dp"
+                    android:text="@string/bankAccount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
-                
+                <TextView
+                    android:id="@+id/tvCompanyEditPerfil_AddAccountWarning"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Adicione uma conta"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_RegularAccount" />
 
-                    <Button
-                        android:id="@+id/etCompanyEditPerfil_Plus"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@drawable/ic_baseline_add"
-                         />
+                <TextView
+                    android:id="@+id/tvCompanyEditPerfil_BankAccount1"
+                    style="@style/editTextHalf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_RegularAccount" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvCompanyEditPerfil_BankAccount2"
+                    style="@style/editTextHalf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_RegularAccount" />
+
+                <TextView
+                    android:id="@+id/tvCompanyEditPerfil_BankAccount3"
+                    style="@style/editTextHalf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/tvCompanyEditPerfil_RegularAccount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_BankAccount1" />
+
+                <TextView
+                    android:id="@+id/tvCompanyEditPerfil_BankAccount4"
+                    style="@style/editTextHalf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_BankAccount2" />
+
+                <Button
+                    android:id="@+id/btnCompanyEditPerfil_Plus1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/ic_baseline_add"
+                    android:tag="buttonAdd"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCompanyEditPerfil_BankAccount1"
+                    app:layout_constraintStart_toEndOf="@+id/tvCompanyEditPerfil_BankAccount1"
+                    app:layout_constraintTop_toTopOf="@+id/tvCompanyEditPerfil_BankAccount1" />
+
+                <Button
+                    android:id="@+id/btnCompanyEditPerfil_Plus2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_baseline_add"
+                    android:tag="buttonAdd"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyEditPerfil_BankAccount1" />
+
+                <Button
+                    android:id="@+id/btnCompanyEditPerfil_Plus3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_baseline_add"
+                    android:tag="buttonAdd"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCompanyEditPerfil_BankAccount3"
+                    app:layout_constraintStart_toStartOf="@+id/tvCompanyEditPerfil_BankAccount2"
+                    app:layout_constraintTop_toTopOf="@+id/tvCompanyEditPerfil_BankAccount3" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"

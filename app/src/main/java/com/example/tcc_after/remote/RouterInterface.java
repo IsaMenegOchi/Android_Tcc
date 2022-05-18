@@ -1,6 +1,7 @@
 package com.example.tcc_after.remote;
 
 import com.example.tcc_after.model.Celebridade;
+import com.example.tcc_after.model.Perfil;
 import com.example.tcc_after.model.empresa.Banco;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
@@ -31,6 +32,9 @@ public interface RouterInterface {
     //* ROTAS DE PERFIL
 //    @DELETE("/perfil/deletarPerfil/{idPerfil}")
 //    Call<Empresa> deletarPerfil(@Path("idPerfil") int idPerfil);
+
+    @GET("/perfil/acharPerfil/{idPerfil}")
+    Call<List<Perfil>> getPerfilPorId (@Path("idPerfil") int idPerfil);
 
     //* ROTAS DE USUARIO
 
@@ -83,6 +87,8 @@ public interface RouterInterface {
     @GET("/empresa/listarEmpresas/")
     Call<List<Empresa>> getEmpresa();
 
+    @GET("/empresa/acharEmpresaPorId/{idEmpresa}")
+    Call<List<Empresa>> getEmpresaPorId(@Path("idEmpresa") int idEmpresa);
     //? EDIÇÃO
     @PUT("/perfil/editarPerfilEmpresa/{idPerfil}")
     Call<Empresa> updateEmpresa(@Path("idPerfil") int idPerfil, @Body Empresa empresa);
@@ -95,7 +101,7 @@ public interface RouterInterface {
 
         //? LISTAGEM
         @GET("/contaEmpresa/listarContasPorIdEmpresa/{idEmpresa}/")
-        Call<List<ContaBancaria>> getContasBancarias(@Path("idEmpresa") int idEmpresa);
+        Call<List<ContaBancaria>> getContaBancariaPorId(@Path("idEmpresa") int idEmpresa);
 
             @GET("/bancoConta/listarBancoConta/")
             Call<List<Banco>> getBancos();

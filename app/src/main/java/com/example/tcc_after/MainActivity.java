@@ -11,14 +11,10 @@ import com.example.tcc_after.uiFragments.FeedFragment;
 import com.example.tcc_after.uiFragments.MomentsFragment;
 import com.example.tcc_after.uiFragments.PerfilFragment;
 import com.example.tcc_after.uiFragments.SearchFragment;
-import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
 import com.example.tcc_after.uiFragments.user.tickets.TicketsFragment;
-import com.example.tcc_after.uiFragments.user.verification.RequestVerificationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import android.content.Intent;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -82,14 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_perfil:
 
-                        fragment = new UserPerfilFragment();
+                        fragment = new PerfilFragment();
 
-                        if (fragment.equals(MomentsFragment.class)) {
-                            item.setIcon(R.drawable.ic_baseline_person);
-                        }
-                        else{
-                            item.setIcon(R.drawable.ic_person_outline);
-                        }
 
                         break;
                 }

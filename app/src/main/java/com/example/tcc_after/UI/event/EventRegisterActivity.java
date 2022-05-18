@@ -337,7 +337,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
 
     //*FAZENDO LISTAGEM DE CONTA BANCÁRIA
-        Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContasBancarias(1);
+        Call<List<ContaBancaria>> getContasBancarias = routerInterface.getContaBancariaPorId(1);
         getContasBancarias.enqueue(
 
                 new Callback<List<ContaBancaria>>() {

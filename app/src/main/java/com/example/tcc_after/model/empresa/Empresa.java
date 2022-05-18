@@ -1,5 +1,6 @@
 package com.example.tcc_after.model.empresa;
 
+import com.example.tcc_after.model.Perfil;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -37,13 +38,15 @@ public class Empresa {
     @Expose
     private String biografiaEmpresa;
 
+    @SerializedName("tblPerfil")
+    @Expose
+    private Perfil perfil;
+
 
     public Empresa() {
     }
 
-    public Empresa(int idEmpresa, String cnpjEmpresa, String nicknameEmpresa,
-                   String emailEmpresa, String senhaEmpresa, String imagemPerfilEmpresa,
-                   String imagemFundoEmpresa, String biografiaEmpresa) {
+    public Empresa(int idEmpresa, String cnpjEmpresa, String nicknameEmpresa, String emailEmpresa, String senhaEmpresa, String imagemPerfilEmpresa, String imagemFundoEmpresa, String biografiaEmpresa, Perfil perfil) {
         this.idEmpresa = idEmpresa;
         this.cnpjEmpresa = cnpjEmpresa;
         this.nicknameEmpresa = nicknameEmpresa;
@@ -52,6 +55,7 @@ public class Empresa {
         this.imagemPerfilEmpresa = imagemPerfilEmpresa;
         this.imagemFundoEmpresa = imagemFundoEmpresa;
         this.biografiaEmpresa = biografiaEmpresa;
+        this.perfil = perfil;
     }
 
     public int getIdEmpresa() {
@@ -116,5 +120,13 @@ public class Empresa {
 
     public void setBiografiaEmpresa(String biografiaEmpresa) {
         this.biografiaEmpresa = biografiaEmpresa;
+    }
+
+    public Perfil getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
     }
 }
