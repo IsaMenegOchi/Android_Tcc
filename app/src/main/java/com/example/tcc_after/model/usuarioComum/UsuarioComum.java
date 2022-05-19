@@ -1,5 +1,7 @@
 package com.example.tcc_after.model.usuarioComum;
 
+import com.example.tcc_after.model.Endereco;
+import com.example.tcc_after.model.Perfil;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -64,6 +66,15 @@ public class UsuarioComum {
     @Expose
     private String estadoUsuario;
 
+    @SerializedName("tblPerfil")
+    @Expose
+    private Perfil perfil;
+
+    @SerializedName("tblEnderecos")
+    @Expose
+    private Endereco endereco;
+
+
 
     /** CRIAÇÃO DOS CONSTRUTORES **/
 
@@ -74,26 +85,7 @@ public class UsuarioComum {
     //Criação dos construtores com comandos
 
 
-    public UsuarioComum(int idUsuario, int idPerfil, int idEnderecoUsuario,
-                        String nomeCompletoUsuario, String nicknameUsuario,
-                        String emailUsuario, String senhaUsuario, String imagemPerfilUsuario,
-                        String imagemFundoUsuario, Date dataNascUsuario, String biografia,
-                        String cep, String cidade, String estado) {
-        this.idUsuario = idUsuario;
-        this.idPerfil = idPerfil;
-        this.idEnderecoUsuario = idEnderecoUsuario;
-        this.nomeCompletoUsuario = nomeCompletoUsuario;
-        this.nicknameUsuario = nicknameUsuario;
-        this.emailUsuario = emailUsuario;
-        this.senhaUsuario = senhaUsuario;
-        this.imagemPerfilUsuario = imagemPerfilUsuario;
-        this.imagemFundoUsuario = imagemFundoUsuario;
-        this.dataNascUsuario = dataNascUsuario;
-        this.biografiaUsuario = biografia;
-        this.cepUsuario = cep;
-        this.cidadeUsuario = cidade;
-        this.estadoUsuario = estado;
-    }
+
 
     public int getIdUsuario() {
         return idUsuario;
@@ -205,6 +197,54 @@ public class UsuarioComum {
 
     public void setEstado(String estado) {
         this.estadoUsuario = estado;
+    }
+
+    public String getBiografiaUsuario() {
+        return biografiaUsuario;
+    }
+
+    public void setBiografiaUsuario(String biografiaUsuario) {
+        this.biografiaUsuario = biografiaUsuario;
+    }
+
+    public String getCepUsuario() {
+        return cepUsuario;
+    }
+
+    public void setCepUsuario(String cepUsuario) {
+        this.cepUsuario = cepUsuario;
+    }
+
+    public String getCidadeUsuario() {
+        return cidadeUsuario;
+    }
+
+    public void setCidadeUsuario(String cidadeUsuario) {
+        this.cidadeUsuario = cidadeUsuario;
+    }
+
+    public String getEstadoUsuario() {
+        return estadoUsuario;
+    }
+
+    public void setEstadoUsuario(String estadoUsuario) {
+        this.estadoUsuario = estadoUsuario;
+    }
+
+    public Perfil getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
 

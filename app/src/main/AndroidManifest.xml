@@ -18,7 +18,14 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".UI.user.UserEditPerfilActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <activity
             android:name=".UI.company.EditBankAccount"
             android:exported="false" /> <!-- TUDO -->
@@ -78,16 +85,12 @@
             android:exported="false" />
         <activity
             android:name=".UI.company.EditPerfilCompanyActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+           android:exported="false"/>
         <activity
             android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
-            android:exported="false" /> <!-- EVENTO -->
+            android:exported="false" />
+
+        <!-- EVENTO -->
         <activity
             android:name=".UI.event.TicketActivity"
             android:exported="false" />

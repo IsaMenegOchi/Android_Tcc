@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.tcc_after.R;
@@ -22,6 +23,8 @@ public class ChoosePerfil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_perfil);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         imgBgUserIcon = findViewById(R.id.tvChoosePerfil_BgUser);
         imgBgCompanyIcon = findViewById(R.id.ivChoosePerfil_BgCompany);

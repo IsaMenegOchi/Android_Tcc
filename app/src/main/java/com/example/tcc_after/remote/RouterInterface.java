@@ -36,6 +36,9 @@ public interface RouterInterface {
     @GET("/perfil/acharPerfil/{idPerfil}")
     Call<List<Perfil>> getPerfilPorId (@Path("idPerfil") int idPerfil);
 
+    @GET("/perfil/acharPerfil/{idUsuarioComum}")
+    Call<List<UsuarioComum>> getPerfilUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
+
     //* ROTAS DE USUARIO
 
     //? CADASTRO
@@ -43,8 +46,9 @@ public interface RouterInterface {
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
     //? LISTAGEM POR ID
-    @GET("/perfil/acharPerfil/{idUsuarioComum}")
+    @GET("/usuarioComum/acharPerfilUsuario/{idUsuarioComum}")
     Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
+
 
     //? LISTAGEM DE TODOS
     @GET("/usuarioComum/listarPerfilUsuarios/")

@@ -53,73 +53,73 @@ public class UserEditPerfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        nickname = getActivity().findViewById(R.id.etEditPerfil_UserNickname);
-        biografia = getActivity().findViewById(R.id.etEditPerfil_UserDescription);
-        email = getActivity().findViewById(R.id.etEditPerfil_UserEmail);
-        nomeCompleto = getActivity().findViewById(R.id.etEditPerfil_UserName);
-        senha = getActivity().findViewById(R.id.etEditPerfil_UserPassword);
-        CEP = getActivity().findViewById(R.id.etEditPerfil_UserCep);
-        estado = getActivity().findViewById(R.id.etEditPerfil_UserState);
-        cidade = getActivity().findViewById(R.id.etEditPerfil_UserCity);
-        dataNascimento = getActivity().findViewById(R.id.etEditPerfil_UserBirth);
-
-
-
-        //!Trocar id
-        routerInterface = APIUtil.getApiInterface();
-        Call<List<UsuarioComum>> updateUsuarioComum= routerInterface.getUsuarioComumId(1);
-        updateUsuarioComum.enqueue(new Callback<List<UsuarioComum>>() {
-            @Override
-            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
-
-                if (response.isSuccessful()){
-                    list = response.body();
-
-                    nomeCompleto.setText(list.get(0).getNomeCompletoUsuario());
-                    nickname.setText(list.get(0).getNicknameUsuario());
-                    biografia.setText(list.get(0).getBiografia());
-                    email.setText(list.get(0).getEmailUsuario());
-                    senha.setText(list.get(0).getSenhaUsuario());
-                    dataNascimento.setText(list.get(0).getDataNascUsuario().toString());
-                    CEP.setText(list.get(0).getCep());
-                    estado.setText(list.get(0).getEstado());
-                    cidade.setText(list.get(0).getCidade());
-
-                    salvar.setOnClickListener(view -> {
-                        UsuarioComum usuarioComum = new UsuarioComum();
-                        usuarioComum.setNomeCompletoUsuario(nomeCompleto.getText().toString());
-                        usuarioComum.setBiografia(biografia.getText().toString());
-                        usuarioComum.setEmailUsuario(email.getText().toString());
-                        usuarioComum.setSenhaUsuario(senha.getText().toString());
-//                        usuarioComum.getDataNascUsuario(DateConvert.format(dataNascimento.getText().toString()));
-                        usuarioComum.setCep(CEP.getText().toString());
-                        usuarioComum.setEstado(estado.getText().toString());
-                        usuarioComum.setCidade(cidade.getText().toString());
-
-                        //!TROCAR ID DO USUARIO COMUM
-                        Call<UsuarioComum> updateUsuarioComum = routerInterface.updateUsuarioComum(1, usuarioComum);
-
-                        updateUsuarioComum.enqueue(new Callback<UsuarioComum>() {
-                            @Override
-                            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
-//                                Toast.makeText(MainA, "foi nega, vc alterou o livro", Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(UserEditPerfilFragment.this, PerfilActivity.class));
-                            }
-
-                            @Override
-                            public void onFailure(Call<UsuarioComum> call, Throwable t) {
-
-                            }
-                        });
-                    });
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
-
-            }
-        });
+//        nickname = getActivity().findViewById(R.id.etUserEditPerfil_UserNickname);
+//        biografia = getActivity().findViewById(R.id.etUserEditPerfil_UserDescription);
+//        email = getActivity().findViewById(R.id.etUserEditPerfil_UserEmail);
+//        nomeCompleto = getActivity().findViewById(R.id.etUserEditPerfil_UserName);
+//        senha = getActivity().findViewById(R.id.etUserEditPerfil_UserPassword);
+//        CEP = getActivity().findViewById(R.id.etUserEditPerfil_UserCep);
+//        estado = getActivity().findViewById(R.id.etEditPerfil_UserState);
+//        cidade = getActivity().findViewById(R.id.etEditPerfil_UserCity);
+//        dataNascimento = getActivity().findViewById(R.id.etEditPerfil_UserBirth);
+//
+//
+//
+//        //!Trocar id
+//        routerInterface = APIUtil.getApiInterface();
+//        Call<List<UsuarioComum>> updateUsuarioComum= routerInterface.getUsuarioComumId(1);
+//        updateUsuarioComum.enqueue(new Callback<List<UsuarioComum>>() {
+//            @Override
+//            public void onResponse(Call<List<UsuarioComum>> call, Response<List<UsuarioComum>> response) {
+//
+//                if (response.isSuccessful()){
+//                    list = response.body();
+//
+//                    nomeCompleto.setText(list.get(0).getNomeCompletoUsuario());
+//                    nickname.setText(list.get(0).getNicknameUsuario());
+//                    biografia.setText(list.get(0).getBiografia());
+//                    email.setText(list.get(0).getEmailUsuario());
+//                    senha.setText(list.get(0).getSenhaUsuario());
+//                    dataNascimento.setText(list.get(0).getDataNascUsuario().toString());
+//                    CEP.setText(list.get(0).getCep());
+//                    estado.setText(list.get(0).getEstado());
+//                    cidade.setText(list.get(0).getCidade());
+//
+//                    salvar.setOnClickListener(view -> {
+//                        UsuarioComum usuarioComum = new UsuarioComum();
+//                        usuarioComum.setNomeCompletoUsuario(nomeCompleto.getText().toString());
+//                        usuarioComum.setBiografia(biografia.getText().toString());
+//                        usuarioComum.setEmailUsuario(email.getText().toString());
+//                        usuarioComum.setSenhaUsuario(senha.getText().toString());
+////                        usuarioComum.getDataNascUsuario(DateConvert.format(dataNascimento.getText().toString()));
+//                        usuarioComum.setCep(CEP.getText().toString());
+//                        usuarioComum.setEstado(estado.getText().toString());
+//                        usuarioComum.setCidade(cidade.getText().toString());
+//
+//                        //!TROCAR ID DO USUARIO COMUM
+//                        Call<UsuarioComum> updateUsuarioComum = routerInterface.updateUsuarioComum(1, usuarioComum);
+//
+//                        updateUsuarioComum.enqueue(new Callback<UsuarioComum>() {
+//                            @Override
+//                            public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
+////                                Toast.makeText(MainA, "foi nega, vc alterou o livro", Toast.LENGTH_SHORT).show();
+////                                startActivity(new Intent(UserEditPerfilFragment.this, PerfilActivity.class));
+//                            }
+//
+//                            @Override
+//                            public void onFailure(Call<UsuarioComum> call, Throwable t) {
+//
+//                            }
+//                        });
+//                    });
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<UsuarioComum>> call, Throwable t) {
+//
+//            }
+//        });
         return inflater.inflate(R.layout.fragment_user_edit_perfil, container, false);
     }
 }
