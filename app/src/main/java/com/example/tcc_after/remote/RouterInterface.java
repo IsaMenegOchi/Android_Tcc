@@ -103,6 +103,8 @@ public interface RouterInterface {
         @GET("/contaEmpresa/listarContasPorIdEmpresa/{idEmpresa}/")
         Call<List<ContaBancaria>> getContaBancariaPorId(@Path("idEmpresa") int idEmpresa);
 
+        //! CRIAR EDICAO DE CONTA BANCARIA
+
             @GET("/bancoConta/listarBancoConta/")
             Call<List<Banco>> getBancos();
 

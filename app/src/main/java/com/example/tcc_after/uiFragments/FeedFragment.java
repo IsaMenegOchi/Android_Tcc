@@ -120,8 +120,6 @@ public class FeedFragment extends Fragment {
             Log.d("teste", "onBindViewHolder: " + listEventos.get(0).getIdEvento());
             ((EventoAdapter.EventoViewHolder) holder).setEventoData(evento);
 
-
-
         }
 
 

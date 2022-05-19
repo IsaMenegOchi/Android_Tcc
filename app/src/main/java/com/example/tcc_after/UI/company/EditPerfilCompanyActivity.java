@@ -12,16 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.model.Perfil;
+import com.example.tcc_after.UI.company.company_register.bank_account.BankAccountRegisterActivity;
 import com.example.tcc_after.model.empresa.ContaBancaria;
 import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,7 +56,7 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
         contaBancaria2 = findViewById(R.id.tvCompanyEditPerfil_BankAccount2);
         contaBancaria3 = findViewById(R.id.tvCompanyEditPerfil_BankAccount3);
         contaBancaria4 = findViewById(R.id.tvCompanyEditPerfil_BankAccount4);
-        addContaAviso
+        addContaAviso = findViewById(R.id.tvCompanyEditPerfil_AddAccountWarning);
 
         btnAdd1 = findViewById(R.id.btnCompanyEditPerfil_Plus1);
         btnAdd2 = findViewById(R.id.btnCompanyEditPerfil_Plus2);
@@ -65,7 +64,6 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
 
         btnSave = findViewById(R.id.btnCompanyEditPerfil_Save);
         btnCancel = findViewById(R.id.btnCompanyEditPerfil_Cancel);
-
 
 
         routerInterface = APIUtil.getApiInterface();
@@ -91,7 +89,8 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
                         public void onResponse(Call<List<ContaBancaria>> call, Response<List<ContaBancaria>> response) {
                             if (response.isSuccessful()){
                                 listContaBancaria = response.body();
-
+                                AtomicInteger idContaBancaria = new AtomicInteger();
+                                Intent intent = new Intent();
                                 switch (listContaBancaria.size()){
 
                                     case (0):
@@ -100,12 +99,21 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
                                         contaBancaria3.setVisibility(View.GONE);
                                         contaBancaria4.setVisibility(View.GONE);
                                         btnAdd1.setVisibility(View.GONE);
+                                        addContaAviso.setVisibility(View.VISIBLE);
+                                        addContaAviso.setOnClickListener(view ->{
+                                            intent.putExtra("idEmpresa", idEmpresa);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, BankAccountRegisterActivity.class));
+                                        });
 
                                     case (1):
                                         contaBancaria1.setText(listContaBancaria.get(0).getNumeroCB());
                                         contaBancaria2.setVisibility(View.GONE);
                                         contaBancaria3.setVisibility(View.GONE);
                                         contaBancaria4.setVisibility(View.GONE);
+                                        btnAdd1.setOnClickListener(view -> {
+                                            intent.putExtra("idEmpresa", idEmpresa);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, BankAccountRegisterActivity.class));
+                                        });
 
                                     break;
 
@@ -116,29 +124,81 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
                                         contaBancaria4.setVisibility(View.GONE);
                                         btnAdd1.setVisibility(View.GONE);
                                         btnAdd2.setVisibility(View.VISIBLE);
+                                        btnAdd2.setOnClickListener(view ->{
+                                            intent.putExtra("idEmpresa", idEmpresa);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, BankAccountRegisterActivity.class));
+                                        });
                                         btnAdd3.setVisibility(View.GONE);
 
                                     break;
+
                                     case (3):
                                         contaBancaria1.setText(listContaBancaria.get(0).getNumeroCB());
+                                        contaBancaria1.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(0).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         contaBancaria2.setText(listContaBancaria.get(1).getNumeroCB());
-                                        contaBancaria3.setText(listContaBancaria.get(1).getNumeroCB());
+                                        contaBancaria2.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(1).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
+                                        contaBancaria3.setText(listContaBancaria.get(2).getNumeroCB());
+                                        contaBancaria3.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(2).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         contaBancaria4.setVisibility(View.GONE);
                                         btnAdd1.setVisibility(View.GONE);
                                         btnAdd2.setVisibility(View.GONE);
                                         btnAdd3.setVisibility(View.VISIBLE);
+                                        btnAdd3.setOnClickListener(view ->{
+                                            intent.putExtra("idEmpresa", idEmpresa);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, BankAccountRegisterActivity.class));
+                                        });
 
                                     break;
 
                                     case (4):
+
                                         contaBancaria1.setText(listContaBancaria.get(0).getNumeroCB());
+                                        contaBancaria1.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(0).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         contaBancaria2.setText(listContaBancaria.get(1).getNumeroCB());
+                                        contaBancaria2.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(1).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         contaBancaria3.setText(listContaBancaria.get(2).getNumeroCB());
+                                        contaBancaria3.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(2).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         contaBancaria4.setText(listContaBancaria.get(3).getNumeroCB());
+                                        contaBancaria4.setOnClickListener(view -> {
+                                            idContaBancaria.set(listContaBancaria.get(3).getIdContaBancaria());
+                                            intent.putExtra("idContaBancaria", idContaBancaria);
+                                            startActivity(intent.setClass(EditPerfilCompanyActivity.this, EditBankAccount.class));
+                                        });
+
                                         btnAdd1.setVisibility(View.GONE);
                                         btnAdd2.setVisibility(View.GONE);
                                         btnAdd3.setVisibility(View.GONE);
-                                        break;
+                                    break;
                                 }
                             }
                         }
@@ -148,33 +208,6 @@ public class EditPerfilCompanyActivity extends AppCompatActivity {
 
                         }
                     });
-
-
-
-//                    contaBancaria1.setOnClickListener(view -> {
-//                        Intent intent = new Intent(EditPerfilCompanyActivity.this, EditBankAccount.class );
-//                        intent.putExtra("idContaBancaria", idContaBancaria);
-//                        startActivity(intent);
-//                    });
-//
-//                    contaBancaria2.setOnClickListener(view -> {
-//                        Intent intent = new Intent(EditPerfilCompanyActivity.this, EditBankAccount.class );
-//                        intent.putExtra("idContaBancaria", idContaBancaria);
-//                        startActivity(intent);
-//
-//                    });
-//
-//                    contaBancaria3.setOnClickListener(view -> {
-//                        Intent intent = new Intent(EditPerfilCompanyActivity.this, EditBankAccount.class );
-//                        intent.putExtra("idContaBancaria", idContaBancaria);
-//                        startActivity(intent);
-//                    });
-//
-//                    contaBancaria4.setOnClickListener(view -> {
-//                        Intent intent = new Intent(EditPerfilCompanyActivity.this, EditBankAccount.class );
-//                        intent.putExtra("idContaBancaria", idContaBancaria);
-//                        startActivity(intent);
-//                    });
 
                     btnSave.setOnClickListener(view -> {
                         Empresa empresa = new Empresa();
