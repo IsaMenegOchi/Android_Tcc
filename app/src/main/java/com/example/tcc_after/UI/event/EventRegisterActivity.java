@@ -80,6 +80,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,7 +171,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
         );
 
     //*FAZENDO LISTAGEM DE ASSUNTOS
-        Call<List<Assunto>> getAssuntos = routerInterface.getAssuntos();
+        Call<List<Assunto>> getAssuntos = routerInterface.getAssuntoPorCategoria(idCategoria);
         getAssuntos.enqueue(
 
                 new Callback<List<Assunto>>() {
@@ -178,6 +179,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
                     public void onResponse(Call<List<Assunto>> call, Response<List<Assunto>> response) {
                         if (response.isSuccessful()) {
 
+                            Log.d("teste", "onResponse: " + idCategoria);
                             List<Assunto> listAssuntos = new ArrayList<Assunto>();
 
                             List<String> listNomeAssunto = new ArrayList<String>();
@@ -657,8 +659,6 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
             }
         }
     }
-
-
 
 //    private boolean validateFields (){
 //

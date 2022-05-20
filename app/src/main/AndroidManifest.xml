@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <activity
             android:name=".UI.company.EditBankAccount"
             android:exported="false" /> <!-- TUDO -->
@@ -39,7 +39,7 @@
             android:name=".UI.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainUserActivity"
             android:exported="false" /> <!-- ADM -->
         <activity
             android:name=".UI.adm.VerifyCardActivity"
@@ -85,7 +85,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.company.EditPerfilCompanyActivity"
-           android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
             android:exported="false" />

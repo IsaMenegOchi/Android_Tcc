@@ -190,6 +190,13 @@
     <string name="finishTime">Hora do término</string>
     <string name="minimum">Mínimo</string>
     <string name="maximum">Máximo</string>
+    <string name="eventEstatistics">Estatísticas dos eventos</string>
+    <string name="active">Ativos</string>
+    <string name="closed">Encerrados</string>
+
+
+    <string name="soldTickets">Ingressos vendidos</string>
+    <string name="gain">Lucro</string>
 
 
     <!--    <string name="number">O after não se responsabiliza pelo o que acontecer no evento. qualquer acontecimento indesejado, deve ser comunicado a empresa responsável</string>-->

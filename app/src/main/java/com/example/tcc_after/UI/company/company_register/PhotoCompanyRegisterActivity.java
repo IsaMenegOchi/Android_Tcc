@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.MainCompanyActivity;
 import com.example.tcc_after.UI.company.company_register.bank_account.BankAccountRegisterActivity;
 import com.example.tcc_after.UI.event.EventRegisterActivity;
 import com.example.tcc_after.model.empresa.Empresa;
@@ -45,7 +46,6 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
         etBiografia = findViewById(R.id.etCompanyPhotoRegister_Description);
         tvPularEtapa = findViewById(R.id.tvCompanyPhotoRegister_Skip);
 
-
         btnFinalizar.setOnClickListener(view -> {
 
             if (validateFields()){
@@ -53,6 +53,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                 empresa.setNicknameEmpresa(CompanyRegisterActivity01.nicknameCadastroEmpresa);
                 empresa.setCnpjEmpresa(CompanyRegisterActivity01.cnpjCadastroEmpresa);
 //                empresa.setImagemPerfilEmpresa(photoPerfil);
+//                empresa.setImagemFundoEmpresa(photoCover);
                 empresa.setEmailEmpresa(CompanyRegisterActivity01.emailCadastroEmpresa);
                 empresa.setSenhaEmpresa(CompanyRegisterPasswordActivity.senhaCadastroEmpresa);
                 empresa.setBiografiaEmpresa(etBiografia.getText().toString());
@@ -68,7 +69,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                             startActivity(intent);
                         })
                         .setNegativeButton("Não", (dialog1, witch)->{
-                            Intent intent = new Intent(PhotoCompanyRegisterActivity.this, EventRegisterActivity.class);
+                            Intent intent = new Intent(PhotoCompanyRegisterActivity.this, MainCompanyActivity.class);
                             startActivity(intent);
                         });
                 alertDialog.show();
@@ -88,20 +89,20 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
 
         tvPularEtapa.setOnClickListener(view -> {
 
-//            if (validateFields()){
-//                Empresa empresa = new Empresa();
-//                empresa.setNicknameEmpresa(CompanyRegisterActivity01.nicknameCadastroEmpresa);
-//                empresa.setCnpjEmpresa(CompanyRegisterActivity01.cnpjCadastroEmpresa);
-//                empresa.setEmailEmpresa(CompanyRegisterActivity01.emailCadastroEmpresa);
-//                empresa.setSenhaEmpresa(CompanyRegisterPasswordActivity.senhaCadastroEmpresa);
-//                empresa.setBiografiaEmpresa(etBiografia.getText().toString());
-//
-//                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-//                routerInterface = APIUtil.getUsuarioInterface();
-//                addEmpresa(empresa);
-//
-//              Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);
-//               startActivity(intent);
+            if (validateFields()) {
+                Empresa empresa = new Empresa();
+                empresa.setNicknameEmpresa(CompanyRegisterActivity01.nicknameCadastroEmpresa);
+                empresa.setCnpjEmpresa(CompanyRegisterActivity01.cnpjCadastroEmpresa);
+                empresa.setEmailEmpresa(CompanyRegisterActivity01.emailCadastroEmpresa);
+                empresa.setSenhaEmpresa(CompanyRegisterPasswordActivity.senhaCadastroEmpresa);
+
+                //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
+                routerInterface = APIUtil.getApiInterface();
+                addEmpresa(empresa);
+
+                Intent intent = new Intent(PhotoCompanyRegisterActivity.this, BankAccountRegisterActivity.class);
+                startActivity(intent);
+            }
         });
 
     }
@@ -123,18 +124,13 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
             public void onFailure(Call<Empresa> call, Throwable t) {
                 Log.d("Erro_api", t.getMessage());
             }//fim do onFailure
-        }); //fim do enqueue e do calback
+        });
     }// fim da funcao addEmprea
 
     public void openGalery(){
 
-        //criamos uma variavel com
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-
-        //qual o tipo de recurso que quero pegar
         intent.setType("image/*");
-
-        //abrir a activity responsavel por exibir as imagens, na qual retornará o conteudo selecionado para o nosso app
         this.startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODE_IMAGE);
     }
 

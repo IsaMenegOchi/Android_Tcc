@@ -3,5 +3,6 @@
 
     <size android:height="200dp"/>
     <solid android:color="@color/background_tertiary"/>
+    <corners android:radius="10dp"/>
 
 </shape>

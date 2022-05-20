@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uiFragments.company.CompanyEventStatisticsFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           style="@style/parent">
+
+           <ImageView
+               android:id="@+id/imageView"
+               style="@style/imageViewAfterLogo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageButton
+               android:id="@+id/btnEventDescription_Chat"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:layout_marginEnd="20dp"
+               android:background="@drawable/round_corner"
+               android:src="@drawable/ic_outline_question_answer"
+               app:layout_constraintBottom_toBottomOf="@+id/imageView"
+
+               app:layout_constraintEnd_toStartOf="@+id/btnEventDescription_Notification"
+               app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+           <ImageButton
+               android:id="@+id/btnEventDescription_Notification"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:background="@drawable/round_corner"
+               android:src="@drawable/ic_outline_notifications"
+               app:layout_constraintBottom_toBottomOf="@+id/imageView"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+           <TextView
+               android:id="@+id/tvEventStatistics_Title"
+               style="@style/textViewTitles"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="30dp"
+               android:text="@string/eventEstatistics"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Chat" />
+
+           <LinearLayout
+               android:id="@+id/llEventStatistics_ActiveClosed"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:weightSum="2"
+               android:layout_marginVertical="25dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/tvEventStatistics_Title">
+
+               <LinearLayout
+                   android:id="@+id/llEventStatistics_EventsActives"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                   <TextView
+                       style="@style/textViewSubTitlesPurple"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/activeTickets" />
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="2dp"
+                       android:layout_marginVertical="10dp"
+                       android:background="@color/purple_quaternary"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/llEventEstatistics_EventsClosed"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+                   android:layout_weight="1">
+
+                   <TextView
+                       style="@style/textViewSubTitlesBold"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/closed" />
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="2dp"
+                       android:layout_marginVertical="10dp"
+                       android:background="@color/white"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rcEventStatistics"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/llEventStatistics_ActiveClosed" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </ScrollView>
+</FrameLayout>

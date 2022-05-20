@@ -10,13 +10,12 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tcc_after.MainActivity;
+import com.example.tcc_after.UI.MainUserActivity;
 import com.example.tcc_after.R;
 import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
@@ -25,8 +24,6 @@ import com.example.tcc_after.util.DateConvert;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -102,7 +99,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         addUsuario(usuarioComum);
 
                         //REDIRECIONANDO A OUTRA TELA
-                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainActivity.class);
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainUserActivity.class);
                         startActivity(intent);
                     }//fim do if
                 }//fim da view
@@ -137,7 +134,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         addUsuario(usuarioComum);
 
                         //REDIRECIONANDO A OUTRA TELA
-                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainActivity.class);
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainUserActivity.class);
                         startActivity(intent);
                     }//fim do if
                 }//fim da view

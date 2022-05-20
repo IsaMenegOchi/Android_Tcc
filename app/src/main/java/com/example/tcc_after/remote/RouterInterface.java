@@ -158,6 +158,9 @@ public interface RouterInterface {
             @GET("/assunto/listarAssuntos")
             Call<List<Assunto>> getAssuntos();
 
+            @GET("/assunto/listarPorCategoria/{idCategoria}")
+            Call<List<Assunto>> getAssuntoPorCategoria(@Path("idCategoria") int idCategoria);
+
             //* TIPOS DE EVENTOS
             //? LISTAGEM DE TODOS
             @GET("/tipoEvento/listarTipoEvento")
