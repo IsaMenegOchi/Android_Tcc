@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:foreground="@color/background_tertiary_transparent"
             android:scaleType="centerCrop"
-            android:src="@drawable/imagemEvento"
+            android:src="@drawable/imagem_evento"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -201,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:src="@drawable/ic_outline_calendar_today"
-                        android:tint="@color/purple_primary" />
+                        app:tint="@color/purple_primary" />
 
                     <TextView
                         style="@style/textViewSubName"

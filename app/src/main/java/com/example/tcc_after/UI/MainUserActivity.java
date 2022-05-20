@@ -59,7 +59,7 @@ public class MainUserActivity extends AppCompatActivity {
                             item.setIcon(R.drawable.ic_baseline_home);
                         }
                         else{
-                            item.setIcon(R.drawable.ic_outline_local_activity);
+                            item.setIcon(R.drawable.ic_outline_home);
                         }
 
                         break;

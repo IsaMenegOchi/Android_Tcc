@@ -35,46 +35,46 @@ public class MainCompanyActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_search:
-                        fragment = new SearchFragment();
+//                        fragment = new SearchFragment();
                         break;
 
                     case R.id.nav_ticket:
 
-                        fragment = new CompanyEventStatisticsFragment();
-
+//                        fragment = new CompanyEventStatisticsFragment();
+//
                         break;
 
                     case R.id.nav_home:
 
                         fragment = new FeedFragment();
 
-                        if (fragment.equals(FeedFragment.class)){
-                            item.setIcon(R.drawable.ic_baseline_home);
-                        }
-                        else{
-                            item.setIcon(R.drawable.ic_outline_local_activity);
-                        }
+//                        if (fragment.equals(FeedFragment.class)){
+//                            item.setIcon(R.drawable.ic_baseline_home);
+//                        }
+//                        else{
+//                            item.setIcon(R.drawable.ic_outline_local_activity);
+//                        }
 
                         break;
 
                     case R.id.nav_moments:
 
-                        fragment = new MomentsFragment();
-
-                        if (fragment.equals(MomentsFragment.class)){
-                            item.setIcon(R.drawable.ic_baseline_video_library);
-                        }
-                        else{
-                            item.setIcon(R.drawable.ic_outline_video_library);
-                        }
+//                        fragment = new MomentsFragment();
+//
+//                        if (fragment.equals(MomentsFragment.class)){
+//                            item.setIcon(R.drawable.ic_baseline_video_library);
+//                        }
+//                        else{
+//                            item.setIcon(R.drawable.ic_outline_video_library);
+//                        }
 
                         break;
 
                     case R.id.nav_perfil:
 
-                        fragment = new CompanyPerfilFragment();
-
-
+//                        fragment = new CompanyPerfilFragment();
+//
+//
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();

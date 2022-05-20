@@ -42,7 +42,7 @@ public interface RouterInterface {
     //* ROTAS DE USUARIO
 
     //? CADASTRO
-    @POST("perfil/cadastrarPerfilUsuarioComumEndereco/")
+    @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
     //? LISTAGEM POR ID

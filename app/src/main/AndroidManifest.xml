@@ -18,13 +18,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".UI.user.UserEditPerfilActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
 
         <activity
             android:name=".UI.company.EditBankAccount"
@@ -37,10 +31,23 @@
             android:exported="false" />
         <activity
             android:name=".UI.LoginActivity"
-            android:exported="false" />
+           android:exported="false"/>
+
         <activity
             android:name=".UI.MainUserActivity"
-            android:exported="false" /> <!-- ADM -->
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".UI.MainCompanyActivity"
+            android:exported="false"/>
+
+        <!-- ADM -->
         <activity
             android:name=".UI.adm.VerifyCardActivity"
             android:exported="false" />
@@ -85,7 +92,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.company.EditPerfilCompanyActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".UI.company.company_register.bank_account.BankAccountRegisterActivity"
             android:exported="false" />
@@ -102,10 +109,10 @@
             android:exported="false" />
         <activity
             android:name=".UI.event.EventRegisterActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".UI.event.EventRegisterAllotmentActivity"
-            android:exported="false" />
+            android:exported="false"/>
     </application>
 
 </manifest>

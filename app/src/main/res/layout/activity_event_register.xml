@@ -94,7 +94,7 @@
         <Spinner
             android:id="@+id/spEventRegister_Category"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvEventRegister_Category"
@@ -113,7 +113,7 @@
         <Spinner
             android:id="@+id/spEventRegister_Subject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             style="@style/spinner"
             android:backgroundTint="@color/background_tertiary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +134,7 @@
         <Spinner
             android:id="@+id/spEventRegister_EventType"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             style="@style/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

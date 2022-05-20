@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            android:text="audio_eventos"
+            android:text="MultWoman"
             android:textStyle="italic"
             style="@style/textViewSubSubName"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Title"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            android:text="Show"
+            android:text="Religião"
             style="@style/textViewSubSubName"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Company"
             app:layout_constraintTop_toBottomOf="@+id/tvCardEvent_Company" />
@@ -94,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
+
             android:text="@string/principalAtraction"
             style="@style/textViewSubName"
             app:layout_constraintBottom_toBottomOf="@+id/ivCardEvent_Favorite"

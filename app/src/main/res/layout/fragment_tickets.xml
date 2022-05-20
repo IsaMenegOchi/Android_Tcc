@@ -45,28 +45,67 @@
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <TextView
-                android:id="@+id/btnAdmVerificationSolicitation_companyFilter"
-                style="@style/textViewSubTitles"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/llTicketsArea_ActivedUsed"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/ativos"
-                app:layout_constraintEnd_toEndOf="@+id/tvTicketsArea_Title"
-                app:layout_constraintTop_toBottomOf="@+id/tvTicketsArea_Title" />
-
-            <TextView
-                android:id="@+id/btnAdmVerificationSolicitation_UserFilter"
-                style="@style/textViewSubTitles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:text="@string/utilizados"
-                app:layout_constraintBottom_toBottomOf="@+id/btnAdmVerificationSolicitation_companyFilter"
+                android:layout_marginVertical="25dp"
+                android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btnAdmVerificationSolicitation_companyFilter"
-                app:layout_constraintTop_toTopOf="@+id/btnAdmVerificationSolicitation_companyFilter"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTicketsArea_Title">
+
+                <LinearLayout
+                    android:id="@+id/llEventStatistics_EventsActives"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textViewSubTitlesPurple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activeTickets" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/purple_quaternary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llEventEstatistics_EventsClosed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textViewSubTitlesBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/usedTickets" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcAdmVerificationSolicitation_Cards"
@@ -75,7 +114,7 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnAdmVerificationSolicitation_companyFilter" />
+                app:layout_constraintTop_toBottomOf="@+id/llTicketsArea_ActivedUsed" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

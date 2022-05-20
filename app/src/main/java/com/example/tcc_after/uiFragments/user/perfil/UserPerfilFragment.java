@@ -100,10 +100,10 @@ public class UserPerfilFragment extends Fragment implements AdapterView.OnItemSe
             }
         });
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.settingsArray, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spConfiguracoes.setAdapter(adapter);
-        spConfiguracoes.setOnItemSelectedListener(this);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.settingsArray, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spConfiguracoes.setAdapter(adapter);
+//        spConfiguracoes.setOnItemSelectedListener(this);
 
         return inflater.inflate(R.layout.fragment_user_perfil, container, false);
     }
@@ -111,23 +111,23 @@ public class UserPerfilFragment extends Fragment implements AdapterView.OnItemSe
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        if (spConfiguracoes.getSelectedItemId() == 0){
-            Fragment fragment = new UserEditPerfilFragment();
-        }
-        else if (spConfiguracoes.getSelectedItemId() == 1){
-            startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
-        }
-        else if (spConfiguracoes.getSelectedItemId() == 2){
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
-                            .setMessage("Você deseja sair da sua conta?")
-                            .setPositiveButton("Sim", (dialog1, witch) -> {
-
-                            })
-                            .setNegativeButton("Não", (dialog1, witch) -> {
-
-                            });
-                    alertDialog.show();
-        }
+//        if (spConfiguracoes.getSelectedItemId() == 0){
+//            Fragment fragment = new UserEditPerfilFragment();
+//        }
+//        else if (spConfiguracoes.getSelectedItemId() == 1){
+//            startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
+//        }
+//        else if (spConfiguracoes.getSelectedItemId() == 2){
+//            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
+//                            .setMessage("Você deseja sair da sua conta?")
+//                            .setPositiveButton("Sim", (dialog1, witch) -> {
+//
+//                            })
+//                            .setNegativeButton("Não", (dialog1, witch) -> {
+//
+//                            });
+//                    alertDialog.show();
+//        }
     }
 
     @Override
@@ -248,7 +248,7 @@ public class UserPerfilFragment extends Fragment implements AdapterView.OnItemSe
 
             public void setEventoData(Evento evento) {
                 tvTituloEvento.setText(evento.getTituloEvento());
-                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
+//                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
 //                ivEmpresa.setImageBitmap(evento.getImagemPerfilEmpresaEvento());
 //                precisamodo cod livro para informar qual estamos editando
 //                tvTipoEvento.setText(tipoEvento.getTipo());

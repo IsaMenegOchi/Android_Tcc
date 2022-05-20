@@ -97,7 +97,7 @@ public class FeedFragment extends Fragment {
     private class EventoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         List<Evento> listEventos;
-        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
+//        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
 
 
 
@@ -216,7 +216,7 @@ public class FeedFragment extends Fragment {
 
             public void setEventoData(Evento evento) {
                 tvTituloEvento.setText(evento.getTituloEvento());
-                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
+//                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
 //                ivEmpresa.setImageBitmap(evento.getImagemPerfilEmpresaEvento());
 //                precisamodo cod livro para informar qual estamos editando
 //                tvTipoEvento.setText(tipoEvento.getTipo());
