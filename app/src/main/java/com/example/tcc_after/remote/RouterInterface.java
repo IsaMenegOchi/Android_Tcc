@@ -45,6 +45,9 @@ public interface RouterInterface {
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
+    @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
+//    Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
+
     //? LISTAGEM POR ID
     @GET("/usuarioComum/acharPerfilUsuario/{idUsuarioComum}")
     Call<List<UsuarioComum>> getUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);

@@ -190,11 +190,11 @@ public class UserPerfilFragment extends Fragment implements AdapterView.OnItemSe
                 tvTituloEvento = itemView.findViewById(R.id.tvCardEvent_Title);
                 tvEmpresa = itemView.findViewById(R.id.tvCardEvent_Company);
                 tvTipoEvento = itemView.findViewById(R.id.tvCardEvent_EventType);
-                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
+//                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
 
                 ivEmpresa = itemView.findViewById(R.id.ivCardEvent_Company);
-                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
-                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
+//                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
+//                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
 
 
 //                    itemView.setOnClickListener(view -> {

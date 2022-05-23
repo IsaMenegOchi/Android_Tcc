@@ -16,263 +16,398 @@
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background_primary">
-
+            android:layout_height="170dp">
 
             <ImageView
-                android:id="@+id/imageView"
-                style="@style/imageViewAfterLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/ivEventdescription_Cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/imagem_evento"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btnEventDescription_Chat"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/round_corner"
-                android:src="@drawable/ic_outline_question_answer"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-
-                app:layout_constraintEnd_toStartOf="@+id/btnEventDescription_Notification"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-            <ImageButton
-                android:id="@+id/btnEventDescription_Notification"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_corner"
-                android:src="@drawable/ic_outline_notifications"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-            <TextView
-                android:id="@+id/tvEventDescription_EventTitle"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                style="@style/parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Festa Neon"
-                android:layout_marginTop="20dp"
-                style="@style/textViewTitles"
-                android:textSize="35sp"
+                android:background="@color/background_tertiary_transparent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/tvEventDescription_Company"
-                app:layout_constraintStart_toStartOf="@+id/tvEventDescription_Company"
-                app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Company" />
-            <TextView
-                android:id="@+id/tvEventDescription_Company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="by AUDIO_EVENTOS"
-                android:textStyle="italic"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_EventTitle" />
-
-            <TextView
-                android:id="@+id/tvEventDescription_Place"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP"
-                android:textColor="@color/purple_quaternary"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+                app:layout_constraintTop_toTopOf="parent">
 
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    style="@style/imageViewAfterLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--            <ImageButton-->
+                <!--                android:id="@+id/btnEventDescription_Chat"-->
+                <!--                android:layout_width="50dp"-->
+                <!--                android:layout_height="50dp"-->
+                <!--                android:layout_marginEnd="20dp"-->
+                <!--                android:background="@drawable/round_corner"-->
+                <!--                android:src="@drawable/ic_outline_question_answer"-->
+                <!--                app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+
+                <!--                app:layout_constraintEnd_toStartOf="@+id/btnEventDescription_Notification"-->
+                <!--                app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+                <!--            <ImageButton-->
+                <!--                android:id="@+id/btnEventDescription_Notification"-->
+                <!--                android:layout_width="50dp"-->
+                <!--                android:layout_height="50dp"-->
+                <!--                android:background="@drawable/round_corner"-->
+                <!--                android:src="@drawable/ic_outline_notifications"-->
+                <!--                app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+                <ImageButton
+                    android:id="@+id/btnEventDescription_Favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_heart"
+                    android:src="@drawable/ic_baseline_favorite_border"
+                    android:padding="7dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_EventTitle"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Festa Neon"
+                    android:textSize="35sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="by AUDIO_EVENTOS"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_EventTitle" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:elevation="2dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvEventDescription_Company"
+                    app:layout_constraintStart_toStartOf="@+id/tvEventDescription_Company"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Company" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="40dp">
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="5dp">
+
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/ivEventDescription_PhotoAtraction"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:background="@drawable/shape_photo_profile_event_description"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tvEventDescription_NameAtraction"-->
+            <!--                    style="@style/textViewTitles"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="4dp"-->
+            <!--                    android:text="DJ Sharon"-->
+            <!--                    android:textSize="30sp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_PhotoAtraction" />-->
 
             <LinearLayout
-                android:id="@+id/llEventDescription_Images"
+                android:id="@+id/llEventDescriprion_Extras"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4"
                 android:gravity="center"
-                android:orientation="vertical"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/ivEventDescription_PhotoAtraction"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/shape_photo_profile_event_description"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <TextView
-                    android:id="@+id/tvEventDescription_NameAtraction"
-                    style="@style/textViewTitles"
+                    android:id="@+id/tvEventDescription_Category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="DJ Sharon"
-                    android:textSize="30sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_PhotoAtraction" />
-
-                <TextView
-                    android:id="@+id/tvEventDescription_DateHour"
-                    style="@style/textViewName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="12/06/2022 - Início: 13:00"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvEventDescription_Hour"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tvEventDescription_Hour"
-                    app:layout_constraintTop_toTopOf="@+id/tvEventDescription_Hour" />
-
-
-
-                <ImageView
-                    android:id="@+id/ivEventDescription_ExtraPhotoEvent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/event_extra_photos_shape"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Date" />
-
-                <TextView
-                    android:id="@+id/tvEventDescription_LowPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="R$30,00 - R$60,00"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_ExtraPhotoEvent" />
-
-
-                <Button
-                    android:id="@+id/btnEventDescription_Buy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/button_gradient"
-                    android:text="@string/buy"
-                    android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_LowPrice" />
+                    android:gravity="center"
+                    android:text="Casual"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:background="@drawable/button_gradient"
+                    android:gravity="center"
+                    android:text="Jardinagem"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_EventType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_gradient"
+                    android:gravity="center"
+                    android:text="Palestra"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_Age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_gradient"
+                    android:gravity="center"
+                    android:text="Livre"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
 
-            <View
-                android:id="@+id/viewEventDescription_Top"
+            <ImageView
+                android:id="@+id/ivEventDescription_ExtraPhotoEvent"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginVertical="15dp"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:background="@drawable/event_extra_photos_shape"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/llEventDescription_Images"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/llEventDescriprion_Extras" />
+
+            <TextView
+                android:id="@+id/tvEventDescription_Date"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/06/2022 - Início: 13:00"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImageDate"
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageDate"
+                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageDate" />
+
+            <TextView
+                android:id="@+id/tvEventDescription_Hour"
+                style="@style/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+
+                android:text="12/06/2022 - Início: 13:00"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImageHour"
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageHour"
+                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageHour" />
+
+            <ImageView
+                android:id="@+id/btnEventDescription_ImageDate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner"
+                android:padding="7dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_outline_calendar_today"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_ExtraPhotoEvent" />
+
+            <ImageView
+                android:id="@+id/btnEventDescription_ImageHour"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner"
+                android:padding="7dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_outline_access_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_ImageDate" />
+
+            <ImageView
+                android:id="@+id/btnEventDescription_ImagePlace"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner"
+                android:padding="7dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_outline_place"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_ImageHour" />
+
+            <TextView
+                android:id="@+id/tvEventDescription_Place"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP"
+                style="@style/textViewSubName"
+
+                app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImagePlace"
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImagePlace"
+                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImagePlace" />
+
+            <TextView
+                android:id="@+id/tvEventDescription_Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textColor="@color/text_color"
+                android:layout_marginTop="20dp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Place" />
+
+            <TextView
+                android:id="@+id/tvEventDescription_LowPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$30,00 - R$60,00"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Description" />
 
 
-            <LinearLayout
-                android:id="@+id/llEventDescription_Menu"
+            <Button
+                android:id="@+id/btnEventDescription_Buy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:weightSum="4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewEventDescription_Top">
-
-                <ImageButton
-                    android:id="@+id/ibEventDescription_FavoriteEvent"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_baseline_favorite_border" />
-
-                <ImageButton
-                    android:id="@+id/ibEventDescription_ComentsEvent"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/ic_outline_description_24" />
-
-                <ImageButton
-                    android:id="@+id/ibEventDescription_CalendarEvent"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/ic_outline_calendar_today" />
-
-                <ImageButton
-                    android:id="@+id/ibEventDescription_ShareEvent"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/ic_outline_share" />
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/viewEventDescription_Bottom"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginVertical="10dp"
-                android:background="@color/white"
+                android:background="@drawable/button_gradient"
+                android:text="@string/buy"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+                app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_LowPrice" />
+
+
+            <!--            <View-->
+            <!--                android:id="@+id/viewEventDescription_Top"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:layout_marginVertical="15dp"-->
+            <!--                android:background="@color/white"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/llEventDescription_Images"-->
+            <!--                />-->
+
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/llEventDescription_Menu"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginVertical="10dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                android:weightSum="3"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/viewEventDescription_Top">-->
+
+            <!--                <ImageButton-->
+            <!--                    android:id="@+id/ibEventDescription_FavoriteEvent"-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginEnd="20dp"-->
+            <!--                    android:background="@drawable/ic_baseline_favorite_border" />-->
+
+            <!--                <ImageButton-->
+            <!--                    android:id="@+id/ibEventDescription_ComentsEvent"-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginHorizontal="60dp"-->
+            <!--                    android:background="@drawable/ic_outline_description_24" />-->
+
+            <!--                <ImageButton-->
+            <!--                    android:id="@+id/ibEventDescription_CalendarEvent"-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginHorizontal="20dp"-->
+            <!--                    android:background="@drawable/ic_outline_calendar_today" />-->
+
+            <!--                <ImageButton-->
+            <!--                    android:id="@+id/ibEventDescription_ShareEvent"-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginStart="40dp"-->
+            <!--                    android:background="@drawable/ic_outline_share" />-->
+
+            <!--            </LinearLayout>-->
+
+            <!--            <View-->
+            <!--                android:id="@+id/viewEventDescription_Bottom"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:layout_marginVertical="10dp"-->
+            <!--                android:background="@color/white"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />-->
 
             <EditText
                 android:id="@+id/etEventDescription_AddComent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp"
-                android:hint="Digite um comentário..."
-                android:textColorHint="@color/text_color"
                 android:background="@drawable/shape_edit_text_background"
                 android:drawableEnd="@drawable/ic_outline_send"
+                android:hint="Digite um comentário..."
                 android:inputType="number"
                 android:padding="10dp"
                 android:textColor="@color/text_color"
-                app:layout_constraintTop_toBottomOf="@+id/viewEventDescription_Bottom"
-                />
+                android:textColorHint="@color/text_color"
+                app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Buy"
+                tools:layout_editor_absoluteX="40dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcEventDescription_Coments"
@@ -284,5 +419,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 </ScrollView>

@@ -3,5 +3,5 @@
 
     <corners android:radius="25dp"/>
     <size android:height="50dp" android:width="50dp"/>
-    <solid android:color="@color/background_tertiary"/>
+    <solid android:color="@color/background_tertiary_transparent"/>
 </shape>

@@ -1,5 +1,6 @@
 package com.example.tcc_after.model.evento;
 
+import com.example.tcc_after.model.empresa.Empresa;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -55,6 +56,12 @@ public class Evento {
     @Expose
     private String categoriaEvento;
 
+    @SerializedName("tblCategorium")
+    @Expose
+    private Categoria categoria;
+
+
+
     /** TIPO EVENTO **/
 
     @SerializedName("tblTipoEventoIdTipoEvento")
@@ -70,6 +77,10 @@ public class Evento {
     @SerializedName("tblFaixaEtariumIdFaixaEtaria")
     @Expose
     private int idFaixaEtariaEvento;
+
+    @SerializedName("tblFaixaEtarium")
+    @Expose
+    private FaixaEtaria faixaEtaria;
 
     @SerializedName("idade")
     @Expose
@@ -164,19 +175,16 @@ public class Evento {
     @Expose
     private String imagemPerfilEmpresaEvento;
 
+    @SerializedName("tblEmpresa")
+    @Expose
+    private Empresa empresa;
+
 
 
     public Evento() {
     }
 
-    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento,
-                  Date dataInicioEvento, Date dataFimEvento, String horaInicioEvento, String horaFimEvento,
-                  int idCategoriaEvento, String categoriaEvento, int idTipoEvento, String tipoEvento,
-                  int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento,
-                  int idImagensEvento, String imagensEvento, int idCelebridadeEvento, String nicknameCelEvento,
-                  int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento,
-                  String bairroEvento, String cidadeEvento, String estadoEvento, String numeroEvento, int idContaEmpresaEvento,
-                  String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento) {
+    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento, Date dataInicioEvento, Date dataFimEvento, String horaInicioEvento, String horaFimEvento, int idCategoriaEvento, String categoriaEvento, Categoria categoria, int idTipoEvento, String tipoEvento, int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento, int idImagensEvento, String imagensEvento, int idCelebridadeEvento, int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento, String bairroEvento, String cidadeEvento, String estadoEvento, String numeroEvento, int idContaEmpresaEvento, String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento, Empresa empresa) {
         this.idEvento = idEvento;
         this.tituloEvento = tituloEvento;
         this.descricaoEvento = descricaoEvento;
@@ -187,6 +195,7 @@ public class Evento {
         this.horaFimEvento = horaFimEvento;
         this.idCategoriaEvento = idCategoriaEvento;
         this.categoriaEvento = categoriaEvento;
+        this.categoria = categoria;
         this.idTipoEvento = idTipoEvento;
         this.tipoEvento = tipoEvento;
         this.idFaixaEtariaEvento = idFaixaEtariaEvento;
@@ -196,7 +205,6 @@ public class Evento {
         this.idImagensEvento = idImagensEvento;
         this.imagensEvento = imagensEvento;
         this.idCelebridadeEvento = idCelebridadeEvento;
-//        this.nicknameCelEvento = nicknameCelEvento;
         this.idEnderecoEvento = idEnderecoEvento;
         this.cepEvento = cepEvento;
         this.logradouroEvento = logradouroEvento;
@@ -210,6 +218,7 @@ public class Evento {
         this.idEmpresaEvento = idEmpresaEvento;
         this.nicknameEmpresaEvento = nicknameEmpresaEvento;
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
+        this.empresa = empresa;
     }
 
     public int getIdEvento() {
@@ -474,5 +483,21 @@ public class Evento {
 
     public void setImagemPerfilEmpresaEvento(String imagemPerfilEmpresaEvento) {
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }

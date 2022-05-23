@@ -142,7 +142,7 @@ public class FeedFragment extends Fragment {
             /**
              * ATRIBUTOS DA CLASS LIVROVIEWHOLDER
              **/
-            private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCelebridade;
+            private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCategoria, tvAssunto, tvFaixaEtaria, tvCelebridade;
             private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivCount;
             private int idEvento;
 
@@ -155,14 +155,14 @@ public class FeedFragment extends Fragment {
                 tvTituloEvento = itemView.findViewById(R.id.tvCardEvent_Title);
                 tvEmpresa = itemView.findViewById(R.id.tvCardEvent_Company);
                 tvTipoEvento = itemView.findViewById(R.id.tvCardEvent_EventType);
-                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
+                tvCategoria = itemView.findViewById(R.id.tvCardEvent_Category);
+                tvAssunto = itemView.findViewById(R.id.tvCardEvent_Subject);
+                tvFaixaEtaria = itemView.findViewById(R.id.tvCardEvent_Age);
+//                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
 
                 ivEmpresa = itemView.findViewById(R.id.ivCardEvent_Company);
-                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
-                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
-
-                /** AÇÃO DE CLIQUE PARA EDITAR LIVRO E EXCLUIR LIVRO **/
-
+//                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
+//                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
 
 
                 itemView.setOnClickListener(view -> {
@@ -216,11 +216,12 @@ public class FeedFragment extends Fragment {
 
             public void setEventoData(Evento evento) {
                 tvTituloEvento.setText(evento.getTituloEvento());
-//                tvEmpresa.setText(evento.getNicknameEmpresaEvento());
+                tvEmpresa.setText(evento.getEmpresa().getNicknameEmpresa());
+//                tvCategoria.setText(evento);
+//                tvAssunto.setText(evento);
+//                tvFaixaEtaria.setText(evento);
 //                ivEmpresa.setImageBitmap(evento.getImagemPerfilEmpresaEvento());
-//                precisamodo cod livro para informar qual estamos editando
-//                tvTipoEvento.setText(tipoEvento.getTipo());
-//                tvCelebridade.setText(evento.getNicknameCelEvento());
+                tvTipoEvento.setText(evento.getIdTipoEvento());
                 idEvento = evento.getIdEvento();
             }
         }//fim da classe livroViewHolder

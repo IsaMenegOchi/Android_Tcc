@@ -21,6 +21,7 @@ import com.example.tcc_after.model.Cep;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.util.DatePickerFragment;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -71,6 +72,12 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
 
         });
 
+        etDataNasc.setOnClickListener(view -> {
+            DatePickerFragment mDatePickerDialogFragment;
+            mDatePickerDialogFragment = new DatePickerFragment();
+            mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+        });
+
         etSenha.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -86,21 +93,22 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->
         {
-// FAZ A VALIDAÇÃO DOS CAMPOS
-            if (validateFields()){
-            //ATRIBUINDO VALORES AS VARIAVEIS PÚBLICAS
-            dataNascCadastroUsuario = etDataNasc.getText().toString();
-            cepCadastroUsuario = etCep.getText().toString();
-            cidadeCadastroUsuario = etCidade.getText().toString();
-            estadoCadastroUsuario = etEstado.getText().toString();
-            senhaCadastroUsuario = etSenha.getText().toString();
+
+            // FAZ A VALIDAÇÃO DOS CAMPOS
+            if (validateFields()) {
+
+                //ATRIBUINDO VALORES AS VARIAVEIS PÚBLICAS
+                dataNascCadastroUsuario = etDataNasc.getText().toString();
+                cepCadastroUsuario = etCep.getText().toString();
+                cidadeCadastroUsuario = etCidade.getText().toString();
+                estadoCadastroUsuario = etEstado.getText().toString();
+                senhaCadastroUsuario = etSenha.getText().toString();
 
 //            REDIRECIONANDO A OUTRA TELA
-            Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
+                startActivity(intent);
 
             }
-
 
         });
     }
@@ -113,10 +121,9 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 //        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-        String hora = dayOfMonth + "/" + month + "/" + year;
+        String data = dayOfMonth + "/" + month + "/" + year;
 
-            etDataNasc.setText(hora);
-
+            etDataNasc.setText(data);
 
     }
 

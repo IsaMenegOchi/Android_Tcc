@@ -40,7 +40,6 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
         tvTituloEvento = findViewById(R.id.tvEventDescription_EventTitle);
         tvNomeEmpresa = findViewById(R.id.tvEventDescription_Company);
-        tvNomeCelebridade = findViewById(R.id.tvEventDescription_NameAtraction);
         tvDataInicio = findViewById(R.id.tvEventDescription_Date);
         tvHoraInicio = findViewById(R.id.tvEventDescription_Hour);
         tvValorMin = findViewById(R.id.tvEventDescription_LowPrice);
