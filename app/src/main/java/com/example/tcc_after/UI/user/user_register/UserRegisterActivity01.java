@@ -6,24 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
 import com.example.tcc_after.remote.RouterInterface;
 
 public class UserRegisterActivity01 extends AppCompatActivity {
 
-    private EditText etNome;
-    private EditText etNickname;
-    private EditText etEmail;
-    private EditText etConfirmEmail;
+    private EditText etNome, etConfirmEmail, etNickname, etEmail;
+    private TextView tvLogin;
     private Button btnAvancar1;
-
-    public static String nomeCadastroUsuario;
-    public static String nicknameCadastroUsuario;
-    public static String emailCadastroUsuario;
-
-    RouterInterface routerInterface;
+    public static String nomeCadastroUsuario, emailCadastroUsuario, nicknameCadastroUsuario;
 
 
     @Override
@@ -32,13 +28,19 @@ public class UserRegisterActivity01 extends AppCompatActivity {
         setContentView(R.layout.activity_user_register01);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
-        btnAvancar1 = findViewById(R.id.btnUserRegister01_Foward);
+        tvLogin = findViewById(R.id.tvUserregister01_entrarPerfil);
+
         etNome = findViewById(R.id.etUserRegister_FullName);
         etNickname = findViewById(R.id.etUserRegister_Nickname);
         etEmail = findViewById(R.id.etUserRegister_Email);
         etConfirmEmail = findViewById(R.id.etUserRegister_ConfEmail);
 
+        btnAvancar1 = findViewById(R.id.btnUserRegister01_Foward);
 
+
+        tvLogin.setOnClickListener(view -> {
+            startActivity(new Intent(UserRegisterActivity01.this, LoginActivity.class));
+        });
 
 
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
@@ -57,6 +59,8 @@ public class UserRegisterActivity01 extends AppCompatActivity {
             }
 
         }); //fim do setOnClickListener
+
+
 
     }// fim do metodo onCreate
 

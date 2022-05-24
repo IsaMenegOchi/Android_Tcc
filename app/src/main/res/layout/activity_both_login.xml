@@ -75,30 +75,44 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             style="@style/textViewSubName"
+            android:visibility="gone"
             android:text="@string/forgotPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLogin_Passaword" />
 
-        <TextView
-            android:id="@+id/tvLogin_DonHaveAccount"
-            style="@style/textViewSubName"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/dontHaveAccount"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
-        <TextView
-            android:id="@+id/tvLogin_RegisterNow"
-            style="@style/textViewSubNamePurple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/registerNow"
-            app:layout_constraintStart_toEndOf="@+id/tvLogin_DonHaveAccount"
-            app:layout_constraintTop_toTopOf="@+id/tvLogin_DonHaveAccount" />
+            <TextView
+                android:id="@+id/tvLogin_DonHaveAccount"
+                style="@style/textViewSubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/dontHaveAccount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+            <TextView
+                android:id="@+id/tvLogin_RegisterNow"
+                style="@style/textViewSubNamePurple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/registerNow"
+                app:layout_constraintStart_toEndOf="@+id/tvLogin_DonHaveAccount"
+                app:layout_constraintTop_toTopOf="@+id/tvLogin_DonHaveAccount" />
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/btnLogin"

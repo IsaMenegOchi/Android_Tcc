@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +23,10 @@ import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,8 +34,7 @@ import retrofit2.Response;
 
 public class PhotoUserRegisterActivity extends AppCompatActivity {
 
-    private ImageView photoPerfil;
-    private ImageView photoCover;
+    private ImageView photoPerfil, photoCover;
     private Button btnFoward;
     private EditText etBiografia;
     private TextView tvPularEtapa;
@@ -40,7 +42,6 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     private final int CODEIMAGE = 1;
     RouterInterface routerInterface;
 
-    private final int CODE_IMAGE = 100;
 
     private Bitmap imageBitmap = null;
 
@@ -56,11 +57,13 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         etBiografia = findViewById(R.id.etUserPhotoRegister_Description);
         tvPularEtapa = findViewById(R.id.tvUserPhotoRegister_Skip);
 
+        photoPerfil.setClipToOutline(true);
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FOTO DE FUNDO **/
         photoPerfil.setOnClickListener( view -> {
             openGalery();
         });
 
+        photoCover.setClipToOutline(true);
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FOTO DE PERFIL **/
         photoCover.setOnClickListener(view -> {
             openGalery();
@@ -163,26 +166,6 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
     //* FUNCOES GERAIS
 
-        /** funcao de pegar a imagem **/
-//    public void onActivityResult (int requestCode, int resultCode,Intent imagem) {
-//        super.onActivityResult(requestCode, resultCode, imagem);
-//
-//        //se não selecionado a imagem, volta 0
-//        //se retornar -1, significa que foi selecionada uma imagem
-//
-//        if (requestCode == CODE_IMAGE && resultCode == -1){
-//
-//            //Resuperar a imagem do stream/fluxo de bits
-//            Bitmap imageStream = getContentResolver().openInputStream(imagem.getData());
-//
-//            //converter os bits em bit map
-//            imageBitmap = BitmapFactory.decodeStream(imageStream);
-//
-//            //colocar o bitmap no imageview
-//            photoPerfil.setImageBitmap(imageBitmap);
-//        }
-//
-//    }
 
 
 
@@ -233,6 +216,53 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
         startActivityForResult(Intent.createChooser(intent, "Selecione a imagem do livro"), CODEIMAGE);
     }
+
+
+    private void uploadImageRetroFit(Bitmap bitmap) {
+
+        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
+
+        String fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+        String fotoCapa = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+
+        String nomeCompleto = UserRegisterActivity01.nomeCadastroUsuario;
+        String nickname = UserRegisterActivity01.nicknameCadastroUsuario;
+        String email = UserRegisterActivity01.emailCadastroUsuario;
+        try {
+            Date dataUsuario = DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String cep = UserRegisterActivity02.cepCadastroUsuario;
+        String cidade = UserRegisterActivity02.cidadeCadastroUsuario;
+        String estado = UserRegisterActivity02.estadoCadastroUsuario;
+        String senha = UserRegisterActivity02.senhaCadastroUsuario;
+        String biografia = etBiografia.getText().toString();
+
+
+
+
+        Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia,dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
+        upload.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(MainActivity.this, "Foi vei hehe", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("testeErro", "onFailure: " + t);
+
+            }
+        });
+
+
+
+    }
+
     //* funcao de validar dados
     private boolean validateFields(){
 

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
 import com.example.tcc_after.model.Cep;
 import com.example.tcc_after.remote.ConectionViaCep;
 import com.example.tcc_after.remote.ConsumeXML;
@@ -28,26 +29,17 @@ import java.util.Calendar;
 import java.util.List;
 
 public class UserRegisterActivity02 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-    private EditText etDataNasc;
-    private EditText etCep;
-    private EditText etCidade;
-    private EditText etEstado;
-    private EditText etSenha;
-    private EditText etConfSenha;
 
-    private TextView tvTeste;
+    private TextView tvLogin;
+
+    private EditText etDataNasc,etCep, etCidade, etEstado, etSenha, etConfSenha;
 
     private Button btnAvancar2;
 
     private List<Cep> cepList = new ArrayList<>();
 
-    RouterInterface routerInterface;
 
-    public static String dataNascCadastroUsuario;
-    public static String cepCadastroUsuario;
-    public static String cidadeCadastroUsuario;
-    public static String estadoCadastroUsuario;
-    public static String senhaCadastroUsuario;
+    public static String dataNascCadastroUsuario, cepCadastroUsuario, cidadeCadastroUsuario, estadoCadastroUsuario, senhaCadastroUsuario;
 
 
     @Override
@@ -56,6 +48,7 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         setContentView(R.layout.activity_user_register02);
 
         /** ATRIBUINDO OS IDS DOS CAMPOS DO XML AS VARIAVEIS **/
+        tvLogin = findViewById(R.id.tvUserRegister02_conectAccount);
 
         etDataNasc = findViewById(R.id.etUserRegister_Birth);
         etCep = findViewById(R.id.etUserRegister_Cep);
@@ -64,6 +57,11 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         etSenha = findViewById(R.id.etUserRegister_Passaword);
         etConfSenha = findViewById(R.id.etUserRegister_ConfPassaword);
         btnAvancar2 = findViewById(R.id.btnUserRegister02_Foward);
+
+        tvLogin.setOnClickListener(view -> {
+            startActivity(new Intent(UserRegisterActivity02.this, LoginActivity.class));
+        });
+
 
 
         etCep.setOnFocusChangeListener((view, b) -> {

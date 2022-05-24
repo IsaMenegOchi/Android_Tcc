@@ -10,11 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
 
 public class CompanyRegisterPasswordActivity extends AppCompatActivity {
 
     private EditText etSenha, etConfSenha;
-    private TextView tvEntrarConta;
+    private TextView tvLogin;
     private Button avancar02;
 
     public static String senhaCadastroEmpresa;
@@ -27,9 +28,15 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
 
         etSenha = findViewById(R.id.etCompanyRegister_Password);
         etConfSenha = findViewById(R.id.etCompanyRegister_ConfPassword);
-//        tvEntrarConta = findViewById(R.id.tvCompanyRegister_LoginPerfil);
+        tvLogin = findViewById(R.id.tvCompanyRegister_LoginPerfil);
         avancar02 = findViewById(R.id.btnCompanyRegister_02);
 
+
+        tvLogin.setOnClickListener(view -> {
+            Intent intent = new Intent(CompanyRegisterPasswordActivity.this, LoginActivity.class);
+            startActivity(intent);
+
+        });
 
         avancar02.setOnClickListener(view -> {
             if (validateFields()){
@@ -39,12 +46,6 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-//        tvEntrarConta.setOnClickListener(view -> {
-//            Intent intent = new Intent(CompanyRegisterPasswordActivity.this, LoginActivity.class);
-//            startActivity(intent);
-//
-//        });
 
     }
 

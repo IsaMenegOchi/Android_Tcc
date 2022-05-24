@@ -6,13 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
+import com.example.tcc_after.UI.user.user_register.UserRegisterActivity01;
+
+import org.w3c.dom.Text;
 
 public class CompanyRegisterActivity01 extends AppCompatActivity {
 
     EditText nicknameEmpresa, emailEmpresa, cnpjEmpresa, confEmailEmpresa;
+    TextView tvLogin;
     Button avancar01;
 
     public static String cnpjCadastroEmpresa, emailCadastroEmpresa,  nicknameCadastroEmpresa;
@@ -27,6 +33,12 @@ public class CompanyRegisterActivity01 extends AppCompatActivity {
         cnpjEmpresa = findViewById(R.id.etCompanyRegister_Cnpj);
         confEmailEmpresa = findViewById(R.id.etCompanyRegister_ConfEmail);
         avancar01 = findViewById(R.id.btnCompanyRegister_01);
+
+        tvLogin = findViewById(R.id.tvCompanyRegister_LoginPerfil);
+
+        tvLogin.setOnClickListener(view -> {
+            startActivity(new Intent(CompanyRegisterActivity01.this, LoginActivity.class));
+        });
 
         avancar01.setOnClickListener(view ->{
 

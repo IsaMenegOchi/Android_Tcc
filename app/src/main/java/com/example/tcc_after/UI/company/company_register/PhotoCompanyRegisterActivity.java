@@ -81,14 +81,16 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
                         });
                 alertDialog.show();
             }
-
         });
 
+
+        photoPerfil.setClipToOutline(true);
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FOTO DE FUNDO **/
         photoPerfil.setOnClickListener( view -> {
             openGalery();
         });
-//
+
+        photoCover.setClipToOutline(true);
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FOTO DE PERFIL **/
         photoCover.setOnClickListener(view -> {
             openGalery();
@@ -166,14 +168,6 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
         });
     }// fim da funcao addEmprea
 
-    //* ABRIR GALERIA
-    public void openGalery(){
-
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        intent.setType("image/*");
-        //
-        startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODEIMAGE);
-    }
 
 
 //    private void uploadImageRetroFit(Bitmap bitmap) {
@@ -183,8 +177,7 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
 //
 //        String file = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
 //
-//
-//        Call<String> upload =  RouterInterface.uploadImage(file);
+//        Call<String> upload = routerInterface.addFotosEmpresa(file);
 //        upload.enqueue(new Callback<String>() {
 //            @Override
 //            public void onResponse(Call<String> call, Response<String> response) {
@@ -201,6 +194,16 @@ public class PhotoCompanyRegisterActivity extends AppCompatActivity {
 //        });
 //
 //    }
+
+
+    //* ABRIR GALERIA
+    public void openGalery(){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/*");
+        //
+        startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODEIMAGE);
+    }
+
 
     //* FUNÇÃO DE VALIDAR DADOS
     private boolean validateFields(){

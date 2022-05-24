@@ -21,6 +21,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -45,8 +47,21 @@ public interface RouterInterface {
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
-    @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
-//    Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
+    @FormUrlEncoded
+    @POST("/perfil/cadastrarUsuarioComumEnderecoMobile")
+    Call<String> addFotosUsuarioComum(
+            @Field("nickname") String nickname,
+            @Field("email") String email,
+            @Field("senha") String senha,
+            @Field("cep") String cep,
+            @Field("estado") String estado,
+            @Field("cidade") String cidade,
+            @Field("biografia") String biografia,
+            @Field("dataNasc") String dataNasc,
+            @Field("nome") String nome,
+            @Field("imagemPerfil") String imagemPerfil,
+            @Field("imagemFundo") String imagemFundo
+    );
 
     //? LISTAGEM POR ID
     @GET("/usuarioComum/acharPerfilUsuario/{idUsuarioComum}")
@@ -89,6 +104,8 @@ public interface RouterInterface {
     //? CADASTRO
     @POST("perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
+
+
 
     //? LISTAGEM
     @GET("/empresa/listarEmpresas/")
