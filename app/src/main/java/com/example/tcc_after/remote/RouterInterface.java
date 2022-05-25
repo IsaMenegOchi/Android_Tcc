@@ -16,6 +16,9 @@ import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 
+import org.w3c.dom.Text;
+
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;

@@ -119,7 +119,24 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 //        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-        String data = dayOfMonth + "/" + month + "/" + year;
+
+        String diaMes = String.valueOf(dayOfMonth);
+        String mes = String.valueOf(month);
+        String data = null;
+
+        if (diaMes.length() == 1 && mes.length() == 1){
+            data = "0"+ diaMes + "/" + "0" + (month+1) + "/" + year;
+
+        }
+        else if (diaMes.length() == 1){
+            data = "0"+ diaMes + "/" + (month+1) + "/" + year;
+        }
+        else if (mes.length() == 1){
+            data = diaMes + "/" + "0" + (month+1) + "/" + year;
+        }
+        else {
+                data = diaMes + "/" + (month+1) + "/" + year;
+            }
 
             etDataNasc.setText(data);
 

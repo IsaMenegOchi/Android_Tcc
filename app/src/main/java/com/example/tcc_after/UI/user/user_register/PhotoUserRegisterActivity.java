@@ -23,6 +23,8 @@ import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 import com.example.tcc_after.util.DateConvert;
 
+import org.w3c.dom.Text;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
@@ -40,10 +42,11 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     private TextView tvPularEtapa;
 
     private final int CODEIMAGE = 1;
+    private Bitmap bitmap = null;
     RouterInterface routerInterface;
+    String fotoPerfil = null;
+    String fotoCapa = null;
 
-
-    private Bitmap imageBitmap = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +75,17 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         /** EXECUTAR QUANDO CLICAR NO BOTAO DE FINALIZAR **/
         btnFoward.setOnClickListener(view ->
                 {
+
+//                    uploadImageRetroFit(bitmap);
                     // FAZ A VALIDAÇÃO DOS CAMPOS
                     if (validateFields()){
 
-                        // CRIANDO UMA MODEL DE USUARIO COMUM
+                        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
+
+                        fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+
+//                         CRIANDO UMA MODEL DE USUARIO COMUM
                         UsuarioComum usuarioComum = new UsuarioComum();
 
                         //CHAMANDO AS VARIAVEIS PUBLICAS
@@ -88,9 +98,8 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         catch (ParseException e) {
                             e.printStackTrace();
                         }
-
-                        //fotoCapa
-                        //fotoFundo
+                        usuarioComum.setImagemPerfilUsuario(fotoPerfil);
+                        usuarioComum.setImagemFundoUsuario(fotoCapa);
                         usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
                         usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
                         usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
@@ -101,7 +110,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         routerInterface = APIUtil.getApiInterface();
                         addUsuario(usuarioComum);
 
-                        //REDIRECIONANDO A OUTRA TELA
+//                        REDIRECIONANDO A OUTRA TELA
                         Intent intent = new Intent(PhotoUserRegisterActivity.this, MainUserActivity.class);
                         startActivity(intent);
                     }//fim do if
@@ -110,6 +119,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
         tvPularEtapa.setOnClickListener(view ->
                 {
+
                     // FAZ A VALIDAÇÃO DOS CAMPOS
                     if (validateFields()){
 
@@ -126,7 +136,6 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
                         catch (ParseException e) {
                             e.printStackTrace();
                         }
-
                         usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
                         usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
                         usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
@@ -175,8 +184,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         {
             super.onActivityResult(requestCode, resultCode, data);
 
-            if (resultCode == this.RESULT_CANCELED)
-            {
+            if (resultCode == this.RESULT_CANCELED) {
                 return;
             }
             if (requestCode == CODEIMAGE)
@@ -187,14 +195,9 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
                     try
                     {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
 
-                        if (photoCover.isActivated()){
-                            photoCover.setImageBitmap(bitmap);
-                        }
-                        else{
-                            photoPerfil.setImageBitmap(bitmap);
-                        }
+                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+                        photoPerfil.setImageBitmap(bitmap);
 
                         Log.d("IMAGEM", "Imagem alterada");
                     }
@@ -220,17 +223,15 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
     private void uploadImageRetroFit(Bitmap bitmap) {
 
-        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
 
-        String fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
-        String fotoCapa = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+
 
         String nomeCompleto = UserRegisterActivity01.nomeCadastroUsuario;
         String nickname = UserRegisterActivity01.nicknameCadastroUsuario;
         String email = UserRegisterActivity01.emailCadastroUsuario;
+        Date dataUsuario = null;
         try {
-            Date dataUsuario = DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario);
+            dataUsuario = DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -240,27 +241,19 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         String senha = UserRegisterActivity02.senhaCadastroUsuario;
         String biografia = etBiografia.getText().toString();
 
-
-
-
-        Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia,dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
+        Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia, String.valueOf(dataUsuario), nomeCompleto , fotoPerfil, fotoCapa);
         upload.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Foi vei hehe", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(PhotoUserRegisterActivity.this, "Foi nega", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                Log.d("testeErro", "onFailure: " + t);
 
+                Log.d("teste", "onFailure: " + t.getMessage());
             }
         });
-
-
-
     }
 
     //* funcao de validar dados
