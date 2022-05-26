@@ -47,6 +47,7 @@ public interface RouterInterface {
     //* ROTAS DE USUARIO
 
     //? CADASTRO
+    @FormUrlEncoded
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
