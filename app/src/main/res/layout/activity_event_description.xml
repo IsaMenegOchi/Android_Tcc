@@ -409,14 +409,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Buy"
                 tools:layout_editor_absoluteX="40dp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcEventDescription_Coments"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rcEventDescription_Coments"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

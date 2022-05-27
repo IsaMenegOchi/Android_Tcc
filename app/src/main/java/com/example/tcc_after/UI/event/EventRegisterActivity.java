@@ -519,7 +519,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
             evento.setIdAssuntoEvento(idAssunto);
             evento.setIdTipoEvento(idTipoEvento);
             evento.setIdFaixaEtariaEvento(idFaixaEtaria);
-            evento.setIdContaEmpresaEvento(idContaBancaria);
+            evento.setIdContaEmpresa(idContaBancaria);
 //            evento.setIdCelebridadeEvento(idCelebridade);
 
 //            evento.setImagensEvento(imagensEvento.getText().toString());

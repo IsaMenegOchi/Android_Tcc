@@ -21,11 +21,11 @@ import retrofit2.Response;
 
 public class EventDescriptionActivity extends AppCompatActivity {
 
-    TextView tvTituloEvento, tvNomeEmpresa, tvNomeCelebridade, tvDataInicio, tvHoraInicio, tvValorMin;
+    TextView tvTituloEvento, tvNomeEmpresa, tvNomeCelebridade, tvDataInicio, tvHoraInicio, tvValorMin, tvLocal;
 
     EditText etComentario;
 
-    int idEvento = 3;
+//    int idEvento = 3;
 
     RouterInterface routerInterface;
     List<Evento> listEvento = new ArrayList<Evento>();
@@ -36,7 +36,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_description);
 
 
-//        int idEvento = getIntent().getExtras().getInt("idEvento");
+        int idEvento = getIntent().getExtras().getInt("idEvento");
 
         tvTituloEvento = findViewById(R.id.tvEventDescription_EventTitle);
         tvNomeEmpresa = findViewById(R.id.tvEventDescription_Company);
@@ -44,10 +44,12 @@ public class EventDescriptionActivity extends AppCompatActivity {
         tvHoraInicio = findViewById(R.id.tvEventDescription_Hour);
         tvValorMin = findViewById(R.id.tvEventDescription_LowPrice);
 
+        tvLocal = findViewById(R.id.tvEventDescription_Place);
+
         etComentario = findViewById(R.id.etEventDescription_AddComent);
 
         routerInterface = APIUtil.getApiInterface();
-        Call<List<Evento>> getEventoId = routerInterface.getEventoIdEvento(4);
+        Call<List<Evento>> getEventoId = routerInterface.getEventoIdEvento(idEvento);
 
         Log.d("teste", "onResponse: estou no create");
 
@@ -60,12 +62,15 @@ public class EventDescriptionActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     listEvento = response.body();
 
-                    Log.d("teste", "onResponse: " + listEvento);
+//                    Log.d("teste", "onResponse: " + listEvento);
                     tvTituloEvento.setText(listEvento.get(0).getTituloEvento());
-//                    tvNomeEmpresa.setText(listEvento.get(0).getNicknameEmpresaEvento());
+                    tvNomeEmpresa.setText(listEvento.get(0).getEmpresa().getNicknameEmpresa());
 //                    tvNomeCelebridade.setText(listEvento.get(0).getNicknameCelebridadeEvento());
                     tvDataInicio.setText(listEvento.get(0).getDataInicioEvento().toString());
-                    tvHoraInicio.setText(listEvento.get(0).getHoraInicioEvento());
+                    tvHoraInicio.setText(listEvento.get(0).getHoraInicioEvento().replaceFirst(":00", ""));
+                    String local = listEvento.get(0).getEnderecoEvento().getLogradouro() + "," + listEvento.get(0).getEnderecoEvento().getNumero() + "-" +
+                            listEvento.get(0).getEnderecoEvento().getCidade() + "-" + listEvento.get(0).getEnderecoEvento().getEstado();
+                    tvLocal.setText(local);
 
                     //! fazer leitura de ingressos
 //                    tvValorMin.setText(listEvento.get(0).get);
@@ -75,7 +80,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Evento>> call, Throwable t) {
-
+                Log.d("teste", "onFailure: " + t.getMessage());
             }
         });
 

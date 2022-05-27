@@ -1,5 +1,6 @@
 package com.example.tcc_after.model.evento;
 
+import com.example.tcc_after.model.empresa.ContaBancaria;
 import com.example.tcc_after.model.empresa.Empresa;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -70,7 +71,11 @@ public class Evento {
 
     @SerializedName("tipo")
     @Expose
-    private String tipoEvento;
+    private String tipo;
+
+    @SerializedName("tblTipoEvento")
+    @Expose
+    private TipoEvento tipoEvento;
 
     /** FAIXA ETARIA **/
 
@@ -150,16 +155,25 @@ public class Evento {
     @Expose
     private String numeroEvento;
 
+    @SerializedName("tblEnderecoEventos")
+    @Expose
+    private EnderecoEvento enderecoEvento;
+
 
     /** CONTA BANCARIA **/
 
-    @SerializedName("tblContaEmpresaIdContaEmpresa")
+    @SerializedName("tblContaEmpresa")
     @Expose
-    private int idContaEmpresaEvento;
+    private ContaBancaria contaEmpresa;
 
     @SerializedName("numeroConta")
     @Expose
     private String numeroContaEvento;
+
+    @SerializedName("tblContaEmpresaIdContaEmpresa")
+    @Expose
+    private int idContaEmpresa;
+
 
     /** EMPRESA **/
 
@@ -179,12 +193,10 @@ public class Evento {
     @Expose
     private Empresa empresa;
 
-
-
     public Evento() {
     }
 
-    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento, Date dataInicioEvento, Date dataFimEvento, String horaInicioEvento, String horaFimEvento, int idCategoriaEvento, String categoriaEvento, Categoria categoria, int idTipoEvento, String tipoEvento, int idFaixaEtariaEvento, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento, int idImagensEvento, String imagensEvento, int idCelebridadeEvento, int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento, String bairroEvento, String cidadeEvento, String estadoEvento, String numeroEvento, int idContaEmpresaEvento, String numeroContaEvento, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento, Empresa empresa) {
+    public Evento(int idEvento, String tituloEvento, String descricaoEvento, String capaEvento, Date dataInicioEvento, Date dataFimEvento, String horaInicioEvento, String horaFimEvento, int idCategoriaEvento, String categoriaEvento, Categoria categoria, int idTipoEvento, String tipo, TipoEvento tipoEvento, int idFaixaEtariaEvento, FaixaEtaria faixaEtaria, int faixaEtariaEvento, int idAssuntoEvento, String assuntoEvento, int idImagensEvento, String imagensEvento, int idCelebridadeEvento, int idEnderecoEvento, String cepEvento, String logradouroEvento, String complementoEvento, String bairroEvento, String cidadeEvento, String estadoEvento, String numeroEvento, ContaBancaria contaEmpresa, String numeroContaEvento, int idContaEmpresa, int idEmpresaEvento, String nicknameEmpresaEvento, String imagemPerfilEmpresaEvento, Empresa empresa) {
         this.idEvento = idEvento;
         this.tituloEvento = tituloEvento;
         this.descricaoEvento = descricaoEvento;
@@ -197,8 +209,10 @@ public class Evento {
         this.categoriaEvento = categoriaEvento;
         this.categoria = categoria;
         this.idTipoEvento = idTipoEvento;
+        this.tipo = tipo;
         this.tipoEvento = tipoEvento;
         this.idFaixaEtariaEvento = idFaixaEtariaEvento;
+        this.faixaEtaria = faixaEtaria;
         this.faixaEtariaEvento = faixaEtariaEvento;
         this.idAssuntoEvento = idAssuntoEvento;
         this.assuntoEvento = assuntoEvento;
@@ -213,8 +227,9 @@ public class Evento {
         this.cidadeEvento = cidadeEvento;
         this.estadoEvento = estadoEvento;
         this.numeroEvento = numeroEvento;
-        this.idContaEmpresaEvento = idContaEmpresaEvento;
+        this.contaEmpresa = contaEmpresa;
         this.numeroContaEvento = numeroContaEvento;
+        this.idContaEmpresa = idContaEmpresa;
         this.idEmpresaEvento = idEmpresaEvento;
         this.nicknameEmpresaEvento = nicknameEmpresaEvento;
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
@@ -301,6 +316,14 @@ public class Evento {
         this.categoriaEvento = categoriaEvento;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     public int getIdTipoEvento() {
         return idTipoEvento;
     }
@@ -309,11 +332,19 @@ public class Evento {
         this.idTipoEvento = idTipoEvento;
     }
 
-    public String getTipoEvento() {
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public TipoEvento getTipoEvento() {
         return tipoEvento;
     }
 
-    public void setTipoEvento(String tipoEvento) {
+    public void setTipoEvento(TipoEvento tipoEvento) {
         this.tipoEvento = tipoEvento;
     }
 
@@ -323,6 +354,14 @@ public class Evento {
 
     public void setIdFaixaEtariaEvento(int idFaixaEtariaEvento) {
         this.idFaixaEtariaEvento = idFaixaEtariaEvento;
+    }
+
+    public FaixaEtaria getFaixaEtaria() {
+        return faixaEtaria;
+    }
+
+    public void setFaixaEtaria(FaixaEtaria faixaEtaria) {
+        this.faixaEtaria = faixaEtaria;
     }
 
     public int getFaixaEtariaEvento() {
@@ -372,14 +411,6 @@ public class Evento {
     public void setIdCelebridadeEvento(int idCelebridadeEvento) {
         this.idCelebridadeEvento = idCelebridadeEvento;
     }
-
-//    public String getNicknameCelEvento() {
-//        return nicknameCelEvento;
-//    }
-//
-//    public void setNicknameCelEvento(String nicknameCelEvento) {
-//        this.nicknameCelEvento = nicknameCelEvento;
-//    }
 
     public int getIdEnderecoEvento() {
         return idEnderecoEvento;
@@ -445,12 +476,12 @@ public class Evento {
         this.numeroEvento = numeroEvento;
     }
 
-    public int getIdContaEmpresaEvento() {
-        return idContaEmpresaEvento;
+    public ContaBancaria getContaEmpresa() {
+        return contaEmpresa;
     }
 
-    public void setIdContaEmpresaEvento(int idContaEmpresaEvento) {
-        this.idContaEmpresaEvento = idContaEmpresaEvento;
+    public void setContaEmpresa(ContaBancaria contaEmpresa) {
+        this.contaEmpresa = contaEmpresa;
     }
 
     public String getNumeroContaEvento() {
@@ -459,6 +490,14 @@ public class Evento {
 
     public void setNumeroContaEvento(String numeroContaEvento) {
         this.numeroContaEvento = numeroContaEvento;
+    }
+
+    public int getIdContaEmpresa() {
+        return idContaEmpresa;
+    }
+
+    public void setIdContaEmpresa(int idContaEmpresa) {
+        this.idContaEmpresa = idContaEmpresa;
     }
 
     public int getIdEmpresaEvento() {
@@ -485,19 +524,20 @@ public class Evento {
         this.imagemPerfilEmpresaEvento = imagemPerfilEmpresaEvento;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
     public Empresa getEmpresa() {
         return empresa;
     }
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+
+    public EnderecoEvento getEnderecoEvento() {
+        return enderecoEvento;
+    }
+
+    public void setEnderecoEvento(EnderecoEvento enderecoEvento) {
+        this.enderecoEvento = enderecoEvento;
     }
 }

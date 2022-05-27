@@ -200,7 +200,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     private void uploadImageRetroFit(Bitmap bitmap) {
 
         ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
+//        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
 
         String nomeCompleto = UserRegisterActivity01.nomeCadastroUsuario;
         String nickname = UserRegisterActivity01.nicknameCadastroUsuario;
@@ -219,8 +219,16 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         String fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
         String fotoCapa = null;
 
-        Log.d("teste", "uploadImageRetroFit: " +  fotoPerfil);
-        Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia, dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
+        Log.d("teste", "uploadImageRetroFit: " + cep);
+        Log.d("teste", "uploadImageRetroFit: " + cidade);
+        Log.d("teste", "uploadImageRetroFit: " + estado);
+        Log.d("teste", "uploadImageRetroFit: " + senha);
+        Log.d("teste", "uploadImageRetroFit: " + biografia);
+        Log.d("teste", "uploadImageRetroFit: " + fotoPerfil);
+        Log.d("teste", "uploadImageRetroFit: " + cep);
+
+Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia, dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
+//        Call<String> upload =  routerInterface.addFotosUsuarioComum("CRISTIANO CORREA DE MORAES");
         upload.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -230,7 +238,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
 
-                Log.d("teste", "onFailure: " + t.getMessage());
+                Log.d("teste", "onFailure: " + t.getCause());
             }
         });
     }

@@ -47,7 +47,6 @@ public interface RouterInterface {
     //* ROTAS DE USUARIO
 
     //? CADASTRO
-    @FormUrlEncoded
     @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
@@ -65,6 +64,11 @@ public interface RouterInterface {
             @Field("nome") String nome,
             @Field("imagemPerfil") String imagemPerfil,
             @Field("imagemFundo") String imagemFundo
+//
+//    @FormUrlEncoded
+//    @POST("/perfil/cadastrarUsuarioComumEnderecoMobile")
+//    Call<String> addFotosUsuarioComum(
+//            @Field("nickname") String nickname
     );
 
     //? LISTAGEM POR ID

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.event.EventDescriptionActivity;
 import com.example.tcc_after.UI.event.EventRegisterActivity;
 import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.TipoEvento;
@@ -74,10 +75,6 @@ public class FeedFragment extends Fragment {
 
                     list = response.body();
                     Log.d("teste", String.valueOf(list.get(0).getTituloEvento()));
-
-//                    for (int i = 0; i < list.size(); i++) {
-//
-//                    }
                     RecyclerView recyclerView = getActivity().findViewById(R.id.rcFeed_CardEvent);
                     recyclerView.setAdapter(new EventoAdapter(list));
 
@@ -170,6 +167,10 @@ public class FeedFragment extends Fragment {
                     Log.d("teste", "EventoViewHolder: " + idEvento);
 
 
+                    Intent intent = new Intent(getActivity(), EventDescriptionActivity.class);
+                    intent.putExtra("idEvento", idEvento);
+                    startActivity(intent);
+
 //                    Fragment fragment = new EventDescriptionFragment();
 //                    Log.d("teste", "EventoViewHolder: " + itemView);
 //                    Bundle bundle = new Bundle();
@@ -216,12 +217,12 @@ public class FeedFragment extends Fragment {
 
             public void setEventoData(Evento evento) {
                 tvTituloEvento.setText(evento.getTituloEvento());
-                tvEmpresa.setText(evento.getEmpresa().getNicknameEmpresa());
-//                tvCategoria.setText(evento);
-//                tvAssunto.setText(evento);
-//                tvFaixaEtaria.setText(evento);
+                tvEmpresa.setText(evento.getEmpresa().getPerfil().getNicknamePerfil());
+                tvCategoria.setText(evento.getCategoria().getCategoriaEvento());
+//                tvAssunto.setText(evento.getAssunto.getNomeAssunto);
+                tvFaixaEtaria.setText(evento.getFaixaEtaria().getIdadeFaixaEtaria());
 //                ivEmpresa.setImageBitmap(evento.getImagemPerfilEmpresaEvento());
-                tvTipoEvento.setText(evento.getIdTipoEvento());
+                tvTipoEvento.setText(evento.getTipoEvento().getTipo());
                 idEvento = evento.getIdEvento();
             }
         }//fim da classe livroViewHolder

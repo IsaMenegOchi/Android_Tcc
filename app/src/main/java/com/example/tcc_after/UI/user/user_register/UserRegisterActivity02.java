@@ -122,7 +122,7 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
 
         String diaMes = String.valueOf(dayOfMonth);
         String mes = String.valueOf(month);
-        String data = null;
+        String data;
 
         if (diaMes.length() == 1 && mes.length() == 1){
             data = "0"+ diaMes + "/" + "0" + (month+1) + "/" + year;
