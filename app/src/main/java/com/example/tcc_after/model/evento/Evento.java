@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.sql.Time;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Evento {
@@ -157,7 +158,7 @@ public class Evento {
 
     @SerializedName("tblEnderecoEventos")
     @Expose
-    private EnderecoEvento enderecoEvento;
+    private ArrayList<EnderecoEvento> enderecoEvento;
 
 
     /** CONTA BANCARIA **/
@@ -192,6 +193,10 @@ public class Evento {
     @SerializedName("tblEmpresa")
     @Expose
     private Empresa empresa;
+
+    @SerializedName("tblLotes")
+    @Expose
+    private ArrayList<Lote> lote;
 
     public Evento() {
     }
@@ -533,11 +538,19 @@ public class Evento {
     }
 
 
-    public EnderecoEvento getEnderecoEvento() {
+    public ArrayList<EnderecoEvento> getEnderecoEvento() {
         return enderecoEvento;
     }
 
-    public void setEnderecoEvento(EnderecoEvento enderecoEvento) {
+    public void setEnderecoEvento(ArrayList<EnderecoEvento> enderecoEvento) {
         this.enderecoEvento = enderecoEvento;
+    }
+
+    public ArrayList<Lote> getLote() {
+        return lote;
+    }
+
+    public void setLote(ArrayList<Lote> lote) {
+        this.lote = lote;
     }
 }

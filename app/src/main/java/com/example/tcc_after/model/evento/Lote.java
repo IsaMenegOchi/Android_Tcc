@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.sql.Time;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Lote {
@@ -58,6 +59,11 @@ public class Lote {
     @SerializedName("idEvento")
     @Expose
     private int idEventoLote;
+
+
+    @SerializedName("tblVariedadeIngressoLote")
+    @Expose
+    private ArrayList<Ingresso> ingressoLote;
 
     public Lote() {
     }
@@ -174,5 +180,13 @@ public class Lote {
 
     public void setIdEventoLote(int idEventoLote) {
         this.idEventoLote = idEventoLote;
+    }
+
+    public ArrayList<Ingresso> getIngressoLote() {
+        return ingressoLote;
+    }
+
+    public void setIngressoLote(ArrayList<Ingresso> ingressoLote) {
+        this.ingressoLote = ingressoLote;
     }
 }

@@ -7,6 +7,7 @@ import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.empresa.ContaBancaria;
 import com.example.tcc_after.model.empresa.Empresa;
+import com.example.tcc_after.model.evento.Comentario;
 import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.Ingresso;
 import com.example.tcc_after.model.evento.Lote;
@@ -47,7 +48,7 @@ public interface RouterInterface {
     //* ROTAS DE USUARIO
 
     //? CADASTRO
-    @POST("perfil/cadastrarPerfilUsuarioComumEndereco")
+    @POST("/perfil/cadastrarPerfilUsuarioComumEndereco")
     Call<UsuarioComum> addUsuarioComum(@Body UsuarioComum usuarioComum);
 
     @FormUrlEncoded
@@ -110,7 +111,7 @@ public interface RouterInterface {
     //* ROTAS DE EMPRESA
 
     //? CADASTRO
-    @POST("perfil/cadastrarPerfilEmpresa/")
+    @POST("/perfil/cadastrarPerfilEmpresa/")
     Call<Empresa> addEmpresa(@Body Empresa empresa);
 
 
@@ -198,6 +199,10 @@ public interface RouterInterface {
             //? LISTAGEM DE TODOS
             @GET("/faixaEtaria/listarFaixaEtaria")
             Call<List<FaixaEtaria>> getFaixasEtaria();
+
+
+            @POST("/comentario/criarComentario/{idPerfil}/{idEvento}")
+            Call<Comentario> postComentarios(@Path("idPerfil") int idPerfil, @Path("idEvento") int idEvento, @Body Comentario comentario);
 
 
             //*ROTAS DE LOTE
