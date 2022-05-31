@@ -13,6 +13,7 @@ import com.example.tcc_after.R;
 import com.example.tcc_after.model.evento.Comentario;
 import com.example.tcc_after.model.evento.EnderecoEvento;
 import com.example.tcc_after.model.evento.Evento;
+import com.example.tcc_after.model.evento.Ingresso;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
 
@@ -35,6 +36,8 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
     RouterInterface routerInterface;
     int idPerfil = 2;
+    int valorMin = 0;
+    int valorMax = 0;
     List<Evento> listEvento = new ArrayList<Evento>();
     List<EnderecoEvento> listEnderecoEvento = new ArrayList<EnderecoEvento>();
 
@@ -77,7 +80,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
                     listEvento = response.body();
 
                     tvTituloEvento.setText(listEvento.get(0).getTituloEvento());
-                    tvNomeEmpresa.setText(listEvento.get(0).getEmpresa().getNicknameEmpresa());
+                    tvNomeEmpresa.setText(listEvento.get(0).getEmpresa().getPerfil().getNicknamePerfil());
 //                    tvNomeCelebridade.setText(listEvento.get(0).getNicknameCelebridadeEvento());
                     tvDataInicio.setText("Hora de início: " + listEvento.get(0).getDataInicioEvento().toString());
                     tvHoraInicio.setText(listEvento.get(0).getHoraInicioEvento().replaceFirst(":00", ""));
@@ -85,14 +88,17 @@ public class EventDescriptionActivity extends AppCompatActivity {
                             listEvento.get(0).getEnderecoEvento().get(0).getCidade() + " - " + listEvento.get(0).getEnderecoEvento().get(0).getEstado();
                     tvLocal.setText(local);
                     tvDescricao.setText(listEvento.get(0).getDescricaoEvento());
-                    tvTipoEvento.setText(listEvento.get(0).getTipoEvento().getTipo());
-                    tvCategoria.setText(listEvento.get(0).getCategoria().getCategoriaEvento());
-                    tvFaixaEtaria.setText(listEvento.get(0).getFaixaEtaria().getIdadeFaixaEtaria());
+//                    tvTipoEvento.setText(listEvento.get(0).getTipoEvento().getTipo());
+//                    tvCategoria.setText(listEvento.get(0).getCategoria().getCategoriaEvento());
+//                    tvFaixaEtaria.setText(listEvento.get(0).getFaixaEtaria().getIdadeFaixaEtaria());
 
-                    int valorMin = 0;
 //
-//                    for (int i = 0; i <= listEvento.get(i).getLote().get(i).getIngressoLote().get(i).getValor(); i++){
-//
+
+//                    for (int i = 0; i <= listEvento.get(i).getLote().get(i).getIngressoLote().size(); i++){
+//                            List<Ingresso> listIngressos = new ArrayList<Ingresso>();
+//                            listIngressos = listEvento.get(i).getLote().get(i).getIngressoLote();
+//                            valorMin = listIngressos.get(i).getValor().intValue();
+//                            Log.d("teste", "onResponse: " + valorMin);
 //
 //                    }
 //
