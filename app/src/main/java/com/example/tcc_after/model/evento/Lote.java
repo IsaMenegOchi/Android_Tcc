@@ -61,7 +61,7 @@ public class Lote {
     private int idEventoLote;
 
 
-    @SerializedName("tblVariedadeIngressoLote")
+    @SerializedName("tblVariedadeIngressoLotes")
     @Expose
     private ArrayList<Ingresso> ingressoLote;
 

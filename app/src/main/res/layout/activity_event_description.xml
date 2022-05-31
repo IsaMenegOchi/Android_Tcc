@@ -155,10 +155,10 @@
                 android:id="@+id/llEventDescriprion_Extras"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="4"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -180,11 +180,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:visibility="gone"
                     android:background="@drawable/button_gradient"
                     android:gravity="center"
                     android:text="Jardinagem"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/tvEventDescription_EventType"
@@ -214,75 +214,154 @@
                 android:id="@+id/ivEventDescription_ExtraPhotoEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/event_extra_photos_shape"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/event_extra_photos_shape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llEventDescriprion_Extras" />
 
-            <TextView
-                android:id="@+id/tvEventDescription_Date"
-                style="@style/textViewName"
+            <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12/06/2022 - Início: 13:00"
                 android:layout_marginStart="10dp"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImageDate"
-                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageDate"
-                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageDate" />
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageDate">
 
-            <TextView
-                android:id="@+id/tvEventDescription_Hour"
-                style="@style/textViewName"
+                <TextView
+                    style="@style/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Fim: " />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_FinishDate"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="14/07/2022" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageDate"
+                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageDate">
 
-                android:text="12/06/2022 - Início: 13:00"
-                app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImageHour"
+                <TextView
+                    style="@style/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Início: " />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_StartDate"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13/07/2022" />
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageHour"
-                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageHour" />
+                app:layout_constraintTop_toTopOf="@+id/btnEventDescription_ImageHour">
+
+                <TextView
+                    style="@style/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Início: " />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_StartHour"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13:00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImageHour"
+                app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImageHour">
+
+                <TextView
+                    style="@style/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Início: " />
+
+                <TextView
+                    android:id="@+id/tvEventDescription_FinishHour"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17:00" />
+            </LinearLayout>
+
+
 
             <ImageView
                 android:id="@+id/btnEventDescription_ImageDate"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/round_corner"
                 android:padding="7dp"
-                android:layout_marginTop="20dp"
                 android:src="@drawable/ic_outline_calendar_today"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivEventDescription_ExtraPhotoEvent" />
 
             <ImageView
                 android:id="@+id/btnEventDescription_ImageHour"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/round_corner"
                 android:padding="7dp"
-                android:layout_marginTop="10dp"
                 android:src="@drawable/ic_outline_access_time"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_ImageDate" />
 
             <ImageView
                 android:id="@+id/btnEventDescription_ImagePlace"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/round_corner"
                 android:padding="7dp"
-                android:layout_marginTop="10dp"
                 android:src="@drawable/ic_outline_place"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_ImageHour" />
 
             <TextView
                 android:id="@+id/tvEventDescription_Place"
+                style="@style/textViewSubName"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP"
-                style="@style/textViewSubName"
 
                 app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImagePlace"
                 app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImagePlace"
@@ -292,9 +371,9 @@
                 android:id="@+id/tvEventDescription_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="@string/description"
                 android:textColor="@color/text_color"
-                android:layout_marginTop="20dp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -304,9 +383,9 @@
                 android:id="@+id/tvEventDescription_LowPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="R$30,00 - R$60,00"
                 android:textColor="@color/white"
-                android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -419,14 +498,14 @@
                 app:layout_constraintEnd_toEndOf="@+id/etEventDescription_AddComent"
                 app:layout_constraintTop_toTopOf="@+id/etEventDescription_AddComent" />
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/rcEventDescription_Coments"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />-->
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/rcEventDescription_Coments"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

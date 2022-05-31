@@ -57,7 +57,7 @@ public class MainCompanyActivity extends AppCompatActivity {
 
                         break;
 
-                    case R.id.nav_moments:
+//                    case R.id.nav_moments:
 
 //                        fragment = new MomentsFragment();
 //
@@ -68,7 +68,7 @@ public class MainCompanyActivity extends AppCompatActivity {
 //                            item.setIcon(R.drawable.ic_outline_video_library);
 //                        }
 
-                        break;
+//                        break;
 
                     case R.id.nav_perfil:
 

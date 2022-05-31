@@ -73,6 +73,7 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
     private Button avancarEvento;
 
     int idCategoria, idAssunto, idTipoEvento, idFaixaEtaria, idContaBancaria, idCelebridade = 0;
+
     private final int CODEIMAGE = 1;
     private List<Cep> cepList = new ArrayList<>();
 

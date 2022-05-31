@@ -1,6 +1,5 @@
 package com.example.tcc_after.uiFragments;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,20 +11,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.event.EventDescriptionActivity;
-import com.example.tcc_after.UI.event.EventRegisterActivity;
 import com.example.tcc_after.model.evento.Evento;
-import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
-import com.example.tcc_after.uiFragments.event.EventDescriptionFragment;
-import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
 
 import java.util.ArrayList;
 import java.util.List;

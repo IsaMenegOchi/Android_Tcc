@@ -64,18 +64,18 @@ public class MainUserActivity extends AppCompatActivity {
 
                         break;
 
-                    case R.id.nav_moments:
-
-                        fragment = new MomentsFragment();
-
-                        if (fragment.equals(MomentsFragment.class)){
-                            item.setIcon(R.drawable.ic_baseline_video_library);
-                        }
-                        else{
-                            item.setIcon(R.drawable.ic_outline_video_library);
-                        }
-
-                        break;
+//                    case R.id.nav_moments:
+//
+//                        fragment = new MomentsFragment();
+//
+//                        if (fragment.equals(MomentsFragment.class)){
+//                            item.setIcon(R.drawable.ic_baseline_video_library);
+//                        }
+//                        else{
+//                            item.setIcon(R.drawable.ic_outline_video_library);
+//                        }
+//
+//                        break;
 
                     case R.id.nav_perfil:
 
