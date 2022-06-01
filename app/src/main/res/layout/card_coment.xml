@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="70dp"
+    style="@style/cardsView"
+    android:backgroundTint="@color/background_primary"
+    app:cardCornerRadius="10dp"
+    android:layout_marginVertical="10dp"
+    android:elevation="5dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivCardComent_ImagePerfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_perfil_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvCardComent_PerfilName"
+            style="@style/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="LukinhasDaBase"
+            app:layout_constraintStart_toEndOf="@+id/ivCardComent_ImagePerfil"
+            app:layout_constraintTop_toTopOf="@+id/ivCardComent_ImagePerfil" />
+
+        <TextView
+            android:id="@+id/tvCardComent_Coment"
+            style="@style/textViewSubName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:maxWidth="280dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="MUUIITOO LOUCO"
+            app:layout_constraintStart_toStartOf="@+id/tvCardComent_PerfilName"
+            app:layout_constraintTop_toBottomOf="@+id/tvCardComent_PerfilName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
