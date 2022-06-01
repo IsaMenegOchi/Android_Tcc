@@ -198,6 +198,15 @@ public class Evento {
     @Expose
     private ArrayList<Lote> lote;
 
+    @SerializedName("tblComentarios")
+    @Expose
+    private ArrayList<Comentario> comentarios;
+//
+//    @SerializedName("tblIntermEventoAssuntos")
+//    @Expose
+//    private ArrayList<IntermAssuntoEvento> assuntoInterm;
+
+
     public Evento() {
     }
 
@@ -553,4 +562,20 @@ public class Evento {
     public void setLote(ArrayList<Lote> lote) {
         this.lote = lote;
     }
+
+    public ArrayList<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(ArrayList<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+//    public ArrayList<IntermAssuntoEvento> getAssuntoInterm() {
+//        return assuntoInterm;
+//    }
+//
+//    public void setAssuntoInterm(ArrayList<IntermAssuntoEvento> assuntoInterm) {
+//        this.assuntoInterm = assuntoInterm;
+//    }
 }

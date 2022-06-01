@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_secondary"
-
     tools:context=".UI.event.EventDescriptionActivity">
 
     <LinearLayout
@@ -125,8 +124,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="40dp"
-            android:paddingVertical="5dp">
+            style="@style/parent">
 
 
             <!--                <ImageView-->
@@ -482,6 +480,8 @@
                 android:hint="Digite um comentário..."
                 android:inputType="text"
                 android:padding="10dp"
+                android:paddingEnd="50dp"
+                android:maxWidth="300dp"
                 android:textColor="@color/text_color"
                 android:textColorHint="@color/text_color"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -494,18 +494,32 @@
                 android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_outline_send"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/etEventDescription_AddComent"
                 app:layout_constraintEnd_toEndOf="@+id/etEventDescription_AddComent"
                 app:layout_constraintTop_toTopOf="@+id/etEventDescription_AddComent" />
 
-            <!--            <androidx.recyclerview.widget.RecyclerView-->
-            <!--                android:id="@+id/rcEventDescription_Coments"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="20dp"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />-->
+            <TextView
+                android:id="@+id/tvEventDescription_NoComents"
+                style="@style/textViewSubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:text="Este evento não possui comentário ainda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcEventDescription_Coments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

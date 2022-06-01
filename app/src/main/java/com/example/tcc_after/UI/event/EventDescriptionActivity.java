@@ -1,11 +1,14 @@
 package com.example.tcc_after.UI.event;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,10 +22,9 @@ import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.Ingresso;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
-import com.example.tcc_after.uiFragments.user.tickets.buy.PandemicWarningFragment;
+import com.example.tcc_after.uiFragments.FeedFragment;
 import com.example.tcc_after.util.DateConvert;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,21 +34,23 @@ import retrofit2.Response;
 
 public class EventDescriptionActivity extends AppCompatActivity {
 
-    TextView tvTituloEvento, tvNomeEmpresa, tvNomeCelebridade, tvDataInicio, tvHoraInicio, tvValorMin, tvLocal, tvDescricao,
-                tvCategoria, tvTipoEvento, tvFaixaEtaria, tvDataFim, tvHoraFim;
+    private TextView tvTituloEvento, tvNomeEmpresa, tvNomeCelebridade, tvDataInicio, tvHoraInicio, tvValorMin, tvLocal, tvDescricao,
+                tvCategoria, tvTipoEvento, tvFaixaEtaria, tvDataFim, tvHoraFim, tvComentario, tvPerfil, tvNenhumComentario, tvAssunto;
 
-    ImageView ivSendComent;
-    Button btnComprar;
-    EditText etComentario;
+    private ImageView ivPerfil, ivSendComent;
+    private int idComentario;
 
-    int idEvento = 3;
+    private Button btnComprar;
+    private EditText etComentario;
+    private RecyclerView recyclerView;
+
+//    int idEvento = 3;
 
     RouterInterface routerInterface;
     int idPerfil = 2;
     int valorMin = 0;
     int valorMax = 0;
     List<Evento> listEvento = new ArrayList<Evento>();
-    List<EnderecoEvento> listEnderecoEvento = new ArrayList<EnderecoEvento>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_description);
         routerInterface = APIUtil.getApiInterface();
 
-//        int idEvento = getIntent().getExtras().getInt("idEvento");
+        int idEvento = getIntent().getExtras().getInt("idEvento");
 
         tvTituloEvento = findViewById(R.id.tvEventDescription_EventTitle);
         tvNomeEmpresa = findViewById(R.id.tvEventDescription_Company);
@@ -69,13 +73,38 @@ public class EventDescriptionActivity extends AppCompatActivity {
         tvTipoEvento = findViewById(R.id.tvEventDescription_EventType);
         btnComprar = findViewById(R.id.btnEventDescription_Buy);
         ivSendComent = findViewById(R.id.ivEventdescription_SendComent);
-
+        tvNenhumComentario = findViewById(R.id.tvEventDescription_NoComents);
         tvLocal = findViewById(R.id.tvEventDescription_Place);
-
+        recyclerView = findViewById(R.id.rcEventDescription_Coments);
         etComentario = findViewById(R.id.etEventDescription_AddComent);
-
-
+        tvAssunto = findViewById(R.id.tvEventDescription_Subject);
 //        btnComprar.setOnClickListener(startActivity(new Intent(EventDescriptionActivity.this, PandemicWarningFragment.class)));
+
+        Call<List<Comentario>> getComentarios = routerInterface.getComentarios(idEvento);
+        getComentarios.enqueue(new Callback<List<Comentario>>() {
+            @Override
+            public void onResponse(Call<List<Comentario>> call, Response<List<Comentario>> response) {
+
+                if (response.isSuccessful()) {
+                    List<Comentario> listComentario = new ArrayList<Comentario>();
+                    listComentario = response.body();
+
+                    if (listComentario.size() == 0){
+                        tvNenhumComentario.setVisibility(View.VISIBLE);
+                    }
+                    else{
+
+                        recyclerView.setAdapter(new ComentarioAdapter(listComentario));
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Comentario>> call, Throwable t) {
+
+            }
+        });
 
 
         Call<List<Evento>> getEventoId = routerInterface.getEventoIdEvento(idEvento);
@@ -105,28 +134,42 @@ public class EventDescriptionActivity extends AppCompatActivity {
                     tvCategoria.setText(listEvento.get(0).getCategoria().getCategoriaEvento());
                     tvFaixaEtaria.setText(listEvento.get(0).getFaixaEtaria().getIdadeFaixaEtaria());
 
-                    tvValorMin.setText("R$" + String.valueOf(valorMin) + "-" + "R$" + String.valueOf(valorMax));
-//
-//                    Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(0).getIngressoLote().size());
+//                        tvAssunto.setVisibility(View.VISIBLE);
+//                        tvAssunto.setText();
 
-                    for (int i = 0; i <= listEvento.get(0).getLote().get(i).getIngressoLote().size(); i++) {
-//                        Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(i).getIngressoLote().size());
+//                    tvValorMin.setText("R$" + String.valueOf(valorMin) + "-" + "R$" + String.valueOf(valorMax));
+//
+                    Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(0).getIngressoLote().size());
+
+                    int i = 0;
+                    while (listEvento.get(0).getLote().get(i).getIngressoLote().size() < i){
                         List<Ingresso> listIngressos = new ArrayList<Ingresso>();
                         listIngressos = listEvento.get(i).getLote().get(i).getIngressoLote();
 
-                        if (listIngressos.get(i).getValor() == 0) {
-                            continue;
-                        }
                         if (listIngressos.get(i).getValor() > listIngressos.get(i++).getValor()) {
                             valorMin = listIngressos.get(i).getValor().intValue();
                         }
                         if (listIngressos.get(i).getValor() < listIngressos.get(i++).getValor()) {
                             valorMax = listIngressos.get(i).getValor().intValue();
                         }
-//
-//                    tvValorMin.setText(valorMin);
-
+                        i++;
                     }
+
+//                    for (int i = 0; i < listEvento.get(0).getLote().get(i).getIngressoLote().size(); i++) {
+////                        Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(i).getIngressoLote().size());
+//                        List<Ingresso> listIngressos = new ArrayList<Ingresso>();
+//                        listIngressos = listEvento.get(i).getLote().get(i).getIngressoLote();
+//
+//                        if (listIngressos.get(i).getValor() > listIngressos.get(i++).getValor()) {
+//                            valorMin = listIngressos.get(i).getValor().intValue();
+//                        }
+//                        if (listIngressos.get(i).getValor() < listIngressos.get(i++).getValor()) {
+//                            valorMax = listIngressos.get(i).getValor().intValue();
+//                        }
+////
+////                    tvValorMin.setText(valorMin);
+//
+//                    }
                 }
             }
 
@@ -134,30 +177,107 @@ public class EventDescriptionActivity extends AppCompatActivity {
             public void onFailure(Call<List<Evento>> call, Throwable t) {
                 Log.d("teste", "onFailure: " + t.getMessage());
             }
-        });
+    });
 
         ivSendComent.setOnClickListener(view -> {
 
-            Comentario comentario = new Comentario();
-            comentario.setTextComentario(etComentario.getText().toString());
+            Log.d("teste", "onCreate: " + etComentario.getText().toString().trim().equals(""));
+            Log.d("teste", "onCreate: " + etComentario.getText().toString().equals(""));
+            Log.d("teste", "onCreate: " + etComentario.getText().toString().length());
+            Log.d("teste", "onCreate: " +  etComentario.getText().toString());
 
-            Call<Comentario> postComentario = routerInterface.postComentarios(idPerfil, idEvento, comentario);
-            postComentario.enqueue(new Callback<Comentario>() {
-                @Override
-                public void onResponse(Call<Comentario> call, Response<Comentario> response) {
-                    Toast.makeText(EventDescriptionActivity.this, "Você cadastrou um comentário", Toast.LENGTH_SHORT).show();
-                }
 
-                @Override
-                public void onFailure(Call<Comentario> call, Throwable t) {
+            if (!etComentario.getText().toString().trim().equals("") && etComentario.getText().toString().length() != 0) {
 
-                }
-            });
+                Comentario comentario = new Comentario();
+                comentario.setTextComentario(etComentario.getText().toString().trim());
+
+                Call<Comentario> postComentario = routerInterface.postComentarios(idPerfil, idEvento, comentario);
+                postComentario.enqueue(new Callback<Comentario>() {
+                    @Override
+                    public void onResponse(Call<Comentario> call, Response<Comentario> response) {
+//                    Toast.makeText(EventDescriptionActivity.this, "Você cadastrou um comentário", Toast.LENGTH_SHORT).show();
+                        recreate();
+                        etComentario.setText("");
+                    }
+
+                    @Override
+                    public void onFailure(Call<Comentario> call, Throwable t) {
+
+                    }
+                });
+            }
         });
-
-
-
-
     }
+
+
+    private class ComentarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        List<Comentario> listComentarios;
+//        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
+
+
+
+        public ComentarioAdapter(List<Comentario> comentario) {
+            this.listComentarios = comentario;
+        }
+
+
+        //cria a view holder
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new ComentarioAdapter.ComentarioViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_coment, parent, false));
+        }
+
+        //passsa os dados para a view holder
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+            Comentario comentario = this.listComentarios.get(position);
+//            TipoEvento tipoEvento = this.listTiposEvento.get(position);
+//            Log.d("teste", "onBindViewHolder: " + listComentario.get(0).getIdEvento());
+            ((ComentarioViewHolder) holder).setEventoData(comentario);
+
+        }
+
+
+        //conta a quantidade de livros
+        @Override
+        public int getItemCount() {
+
+            return listComentarios.size();
+
+        }
+
+        public int getItemViewType(int position) {
+
+            return listComentarios.size();
+
+        }
+
+        class ComentarioViewHolder extends RecyclerView.ViewHolder {
+
+            public ComentarioViewHolder(@NonNull View itemView) {
+                super(itemView);
+
+                tvComentario = itemView.findViewById(R.id.tvCardComent_Coment);
+                ivPerfil = itemView.findViewById(R.id.ivCardComent_ImagePerfil);
+                tvPerfil = itemView.findViewById(R.id.tvCardComent_PerfilName);
+
+            }
+
+
+            public void setEventoData(Comentario comentario) {
+                if (tvComentario != null){
+                    tvComentario.setText(comentario.getTextComentario());
+                    tvPerfil.setText(comentario.getPerfil().getNicknamePerfil());
+//                ivPerfil.setImageBitmap(evento.getComentarios().get(0).getPerfil().getNicknamePerfil());
+//                    idComentario = comentario.getIdComentario();
+                }
+            }
+        }
+    }
+
+
 
 }

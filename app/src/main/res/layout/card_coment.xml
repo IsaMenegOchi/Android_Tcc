@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="70dp"
+    android:backgroundTint="@color/background_secondary"
     style="@style/cardsView"
-    android:backgroundTint="@color/background_primary"
-    app:cardCornerRadius="10dp"
-    android:layout_marginVertical="10dp"
-    android:elevation="5dp"
+    app:cardElevation="0dp"
+    android:layout_marginVertical="5dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_marginVertical="5dp">
 
         <ImageView
             android:id="@+id/ivCardComent_ImagePerfil"
@@ -46,6 +45,8 @@
             android:maxWidth="280dp"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="5dp"
             android:text="MUUIITOO LOUCO"
             app:layout_constraintStart_toStartOf="@+id/tvCardComent_PerfilName"
             app:layout_constraintTop_toBottomOf="@+id/tvCardComent_PerfilName" />

@@ -204,6 +204,10 @@ public interface RouterInterface {
             @POST("/comentario/criarComentario/{idPerfil}/{idEvento}")
             Call<Comentario> postComentarios(@Path("idPerfil") int idPerfil, @Path("idEvento") int idEvento, @Body Comentario comentario);
 
+            @GET("/comentario/listarComentarioPorIdEvento/{idEvento}")
+            Call<List<Comentario>> getComentarios(@Path("idEvento") int idEvento);
+
+
 
             //*ROTAS DE LOTE
 
