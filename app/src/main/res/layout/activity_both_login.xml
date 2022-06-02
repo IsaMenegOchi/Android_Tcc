@@ -45,9 +45,19 @@
             android:id="@+id/etLogin_Passaword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/editTextText"
+            style="@style/editTextPassword"
             app:layout_constraintStart_toStartOf="@+id/tvLogin_Password"
             app:layout_constraintTop_toBottomOf="@+id/tvLogin_Password" />
+
+        <ImageView
+            android:id="@+id/ivLogin_SeePassaword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_baseline_visibility_off"
+            app:layout_constraintBottom_toBottomOf="@+id/etLogin_Passaword"
+            app:layout_constraintEnd_toEndOf="@+id/etLogin_Passaword"
+            app:layout_constraintTop_toTopOf="@+id/etLogin_Passaword" />
 
         <TextView
             android:id="@+id/tvLogin_Email"

@@ -11,13 +11,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
-import com.example.tcc_after.UI.company.EditBankAccount;
-import com.example.tcc_after.model.empresa.ContaBancaria;
-import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
-import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
+import com.example.tcc_after.uiFragments.user.perfil.PerfilUserFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,7 +99,7 @@ public class UserEditPerfilActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<UsuarioComum> call, Response<UsuarioComum> response) {
                                 Toast.makeText(UserEditPerfilActivity.this, "Foi nega, vc alterou o livro", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(UserEditPerfilActivity.this, UserPerfilFragment.class));
+                                startActivity(new Intent(UserEditPerfilActivity.this, PerfilUserFragment.class));
                             }
 
                             @Override

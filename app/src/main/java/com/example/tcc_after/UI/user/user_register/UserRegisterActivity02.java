@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.textclassifier.TextClassifierEvent;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,10 +39,12 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
 
     private EditText etDataNasc,etCep, etCidade, etEstado, etSenha, etConfSenha;
 
+    private ImageView ivVerSenha, ivVerConfSenha;
+
     private Button btnAvancar2;
 
     private List<Cep> cepList = new ArrayList<>();
-
+    private int contador = 0;
 
     public static String dataNascCadastroUsuario, cepCadastroUsuario, cidadeCadastroUsuario, estadoCadastroUsuario, senhaCadastroUsuario;
 
@@ -56,6 +63,8 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         etEstado = findViewById(R.id.etUserRegister_State);
         etSenha = findViewById(R.id.etUserRegister_Passaword);
         etConfSenha = findViewById(R.id.etUserRegister_ConfPassaword);
+        ivVerConfSenha = findViewById(R.id.ivUserRegister_SeeConfPassaword);
+        ivVerSenha = findViewById(R.id.ivUserRegister_SeePassaword);
         btnAvancar2 = findViewById(R.id.btnUserRegister02_Foward);
 
         tvLogin.setOnClickListener(view -> {
@@ -63,6 +72,30 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         });
 
 
+        ivVerConfSenha.setOnClickListener(view -> {
+            contador++;
+            if (contador % 2 == 0){
+                etConfSenha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                ivVerConfSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility_off));
+
+            }
+            if (contador % 2 != 0){
+                etConfSenha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                ivVerConfSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility));
+            }
+        });
+
+        ivVerSenha.setOnClickListener(view -> {
+            contador++;
+            if (contador % 2 == 0){
+                etSenha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                ivVerSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility_off));
+            }
+            if (contador % 2 != 0){
+                etSenha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                ivVerSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility));
+            }
+        });
 
         etCep.setOnFocusChangeListener((view, b) -> {
             BringJsonCep bringJsonCep = new BringJsonCep();
@@ -71,6 +104,9 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         });
 
         etDataNasc.setOnClickListener(view -> {
+            if (etDataNasc.hasFocus()){
+
+            }
             DatePickerFragment mDatePickerDialogFragment;
             mDatePickerDialogFragment = new DatePickerFragment();
             mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
@@ -91,7 +127,6 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         /** EXECUTAR QUANDO CLICAR NO BOTAO **/
         btnAvancar2.setOnClickListener(view ->
         {
-
             // FAZ A VALIDAÇÃO DOS CAMPOS
             if (validateFields()) {
 
@@ -105,11 +140,10 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
 //            REDIRECIONANDO A OUTRA TELA
                 Intent intent = new Intent(UserRegisterActivity02.this, PhotoUserRegisterActivity.class);
                 startActivity(intent);
-
             }
-
         });
     }
+
 
     //*função de pegar data
     @Override
@@ -118,7 +152,6 @@ public class UserRegisterActivity02 extends AppCompatActivity implements DatePic
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
         String diaMes = String.valueOf(dayOfMonth);
         String mes = String.valueOf(month);

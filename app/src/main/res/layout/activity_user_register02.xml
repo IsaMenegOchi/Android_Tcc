@@ -176,12 +176,23 @@
 
         <EditText
             android:id="@+id/etUserRegister_Passaword"
-            style="@style/editTextText"
+            style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_Passaword" />
+
+        <ImageView
+            android:id="@+id/ivUserRegister_SeePassaword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_visibility_off"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserRegister_Passaword"
+            app:layout_constraintEnd_toEndOf="@+id/etUserRegister_Passaword"
+            app:layout_constraintTop_toTopOf="@+id/etUserRegister_Passaword" />
+
 
         <TextView
             android:id="@+id/tvUserRegister_ConfPassaword"
@@ -201,6 +212,16 @@
             app:layout_constraintEnd_toEndOf="@+id/etUserRegister_Passaword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUserRegister_ConfPassaword" />
+
+        <ImageView
+            android:id="@+id/ivUserRegister_SeeConfPassaword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_visibility_off"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserRegister_ConfPassaword"
+            app:layout_constraintEnd_toEndOf="@+id/etUserRegister_ConfPassaword"
+            app:layout_constraintTop_toTopOf="@+id/etUserRegister_ConfPassaword" />
 
         <Button
             android:id="@+id/btnUserRegister02_Foward"

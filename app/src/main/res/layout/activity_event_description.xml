@@ -14,38 +14,26 @@
         android:scrollbars="vertical"
         >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp">
-
-            <ImageView
-                android:id="@+id/ivEventdescription_Cover"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/imagem_evento"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
-                style="@style/parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background_tertiary_transparent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-
                 <ImageView
-                    android:id="@+id/imageView"
-                    style="@style/imageViewAfterLogo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/ivEventdescription_Cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/imagem_evento"
+                    android:src="@color/background_tertiary_transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
 
                 <!--            <ImageButton-->
                 <!--                android:id="@+id/btnEventDescription_Chat"-->
@@ -69,56 +57,69 @@
                 <!--                app:layout_constraintEnd_toEndOf="parent"-->
                 <!--                app:layout_constraintTop_toTopOf="@+id/imageView" />-->
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    style="@style/imageViewAfterLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageButton
                     android:id="@+id/btnEventDescription_Favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
                     android:background="@drawable/shape_heart"
-                    android:src="@drawable/ic_baseline_favorite_border"
                     android:padding="7dp"
+                    android:src="@drawable/ic_baseline_favorite_border"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintVertical_bias="0.181" />
 
-                <TextView
-                    android:id="@+id/tvEventDescription_EventTitle"
-                    style="@style/textViewTitles"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Festa Neon"
-                    android:textSize="35sp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivEventdescription_Cover"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                    <TextView
+                        android:id="@+id/tvEventDescription_EventTitle"
+                        style="@style/textViewTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxHeight="200dp"
+                        android:text="Festa Neon" />
 
 
+                    <TextView
+                        android:id="@+id/tvEventDescription_Company"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="by AUDIO_EVENTOS"
+                        android:textColor="@color/white"
+                        android:textStyle="italic" />
 
-                <TextView
-                    android:id="@+id/tvEventDescription_Company"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="by AUDIO_EVENTOS"
-                    android:textColor="@color/white"
-                    android:textStyle="italic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_EventTitle" />
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/white"
+                        android:elevation="2dp"
+                        android:orientation="horizontal" />
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="100dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="2dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:elevation="2dp"
-                    app:layout_constraintEnd_toEndOf="@+id/tvEventDescription_Company"
-                    app:layout_constraintStart_toStartOf="@+id/tvEventDescription_Company"
-                    app:layout_constraintTop_toBottomOf="@+id/tvEventDescription_Company" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -232,7 +233,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:text="Fim: " />
+                    android:text="Data de fim: " />
 
                 <TextView
                     android:id="@+id/tvEventDescription_FinishDate"
@@ -257,7 +258,7 @@
                     style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Início: " />
+                    android:text="Data de início: " />
 
                 <TextView
                     android:id="@+id/tvEventDescription_StartDate"
@@ -285,7 +286,7 @@
                     style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Início: " />
+                    android:text="Hora de início: " />
 
                 <TextView
                     android:id="@+id/tvEventDescription_StartHour"
@@ -308,7 +309,7 @@
                     style="@style/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Início: " />
+                    android:text="Hora de fim: " />
 
                 <TextView
                     android:id="@+id/tvEventDescription_FinishHour"
@@ -359,7 +360,7 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP"
+                android:text="Av. Francisco Matarazzo, 694 - Mooca - SP"
 
                 app:layout_constraintBottom_toBottomOf="@+id/btnEventDescription_ImagePlace"
                 app:layout_constraintStart_toEndOf="@+id/btnEventDescription_ImagePlace"
@@ -522,6 +523,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/etEventDescription_AddComent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </LinearLayout>
 </ScrollView>

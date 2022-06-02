@@ -15,6 +15,7 @@
     </style>
 
 
+
     <style name="textViewSubTitlesAfter">
         <item name="android:textColor">@color/text_color</item>
         <item name="fontFamily">@font/montserrat_bold</item>
@@ -68,6 +69,12 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="textViewSubSubNamePuple">
+        <item name="android:textColor">@color/purple_quaternary</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="textViewCardSubName">
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/montserrat_medium</item>
@@ -116,12 +123,12 @@
     <style name="editTextPassword">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:padding">10dp</item>
+        <item name="paddingEnd">45dp</item>
         <item name="android:background">@drawable/shape_edit_text_background</item>
         <item name="android:inputType">textPassword</item>
         <item name="fontFamily">@font/montserrat_regular</item>
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:textColorHint">@color/text_color</item>
-        <item name="android:drawableEnd">@drawable/ic_baseline_visibility_off</item>
     </style>
 
 

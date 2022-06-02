@@ -76,7 +76,7 @@ public class CompanyPerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        btnAddEvento = getActivity().findViewById(R.id.btnCompanyPerfil_AddEvent);
+//        btnAddEvento = getActivity().findViewById(R.id.btnCompanyPerfil_AddEvent);
         int idEmpresa = 2;
         btnAddEvento.setOnClickListener(view -> {
 

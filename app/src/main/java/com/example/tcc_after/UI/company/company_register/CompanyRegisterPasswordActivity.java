@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,8 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
     private EditText etSenha, etConfSenha;
     private TextView tvLogin;
     private Button avancar02;
+    private ImageView ivVerSenha, ivVerConfSenha;
+    private int contador = 0;
 
     public static String senhaCadastroEmpresa;
 
@@ -30,6 +35,32 @@ public class CompanyRegisterPasswordActivity extends AppCompatActivity {
         etConfSenha = findViewById(R.id.etCompanyRegister_ConfPassword);
         tvLogin = findViewById(R.id.tvCompanyRegister_LoginPerfil);
         avancar02 = findViewById(R.id.btnCompanyRegister_02);
+        ivVerSenha = findViewById(R.id.ivCompanyRegister_SeePassaword);
+        ivVerConfSenha = findViewById(R.id.ivCompanyRegister_SeeConfPassaword);
+
+        ivVerSenha.setOnClickListener(view -> {
+            contador++;
+            if (contador % 2 == 0){
+                etSenha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                ivVerSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility_off));
+            }
+            if (contador % 2 != 0){
+                etSenha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                ivVerSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility));
+            }
+        });
+
+        ivVerConfSenha.setOnClickListener(view -> {
+            contador++;
+            if (contador % 2 == 0){
+                etConfSenha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                ivVerConfSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility_off));
+            }
+            if (contador % 2 != 0){
+                etConfSenha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                ivVerConfSenha.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_visibility));
+            }
+        });
 
 
         tvLogin.setOnClickListener(view -> {

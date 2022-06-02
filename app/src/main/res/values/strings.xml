@@ -7,6 +7,9 @@
     <string name="titlePerfil">Perfil</string>
     <string name="titleTikets">Ingressos</string>
 
+    <string name="clickHerePandemic"><a href="https://www.gov.br/saude/pt-br/coronavirus">clique aqui</a></string>
+    <!-- link for practice textview-->
+
     <string name="titleNotifications">Notificações</string>
     <string name="titleSettings">Configurações</string>
 

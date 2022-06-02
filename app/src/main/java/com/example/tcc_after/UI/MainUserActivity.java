@@ -7,11 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.tcc_after.PerfilUserFragment;
 import com.example.tcc_after.R;
 import com.example.tcc_after.uiFragments.FeedFragment;
-import com.example.tcc_after.uiFragments.MomentsFragment;
 import com.example.tcc_after.uiFragments.SearchFragment;
-import com.example.tcc_after.uiFragments.user.perfil.UserPerfilFragment;
 import com.example.tcc_after.uiFragments.user.tickets.TicketsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -79,7 +78,7 @@ public class MainUserActivity extends AppCompatActivity {
 
                     case R.id.nav_perfil:
 
-                        fragment = new UserPerfilFragment();
+                        fragment = new PerfilUserFragment();
 
 
                         break;

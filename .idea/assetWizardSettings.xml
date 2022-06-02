@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialiconsoutlined/place/outline_place_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/visibility/baseline_visibility_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,7 +34,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_outline_place" />
+                            <entry key="outputName" value="ic_baseline_visibility" />
                             <entry key="sourceFile" value="/C:\Users\isabe\Downloads\health_and_safety_black_24dp 1.png" />
                           </map>
                         </option>

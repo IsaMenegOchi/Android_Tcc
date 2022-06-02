@@ -76,45 +76,45 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
         btnFoward.setOnClickListener(view ->
                 {
 
-                    uploadImageRetroFit(bitmap);
+//                    uploadImageRetroFit(bitmap);
                     // FAZ A VALIDAÇÃO DOS CAMPOS
-//                    if (validateFields()){
-//
+                    if (validateFields()) {
+
 //                        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
-//                        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
+//                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayInputStream);
 //
-//                        fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
-//
-////                         CRIANDO UMA MODEL DE USUARIO COMUM
-//                        UsuarioComum usuarioComum = new UsuarioComum();
-//
-//                        //CHAMANDO AS VARIAVEIS PUBLICAS
-//                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
-//                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
-//                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
-//                        try {
-//                            usuarioComum.setDataNascUsuario(DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
-//                        }
-//                        catch (ParseException e) {
-//                            e.printStackTrace();
-//                        }
+//                        photoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+
+//                         CRIANDO UMA MODEL DE USUARIO COMUM
+                        UsuarioComum usuarioComum = new UsuarioComum();
+
+                        //CHAMANDO AS VARIAVEIS PUBLICAS
+                        usuarioComum.setNomeCompletoUsuario(UserRegisterActivity01.nomeCadastroUsuario);
+                        usuarioComum.setNicknameUsuario(UserRegisterActivity01.nicknameCadastroUsuario);
+                        usuarioComum.setEmailUsuario(UserRegisterActivity01.emailCadastroUsuario);
+                        try {
+                            usuarioComum.setDataNascUsuario(DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
 //                        usuarioComum.setImagemPerfilUsuario(fotoPerfil);
 //                        usuarioComum.setImagemFundoUsuario(fotoCapa);
-//                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
-//                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
-//                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
-//                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
-//                        usuarioComum.setBiografia(etBiografia.getText().toString());
-//
-//                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
-//                        routerInterface = APIUtil.getApiInterface();
-//                        addUsuario(usuarioComum);
-//
-////                        REDIRECIONANDO A OUTRA TELA
-//                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainUserActivity.class);
-//                        startActivity(intent);
+                        usuarioComum.setCep(UserRegisterActivity02.cepCadastroUsuario);
+                        usuarioComum.setCidade(UserRegisterActivity02.cidadeCadastroUsuario);
+                        usuarioComum.setEstado(UserRegisterActivity02.estadoCadastroUsuario);
+                        usuarioComum.setSenhaUsuario(UserRegisterActivity02.senhaCadastroUsuario);
+                        usuarioComum.setBiografia(etBiografia.getText().toString());
+
+                        //PEDE A ROUTER INTERFACE PARA INSERIR NO BANCO DE DADOS O QUE PASSAMOS
+                        routerInterface = APIUtil.getApiInterface();
+                        addUsuario(usuarioComum);
+
+//                        REDIRECIONANDO A OUTRA TELA
+                        Intent intent = new Intent(PhotoUserRegisterActivity.this, MainUserActivity.class);
+                        startActivity(intent);
 //                    }//fim do if
-                }//fim da view
+                    }//fim da view
+                }
         ); //fim do click listener
 
         tvPularEtapa.setOnClickListener(view ->
@@ -187,6 +187,7 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
 
         }
 
+
     private void openGalery(){
         Intent intent = new Intent(Intent.ACTION_PICK, //o pick permite abrir uma parte especifica do smartphine
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI //o priveder permite acessar funcionalidades do Sistema Operacional
@@ -197,51 +198,51 @@ public class PhotoUserRegisterActivity extends AppCompatActivity {
     }
 
 
-    private void uploadImageRetroFit(Bitmap bitmap) {
-
-        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
-
-        String nomeCompleto = UserRegisterActivity01.nomeCadastroUsuario;
-        String nickname = UserRegisterActivity01.nicknameCadastroUsuario;
-        String email = UserRegisterActivity01.emailCadastroUsuario;
-        String dataUsuario = UserRegisterActivity02.dataNascCadastroUsuario;
-//        try {
-//            dataUsuario = DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-        String cep = UserRegisterActivity02.cepCadastroUsuario;
-        String cidade = UserRegisterActivity02.cidadeCadastroUsuario;
-        String estado = UserRegisterActivity02.estadoCadastroUsuario;
-        String senha = UserRegisterActivity02.senhaCadastroUsuario;
-        String biografia = etBiografia.getText().toString();
-        String fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
-        String fotoCapa = null;
-
-        Log.d("teste", "uploadImageRetroFit: " + cep);
-        Log.d("teste", "uploadImageRetroFit: " + cidade);
-        Log.d("teste", "uploadImageRetroFit: " + estado);
-        Log.d("teste", "uploadImageRetroFit: " + senha);
-        Log.d("teste", "uploadImageRetroFit: " + biografia);
-        Log.d("teste", "uploadImageRetroFit: " + fotoPerfil);
-        Log.d("teste", "uploadImageRetroFit: " + cep);
-
-Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia, dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
-//        Call<String> upload =  routerInterface.addFotosUsuarioComum("CRISTIANO CORREA DE MORAES");
-        upload.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(PhotoUserRegisterActivity.this, "Foi nega", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-                Log.d("teste", "onFailure: " + t.getCause());
-            }
-        });
-    }
+//    private void uploadImageRetroFit(Bitmap bitmap) {
+//
+//        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
+////        bitmap.compress(Bitmap.CompressFormat. JPEG, 100, byteArrayInputStream);
+//
+//        String nomeCompleto = UserRegisterActivity01.nomeCadastroUsuario;
+//        String nickname = UserRegisterActivity01.nicknameCadastroUsuario;
+//        String email = UserRegisterActivity01.emailCadastroUsuario;
+//        String dataUsuario = UserRegisterActivity02.dataNascCadastroUsuario;
+////        try {
+////            dataUsuario = DateConvert.format.parse(UserRegisterActivity02.dataNascCadastroUsuario);
+////        } catch (ParseException e) {
+////            e.printStackTrace();
+////        }
+//        String cep = UserRegisterActivity02.cepCadastroUsuario;
+//        String cidade = UserRegisterActivity02.cidadeCadastroUsuario;
+//        String estado = UserRegisterActivity02.estadoCadastroUsuario;
+//        String senha = UserRegisterActivity02.senhaCadastroUsuario;
+//        String biografia = etBiografia.getText().toString();
+//        String fotoPerfil = Base64.encodeToString(byteArrayInputStream.toByteArray(), Base64.DEFAULT);
+//        String fotoCapa = null;
+//
+//        Log.d("teste", "uploadImageRetroFit: " + cep);
+//        Log.d("teste", "uploadImageRetroFit: " + cidade);
+//        Log.d("teste", "uploadImageRetroFit: " + estado);
+//        Log.d("teste", "uploadImageRetroFit: " + senha);
+//        Log.d("teste", "uploadImageRetroFit: " + biografia);
+//        Log.d("teste", "uploadImageRetroFit: " + fotoPerfil);
+//        Log.d("teste", "uploadImageRetroFit: " + cep);
+//
+//    Call<String> upload =  routerInterface.addFotosUsuarioComum(nickname, email, senha, cep, estado, cidade, biografia, dataUsuario, nomeCompleto , fotoPerfil, fotoCapa);
+////        Call<String> upload =  routerInterface.addFotosUsuarioComum("CRISTIANO CORREA DE MORAES");
+//        upload.enqueue(new Callback<String>() {
+//            @Override
+//            public void onResponse(Call<String> call, Response<String> response) {
+//                Toast.makeText(PhotoUserRegisterActivity.this, "Foi nega", Toast.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<String> call, Throwable t) {
+//
+//                Log.d("teste", "onFailure: " + t.getCause());
+//            }
+//        });
+//    }
 
     /** FUNCOES DE MODEL **/
     public void addUsuario(UsuarioComum usuarioComum) {

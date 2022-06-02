@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,8 +49,9 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
     RouterInterface routerInterface;
     int idPerfil = 2;
-    int valorMin = 0;
-    int valorMax = 0;
+//    int valorMin = 0;
+//    int valorMax = 0;
+    private String local;
     List<Evento> listEvento = new ArrayList<Evento>();
 
     @Override
@@ -96,7 +98,6 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
                         recyclerView.setAdapter(new ComentarioAdapter(listComentario));
                     }
-
                 }
             }
 
@@ -105,7 +106,6 @@ public class EventDescriptionActivity extends AppCompatActivity {
 
             }
         });
-
 
         Call<List<Evento>> getEventoId = routerInterface.getEventoIdEvento(idEvento);
         getEventoId.enqueue(new Callback<List<Evento>>() {
@@ -117,7 +117,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
                     listEvento = response.body();
 
                     tvTituloEvento.setText(listEvento.get(0).getTituloEvento());
-                    tvNomeEmpresa.setText(listEvento.get(0).getEmpresa().getPerfil().getNicknamePerfil());
+                    tvNomeEmpresa.setText("by "+ listEvento.get(0).getEmpresa().getPerfil().getNicknamePerfil());
 //                    tvNomeCelebridade.setText(listEvento.get(0).getNicknameCelebridadeEvento());
                     tvDataInicio.setText(DateConvert.format.format(listEvento.get(0).getDataInicioEvento()));
                     if (listEvento.get(0).getDataFimEvento() == null) {
@@ -126,8 +126,18 @@ public class EventDescriptionActivity extends AppCompatActivity {
                         tvDataFim.setText(DateConvert.format.format(listEvento.get(0).getDataFimEvento()));
                     }
                     tvHoraInicio.setText(listEvento.get(0).getHoraInicioEvento().replaceFirst(":00", ""));
-                    String local = listEvento.get(0).getEnderecoEvento().get(0).getLogradouro() + ", " + listEvento.get(0).getEnderecoEvento().get(0).getNumero() + " - " +
-                            listEvento.get(0).getEnderecoEvento().get(0).getCidade() + " - " + listEvento.get(0).getEnderecoEvento().get(0).getEstado();
+
+
+                    if (listEvento.get(0).getEnderecoEvento().get(0).getComplemento() == null || listEvento.get(0).getEnderecoEvento().get(0).getComplemento().equals("") ){
+                        local = listEvento.get(0).getEnderecoEvento().get(0).getLogradouro() + ", " + listEvento.get(0).getEnderecoEvento().get(0).getNumero() + " - " +
+                                listEvento.get(0).getEnderecoEvento().get(0).getCidade() + " - " + listEvento.get(0).getEnderecoEvento().get(0).getEstado();
+
+                    }
+                    else{
+                        local = listEvento.get(0).getEnderecoEvento().get(0).getLogradouro() + ", " + listEvento.get(0).getEnderecoEvento().get(0).getNumero() + " - " +
+                                listEvento.get(0).getEnderecoEvento().get(0).getCidade() + "("  + listEvento.get(0).getEnderecoEvento().get(0).getComplemento() + ")" + " - " + listEvento.get(0).getEnderecoEvento().get(0).getEstado();
+                    }
+
                     tvLocal.setText(local);
                     tvDescricao.setText(listEvento.get(0).getDescricaoEvento());
                     tvTipoEvento.setText(listEvento.get(0).getTipoEvento().getTipo());
@@ -137,39 +147,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
 //                        tvAssunto.setVisibility(View.VISIBLE);
 //                        tvAssunto.setText();
 
-//                    tvValorMin.setText("R$" + String.valueOf(valorMin) + "-" + "R$" + String.valueOf(valorMax));
-//
-                    Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(0).getIngressoLote().size());
-
-                    int i = 0;
-                    while (listEvento.get(0).getLote().get(i).getIngressoLote().size() < i){
-                        List<Ingresso> listIngressos = new ArrayList<Ingresso>();
-                        listIngressos = listEvento.get(i).getLote().get(i).getIngressoLote();
-
-                        if (listIngressos.get(i).getValor() > listIngressos.get(i++).getValor()) {
-                            valorMin = listIngressos.get(i).getValor().intValue();
-                        }
-                        if (listIngressos.get(i).getValor() < listIngressos.get(i++).getValor()) {
-                            valorMax = listIngressos.get(i).getValor().intValue();
-                        }
-                        i++;
-                    }
-
-//                    for (int i = 0; i < listEvento.get(0).getLote().get(i).getIngressoLote().size(); i++) {
-////                        Log.d("teste", "onResponse: " + listEvento.get(0).getLote().get(i).getIngressoLote().size());
-//                        List<Ingresso> listIngressos = new ArrayList<Ingresso>();
-//                        listIngressos = listEvento.get(i).getLote().get(i).getIngressoLote();
-//
-//                        if (listIngressos.get(i).getValor() > listIngressos.get(i++).getValor()) {
-//                            valorMin = listIngressos.get(i).getValor().intValue();
-//                        }
-//                        if (listIngressos.get(i).getValor() < listIngressos.get(i++).getValor()) {
-//                            valorMax = listIngressos.get(i).getValor().intValue();
-//                        }
-////
-////                    tvValorMin.setText(valorMin);
-//
-//                    }
+                    tvValorMin.setText("R$ " + listEvento.get(0).getLote().get(0).getIngressoLote().get(0).getValor());
                 }
             }
 
@@ -180,13 +158,6 @@ public class EventDescriptionActivity extends AppCompatActivity {
     });
 
         ivSendComent.setOnClickListener(view -> {
-
-            Log.d("teste", "onCreate: " + etComentario.getText().toString().trim().equals(""));
-            Log.d("teste", "onCreate: " + etComentario.getText().toString().equals(""));
-            Log.d("teste", "onCreate: " + etComentario.getText().toString().length());
-            Log.d("teste", "onCreate: " +  etComentario.getText().toString());
-
-
             if (!etComentario.getText().toString().trim().equals("") && etComentario.getText().toString().length() != 0) {
 
                 Comentario comentario = new Comentario();
@@ -208,20 +179,20 @@ public class EventDescriptionActivity extends AppCompatActivity {
                 });
             }
         });
+
+        btnComprar.setOnClickListener(view -> {
+//            startActivity(new Intent(this, ));
+        });
     }
 
 
     private class ComentarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         List<Comentario> listComentarios;
-//        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
-
-
 
         public ComentarioAdapter(List<Comentario> comentario) {
             this.listComentarios = comentario;
         }
-
 
         //cria a view holder
         @NonNull
@@ -233,13 +204,11 @@ public class EventDescriptionActivity extends AppCompatActivity {
         //passsa os dados para a view holder
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
             Comentario comentario = this.listComentarios.get(position);
-//            TipoEvento tipoEvento = this.listTiposEvento.get(position);
-//            Log.d("teste", "onBindViewHolder: " + listComentario.get(0).getIdEvento());
             ((ComentarioViewHolder) holder).setEventoData(comentario);
 
         }
-
 
         //conta a quantidade de livros
         @Override
@@ -272,12 +241,9 @@ public class EventDescriptionActivity extends AppCompatActivity {
                     tvComentario.setText(comentario.getTextComentario());
                     tvPerfil.setText(comentario.getPerfil().getNicknamePerfil());
 //                ivPerfil.setImageBitmap(evento.getComentarios().get(0).getPerfil().getNicknamePerfil());
-//                    idComentario = comentario.getIdComentario();
+
                 }
             }
         }
     }
-
-
-
 }

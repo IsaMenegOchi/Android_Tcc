@@ -7,10 +7,9 @@
     android:background="@color/background_primary"
     tools:context=".UI.company.company_register.CompanyRegisterPasswordActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         style="@style/parent">
 
         <ImageView
@@ -18,32 +17,51 @@
             style="@style/imageViewAfterLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvRegister"
             style="@style/textViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
             android:text="@string/register"
-            android:layout_gravity="center" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/tvCompanyRegister_Password"
             style="@style/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
             android:text="@string/password"
-             />
+            android:layout_marginTop="110dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
         <EditText
             android:id="@+id/etCompanyRegister_Password"
             style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             />
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegister_Password" />
+
+        <ImageView
+            android:id="@+id/ivCompanyRegister_SeePassaword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_baseline_visibility_off"
+            app:layout_constraintBottom_toBottomOf="@+id/etCompanyRegister_Password"
+            app:layout_constraintEnd_toEndOf="@+id/etCompanyRegister_Password"
+            app:layout_constraintTop_toTopOf="@+id/etCompanyRegister_Password" />
 
         <TextView
             android:id="@+id/tvCompanyRegister_ConfPassword"
@@ -52,50 +70,67 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/confPassword"
-             />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegister_Password" />
 
         <EditText
             android:id="@+id/etCompanyRegister_ConfPassword"
             style="@style/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyRegister_ConfPassword" />
+
+        <ImageView
+            android:id="@+id/ivCompanyRegister_SeeConfPassaword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_baseline_visibility_off"
+            app:layout_constraintBottom_toBottomOf="@+id/etCompanyRegister_ConfPassword"
+            app:layout_constraintEnd_toEndOf="@+id/etCompanyRegister_ConfPassword"
+            app:layout_constraintTop_toTopOf="@+id/etCompanyRegister_ConfPassword" />
 
         <Button
             android:id="@+id/btnCompanyRegister_02"
             style="@style/buttonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
             android:text="Cadastrar"
-            />
+            android:layout_marginTop="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyRegister_ConfPassword" />
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCompanyRegister_02">
 
             <TextView
                 android:id="@+id/haveAccount"
                 style="@style/textViewSubName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/haveAccont"
-                />
+                android:text="@string/haveAccont" />
 
             <TextView
                 android:id="@+id/tvCompanyRegister_LoginPerfil"
                 style="@style/textViewSubNamePurple"
-                android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/conectNow"
-                />
+                android:layout_marginStart="5dp"
+                android:text="@string/conectNow" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
