@@ -2,6 +2,7 @@ package com.example.tcc_after.remote;
 
 import com.example.tcc_after.model.Celebridade;
 import com.example.tcc_after.model.Perfil;
+import com.example.tcc_after.model.Pesquisa;
 import com.example.tcc_after.model.empresa.Banco;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
@@ -44,6 +45,10 @@ public interface RouterInterface {
 
     @GET("/perfil/acharPerfil/{idUsuarioComum}")
     Call<List<UsuarioComum>> getPerfilUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
+
+    @POST("/pesquisar/pesquisarEvento")
+    Call<List<Pesquisa>> pesquisar(@Body Pesquisa pesquisa);
+
 
     //* ROTAS DE USUARIO
 

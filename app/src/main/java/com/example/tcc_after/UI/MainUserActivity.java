@@ -3,14 +3,16 @@ package com.example.tcc_after.UI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.tcc_after.PerfilUserFragment;
 import com.example.tcc_after.R;
 import com.example.tcc_after.uiFragments.FeedFragment;
 import com.example.tcc_after.uiFragments.SearchFragment;
+import com.example.tcc_after.uiFragments.user.perfil.PerfilUserFragment;
 import com.example.tcc_after.uiFragments.user.tickets.TicketsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -33,6 +35,8 @@ public class MainUserActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
+
+
                 switch (item.getItemId()){
                     case R.id.nav_search:
                         fragment = new SearchFragment();

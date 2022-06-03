@@ -1,15 +1,22 @@
 package com.example.tcc_after.uiFragments.user.perfil;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ActionMenuView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -17,9 +24,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
 import com.example.tcc_after.model.evento.Evento;
+import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.uiFragments.user.verification.AboutVerificationFragment;
+import com.example.tcc_after.uiFragments.user.verification.RequestVerificationFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,15 +70,20 @@ public class PerfilUserFragment extends Fragment {
 
     private Spinner spConfiguracoes;
     private TextView tvNumeroSeguindo, tvEventosPresenciados;
+
+    private ActionMenuView actionMenuView;
     RouterInterface routerInterface;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)  {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        spConfiguracoes = requireActivity().findViewById(R.id.spUserPerfil_Config);
+//        spConfiguracoes = requireActivity().findViewById(R.id.spUserPerfil_Config);
         tvNumeroSeguindo = getActivity().findViewById(R.id.tvUserPerfil_NumberFollowing);
         tvEventosPresenciados = getActivity().findViewById(R.id.tvUserPerfil_NumberWitnessedEvents);
+        actionMenuView = getActivity().findViewById(R.id.amvUserPerfil_Settings);
+
+
 
         routerInterface = APIUtil.getApiInterface();
         Call<List<Evento>> call = routerInterface.getEventos();
@@ -93,46 +109,88 @@ public class PerfilUserFragment extends Fragment {
 
             }
         });
+//
+//        Log.d("teste", "onCreateView: " + spConfiguracoes);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.settingsArray, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spConfiguracoes.setAdapter(adapter);
 
-        Log.d("teste", "onCreateView: " + spConfiguracoes);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.settingsArray, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spConfiguracoes.setAdapter(adapter);
-
-
-        spConfiguracoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Log.d("teste", "onItemSelected: " + spConfiguracoes.getSelectedItemPosition());
-//                if (spConfiguracoes.getSelectedItemId() == 0){
-//                     Fragment fragment = new UserEditPerfilFragment();
+//        spConfiguracoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//
+//
+//                if (spConfiguracoes.getSelectedItemPosition() == 0){
+//
+//                    fragmentTransaction.replace(R.id.frameLUserPerfil_Frame, new UserEditPerfilFragment()).commit();
+//
 //                }
-//                else if (spConfiguracoes.getSelectedItemId() == 1){
-//                    startActivity(new Intent(getActivity(), VerificacaoUsuario.class));
+//                else if (spConfiguracoes.getSelectedItemPosition() == 1){
+//
+//
 //                }
-//                else if (spConfiguracoes.getSelectedItemId() == 2){
+//                else if (spConfiguracoes.getSelectedItemPosition() == 2){
 //                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
 //                                    .setMessage("Você deseja sair da sua conta?")
 //                                    .setPositiveButton("Sim", (dialog1, witch) -> {
 //
+//                                        startActivity(new Intent(getActivity(), LoginActivity.class));
 //                                    })
 //                                    .setNegativeButton("Não", (dialog1, witch) -> {
 //
 //                                    });
 //                            alertDialog.show();
 //                }
-            }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
+    }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState)  {
 
-            }
-        });
+
         return inflater.inflate(R.layout.fragment_user_perfil, container, false);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        switch (item.getItemId()){
+            case R.id.menu_edit:
 
+                fragmentTransaction.replace(R.id.frameLUserPerfil_Frame, new UserEditPerfilFragment()).commit();
+                return true;
+
+            case R.id.menu_leave:
+
+                fragmentTransaction.replace(R.id.frameLUserPerfil_Frame, new RequestVerificationFragment()).commit();
+                return true;
+
+            case R.id.menu_verification:
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
+                        .setMessage("Você deseja sair da sua conta?")
+                        .setPositiveButton("Sim", (dialog1, witch) -> {
+
+                            startActivity(new Intent(getActivity(), LoginActivity.class));
+                        })
+                        .setNegativeButton("Não", (dialog1, witch) -> {
+
+                        });
+                alertDialog.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 
     private class EventoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

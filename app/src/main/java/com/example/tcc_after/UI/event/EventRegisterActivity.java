@@ -150,8 +150,12 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
                                         for(int ii = 0 ; ii < listIdCategoria.size(); ii++){
 
-                                            if (categoriaEvento.getSelectedItemPosition() == listIdCategoria.get(ii)){
-                                                idCategoria = listIdCategoria.get(ii);
+                                            if (categoriaEvento.getSelectedItemPosition() == listIdCategoria.indexOf(ii)){
+                                                idCategoria = listIdCategoria.get(ii-1);
+//                                                Log.d("teste", "categoriaEvento.getSelectedItemPosition " + categoriaEvento.getSelectedItemPosition());
+//                                                Log.d("teste", "id_categoria_index: " + listIdCategoria.indexOf(ii));
+//                                                Log.d("teste", "id_categoria_dentro_if: " + idCategoria);
+
                                             }
                                         }
                                     }
@@ -205,8 +209,10 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
                                     for (int ii = 0; ii < listIdAssunto.size(); ii++) {
 
-                                        if (assuntoEvento.getSelectedItemPosition() == listIdAssunto.get(ii)) {
-                                            idAssunto = listIdAssunto.get(ii);
+
+                                        if (assuntoEvento.getSelectedItemPosition() == listIdAssunto.indexOf(ii)) {
+                                            idAssunto = listIdAssunto.get(ii-1);
+
                                         }
                                     }
                                 }
@@ -263,8 +269,8 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
                                     for(int ii = 0 ; ii < listIdTipoEvento.size(); ii++){
 
-                                        if (tipoEvento.getSelectedItemPosition() == listIdTipoEvento.get(ii)){
-                                            idCategoria = listIdTipoEvento.get(ii);
+                                        if (tipoEvento.getSelectedItemPosition() == listIdTipoEvento.indexOf(ii)){
+                                            idCategoria = listIdTipoEvento.get(ii-1);
                                         }
                                     }
                                 }
@@ -316,8 +322,8 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
                                     for(int ii = 0 ; ii < listIdFaixaEtaria.size(); ii++){
 
-                                        if (faixaEtariaEvento.getSelectedItemPosition() == listIdFaixaEtaria.get(ii)){
-                                            idFaixaEtaria = listIdFaixaEtaria.get(ii);
+                                        if (faixaEtariaEvento.getSelectedItemPosition() == listIdFaixaEtaria.indexOf(ii)){
+                                            idFaixaEtaria = listIdFaixaEtaria.get(ii-1);
                                         }
                                     }
                                 }
@@ -375,8 +381,8 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
 
                             for(int ii = 0 ; ii < listIdContaBancaria.size(); ii++){
 
-                                if (contaEvento.getSelectedItemPosition() == listIdContaBancaria.get(ii)){
-                                    idContaBancaria = listIdContaBancaria.get(ii);
+                                if (contaEvento.getSelectedItemPosition() == listIdContaBancaria.indexOf(ii)){
+                                    idContaBancaria = listIdContaBancaria.get(ii-1);
                                 }
                             }
                             Log.d("teste", "onItemSelected: " + idContaBancaria);

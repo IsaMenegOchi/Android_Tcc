@@ -69,9 +69,9 @@
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".UI.user.verification.AboutVerificationActivity" -->
         <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".UI.user.verification.RequestVerificationActivity" -->
-        <!-- android:exported="false"/> -->
+<!--         <activity-->
+<!--         android:name=".UI.user.verification.RequestVerificationActivity"-->
+<!--         android:exported="false"/>-->
         <!-- EMPRESA -->
         <activity
             android:name=".UI.company.CompanyEventStatisticsActivity"
