@@ -18,8 +18,7 @@ import android.widget.TextView;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.event.EventDescriptionActivity;
-import com.example.tcc_after.model.Pesquisa;
-import com.example.tcc_after.model.evento.Evento;
+import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.remote.RouterInterface;
 
 import java.util.ArrayList;
@@ -78,6 +77,7 @@ public class SearchFragment extends Fragment {
 
     EditText etPesquisa;
     RouterInterface routerInterface;
+    ImageView ivPesquisa;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,29 +91,30 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         etPesquisa = getActivity().findViewById(R.id.etSearch_Search);
+        ivPesquisa = getActivity().findViewById(R.id.ivSearch_IconSearch);
 
-        etPesquisa.setOnClickListener(view1 -> {
 
-            Pesquisa pesquisa = new Pesquisa();
+        ivPesquisa.setOnClickListener(view1 -> {
+            String pesquisa = etPesquisa.getText().toString();
 
-            pesquisa.setTituloPesquisa(etPesquisa.getText().toString());
-
-            Call<List<Pesquisa>> pesquisar = routerInterface.pesquisar(pesquisa);
-            pesquisar.enqueue(new Callback<List<Pesquisa>>() {
+            Call<List<Evento>> pesquisarEvento = routerInterface.pesquisarEvento(pesquisa);
+            pesquisarEvento.enqueue(new Callback<List<Evento>>() {
                 @Override
-                public void onResponse(Call<List<Pesquisa>> call, Response<List<Pesquisa>> response) {
+                public void onResponse(Call<List<Evento>> call, Response<List<Evento>> response) {
+                    if (response.isSuccessful()){
+                        List<Evento> listEvento = new ArrayList<Evento>();
 
-                    List<Pesquisa> listPesquisa = new ArrayList<Pesquisa>();
+                        listEvento = response.body();
 
-                    listPesquisa = response.body();
-
-//                    Log.d("teste", String.valueOf(listPesquisa.get(0).getTituloEvento()));
-                    RecyclerView recyclerView = getActivity().findViewById(R.id.rcSearch_SearchEvents);
-                    recyclerView.setAdapter(new SearchFragment.PesquisaAdapter(listPesquisa));
+                        Log.d("teste", "onResponse: ta entrando nega");
+////                    Log.d("teste", String.valueOf(listPesquisa.get(0).getTituloEvento()));
+//                        RecyclerView recyclerView = getActivity().findViewById(R.id.rcSearch_SearchEvents);
+//                        recyclerView.setAdapter(new SearchFragment.PesquisaAdapter(listEvento));
+                    }
                 }
 
                 @Override
-                public void onFailure(Call<List<Pesquisa>> call, Throwable t) {
+                public void onFailure(Call<List<Evento>> call, Throwable t) {
 
                 }
             });
@@ -126,13 +127,13 @@ public class SearchFragment extends Fragment {
 
     private class PesquisaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        List<Pesquisa> listPesquisa;
+        List<Evento> listEvento;
 //        List<TipoEvento> listTiposEvento = new ArrayList<TipoEvento>();
 
 
 
-        public PesquisaAdapter(List<Pesquisa> pesquisas) {
-            this.listPesquisa = pesquisas;
+        public PesquisaAdapter(List<Evento> eventos) {
+            this.listEvento = eventos;
         }
 
         //cria a view holder
@@ -145,7 +146,7 @@ public class SearchFragment extends Fragment {
         //passsa os dados para a view holder
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            Pesquisa pesquisa = this.listPesquisa.get(position);
+            Evento pesquisa = this.listEvento.get(position);
 //            TipoEvento tipoEvento = this.listTiposEvento.get(position);
 //            Log.d("teste", "onBindViewHolder: " + listPesquisa.get(0).getIdEvento());
             ((SearchFragment.PesquisaAdapter.EventoViewHolder) holder).setEventoData(pesquisa);
@@ -157,13 +158,13 @@ public class SearchFragment extends Fragment {
         @Override
         public int getItemCount() {
 
-            return listPesquisa.size();
+            return listEvento.size();
 
         }
 
         public int getItemViewType(int position) {
 
-            return listPesquisa.size();
+            return listEvento.size();
 
         }
 
@@ -248,7 +249,7 @@ public class SearchFragment extends Fragment {
             }//fim do construtor da classe eventoviewholder
 
 
-            public void setEventoData(Pesquisa pesquisa) {
+            public void setEventoData(Evento pesquisa) {
                 tvTituloEvento.setText(pesquisa.getTituloEvento());
                 tvEmpresa.setText(pesquisa.getEmpresa().getPerfil().getNicknamePerfil());
                 tvCategoria.setText(pesquisa.getCategoria().getCategoriaEvento());

@@ -2,6 +2,7 @@ package com.example.tcc_after.UI.event;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ComponentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.UI.LoginActivity;
 import com.example.tcc_after.model.evento.Comentario;
 import com.example.tcc_after.model.evento.EnderecoEvento;
 import com.example.tcc_after.model.evento.Evento;
@@ -48,7 +50,7 @@ public class EventDescriptionActivity extends AppCompatActivity {
 //    int idEvento = 3;
 
     RouterInterface routerInterface;
-    int idPerfil = 2;
+    int idPerfil = LoginActivity.idPerfil;
 //    int valorMin = 0;
 //    int valorMax = 0;
     private String local;
@@ -147,7 +149,12 @@ public class EventDescriptionActivity extends AppCompatActivity {
 //                        tvAssunto.setVisibility(View.VISIBLE);
 //                        tvAssunto.setText();
 
-                    tvValorMin.setText("R$ " + listEvento.get(0).getLote().get(0).getIngressoLote().get(0).getValor());
+                    if (listEvento.get(0).getLote().size() == 0 || listEvento.get(0).getLote().get(0).getIngressoLote().size() == 0){
+                        tvValorMin.setText("Este evento não possui ingressos");
+                    }
+                    else{
+                        tvValorMin.setText("R$ " + listEvento.get(0).getLote().get(0).getIngressoLote().get(0).getValor());
+                    }
                 }
             }
 

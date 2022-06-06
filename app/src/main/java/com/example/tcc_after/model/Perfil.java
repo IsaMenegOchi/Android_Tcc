@@ -1,7 +1,12 @@
 package com.example.tcc_after.model;
 
+import com.example.tcc_after.model.empresa.Empresa;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Perfil {
 
@@ -32,6 +37,16 @@ public class Perfil {
     @SerializedName("biografia")
     @Expose
     private String biografiaPerfil;
+
+    @SerializedName("tblEmpresas")
+    @Expose
+    private ArrayList<Empresa> empresa;
+
+    @SerializedName("tblUsuarioComums")
+    @Expose
+    private ArrayList<UsuarioComum> usuarioComum;
+
+
 
     public Perfil() {
     }
@@ -100,5 +115,21 @@ public class Perfil {
 
     public void setBiografiaPerfil(String biografiaPerfil) {
         this.biografiaPerfil = biografiaPerfil;
+    }
+
+    public ArrayList<Empresa> getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(ArrayList<Empresa> empresa) {
+        this.empresa = empresa;
+    }
+
+    public ArrayList<UsuarioComum> getUsuarioComum() {
+        return usuarioComum;
+    }
+
+    public void setUsuarioComum(ArrayList<UsuarioComum> usuarioComum) {
+        this.usuarioComum = usuarioComum;
     }
 }

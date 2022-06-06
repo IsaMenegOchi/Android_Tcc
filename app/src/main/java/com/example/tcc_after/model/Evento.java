@@ -14,7 +14,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Pesquisa {
+public class Evento {
 
     @SerializedName("titulo")
     @Expose

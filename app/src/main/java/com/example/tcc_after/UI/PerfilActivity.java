@@ -1,14 +1,19 @@
 package com.example.tcc_after.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.tcc_after.R;
+import com.example.tcc_after.model.Perfil;
+import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
+import com.example.tcc_after.uiFragments.user.perfil.PerfilUserFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +61,7 @@ public class PerfilActivity extends AppCompatActivity {
 
             }
         });
+
 
 
     }

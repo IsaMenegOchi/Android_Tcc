@@ -46,23 +46,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
 
+
             <EditText
                 android:id="@+id/etSearch_Search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/editTextText"
+                android:paddingStart="20dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/shape_edit_text_background"
-                android:drawableLeft="@drawable/ic_baseline_search"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Chat" />
+
+
+            <ImageView
+                android:id="@+id/ivSearch_IconSearch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_baseline_search"
+                app:layout_constraintBottom_toTopOf="@+id/rcSearch_SearchEvents"
+                app:layout_constraintStart_toStartOf="@+id/etSearch_Search"
+                app:layout_constraintTop_toBottomOf="@+id/etSearch_Search" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcSearch_SearchEvents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etSearch_Search" />

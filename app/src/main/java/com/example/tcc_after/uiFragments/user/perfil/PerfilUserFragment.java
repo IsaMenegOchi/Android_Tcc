@@ -25,7 +25,9 @@ import android.widget.TextView;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.UI.LoginActivity;
+import com.example.tcc_after.model.Perfil;
 import com.example.tcc_after.model.evento.Evento;
+import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 import com.example.tcc_after.remote.APIUtil;
 import com.example.tcc_after.remote.RouterInterface;
@@ -69,25 +71,49 @@ public class PerfilUserFragment extends Fragment {
     }
 
     private Spinner spConfiguracoes;
-    private TextView tvNumeroSeguindo, tvEventosPresenciados;
+    private TextView tvNumeroSeguindo, tvEventosPresenciados, tvNickname, tvBiografia;
 
     private ActionMenuView actionMenuView;
     RouterInterface routerInterface;
+
+    int idPerfil = LoginActivity.idPerfil;
+
+    List<Perfil> listPerfil = new ArrayList<Perfil>();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        routerInterface = APIUtil.getApiInterface();
+
 //        spConfiguracoes = requireActivity().findViewById(R.id.spUserPerfil_Config);
         tvNumeroSeguindo = getActivity().findViewById(R.id.tvUserPerfil_NumberFollowing);
         tvEventosPresenciados = getActivity().findViewById(R.id.tvUserPerfil_NumberWitnessedEvents);
         actionMenuView = getActivity().findViewById(R.id.amvUserPerfil_Settings);
+        tvNickname = getActivity().findViewById(R.id.tvUserPerfil_UserName);
+        tvBiografia = getActivity().findViewById(R.id.tvUserPerfil_Biografia);
 
 
+        Call<List<Perfil>> callPerfil = routerInterface.getPerfilPorId(idPerfil);
+       callPerfil.enqueue(new Callback<List<Perfil>>() {
+           @Override
+           public void onResponse(Call<List<Perfil>> call, Response<List<Perfil>> response) {
+               if (response.isSuccessful()){
 
-        routerInterface = APIUtil.getApiInterface();
+                   listPerfil = response.body();
+
+                   tvNickname.setText(listPerfil.get(0).getNicknamePerfil());
+                   tvBiografia.setText(listPerfil.get(0).getBiografiaPerfil());
+               }
+           }
+
+           @Override
+           public void onFailure(Call<List<Perfil>> call, Throwable t) {
+
+           }
+       });
+
         Call<List<Evento>> call = routerInterface.getEventos();
-
         call.enqueue(new Callback<List<Evento>>() {
             @Override
             public void onResponse(Call<List<Evento>> call, Response<List<Evento>> response) {
@@ -109,6 +135,8 @@ public class PerfilUserFragment extends Fragment {
 
             }
         });
+
+
 //
 //        Log.d("teste", "onCreateView: " + spConfiguracoes);
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.settingsArray, android.R.layout.simple_spinner_item);

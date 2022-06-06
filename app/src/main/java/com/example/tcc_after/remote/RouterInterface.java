@@ -2,14 +2,13 @@ package com.example.tcc_after.remote;
 
 import com.example.tcc_after.model.Celebridade;
 import com.example.tcc_after.model.Perfil;
-import com.example.tcc_after.model.Pesquisa;
+import com.example.tcc_after.model.Evento;
 import com.example.tcc_after.model.empresa.Banco;
 import com.example.tcc_after.model.evento.Assunto;
 import com.example.tcc_after.model.evento.Categoria;
 import com.example.tcc_after.model.empresa.ContaBancaria;
 import com.example.tcc_after.model.empresa.Empresa;
 import com.example.tcc_after.model.evento.Comentario;
-import com.example.tcc_after.model.evento.Evento;
 import com.example.tcc_after.model.evento.Ingresso;
 import com.example.tcc_after.model.evento.Lote;
 import com.example.tcc_after.model.evento.FaixaEtaria;
@@ -18,9 +17,6 @@ import com.example.tcc_after.model.evento.TipoEvento;
 import com.example.tcc_after.model.usuarioComum.UsuarioComum;
 import com.example.tcc_after.model.usuarioComum.VerificacaoUsuario;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,9 +42,11 @@ public interface RouterInterface {
     @GET("/perfil/acharPerfil/{idUsuarioComum}")
     Call<List<UsuarioComum>> getPerfilUsuarioComumId(@Path("idUsuarioComum") int idUsuarioComum);
 
-    @POST("/pesquisar/pesquisarEvento")
-    Call<List<Pesquisa>> pesquisar(@Body Pesquisa pesquisa);
+    @GET("/pesquisar/pesquisarEventoGet/{tituloEvento}")
+    Call<List<Evento>> pesquisarEvento(@Path("tituloEvento") String tituloEvento);
 
+    @GET("/perfil/listarPerfis")
+    Call<List<Perfil>> getPerfils();
 
     //* ROTAS DE USUARIO
 
@@ -164,11 +162,11 @@ public interface RouterInterface {
 
         //? LISTAGEM DE TODOS
         @GET("/evento/listarEvento")
-        Call<List<Evento>> getEventos();
+        Call<List<com.example.tcc_after.model.evento.Evento>> getEventos();
 
         //? LISTAGEM POR ID DO EVENTO
         @GET("/evento/acharEventoIdEvento/{idEvento}")
-        Call<List<Evento>> getEventoIdEvento(@Path("idEvento") int idEvento);
+        Call<List<com.example.tcc_after.model.evento.Evento>> getEventoIdEvento(@Path("idEvento") int idEvento);
 
         //? LISTAGEM POR ID DA EMPRESA
         @GET("/evento/acharEventoPorId/{idEmpresa}")

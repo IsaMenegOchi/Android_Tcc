@@ -622,19 +622,19 @@ public class EventRegisterActivity extends AppCompatActivity implements TimePick
     public void addEvento(Evento evento) {
 
         //! ARRUMAR O ID DA EMPRESA
-        Call<Evento> call = routerInterface.addEvento(1, evento);
-        call.enqueue(new Callback<Evento>() {
-
-            @Override
-            public void onResponse(Call<Evento> call, Response<Evento> response) {
-                Toast.makeText(EventRegisterActivity.this, "Evento inserido com sucesso", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(Call<Evento> call, Throwable t) {
-                Log.d("Erro_api", t.getMessage());
-            }
-        });
+//        Call<Evento> call = routerInterface.addEvento(1, evento);
+//        call.enqueue(new Callback<Evento>() {
+//
+//            @Override
+//            public void onResponse(Call<Evento> call, Response<Evento> response) {
+//                Toast.makeText(EventRegisterActivity.this, "Evento inserido com sucesso", Toast.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Evento> call, Throwable t) {
+//                Log.d("Erro_api", t.getMessage());
+//            }
+//        });
     }// fim da funcao addEvento
 
 
