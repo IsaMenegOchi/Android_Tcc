@@ -96,12 +96,14 @@ public class LoginActivity extends AppCompatActivity {
                             idPerfil = listPerfil.get(i).getIdPerfil();
 
                             if (listPerfil.get(i).getUsuarioComum().size() != 0 && listPerfil.get(i).getEmpresa().size() == 0){
+                                idUsuario = listPerfil.get(i).getUsuarioComum().get(0).getIdUsuario();
                                 Intent intent = new Intent(LoginActivity.this, MainUserActivity.class);
                                 intent.putExtra("idPerfil", idPerfil);
                                 intent.putExtra("idUsuario", idUsuario);
                                 startActivity(intent);
                             }
                             if (listPerfil.get(i).getEmpresa().size() != 0 && listPerfil.get(i).getUsuarioComum().size() == 0){
+                                idEmpresa = listPerfil.get(i).getEmpresa().get(0).getIdEmpresa();
                                 Intent intent = new Intent(LoginActivity.this, MainCompanyActivity.class);
                                 intent.putExtra("idPerfil", idPerfil);
                                 intent.putExtra("idEmpresa", idEmpresa);

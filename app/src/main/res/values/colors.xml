@@ -12,6 +12,7 @@
     <color name="background_secondary">#262B2E</color>
     <color name="background_tertiary">#32363A</color>
     <color name="background_tertiary_transparent">#CC262B2E</color>
+    <color name="background_tertiary_more_transparent">#77262B2E</color>
 
     <color name="purple_primary">#6123F6</color>
     <color name="purple_secondary">#7F37FF</color>

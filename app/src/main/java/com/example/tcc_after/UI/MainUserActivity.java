@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.example.tcc_after.R;
 import com.example.tcc_after.uiFragments.FeedFragment;
+import com.example.tcc_after.uiFragments.MomentsFragment;
 import com.example.tcc_after.uiFragments.SearchFragment;
 import com.example.tcc_after.uiFragments.user.perfil.PerfilUserFragment;
 import com.example.tcc_after.uiFragments.user.tickets.TicketsFragment;
@@ -72,16 +73,16 @@ public class MainUserActivity extends AppCompatActivity {
 
                     case R.id.nav_moments:
 
-//                        fragment = new MomentsFragment();
-//
-//                        if (fragment.equals(MomentsFragment.class)){
-//                            item.setIcon(R.drawable.ic_baseline_video_library);
-//                        }
-//                        else{
-//                            item.setIcon(R.drawable.ic_outline_video_library);
-//                        }
-//
-//                        break;
+                        fragment = new MomentsFragment();
+
+                        if (fragment.equals(MomentsFragment.class)){
+                            item.setIcon(R.drawable.ic_baseline_video_library);
+                        }
+                        else{
+                            item.setIcon(R.drawable.ic_outline_video_library);
+                        }
+
+                        break;
 
                 case R.id.nav_perfil:
 

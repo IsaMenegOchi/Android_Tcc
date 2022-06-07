@@ -7,128 +7,340 @@
     android:background="@color/background_primary"
     tools:context=".uiFragments.company.CompanyEventStatisticsFragment">
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-       <androidx.constraintlayout.widget.ConstraintLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           style="@style/parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/parent">
 
-           <ImageView
-               android:id="@+id/imageView"
-               style="@style/imageViewAfterLogo"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               tools:layout_editor_absoluteX="20dp" />
 
-           <ImageButton
-               android:id="@+id/btnCompanyEventDescription_Chat"
-               android:layout_width="50dp"
-               android:layout_height="50dp"
-               android:layout_marginEnd="20dp"
-               android:background="@drawable/round_corner"
-               android:src="@drawable/ic_outline_question_answer"
-               app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            <ImageView
+                android:id="@+id/imageView"
+                style="@style/imageViewAfterLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="40dp" />
+            <ImageButton
+                android:id="@+id/ibCompanyEventEstatistics_Notifications"
+                style="@style/iconNotification"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-               app:layout_constraintEnd_toStartOf="@+id/btnEventDescription_Notification"
-               app:layout_constraintTop_toTopOf="@+id/imageView" />
+            <TextView
+                android:id="@+id/tvCompanyEventEstatistics_Title"
+                style="@style/textViewTitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/tickets"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-           <ImageButton
-               android:id="@+id/btnCompanyEventDescription_Notification"
-               android:layout_width="50dp"
-               android:layout_height="50dp"
-               android:background="@drawable/round_corner"
-               android:src="@drawable/ic_outline_notifications"
-               app:layout_constraintBottom_toBottomOf="@+id/imageView"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toTopOf="@+id/imageView" />
+            <LinearLayout
+                android:id="@+id/llCompanyEventEstatistics_ActivedUsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="25dp"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyEventEstatistics_Title">
 
-           <TextView
-               android:id="@+id/tvCompanyEventStatistics_Title"
-               style="@style/textViewTitles"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="30dp"
-               android:text="@string/eventEstatistics"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/btnEventDescription_Chat" />
+                <LinearLayout
+                    android:id="@+id/llCompanyEventEstatistics_EventsActives"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-           <LinearLayout
-               android:id="@+id/llCompanyEventStatistics_ActiveClosed"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:weightSum="2"
-               android:layout_marginVertical="25dp"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/tvEventStatistics_Title">
+                    <TextView
+                        android:id="@+id/tvCompanyEventEstatistics_active"
+                        style="@style/textViewSubTitlesPurple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activeTickets" />
 
-               <LinearLayout
-                   android:id="@+id/llCompanyEventStatistics_CompanyEventsActives"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:gravity="center"
-                   android:orientation="vertical">
+                    <View
+                        android:id="@+id/viewCompanyEventEstatistics_viewActive"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/purple_quaternary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llCompanyEventEstatistics_Menu" />
 
-                   <TextView
-                       style="@style/textViewSubTitlesPurple"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/activeTickets" />
+                </LinearLayout>
 
-                   <View
-                       android:layout_width="match_parent"
-                       android:layout_height="2dp"
-                       android:layout_marginVertical="10dp"
-                       android:background="@color/purple_quaternary"
-                       app:layout_constraintEnd_toEndOf="parent"
-                       app:layout_constraintStart_toStartOf="parent"
-                       app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+                <LinearLayout
+                    android:id="@+id/llCompanyEventEstatistics_EventsClosed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-               </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvCompanyEventEstatistics_desative"
+                        style="@style/textViewSubTitlesBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/usedTickets" />
 
-               <LinearLayout
-                   android:id="@+id/llCompanyEventEstatistics_CompanyEventsClosed"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical"
-                   android:gravity="center"
-                   android:layout_weight="1">
+                    <View
+                        android:id="@+id/viewCompanyEventEstatistics_viewDesactive"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
 
-                   <TextView
-                       style="@style/textViewSubTitlesBold"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/closed" />
+                </LinearLayout>
 
-                   <View
-                       android:layout_width="match_parent"
-                       android:layout_height="2dp"
-                       android:layout_marginVertical="10dp"
-                       android:background="@color/white"
-                       app:layout_constraintEnd_toEndOf="parent"
-                       app:layout_constraintStart_toStartOf="parent"
-                       app:layout_constraintTop_toBottomOf="@+id/llEventDescription_Menu" />
+            </LinearLayout>
 
-               </LinearLayout>
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/rcAdmVerificationSolicitation_Cards"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/llTicketsArea_ActivedUsed" />-->
 
-           </LinearLayout>
 
-           <androidx.recyclerview.widget.RecyclerView
-               android:id="@+id/rcCompanyEventStatistics"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="20dp"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/llEventStatistics_ActiveClosed" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/llCompanyEventEstatistics_ActivedUsed"
+                tools:layout_editor_absoluteX="20dp">
 
-       </androidx.constraintlayout.widget.ConstraintLayout>
-   </ScrollView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivCardEventEstatistics_CoverPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="@color/background_tertiary_transparent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/imagem_evento"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvCardEventEstatistics_EventTitle"
+                            style="@style/textViewTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Festa Neon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvCardEventEstatistics_EventCity"
+                            style="@style/textViewSubName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Barueri"
+                            app:layout_constraintStart_toStartOf="@+id/tvCardEventEstatistics_EventTitle"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCardEventEstatistics_EventTitle" />
+
+
+                        <TextView
+                            android:id="@+id/tvCardEventEstatistics_EventPLace"
+                            style="@style/textViewSubName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP"
+                            app:layout_constraintStart_toStartOf="@+id/tvCardEventEstatistics_EventCompany"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCardEventEstatistics_EventCompany" />
+
+                        <TextView
+                            android:id="@+id/tvCardEventEstatistics_DateTime"
+                            style="@style/textViewName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="16/03 19h30"
+                            app:layout_constraintStart_toStartOf="@+id/tvCardEventEstatistics_EventPLace"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCardEventEstatistics_EventPLace" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCardEventEstatistics_DateTime">
+
+                            <LinearLayout
+                                android:id="@+id/llCardEventEstatistics_SoldTickets"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_card_event_statistics"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingVertical="10dp">
+
+                                <TextView
+                                    android:id="@+id/tvCardEventEstatistics_SoldTickts"
+                                    style="@style/textViewSubName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/soldTickets" />
+
+                                <TextView
+                                    android:id="@+id/tvCardEventEstatistics_QtdTickets"
+                                    style="@style/textViewName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:text="3402" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llCardEventEstatistics_Gain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_card_event_statistics"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingVertical="10dp">
+
+                                <TextView
+                                    android:id="@+id/tvCardEventEstatistics_Gain"
+                                    style="@style/textViewSubName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gain"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCardEventEstatistics_QtdeGain"
+                                    style="@style/textViewName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:text="R$ 93.100,00"
+                                    app:layout_constraintStart_toStartOf="@+id/tvCardEventEstatistics_EventTitle"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvCardEventEstatistics_EventTitle" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:id="@+id/llCardEventEstatistics_Favorites"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_edit_text_background_black"
+                                android:orientation="horizontal"
+                                android:paddingVertical="10dp"
+                                android:weightSum="2">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="0.8"
+                                    android:src="@drawable/ic_baseline_favorite_border"
+                                    app:tint="@color/purple_quaternary" />
+
+                                <TextView
+                                    android:id="@+id/tvCardEventEstatistics_QtdeEventsFavorites"
+                                    style="@style/textViewSubName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.2"
+                                    android:text="100.000"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llCardEventEstatistics_Calendar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_edit_text_background_black"
+                                android:orientation="horizontal"
+                                android:paddingVertical="10dp"
+                                android:weightSum="2">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.8"
+                                    android:src="@drawable/ic_outline_calendar_today"
+                                    app:tint="@color/purple_quaternary" />
+
+                                <TextView
+                                    style="@style/textViewSubName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.2"
+
+                                    android:text="10.000" />
+                            </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

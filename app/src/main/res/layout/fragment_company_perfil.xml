@@ -7,174 +7,198 @@
     android:background="@color/background_primary"
     tools:context=".uiFragments.company.CompanyPerfilFragment">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:context=".UI.user.UserPerfilFragment">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.user.UserPerfilFragment">
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:scrollbars="vertical">-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/ivCompanyPhotoRegister_Cover"-->
-<!--                style="@style/photoCapa"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="150dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+            <ImageView
+                android:id="@+id/ivCompanyPhotoRegister_Cover"
+                style="@style/photoCapa"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/foto_fundo_empresa"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/ivCompanyPhotoRegister_Perfil"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                style="@style/photoPerfil"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Cover" />-->
+            <ImageView
+                android:id="@+id/ivCompanyPhotoRegister_Perfil"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                style="@style/photoPerfil"
+                android:scaleType="centerCrop"
+                android:elevation="3dp"
+                android:src="@drawable/foto_perfil_empresa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Cover" />
 
-<!--            <Spinner-->
-<!--                android:id="@+id/spCompanyPerfil_Settings"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:layout_marginTop="16dp"-->
-<!--                android:background="@drawable/ic_outline_settings"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+            <Spinner
+                android:id="@+id/spCompanyPerfil_Settings"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_outline_settings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:id="@+id/clUserPerfil_ContentPerfil"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="20dp"-->
-<!--                android:paddingVertical="10dp"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Perfil"-->
-<!--                tools:layout_editor_absoluteX="20dp">-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clCompanyPerfil_ContentPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ivCompanyPhotoRegister_Perfil"
+                tools:layout_editor_absoluteX="20dp">
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_UserName"-->
-<!--                    style="@style/textViewTitles"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Audio_eventos"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_UserName"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audio_eventos"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_Biografia"-->
-<!--                    style="@style/textViewSubName"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:maxWidth="280dp"-->
-<!--                    android:text="Dias de luta dias de glória #paz"-->
-<!--                    android:textStyle="italic"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_UserName" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_Biografia"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="280dp"
+                    android:text="Dias de luta dias de glória #paz"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyPerfil_UserName" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_NumberFollowing"-->
-<!--                    style="@style/textViewTitles"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="36dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:text="65"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_Biografia" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_NumberFollowing"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyPerfil_Biografia" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_SubTitleFollowing"-->
-<!--                    style="@style/textViewSubName"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Seguindo"-->
-<!--                    app:layout_constraintEnd_toEndOf="@+id/tvUserPerfil_NumberFollowing"-->
-<!--                    app:layout_constraintStart_toStartOf="@+id/tvUserPerfil_NumberFollowing"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_NumberFollowing" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_SubTitleFollowing"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seguindo"
+                    app:layout_constraintEnd_toEndOf="@+id/tvCompanyPerfil_NumberFollowing"
+                    app:layout_constraintStart_toStartOf="@+id/tvCompanyPerfil_NumberFollowing"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyPerfil_NumberFollowing" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_NumberWitnessedEvents"-->
-<!--                    style="@style/textViewTitles"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="68dp"-->
-<!--                    android:text="65"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/tvUserPerfil_NumberFollowing" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_NumberWitnessedEvents"
+                    style="@style/textViewTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCompanyPerfil_NumberFollowing" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tvUserPerfil_SubTitleWitnessedEvents"-->
-<!--                    style="@style/textViewSubName"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Eventos presenciados"-->
-<!--                    app:layout_constraintEnd_toEndOf="@+id/tvUserPerfil_NumberWitnessedEvents"-->
-<!--                    app:layout_constraintStart_toStartOf="@+id/tvUserPerfil_NumberWitnessedEvents"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_NumberWitnessedEvents" />-->
+                <TextView
+                    android:id="@+id/tvCompanyPerfil_SubTitleWitnessedEvents"
+                    style="@style/textViewSubName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eventos presenciados"
+                    app:layout_constraintEnd_toEndOf="@+id/tvCompanyPerfil_NumberWitnessedEvents"
+                    app:layout_constraintStart_toStartOf="@+id/tvCompanyPerfil_NumberWitnessedEvents"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCompanyPerfil_NumberWitnessedEvents" />
 
 
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                style="@style/parent"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/background_secondary"-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_secondary"
 
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/clUserPerfil_ContentPerfil">-->
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clCompanyPerfil_ContentPerfil">
+
+
+                <ImageButton
+                    android:id="@+id/ibCompanyPerfil_FavoritesEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_perfil_button_left"
+                    android:src="@drawable/ic_baseline_calendar_today"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
 <!--                <ImageButton-->
-<!--                    android:id="@+id/ibUserPerfil_FavoritesEvents"-->
-<!--                    android:layout_width="186dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:background="@drawable/shape_perfil_button_left"-->
-<!--                    android:src="@drawable/ic_baseline_favorite_border"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-
-<!--                <ImageButton-->
-<!--                    android:id="@+id/ibUserPerfil_Calendar"-->
+<!--                    android:id="@+id/ibCompanyPerfil_Calendar"-->
 <!--                    android:layout_width="186dp"-->
 <!--                    android:layout_height="40dp"-->
 <!--                    android:background="@drawable/shape_perfil_button_rigth"-->
 <!--                    android:src="@drawable/ic_outline_calendar_today"-->
-<!--                    app:layout_constraintBottom_toBottomOf="@+id/ibUserPerfil_FavoritesEvents"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/ibCompanyPerfil_FavoritesEvents"-->
 <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/ibUserPerfil_FavoritesEvents" />-->
-
-<!--                <androidx.recyclerview.widget.RecyclerView-->
-<!--                    android:id="@+id/rcUserPerfil_CardEvent"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginVertical="20dp"-->
-<!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/ibUserPerfil_FavoritesEvents" />-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/ibCompanyPerfil_FavoritesEvents" />-->
 
 
-<!--                <Button-->
-<!--                    android:id="@+id/btnCompanyPerfil_AddEvent"-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcCompanyPerfil_CardEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ibCompanyPerfil_FavoritesEvents" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvCompanyPerfil_noEvents"-->
+<!--                    style="@style/textViewSubName"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/ic_baseline_add"-->
+<!--                    android:text="Você ainda não possui eventos criados"-->
+<!--                    android:layout_marginBottom="20dp"-->
+
+<!--                    android:textStyle="italic"-->
+<!--                    android:layout_marginTop="20dp"-->
 <!--                    app:layout_constraintEnd_toEndOf="parent"-->
 <!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/rcUserPerfil_CardEvent" />-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/ibCompanyPerfil_FavoritesEvents" />-->
 
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                <ImageView
+                    android:id="@+id/ivCompanyPerfil_AddEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_add_event"
+                    android:src="@drawable/ic_baseline_add"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rcCompanyPerfil_CardEvent" />
 
-<!--    </ScrollView>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </FrameLayout>

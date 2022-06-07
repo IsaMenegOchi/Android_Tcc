@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".UI.MainUserActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/body_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/body_container"/>
+        android:layout_marginBottom="40dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/user_bottom_navigation"

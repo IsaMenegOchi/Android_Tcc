@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class PerfilUserFragment extends Fragment {
     }
 
     private Spinner spConfiguracoes;
+    private ImageView ivFotoUsuario;
     private TextView tvNumeroSeguindo, tvEventosPresenciados, tvNickname, tvBiografia;
 
     private ActionMenuView actionMenuView;
@@ -92,6 +94,9 @@ public class PerfilUserFragment extends Fragment {
         actionMenuView = getActivity().findViewById(R.id.amvUserPerfil_Settings);
         tvNickname = getActivity().findViewById(R.id.tvUserPerfil_UserName);
         tvBiografia = getActivity().findViewById(R.id.tvUserPerfil_Biografia);
+        ivFotoUsuario = getActivity().findViewById(R.id.ivUserPhotoRegister_Perfil);
+
+        ivFotoUsuario.setClipToOutline(true);
 
 
         Call<List<Perfil>> callPerfil = routerInterface.getPerfilPorId(idPerfil);
@@ -122,11 +127,10 @@ public class PerfilUserFragment extends Fragment {
                     List<Evento> list = new ArrayList<Evento>();
 
                     list = response.body();
-                    Log.d("teste", String.valueOf(list.get(0).getTituloEvento()));
 
-
-                    RecyclerView recyclerView = getActivity().findViewById(R.id.rcUserPerfil_CardEvent);
-                    recyclerView.setAdapter(new PerfilUserFragment.EventoAdapter(list));
+//
+//                    RecyclerView recyclerView = getActivity().findViewById(R.id.rcUserPerfil_CardEvent);
+//                    recyclerView.setAdapter(new PerfilUserFragment.EventoAdapter(list));
                 }
             }
 

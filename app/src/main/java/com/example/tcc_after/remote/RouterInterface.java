@@ -170,7 +170,7 @@ public interface RouterInterface {
 
         //? LISTAGEM POR ID DA EMPRESA
         @GET("/evento/acharEventoPorId/{idEmpresa}")
-        Call<List<Evento>> getEventoIdEmpresa(@Path("idEmpresa") int idEmpresa);
+        Call<List<com.example.tcc_after.model.evento.Evento>> getEventoIdEmpresa(@Path("idEmpresa") int idEmpresa);
 
         //? EDIÇÃO
         @PUT("/evento/editarEvento/{idEvento}")

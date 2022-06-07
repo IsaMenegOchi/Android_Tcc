@@ -21,6 +21,8 @@
             <ImageView
                 android:id="@+id/ivUserPhotoRegister_Cover"
                 style="@style/photoCapa"
+                android:src="@drawable/imagem_fundo"
+                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -29,9 +31,11 @@
 
             <ImageView
                 android:id="@+id/ivUserPhotoRegister_Perfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 style="@style/photoPerfil"
+                android:scaleType="centerCrop"
+                android:src="@drawable/imagem_perfil_foto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserPhotoRegister_Cover" />
@@ -95,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="36dp"
                     android:layout_marginTop="10dp"
-                    android:text="65"
+                    android:text="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvUserPerfil_Biografia" />
 
@@ -115,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="68dp"
-                    android:text="65"
+                    android:text="0"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tvUserPerfil_NumberFollowing" />
 
@@ -145,33 +149,36 @@
 
                 <ImageButton
                     android:id="@+id/ibUserPerfil_FavoritesEvents"
-                    android:layout_width="186dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/shape_perfil_button_left"
                     android:src="@drawable/ic_baseline_favorite_border"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-                <ImageButton
-                    android:id="@+id/ibUserPerfil_Calendar"
-                    android:layout_width="186dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/shape_perfil_button_rigth"
-                    android:src="@drawable/ic_outline_calendar_today"
-                    app:layout_constraintBottom_toBottomOf="@+id/ibUserPerfil_FavoritesEvents"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ibUserPerfil_FavoritesEvents" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcUserPerfil_CardEvent"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tvUserPerfil_FavoriteEvents"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="20dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:text="Você ainda não possui eventos curtidos"
+                    style="@style/textViewSubName"
+                    android:textStyle="italic"
+                    android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ibUserPerfil_FavoritesEvents" />
+
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/rcUserPerfil_CardEvent"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginVertical="20dp"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/ibUserPerfil_FavoritesEvents" />-->
 
                 <CalendarView
                     android:layout_width="match_parent"
@@ -183,7 +190,6 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
