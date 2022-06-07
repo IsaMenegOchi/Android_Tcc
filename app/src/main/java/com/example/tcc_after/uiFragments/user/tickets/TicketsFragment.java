@@ -2,11 +2,16 @@ package com.example.tcc_after.uiFragments.user.tickets;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.tcc_after.R;
 
@@ -56,11 +61,47 @@ public class TicketsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    LinearLayout llAtivos, llDesativos;
+    TextView tvAtivos, tvUtilizados;
+    View viewAtivos, viewDesativados;
+    CardView cardViwIngresso;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        llDesativos = getActivity().findViewById(R.id.llEventEstatistics_EventsClosed);
+        llAtivos = getActivity().findViewById(R.id.llEventStatistics_EventsActives);
+
+        tvAtivos = getActivity().findViewById(R.id.tvUserTickets_active);
+        tvUtilizados = getActivity().findViewById(R.id.tvUserTickets_desative);
+        viewAtivos = getActivity().findViewById(R.id.viewTickets_viewActive);
+        viewDesativados = getActivity().findViewById(R.id.viewTickets_viewDesactive);
+        cardViwIngresso = getActivity().findViewById(R.id.cvTickets_cardView);
+
+        llAtivos.setOnClickListener(view1 -> {
+            cardViwIngresso.setVisibility(View.VISIBLE);
+            tvAtivos.setTextAppearance(getActivity(), R.style.textViewSubTitlesPurple);
+            tvUtilizados.setTextAppearance(getActivity(), R.style.textViewSubTitlesBold);
+            viewAtivos.setBackgroundColor(getResources().getColor(R.color.purple_quaternary));
+            viewDesativados.setBackgroundColor(getResources().getColor(R.color.white));
+        });
+
+        llDesativos.setOnClickListener(view1 -> {
+            cardViwIngresso.setVisibility(View.GONE);
+            tvAtivos.setTextAppearance(getActivity(), R.style.textViewSubTitlesBold);
+            tvUtilizados.setTextAppearance(getActivity(), R.style.textViewSubTitlesPurple);
+            viewAtivos.setBackgroundColor(getResources().getColor(R.color.white));
+            viewDesativados.setBackgroundColor(getResources().getColor(R.color.purple_quaternary));
+        });
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tickets, container, false);
+
     }
 }

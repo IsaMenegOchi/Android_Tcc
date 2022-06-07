@@ -9,7 +9,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/cardsView"
     >
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shows"
+        android:src="@color/background_tertiary_transparent"
+        />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,8 +22,10 @@
 
         <ImageView
             android:id="@+id/ivCardEvent_Company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/perfil"
+            android:scaleType="centerCrop"
             android:background="@drawable/shape_photo_profile_card_event"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +49,7 @@
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
             android:text="MultWoman"
-            android:textStyle="italic"
+            android:textStyle="italic|bold"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Title"
             app:layout_constraintTop_toBottomOf="@+id/tvCardEvent_Title" />
 
@@ -52,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            android:text="Religião"
+            android:text="Exposicao"
             app:layout_constraintStart_toStartOf="@+id/tvCardEvent_Company"
             app:layout_constraintTop_toBottomOf="@+id/tvCardEvent_Company" />
 
@@ -62,8 +69,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Cultura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivCardEvent_Favorite"
+            app:layout_constraintStart_toEndOf="@+id/tvCardEvent_Age" />
 
 
         <!--        <ImageView-->
@@ -148,8 +157,8 @@
 
         <ImageView
             android:id="@+id/ivCardEvent_Favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/shape_heart"
             android:padding="10dp"
             android:src="@drawable/ic_baseline_favorite_border"

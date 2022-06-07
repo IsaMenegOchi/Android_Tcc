@@ -1,9 +1,12 @@
 package com.example.tcc_after.uiFragments;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -133,8 +136,9 @@ public class FeedFragment extends Fragment {
              * ATRIBUTOS DA CLASS LIVROVIEWHOLDER
              **/
             private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCategoria, tvAssunto, tvFaixaEtaria, tvCelebridade;
-            private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivCount;
+            private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivFavorito;
             private int idEvento;
+            private int count = 0;
 
             //View itemView - elementos de view (et, tv, btn)
             //o item_conteiner entre na no itemView
@@ -148,12 +152,27 @@ public class FeedFragment extends Fragment {
                 tvCategoria = itemView.findViewById(R.id.tvCardEvent_Category);
                 tvAssunto = itemView.findViewById(R.id.tvCardEvent_Subject);
                 tvFaixaEtaria = itemView.findViewById(R.id.tvCardEvent_Age);
+                ivFavorito = itemView.findViewById(R.id.ivCardEvent_Favorite);
 //                tvCelebridade = itemView.findViewById(R.id.tvCardEvent_Atractions);
 
                 ivEmpresa = itemView.findViewById(R.id.ivCardEvent_Company);
+                ivEmpresa.setClipToOutline(true);
 //                ivCelebridade1 = itemView.findViewById(R.id.ivCardEvent_person1);
 //                ivCelebridade2 = itemView.findViewById(R.id.ivCardEvent_person2);
+                Resources res = getContext().getResources();
+                Drawable drawableRounded = ResourcesCompat.getDrawable(res, R.drawable.ic_baseline_favorite,null);
+                Drawable drawableOutlined = ResourcesCompat.getDrawable(res, R.drawable.ic_baseline_favorite_border,null);
 
+                ivFavorito.setOnClickListener(view -> {
+                    count++;
+                    if (count %2 == 0){
+                        ivFavorito.setImageDrawable(drawableOutlined);
+                    }
+                    else{
+                        ivFavorito.setImageDrawable(drawableRounded);
+                    }
+
+                });
 
                 itemView.setOnClickListener(view -> {
 
@@ -209,6 +228,8 @@ public class FeedFragment extends Fragment {
 
 
             public void setEventoData(Evento evento) {
+
+
                 tvTituloEvento.setText(evento.getTituloEvento());
                 tvEmpresa.setText(evento.getEmpresa().getPerfil().getNicknamePerfil());
                 tvCategoria.setText(evento.getCategoria().getCategoriaEvento());

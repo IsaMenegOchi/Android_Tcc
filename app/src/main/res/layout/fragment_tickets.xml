@@ -64,12 +64,14 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvUserTickets_active"
                         style="@style/textViewSubTitlesPurple"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/activeTickets" />
 
                     <View
+                        android:id="@+id/viewTickets_viewActive"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:layout_marginVertical="10dp"
@@ -89,12 +91,14 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvUserTickets_desative"
                         style="@style/textViewSubTitlesBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/usedTickets" />
 
                     <View
+                        android:id="@+id/viewTickets_viewDesactive"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:layout_marginVertical="10dp"
@@ -107,15 +111,108 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcAdmVerificationSolicitation_Cards"
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rcAdmVerificationSolicitation_Cards"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/llTicketsArea_ActivedUsed" />-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTickets_cardView"
+                style="@style/cardsView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llTicketsArea_ActivedUsed" />
+                app:layout_constraintTop_toBottomOf="@+id/llTicketsArea_ActivedUsed">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivCardTicketsArea_Image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shows"
+                        android:src="@color/background_tertiary_transparent"/>
+
+                    <TextView
+                        android:id="@+id/ivCardTicketsArea_EventTitle"
+                        style="@style/textViewCardName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="O mágico do contraste"
+                        app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+                        app:layout_constraintTop_toTopOf="@+id/ivCardTicketsArea_Image" />
+
+
+                    <TextView
+                        android:id="@+id/ivCardTicketsArea_EventCompany"
+                        style="@style/textViewCardSubName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Entidade"
+                        app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+                        app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventTitle" />
+
+                    <TextView
+                        android:id="@+id/ivCardTicketsArea_EventLocate"
+                        style="@style/textViewCardSubName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:maxWidth="310dp"
+                        android:text="Travessa Guarani, 7-B - São Mateus - ES"
+                        app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_Image"
+                        app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventCompany" />
+
+                    <TextView
+                        android:id="@+id/ivCardTicketsArea_EventDate"
+                        style="@style/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30/04"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_EventLocate"
+                        app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
+
+                    <TextView
+                        android:id="@+id/ivCardTicketsArea_EventTime"
+                        style="@style/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="10h00"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivCardTicketsArea_EventDate"
+                        app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
+
+<!--                    <Button-->
+<!--                        android:id="@+id/btnTicktsArea_OpenTicket"-->
+<!--                        style="@style/buttonOpenTicket"-->
+<!--                        android:layout_width="138dp"-->
+<!--                        android:layout_height="22dp"-->
+<!--                        android:layout_marginEnd="16dp"-->
+<!--                        android:layout_marginBottom="12dp"-->
+<!--                        android:text="Ver ingresso"-->
+<!--                        android:textSize="10sp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="@+id/ivCardTicketsArea_Image"-->
+<!--                        app:layout_constraintEnd_toEndOf="@+id/ivCardTicketsArea_Image" />-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
