@@ -16,10 +16,10 @@
         android:icon="@drawable/ic_outline_home"
         android:title="@string/title_home"/>
 
-<!--    <item-->
-<!--        android:id="@+id/nav_moments"-->
-<!--        android:icon="@drawable/ic_outline_video_library"-->
-<!--        android:title="@string/titleMoments"/>-->
+    <item
+        android:id="@+id/nav_moments"
+        android:icon="@drawable/ic_outline_video_library"
+        android:title="@string/titleMoments"/>
 
     <item
         android:id="@+id/nav_perfil"
