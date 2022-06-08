@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/round_corner"
+        android:background="@drawable/shape_menu_bottom"
         app:itemIconSize="30dp"
         app:itemIconTint="@color/white"
         app:itemRippleColor="@android:color/transparent"

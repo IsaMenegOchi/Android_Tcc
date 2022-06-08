@@ -71,7 +71,7 @@ public class PerfilUserFragment extends Fragment {
 
     }
 
-    private Spinner spConfiguracoes;
+    private ImageView ivConfiguracao;
     private ImageView ivFotoUsuario;
     private TextView tvNumeroSeguindo, tvEventosPresenciados, tvNickname, tvBiografia;
 
@@ -88,16 +88,21 @@ public class PerfilUserFragment extends Fragment {
 
         routerInterface = APIUtil.getApiInterface();
 
-//        spConfiguracoes = requireActivity().findViewById(R.id.spUserPerfil_Config);
+        ivConfiguracao = requireActivity().findViewById(R.id.amvUserPerfil_Settings);
         tvNumeroSeguindo = getActivity().findViewById(R.id.tvUserPerfil_NumberFollowing);
         tvEventosPresenciados = getActivity().findViewById(R.id.tvUserPerfil_NumberWitnessedEvents);
-        actionMenuView = getActivity().findViewById(R.id.amvUserPerfil_Settings);
+//        actionMenuView = getActivity().findViewById(R.id.amvUserPerfil_Settings);
         tvNickname = getActivity().findViewById(R.id.tvUserPerfil_UserName);
         tvBiografia = getActivity().findViewById(R.id.tvUserPerfil_Biografia);
         ivFotoUsuario = getActivity().findViewById(R.id.ivUserPhotoRegister_Perfil);
 
         ivFotoUsuario.setClipToOutline(true);
 
+
+        ivConfiguracao.setOnClickListener(view1 -> {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+        );
 
         Call<List<Perfil>> callPerfil = routerInterface.getPerfilPorId(idPerfil);
        callPerfil.enqueue(new Callback<List<Perfil>>() {

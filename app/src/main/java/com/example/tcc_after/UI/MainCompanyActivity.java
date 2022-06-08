@@ -44,9 +44,9 @@ public class MainCompanyActivity extends AppCompatActivity {
 
 
             switch (item.getItemId()) {
-                case R.id.nav_search:
-                    fragment = new SearchFragment();
-                    break;
+//                case R.id.nav_search:
+//                    fragment = new SearchFragment();
+//                    break;
 
                 case R.id.nav_ticket:
 

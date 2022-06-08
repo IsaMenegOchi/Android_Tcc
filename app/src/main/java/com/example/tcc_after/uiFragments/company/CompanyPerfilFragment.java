@@ -106,7 +106,7 @@ public class CompanyPerfilFragment extends Fragment {
     int idEmpresa = LoginActivity.idEmpresa;
 
     private TextView tvTituloEvento, tvEmpresa, tvTipoEvento, tvCategoria, tvAssunto, tvFaixaEtaria, tvCelebridade;
-    private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivFavorito;
+    private ImageView ivEmpresa, ivCelebridade1, ivCelebridade2, ivFavorito, ivConfiguracao;
     private int idEvento;
     private int count = 0;
 
@@ -116,6 +116,7 @@ public class CompanyPerfilFragment extends Fragment {
 
         tvCompanyUsername = getActivity().findViewById(R.id.tvCompanyPerfil_UserName);
         tvCompanyBiografia = getActivity().findViewById(R.id.tvCompanyPerfil_Biografia);
+        ivConfiguracao = getActivity().findViewById(R.id.ivCompanyPerfil_Settings);
 
         ivAddEvento = getActivity().findViewById(R.id.ivCompanyPerfil_AddEvent);
         ivFotoPerfil = getActivity().findViewById(R.id.ivCompanyPhotoRegister_Perfil);
@@ -124,6 +125,10 @@ public class CompanyPerfilFragment extends Fragment {
 
         routerInterface = APIUtil.getApiInterface();
 
+        ivConfiguracao.setOnClickListener(view1 -> {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        );
 
         ivAddEvento.setOnClickListener(view1 -> {
 

@@ -41,7 +41,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivUserPhotoRegister_Cover" />
 
 
-            <ActionMenuView
+            <ImageView
                 android:id="@+id/amvUserPerfil_Settings"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
