@@ -109,7 +109,6 @@
     </style>
 
     <style name="spinner">
-        <item name="android:textColor">@color/text_color</item>
         <item name="android:padding">10dp</item>
         <item name="android:background">@drawable/shape_spinner</item>
         <item name="fontFamily">@font/montserrat_regular</item>

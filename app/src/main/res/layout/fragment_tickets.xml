@@ -180,7 +180,7 @@
                         style="@style/textViewName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="30/04"
+                        android:text="15/08"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/ivCardTicketsArea_EventLocate"
                         app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
@@ -191,7 +191,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="10h00"
+                        android:text="14h00"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivCardTicketsArea_EventDate"
                         app:layout_constraintTop_toBottomOf="@+id/ivCardTicketsArea_EventLocate" />
